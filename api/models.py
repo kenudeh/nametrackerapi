@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 from .utils import *
 from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
@@ -12,12 +13,28 @@ from django.utils.text import slugify
 
 # Create your models here.
 
+class UserProfile(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE)
+    is_logged_in = models.BooleanField(default=False)
+    payment_status = models.CharField(max_length=20, default='unpaid')
+    subscription_expiry = models.DateField(null=True, blank=True)
+    access_tier = models.CharField(max_length=20, default='free')
+
+    def __str__(self):
+        return self.user.username
+    
+    
+
+  
+
+
+
 
 #Domain
 class Domain(models.Model):
     name = models.CharField(max_length=20)
     use_case = models.ForeignKey(
-        UseCase,
+        'UseCase',
         on_delete=models.CASCADE,
         related_name="approved_tool_category"
     )
@@ -25,15 +42,43 @@ class Domain(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
+
+# Options for execution difficulty
+class DifficultyType(models.TextChoices):
+    EASY = 'easy', 'Easy'
+    MEDIUM = 'medium', 'Medium'
+    HARD = 'hard', 'Hard'
+
+
 class UseCase(models.Model):
+    title = models.CharField(max_length=50)
     description = models.CharField(max_length=200)
+    difficulty = models.CharField(
+        max_length=20,
+        choices = DifficultyType.choices,
+        unique = True
+        )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 # Favorite
- class Favorite(models.Model):
-    user = models.ForeignKey(UserProfile, related_name='user_favorites', on_delete=models.CASCADE)
-    tool = models.ForeignKey('Tool',  related_name='tool', on_delete=models.CASCADE)
+class Favorite(models.Model):
+    # user = models.ForeignKey(UserProfile, related_name='user_favorites', on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
-    
+
     def __str__(self):
         return self.user
 
@@ -43,6 +88,8 @@ class SubscriptionType(models.TextChoices):
     FREE = 'free', 'Free'
     PAID = 'paid', 'Paid'
     FREEMIUM = 'freemium', 'Freemium'
+
+
 
 class PlanModel(models.Model):
     type = models.CharField(
@@ -59,36 +106,6 @@ class PlanModel(models.Model):
 
 
 
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
-#     submissions = models.ManyToManyField('ToolSuggestion', related_name='my_submissions', blank=True) # Users can submit multiple tools
-#     my_favorites = models.ManyToManyField('Favorite', related_name='my_favorites', blank=True) # Tools user likes
-    # Explicitly define groups and user_permissions with unique related_name
-    # THESE ARE NEEDED IF YOU ARE SUBCLASING ABSTRACTUSER
-    # groups = models.ManyToManyField(
-    #     'auth.Group',
-    #     verbose_name='groups',
-    #     blank=True,
-    #     help_text='The groups this user belongs to. A user will get all permissions granted to each of their groups.',
-    #     related_name="userprofile_groups",  # Unique related_name
-    #     related_query_name="userprofile",
-    # )
-    # user_permissions = models.ManyToManyField(
-    #     'auth.Permission',
-    #     verbose_name= 'user permission',
-    #     blank=True,
-    #     help_text='Specific permissions for this user',
-    #     related_name="userprofile_user_permissions",  # Unique related_name
-    #     related_query_name="userprofile",
-    # )
-    
-    
-    # def __str__(self):
-    #     return f"{self.user}"
-    
-    
-
-  
 class CategoryType(models.TextChoices):
     HEALTH = 'health_and_wellness', 'Health_And_Wellness'
     TECH = 'tech', 'Tech'
