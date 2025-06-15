@@ -1,5 +1,5 @@
 """
-WSGI config for aitrackerapi project.
+WSGI config for nametrackerapi project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'aitrackerapi.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'nametrackerapi.settings')
 
 application = get_wsgi_application()
