@@ -1,41 +1,28 @@
 from django.urls import path, include
 from . import views
-# Import for auto-generating urls from viewset in ToolSubmission view
-from rest_framework.routers import DefaultRouter
 
-# For image rendering during development
-from django.conf import settings
-from django.conf.urls.static import static
 
-# Creating a router and registering the viewset
-router = DefaultRouter()
-router.register(r'submit', views.ToolSuggestionViewSet, basename='tool-suggestion')
+
 
 urlpatterns = [
-    path('tools', views.ToolListCreateView.as_view(), name='tool-list-create'),
-    path('tools/<slug:slug>', views.SingleToolViewAndUpdate.as_view(), name='tool-retrieve-update'),
-    path('update-tool', views.UpdateToolView.as_view(), name='update-tool'),
-    path('', include(router.urls)),  #For tool suggestion actions
-    #path('profile', views.UserProfileView.as_view(), name='user-profile'),
-    path('compare', views.ToolComparisonView.as_view(), name='compare-tools'),
-    path('support', views.SupportView.as_view(), name='support'),
-    path('newsletter', views.NewsletterView.as_view(), name = 'newsletter'),
-    path('categories', views.CategoryListView, name='category-list' ),
-    path('pricing', views.PricingTypeView, name='pricing-type' ),
-    path('tool-options', views.ToolOptionsView.as_view(), name='tool-options' ),
-    path('featured', views.FeaturedToolsView.as_view(), name='featured-list' ),
+   
+    # path('support', views.SupportView.as_view(), name='support'),
+    # path('newsletter', views.NewsletterView.as_view(), name = 'newsletter'),
+    # path('categories', views.CategoryListView, name='category-list' ),
 
-    
-    
+    # path('names/', views.NameListAPIView.as_view(), name='name-list'),
+    # path('names/<int:pk>/', views.NameDetailAPIView.as_view(), name='name-detail'),
+    path('names/', views.NameListAPIView.as_view(), name='name-list'),
+    path('names/<int:pk>/', views.NameDetailAPIView.as_view(), name='name-detail'),
+    path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
+    path('names/<int:pk>/update/', views.NameUpdateAPIView.as_view(), name='name-update'),
+    path('names/<int:pk>/delete/', views.NameDeleteAPIView.as_view(), name='name-delete'),
     
     # Djoser urls
     path("auth/", include("djoser.urls")),  # Includes registration, login, logout, password reset, etc.
     path("auth/", include("djoser.urls.jwt")),  # Includes JWT token endpoints
 ]
 
-
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # Djoser adds the following endpoints:
 
