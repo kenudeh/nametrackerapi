@@ -38,6 +38,7 @@ class RegStatusOptions(models.TextChoices):
     PENDING = 'pending', 'Pending'
     AVAILABLE = 'available', 'Available'
     TAKEN = 'taken', 'Taken'
+    UNVERIFIED = 'unverified', 'Unverified'
 
 class ExtensionOptions(models.TextChoices):
     ALL_EXTENSIONS = 'all_extensions', 'All_extensions'
@@ -58,9 +59,9 @@ class CompetitionType(models.TextChoices):
     HIGH = 'high', 'High'
 
 
-class ListOptions(models.TextChoices):
-    ALL_LIST = 'all_list', 'All_list'
-    PENDING_DELETE = 'pending_delete', 'Pending_delete'
+class DomainListOptions(models.TextChoices):
+    ALL_LIST = 'all_list', 'All List'
+    PENDING_DELETE = 'pending_delete', 'Pending Delete'
     DELETED = 'deleted', 'Deleted'
     MARKETPLACE = 'marketplace', 'Marketplace'
 
@@ -75,8 +76,8 @@ class Name(models.Model):
     )
     domain_list = models.CharField(
         max_length=50,
-        choices = ListOptions.choices,
-        default = ListOptions.DELETED
+        choices = DomainListOptions.choices,
+        default = DomainListOptions.DELETED
     )
     status = models.CharField(
         max_length = 20,
@@ -183,23 +184,11 @@ class NameTag(models.Model):
 
 
 
-# Options for UseCase Model
-# class DifficultyType(models.TextChoices):
-#     EASY = 'easy', 'Easy'
-#     MODERATE = 'moderate', 'Moderate'
-#     HARD = 'hard', 'Hard'
-
-# class CompetitionType(models.TextChoices):
-    LOW = 'low', 'Low'
-    MEDIUM = 'medium', 'Medium'
-    HIGH = 'high', 'High'
-
+#OPTIONS FOR USECASE MODEL
 class RevenueOptions(models.TextChoices):
     LOW = 'low', 'Low'
     MEDIUM = 'medium', 'Medium'
     HIGH = 'high', 'High'
-
-
 
 class UseCase(models.Model):
     domain_name = models.ForeignKey(
@@ -236,8 +225,40 @@ class UseCase(models.Model):
 
 
 
+# ============================================
+# Model to define Drop Time Rules Per Extension
+# ============================================
+
+class ExtensionDropInfo(models.Model):
+    """
+    Holds expected drop processing times per domain extension (.com, .co, .ai, .io),
+    allowing availability check schedules to be dynamically adjusted in Celery tasks.
+    """
+    extension = models.CharField(max_length=10, unique=True)  
+    first_check_delay_hours = models.PositiveIntegerField(default=2)  # Delay after drop to run first check
+    second_check_delay_hours = models.PositiveIntegerField(default=12)  # Delay for second check (if still unverified)
+
+    def __str__(self):
+        return f"{self.extension} drop timing rules"
 
 
+
+# ============================================
+# Model to Archive Names Older Than 90 Days
+# ============================================
+
+class ArchivedName(models.Model):
+    """
+    Stores minimal details of domain names whose drop dates exceeded 90 days,
+    for historical reference while freeing up main Name table space.
+    """
+    domain_name = models.CharField(max_length=20)
+    extension = models.CharField(max_length=10)
+    original_drop_date = models.DateField()
+    archived_on = models.DateTimeField(auto_now_add=True)  # When this record was archived
+
+    def __str__(self):
+        return f"Archived: {self.domain}{self.extension} (Dropped: {self.original_drop_date})"
 
 
     

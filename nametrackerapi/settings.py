@@ -16,8 +16,15 @@ import dj_database_url
 import os
 import json
 from dotenv import load_dotenv
+
+
+# Load environment variables from .env file
 load_dotenv()
 
+
+# Dynadot API credentials
+DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
+DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -53,6 +60,7 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'djoser',
     'django_filters',
+    'django_celery_beat',
 ]
 
 
@@ -198,3 +206,13 @@ CACHES = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Points to Redis running in Docker
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# CELERY BEAT SETTINGS
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
