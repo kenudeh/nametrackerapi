@@ -77,12 +77,12 @@ class Name(models.Model):
     domain_list = models.CharField(
         max_length=50,
         choices = DomainListOptions.choices,
-        default = DomainListOptions.DELETED
+        default = DomainListOptions.PENDING_DELETE
     )
     status = models.CharField(
         max_length = 20,
         choices = RegStatusOptions.choices,
-        default = RegStatusOptions.AVAILABLE,
+        default = RegStatusOptions.PENDING,
         unique = True
     )
     length = models.PositiveIntegerField(

@@ -12,11 +12,11 @@ urlpatterns = [
 
     # path('names/', views.NameListAPIView.as_view(), name='name-list'),
     # path('names/<int:pk>/', views.NameDetailAPIView.as_view(), name='name-detail'),
-    path('names/', views.NameListAPIView.as_view(), name='name-list'),
-    path('names/<int:pk>/', views.NameDetailAPIView.as_view(), name='name-detail'),
+    path('names', views.NameListAPIView.as_view(), name='name-list'),
+    path('names/<int:pk>', views.NameDetailAPIView.as_view(), name='name-detail'),
     path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
-    path('names/<int:pk>/update/', views.NameUpdateAPIView.as_view(), name='name-update'),
-    path('names/<int:pk>/delete/', views.NameDeleteAPIView.as_view(), name='name-delete'),
+    path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
+    path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
     
     # Djoser urls
     path("auth/", include("djoser.urls")),  # Includes registration, login, logout, password reset, etc.

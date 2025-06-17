@@ -33,7 +33,7 @@ def archive_selected_names(modeladmin, request, queryset):
 #Name admin
 @admin.register(Name)
 class NameAdmin(admin.ModelAdmin):
-    readonly_fields = ('length', 'syllables', 'status', 'domain_list') 
+    readonly_fields = ('length', 'syllables', 'status') 
     list_display = (
         'domain_name',  
         'extension',
