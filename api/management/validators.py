@@ -1,5 +1,3 @@
-# validators.py
-
 """
 This module provides JSON validation for the AI-generated domain data
 before inserting into the database. It ensures that every domain record
@@ -24,14 +22,12 @@ def validate_domain_data(data):
         True if validation passes.
     """
     if not isinstance(data, list):
-        raise ValueError("Top-level JSON data must be a list of domains.")
+        raise ValueError("Top-level JSON data must be a list of domain records.")
 
-    required_name_fields = [
-        'domain_name', 'extension', 'domain_list', 'status',
-        'competition', 'difficulty', 'suggested_usecase', 'is_top_rated', 'is_favorite',
-        'drop_date', 'drop_time', 'category', 'tags', 'use_cases'
-    ]
+    # These are the *only* fields required directly from JSON per domain
+    required_name_fields = ['domain_name', 'category', 'tags', 'use_cases']
 
+    # Required fields inside each use_case entry
     required_use_case_fields = [
         'case_title', 'description', 'difficulty', 'competition',
         'target_market', 'revenue_potential', 'order'
@@ -41,17 +37,14 @@ def validate_domain_data(data):
         if not isinstance(item, dict):
             raise ValueError(f"Domain item at index {index} must be a dictionary.")
 
-        # Check for required fields in Name model
+        # Check that all required fields are present in each domain
         for field in required_name_fields:
             if field not in item:
                 raise ValueError(f"Missing field '{field}' in domain item at index {index}.")
 
-        # Field type checks (basic ones)
+        # Field type checks
         if not isinstance(item['domain_name'], str):
             raise ValueError(f"'domain_name' must be a string at index {index}.")
-
-        if not isinstance(item['extension'], str):
-            raise ValueError(f"'extension' must be a string at index {index}.")
 
         if not isinstance(item['tags'], list):
             raise ValueError(f"'tags' must be a list at index {index}.")
@@ -61,6 +54,11 @@ def validate_domain_data(data):
 
         if len(item['use_cases']) > 3:
             raise ValueError(f"'use_cases' cannot contain more than 3 items (found {len(item['use_cases'])}) at index {index}.")
+
+        # Validate 'category' field structure
+        category = item['category']
+        if not isinstance(category, dict) or 'name' not in category:
+            raise ValueError(f"'category' must be a dict containing a 'name' key at index {index}.")
 
         # Validate each UseCase entry
         for uc_index, uc in enumerate(item['use_cases']):
@@ -75,4 +73,4 @@ def validate_domain_data(data):
             if not isinstance(uc['order'], int):
                 raise ValueError(f"'order' in use_case {uc_index} at domain index {index} must be an integer.")
 
-    return True
+    return True  # All records passed validation
