@@ -17,7 +17,11 @@ from .data.helpers import DROP_TIMES
 
 
 
-# Create your models here.
+
+# ============================================
+# User profile model
+# ============================================
+
 class UserProfile(models.Model):
     user = models.OneToOneField(
         User, 
@@ -28,6 +32,8 @@ class UserProfile(models.Model):
     subscription_expiry = models.DateField(null=True, blank=True)
     access_tier = models.CharField(max_length=20, default='free')
     isPaid = models.BooleanField( default='False')
+    saved_names = models.PositiveIntegerField()
+    acquired = models.PositiveIntegerField() # names acquired from the marketplace only
 
     def __str__(self):
         return self.user.username
@@ -67,6 +73,7 @@ class DomainListOptions(models.TextChoices):
     PENDING_DELETE = 'pending_delete', 'Pending Delete'
     DELETED = 'deleted', 'Deleted'
     MARKETPLACE = 'marketplace', 'Marketplace'
+
 
 
 #NAME MODEL
@@ -115,6 +122,7 @@ class Name(models.Model):
         related_name='suggested_for'
     )
     is_top_rated = models.BooleanField(default=False)
+    top_rated_date = models.DateField(null=True, blank=True)  # Used to isolate daily top-rated names
     is_favorite = models.BooleanField(default=False)
     category = models.ForeignKey(  # To be handled in loader
         'NameCategory',
@@ -135,6 +143,8 @@ class Name(models.Model):
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    last_checked = models.DateTimeField(null=True, blank=True)
+
 
 
     
@@ -275,6 +285,7 @@ class ArchivedName(models.Model):
         return f"Archived: {self.domain}{self.extension} (Dropped: {self.original_drop_date})"
 
 
+    
     
     
     
