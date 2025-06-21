@@ -1,20 +1,27 @@
 from django.db import models
 from django.contrib.auth.models import User
 from .utils import *
-from django.contrib.postgres.fields import ArrayField
 from django.utils import timezone
+
+from django.contrib.postgres.fields import ArrayField
 from django.conf import settings
 from django.core.validators import MinValueValidator, MaxValueValidator 
-from django.utils.text import slugify
 
 # For syllable calculations
 import textstat
 
+# For drop times for different extensions
+from .data.helpers import DROP_TIMES
 
 
 
 
-# Create your models here.
+
+
+# ============================================
+# User profile model
+# ============================================
+
 class UserProfile(models.Model):
     user = models.OneToOneField(
         User, 
@@ -25,6 +32,8 @@ class UserProfile(models.Model):
     subscription_expiry = models.DateField(null=True, blank=True)
     access_tier = models.CharField(max_length=20, default='free')
     isPaid = models.BooleanField( default='False')
+    saved_names = models.PositiveIntegerField(null=True, blank=True)
+    acquired = models.PositiveIntegerField(null=True, blank=True) # names acquired from the marketplace only
 
     def __str__(self):
         return self.user.username
@@ -38,6 +47,7 @@ class RegStatusOptions(models.TextChoices):
     PENDING = 'pending', 'Pending'
     AVAILABLE = 'available', 'Available'
     TAKEN = 'taken', 'Taken'
+    UNVERIFIED = 'unverified', 'Unverified'
 
 class ExtensionOptions(models.TextChoices):
     ALL_EXTENSIONS = 'all_extensions', 'All_extensions'
@@ -58,11 +68,12 @@ class CompetitionType(models.TextChoices):
     HIGH = 'high', 'High'
 
 
-class ListOptions(models.TextChoices):
-    ALL_LIST = 'all_list', 'All_list'
-    PENDING_DELETE = 'pending_delete', 'Pending_delete'
+class DomainListOptions(models.TextChoices):
+    ALL_LIST = 'all_list', 'All List'
+    PENDING_DELETE = 'pending_delete', 'Pending Delete'
     DELETED = 'deleted', 'Deleted'
     MARKETPLACE = 'marketplace', 'Marketplace'
+
 
 
 #NAME MODEL
@@ -70,19 +81,18 @@ class Name(models.Model):
     domain_name = models.CharField(max_length=20)
     extension = models.CharField(
         max_length=20,
-        choices = ExtensionOptions.choices,
-        default = ExtensionOptions.ALL_EXTENSIONS
+        choices=ExtensionOptions.choices,
+        editable=False  # Computed in save()
     )
     domain_list = models.CharField(
         max_length=50,
-        choices = ListOptions.choices,
-        default = ListOptions.DELETED
+        choices = DomainListOptions.choices,
+        default = DomainListOptions.PENDING_DELETE
     )
     status = models.CharField(
         max_length = 20,
         choices = RegStatusOptions.choices,
-        default = RegStatusOptions.AVAILABLE,
-        unique = True
+        default = RegStatusOptions.PENDING,
     )
     length = models.PositiveIntegerField(
         editable=False,
@@ -94,23 +104,17 @@ class Name(models.Model):
         null=True,
         blank=True
     )
-    use_cases = models.ManyToManyField(
-        'UseCase', 
-        related_name="domain_use_cases"
-    )
-    competition = models.CharField(
+    competition = models.CharField(  # To be filled by post-save signal
         max_length=20,
-        choices=CompetitionType.choices,
         null=True,
         blank=True
     )
-    difficulty = models.CharField(
+    difficulty = models.CharField(   # To be filled by post-save signal
         max_length=20,
-        choices=DifficultyType.choices,
         null=True,
         blank=True
     )
-    suggested_usecase = models.ForeignKey(
+    suggested_usecase = models.ForeignKey(  # To be filled by post-save signal
         'UseCase',
         on_delete=models.SET_NULL,
         null=True,
@@ -118,8 +122,9 @@ class Name(models.Model):
         related_name='suggested_for'
     )
     is_top_rated = models.BooleanField(default=False)
+    top_rated_date = models.DateField(null=True, blank=True)  # Used to isolate daily top-rated names
     is_favorite = models.BooleanField(default=False)
-    category = models.ForeignKey(
+    category = models.ForeignKey(  # To be handled in loader
         'NameCategory',
         on_delete=models.SET_NULL,
         null=True,
@@ -130,26 +135,46 @@ class Name(models.Model):
         related_name='names'
     )
     drop_date = models.DateField(
-        default=timezone.now,
-        help_text="Default to current time if not specified"
+        help_text="Set manually in loader per batch"
     )
     drop_time = models.DateTimeField(
-        default=timezone.now,
-        help_text="Default to current time if not specified"
+        editable=False,
+        help_text="Auto-computed in save() based on extension"
     )
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    last_checked = models.DateTimeField(null=True, blank=True)
+
 
 
     
     def save(self, *args, **kwargs):
-        # If length and syllables are not already set (first save), calculate them.
-        if self.length is None or self.syllables is None:
-            name_part = self.domain_name.split('.')[0]  # Exclude extension
-            self.length = len(name_part)
-            self.syllables = textstat.syllable_count(name_part)
-        super().save(*args, **kwargs)
+        """
+        Override save method to compute:
+        - length and syllables of the domain (excluding extension),
+        - extension extracted from domain_name,
+        - drop_time based on extension and drop_date.
+        """
+        # Compute extension from domain_name
+        self.extension = self.domain_name.split('.')[-1]
 
+        # Compute length and syllables from domain_name (excluding extension)
+        name_part = self.domain_name.split('.')[0]
+        self.length = len(name_part)
+        self.syllables = textstat.syllable_count(name_part)
+
+        # Compute drop_time from extension lookup table (DROP_TIMES)
+        drop_time_value = DROP_TIMES.get(self.extension)
+        if drop_time_value:
+            # Combine drop_date with the corresponding drop time
+            self.drop_time = timezone.make_aware(
+                timezone.datetime.combine(self.drop_date, drop_time_value)
+            )
+        else:
+            # Default to timezone.now() if extension not found
+            self.drop_time = timezone.now()
+
+        super().save(*args, **kwargs)
 
     def __str__(self):
         return self.domain_name
@@ -183,23 +208,11 @@ class NameTag(models.Model):
 
 
 
-# Options for UseCase Model
-# class DifficultyType(models.TextChoices):
-#     EASY = 'easy', 'Easy'
-#     MODERATE = 'moderate', 'Moderate'
-#     HARD = 'hard', 'Hard'
-
-# class CompetitionType(models.TextChoices):
-    LOW = 'low', 'Low'
-    MEDIUM = 'medium', 'Medium'
-    HIGH = 'high', 'High'
-
+#OPTIONS FOR USECASE MODEL
 class RevenueOptions(models.TextChoices):
     LOW = 'low', 'Low'
     MEDIUM = 'medium', 'Medium'
     HIGH = 'high', 'High'
-
-
 
 class UseCase(models.Model):
     domain_name = models.ForeignKey(
@@ -236,10 +249,43 @@ class UseCase(models.Model):
 
 
 
+# ============================================
+# Model to define Drop Time Rules Per Extension
+# ============================================
+
+class ExtensionDropInfo(models.Model):
+    """
+    Holds expected drop processing times per domain extension (.com, .co, .ai, .io),
+    allowing availability check schedules to be dynamically adjusted in Celery tasks.
+    """
+    extension = models.CharField(max_length=10, unique=True)  
+    first_check_delay_hours = models.PositiveIntegerField(default=2)  # Delay after drop to run first check
+    second_check_delay_hours = models.PositiveIntegerField(default=12)  # Delay for second check (if still unverified)
+
+    def __str__(self):
+        return f"{self.extension} drop timing rules"
 
 
 
+# ============================================
+# Model to Archive Names Older Than 90 Days
+# ============================================
 
+class ArchivedName(models.Model):
+    """
+    Stores minimal details of domain names whose drop dates exceeded 90 days,
+    for historical reference while freeing up main Name table space.
+    """
+    domain_name = models.CharField(max_length=20)
+    extension = models.CharField(max_length=10)
+    original_drop_date = models.DateField()
+    archived_on = models.DateTimeField(auto_now_add=True)  # When this record was archived
+
+    def __str__(self):
+        return f"Archived: {self.domain}{self.extension} (Dropped: {self.original_drop_date})"
+
+
+    
     
     
     

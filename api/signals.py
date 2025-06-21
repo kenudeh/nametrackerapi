@@ -3,7 +3,7 @@ from django.contrib.auth.models import User
 
 from django.db.models.signals import post_save, post_delete
 from django.dispatch import receiver
-from .models import Name, UseCase 
+from .models import Name, UseCase, UserProfile 
 
 
 # Creating a UserProfile instance automatically when a new user is registered
@@ -31,10 +31,20 @@ def create_user_profile(sender, instance, created, **kwargs):
 #     name.save()
 
 
+
 @receiver(post_save, sender=UseCase)
-def update_suggested_usecase(sender, instance, **kwargs):
+def update_name_fields(sender, instance, **kwargs):
+    """
+    Post-save signal for UseCase.
+    Updates competition, difficulty, and suggested_usecase fields in Name model
+    based on the first UseCase (order=1).
+    """
     name = instance.domain_name
     first_usecase = name.use_cases_domain.order_by('order').first()
+
     if first_usecase:
+        # Update Name fields based on the first UseCase
+        name.competition = first_usecase.competition
+        name.difficulty = first_usecase.difficulty
         name.suggested_usecase = first_usecase
         name.save()

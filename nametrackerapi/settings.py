@@ -16,8 +16,15 @@ import dj_database_url
 import os
 import json
 from dotenv import load_dotenv
+
+
+# Load environment variables from .env file
 load_dotenv()
 
+
+# Dynadot API credentials
+DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
+DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -45,51 +52,118 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sites',  # Required for allauth
 
     # Third-party apps
-    'api.apps.ApiConfig',
-    'corsheaders',
     'rest_framework',
-    'rest_framework.authtoken',
-    'djoser',
+    'rest_framework.authtoken', #Not in use. Added to prevent the error with dj_rest
+    'corsheaders',
+    'allauth',
+    'allauth.account',
+    'allauth.socialaccount',
+    'allauth.socialaccount.providers.google',
+    'dj_rest_auth',
+    'dj_rest_auth.registration',
     'django_filters',
+    'django_celery_beat',
+
+    #My app
+    'api.apps.ApiConfig',
 ]
 
 
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
-    "DEFAULT_AUTHENTICATION_CLASSES": (
-        "rest_framework_simplejwt.authentication.JWTAuthentication",
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication', #Switched away from JWTAuthentication
     ),
     "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.AllowAny",  # Change to `IsAuthenticated` for stricter access
+        "rest_framework.permissions.IsAuthenticated",  # Change to `IsAuthenticated` for stricter access
     ),
     'DEFAULT_THROTTLE_RATES': {
         'post_request': '2/day',  # Allow 2 POST requests per day
-        'tool_submission': '3/day', # Allow 3 tool suggestion posts per user per day
-        "anon": "2/day",  # 2 requests per day per IP
-        "compare" : "8/day"
     },
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 
 SIMPLE_JWT = {
-    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
-    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
-    "AUTH_HEADER_TYPES": ("Bearer",),
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+    'AUTH_HEADER_TYPES': ('Bearer',),
+}
+
+#DJ Rest Auth
+REST_USE_JWT = True
+
+DJ_REST_AUTH = {
+    'USE_JWT': True,
+    'TOKEN_MODEL': None,
+}
+
+#Allauth (deprecated fields are commented out)
+# ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_USERNAME_REQUIRED = False
+# ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_SIGNUP_FIELDS = [
+    'username*', 
+    'email*',        # Required email
+    'password1*',    # Required password
+    'password2*'     # Required password confirmation
+]
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+
+
+
+#Site ID
+SITE_ID = 1
+
+
+#Email Backend for Postmark
+# Use custom Postmark API backend for sending emails:
+EMAIL_BACKEND = 'api.postmark_backend.EmailBackend'
+
+# Where the Postmark API token is stored (already in your .env):
+POSTMARK_API_TOKEN = os.getenv('POSTMARK_API_TOKEN')
+
+# Default "From" email address (also from .env):
+DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
+
+DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
+
+
+# Redirect for confirmation page
+ACCOUNT_CONFIRM_EMAIL_ON_GET = True
+ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
+ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
+
+
+#Google Login (Allauth)
+SOCIALACCOUNT_PROVIDERS = {
+    'google': {
+        'APP': {
+            'client_id': 'YOUR_GOOGLE_CLIENT_ID',
+            'secret': 'YOUR_GOOGLE_CLIENT_SECRET',
+            'key': ''
+        }
+    }
 }
 
 
+
+
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'allauth.account.middleware.AccountMiddleware', #Required by allauth
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-
-    'corsheaders.middleware.CorsMiddleware',
 ]
 
 
@@ -122,13 +196,6 @@ WSGI_APPLICATION = 'nametrackerapi.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 DATABASES = {
     'default': {
@@ -198,3 +265,46 @@ CACHES = {
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Points to Redis running in Docker
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+# CELERY BEAT SETTINGS
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+# Logging Setup
+LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
+if not os.path.exists(LOGGING_DIR):
+    os.makedirs(LOGGING_DIR)
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+        }
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+            'propagate': True,
+        },
+        'api': {  # For everything in my app
+            'handlers': ['file', 'console'],
+            'level': 'INFO',
+            'propagate': False,
+        },
+    },
+}
+

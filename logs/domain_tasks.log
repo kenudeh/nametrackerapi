@@ -1,0 +1,979 @@
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Unauthorized: /api/names
+"GET /api/names HTTP/1.1" 401 58
+Method Not Allowed: /auth/registration/
+"GET /auth/registration/ HTTP/1.1" 405 40
+Bad Request: /auth/registration/
+"POST /auth/registration/ HTTP/1.1" 400 156
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Internal Server Error: /auth/registration/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 84, in perform_create
+    user = serializer.save(self.request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\serializers.py", line 277, in save
+    user.save()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\base_user.py", line 65, in save
+    super().save(*args, **kwargs)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\base.py", line 902, in save
+    self.save_base(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\base.py", line 1023, in save_base
+    post_save.send(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\dispatch\dispatcher.py", line 189, in send
+    response = receiver(signal=self, sender=sender, **named)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\signals.py", line 13, in create_user_profile
+    UserProfile.objects.create(user=instance)
+    ^^^^^^^^^^^
+NameError: name 'UserProfile' is not defined
+"POST /auth/registration/ HTTP/1.1" 500 150806
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\signals.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /auth/registration/
+"POST /auth/registration/ HTTP/1.1" 400 58
+- Broken pipe from ('127.0.0.1', 52325)
+"GET /admin/api/name/ HTTP/1.1" 200 20709
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+Not Found: /favicon.ico
+"GET /favicon.ico HTTP/1.1" 404 2820
+"GET /admin/auth/user/ HTTP/1.1" 200 22030
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 200 560
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\admin.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\admin.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19392
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18164
+"GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19658
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/api/userprofile/ HTTP/1.1" 200 18184
+"POST /admin/api/userprofile/ HTTP/1.1" 302 0
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19534
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /auth/registration/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 92, in perform_create
+    complete_signup(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 102, in complete_signup
+    return flows.signup.complete_signup(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\signup.py", line 114, in complete_signup
+    return perform_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 89, in perform_login
+    return resume_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 98, in resume_login
+    response = ctrl.handle()
+               ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 112, in handle
+    response, cont = stage.handle()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 151, in handle
+    send_email_confirmation(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 222, in send_email_confirmation
+    return flows.email_verification.send_verification_email(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\email_verification.py", line 263, in send_verification_email
+    email_address.send_confirmation(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 107, in send_confirmation
+    confirmation.send(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 136, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 671, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 214, in send_mail
+    msg.send()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 835, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+- Broken pipe from ('127.0.0.1', 52424)
+Bad Request: /auth/registration/
+"POST /auth/registration/ HTTP/1.1" 400 58
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18317
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19658
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/api/userprofile/3/change/ HTTP/1.1" 200 24576
+"GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+"GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+"GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+"GET /admin/sites/site/ HTTP/1.1" 200 20091
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/?is_active__exact=0 HTTP/1.1" 200 20646
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 23046
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/4/change/?_changelist_filters=is_active__exact%3D1 HTTP/1.1" 200 40683
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+"GET /admin/auth/user/?is_active__exact=1 HTTP/1.1" 200 23046
+"GET /admin/auth/user/?is_active__exact=0 HTTP/1.1" 200 20646
+"GET /admin/sites/site/ HTTP/1.1" 200 20091
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/1/change/ HTTP/1.1" 200 19729
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/sites/site/1/change/ HTTP/1.1" 302 0
+"GET /admin/sites/site/ HTTP/1.1" 200 20306
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18430
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19392
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /auth/registration/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 92, in perform_create
+    complete_signup(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 102, in complete_signup
+    return flows.signup.complete_signup(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\signup.py", line 114, in complete_signup
+    return perform_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 89, in perform_login
+    return resume_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 98, in resume_login
+    response = ctrl.handle()
+               ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 112, in handle
+    response, cont = stage.handle()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 151, in handle
+    send_email_confirmation(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 222, in send_email_confirmation
+    return flows.email_verification.send_verification_email(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\email_verification.py", line 263, in send_verification_email
+    email_address.send_confirmation(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 107, in send_confirmation
+    confirmation.send(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 136, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 671, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 214, in send_mail
+    msg.send()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 835, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+"POST /auth/registration/ HTTP/1.1" 500 218324
+Bad Request: /auth/registration/
+"POST /auth/registration/ HTTP/1.1" 400 58
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19658
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/api/userprofile/ HTTP/1.1" 200 18184
+"POST /admin/api/userprofile/ HTTP/1.1" 302 0
+"GET /admin/api/userprofile/ HTTP/1.1" 200 19534
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18317
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /auth/registration/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 92, in perform_create
+    complete_signup(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 102, in complete_signup
+    return flows.signup.complete_signup(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\signup.py", line 114, in complete_signup
+    return perform_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 89, in perform_login
+    return resume_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 98, in resume_login
+    response = ctrl.handle()
+               ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 112, in handle
+    response, cont = stage.handle()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 151, in handle
+    send_email_confirmation(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 222, in send_email_confirmation
+    return flows.email_verification.send_verification_email(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\email_verification.py", line 263, in send_verification_email
+    email_address.send_confirmation(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 107, in send_confirmation
+    confirmation.send(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 136, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 671, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 214, in send_mail
+    msg.send()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\backends\smtp.py", line 128, in send_messages
+    new_conn_created = self.open()
+                       ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\backends\smtp.py", line 86, in open
+    self.connection = self.connection_class(
+                      ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 255, in __init__
+    (code, msg) = self.connect(host, port)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 341, in connect
+    self.sock = self._get_socket(host, port, self.timeout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\smtplib.py", line 312, in _get_socket
+    return socket.create_connection((host, port), timeout,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 850, in create_connection
+    raise exceptions[0]
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\socket.py", line 835, in create_connection
+    sock.connect(sa)
+TimeoutError: [WinError 10060] A connection attempt failed because the connected party did not properly respond after a period of time, or established connection failed because connected host has failed to respond
+"POST /auth/registration/ HTTP/1.1" 500 218324
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\models.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\models.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/sites/site/ HTTP/1.1" 200 20103
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18430
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /auth/registration/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 92, in perform_create
+    complete_signup(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 102, in complete_signup
+    return flows.signup.complete_signup(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\signup.py", line 114, in complete_signup
+    return perform_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 89, in perform_login
+    return resume_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 98, in resume_login
+    response = ctrl.handle()
+               ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 112, in handle
+    response, cont = stage.handle()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 151, in handle
+    send_email_confirmation(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 222, in send_email_confirmation
+    return flows.email_verification.send_verification_email(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\email_verification.py", line 263, in send_verification_email
+    email_address.send_confirmation(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 107, in send_confirmation
+    confirmation.send(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 136, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 671, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 214, in send_mail
+    msg.send()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 263, in get_connection
+    self.connection = get_connection(fail_silently=fail_silently)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\__init__.py", line 55, in get_connection
+    klass = import_string(backend or settings.EMAIL_BACKEND)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1142, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'nametrackerapi.postmark_backend'
+"POST /auth/registration/ HTTP/1.1" 500 211061
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18430
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /auth/registration/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 48, in _wrapper
+    return bound_method(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\debug.py", line 143, in sensitive_post_parameters_wrapper
+    return view(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 47, in dispatch
+    return super().dispatch(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\generics.py", line 194, in post
+    return self.create(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 68, in create
+    user = self.perform_create(serializer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\dj_rest_auth\registration\views.py", line 92, in perform_create
+    complete_signup(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 102, in complete_signup
+    return flows.signup.complete_signup(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\signup.py", line 114, in complete_signup
+    return perform_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 89, in perform_login
+    return resume_login(request, login)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\login.py", line 98, in resume_login
+    response = ctrl.handle()
+               ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 112, in handle
+    response, cont = stage.handle()
+                     ^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\stages.py", line 151, in handle
+    send_email_confirmation(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\utils.py", line 222, in send_email_confirmation
+    return flows.email_verification.send_verification_email(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\internal\flows\email_verification.py", line 263, in send_verification_email
+    email_address.send_confirmation(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 107, in send_confirmation
+    confirmation.send(request, signup=signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\models.py", line 136, in send
+    get_adapter().send_confirmation_mail(request, self, signup)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 671, in send_confirmation_mail
+    self.send_mail(email_template, emailconfirmation.email_address.email, ctx)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\allauth\account\adapter.py", line 214, in send_mail
+    msg.send()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 307, in send
+    return self.get_connection(fail_silently).send_messages([self])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\message.py", line 263, in get_connection
+    self.connection = get_connection(fail_silently=fail_silently)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\mail\__init__.py", line 55, in get_connection
+    klass = import_string(backend or settings.EMAIL_BACKEND)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\module_loading.py", line 30, in import_string
+    return cached_import(module_path, class_name)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\module_loading.py", line 15, in cached_import
+    module = import_module(module_path)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\AppData\Local\Programs\Python\Python311\Lib\importlib\__init__.py", line 126, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1206, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1178, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1142, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'nametrackerapi.postmark_backend'
+"POST /auth/registration/ HTTP/1.1" 500 211162
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18430
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+Internal Server Error: /auth/registration/account-confirm-email/Nw:1uT2KW:sKvWVOGAGGVY1g7-3zgtKWkAnV6DHG1Dr-reI_aP8CU/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/Nw:1uT2KW:sKvWVOGAGGVY1g7-3zgtKWkAnV6DHG1Dr-reI_aP8CU/ HTTP/1.1" 500 92900
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+Internal Server Error: /auth/registration/account-confirm-email/Nw:1uT2KW:sKvWVOGAGGVY1g7-3zgtKWkAnV6DHG1Dr-reI_aP8CU/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/Nw:1uT2KW:sKvWVOGAGGVY1g7-3zgtKWkAnV6DHG1Dr-reI_aP8CU/ HTTP/1.1" 500 92794
+Internal Server Error: /auth/registration/account-confirm-email/Nw:1uT2KW:sKvWVOGAGGVY1g7-3zgtKWkAnV6DHG1Dr-reI_aP8CU/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/Nw:1uT2KW:sKvWVOGAGGVY1g7-3zgtKWkAnV6DHG1Dr-reI_aP8CU/ HTTP/1.1" 500 93272
+"GET /admin/auth/user/ HTTP/1.1" 200 22467
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18430
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/ HTTP/1.1" 200 20103
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/1/change/ HTTP/1.1" 200 19747
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/sites/site/1/change/ HTTP/1.1" 302 0
+"GET /admin/sites/site/ HTTP/1.1" 200 20298
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+Internal Server Error: /auth/registration/account-confirm-email/OA:1uT6p3:P0rCXLIkf0_97HWag5mmzCfhSR40IDEu-g2ARjzaGEI/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/OA:1uT6p3:P0rCXLIkf0_97HWag5mmzCfhSR40IDEu-g2ARjzaGEI/ HTTP/1.1" 500 93272
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22466
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18429
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+"GET /admin/sites/site/ HTTP/1.1" 200 20095
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/1/change/ HTTP/1.1" 200 19739
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+Internal Server Error: /auth/registration/account-confirm-email/OQ:1uT6vY:UzcilnJ1l9NzEYP9ZF1iaQn-zrL_ifNqOVPCFX1gbTs/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/OQ:1uT6vY:UzcilnJ1l9NzEYP9ZF1iaQn-zrL_ifNqOVPCFX1gbTs/ HTTP/1.1" 500 93279
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22466
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 200 18430
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+Internal Server Error: /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/ HTTP/1.1" 500 93427
+Internal Server Error: /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/ HTTP/1.1" 500 93427
+Internal Server Error: /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/ HTTP/1.1" 500 93427
