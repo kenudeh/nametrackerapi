@@ -5,26 +5,24 @@ from . import views
 
 
 urlpatterns = [
-   
-    # path('support', views.SupportView.as_view(), name='support'),
-    # path('newsletter', views.NewsletterView.as_view(), name = 'newsletter'),
-    # path('categories', views.CategoryListView, name='category-list' ),
-
-    # path('names/', views.NameListAPIView.as_view(), name='name-list'),
-    # path('names/<int:pk>/', views.NameDetailAPIView.as_view(), name='name-detail'),
     path('names', views.NameListAPIView.as_view(), name='name-list'),
     path('names/<int:pk>', views.NameDetailAPIView.as_view(), name='name-detail'),
     path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
     path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
     path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
-    
-    # Djoser urls
-    path("auth/", include("djoser.urls")),  # Includes registration, login, logout, password reset, etc.
-    path("auth/", include("djoser.urls.jwt")),  # Includes JWT token endpoints
-]
+
+    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+
+] 
+   
 
 
+#SWITCHED TO all_auth FOR FUTURE FLEXIBILITY
 # Djoser adds the following endpoints:
+ # Djoser urls
+    # path("auth/", include("djoser.urls")),  # Includes registration, login, logout, password reset, etc.
+    # path("auth/", include("djoser.urls.jwt")),  # Includes JWT token endpoints
+
 
 # User Management Endpoints
 # 1. POST /auth/users/ → Register a new user.

@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, NameCategory, NameTag, UseCase, ArchivedName
+from .models import Name, UserProfile, NameCategory, NameTag, UseCase, ArchivedName
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -77,6 +77,11 @@ class NameAdmin(admin.ModelAdmin):
         }),
     )
 
+
+@admin.register(UserProfile)
+class UserProfile(admin.ModelAdmin):
+    list_display = ('user',)
+   
 
 @admin.register(NameCategory)
 class NameCategoryAdmin(admin.ModelAdmin):

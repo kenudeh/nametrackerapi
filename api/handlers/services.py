@@ -6,12 +6,9 @@ from django.conf import settings
 logger = logging.getLogger(__name__)
 
 
-# Dynadot API Logic — Production Ready
-# This file (services.py) handles Dynadot's availability check via its API
+# Dynadot API Logic
+# This file handles Dynadot's availability check via its API
 # via a class-based structure for reuse, clarity, and testability.
-
-
-
 class DynadotAPI:
     """
     Handles communication with the Dynadot API for domain availability checks (bulk supported).

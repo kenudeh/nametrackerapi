@@ -32,8 +32,8 @@ class UserProfile(models.Model):
     subscription_expiry = models.DateField(null=True, blank=True)
     access_tier = models.CharField(max_length=20, default='free')
     isPaid = models.BooleanField( default='False')
-    saved_names = models.PositiveIntegerField()
-    acquired = models.PositiveIntegerField() # names acquired from the marketplace only
+    saved_names = models.PositiveIntegerField(null=True, blank=True)
+    acquired = models.PositiveIntegerField(null=True, blank=True) # names acquired from the marketplace only
 
     def __str__(self):
         return self.user.username
