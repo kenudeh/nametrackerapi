@@ -13,7 +13,6 @@ pillow = "*"
 django-validators = "*"
 dj-database-url = "*"
 python-dotenv = "*"
-gunicorn = "*"
 celery = "*"
 redis = "*"
 django-celery-beat = "*"
@@ -21,6 +20,7 @@ django-allauth = "*"
 postmarker = "*"
 djangorestframework-simplejwt = "*"
 dj-rest-auth = "*"
+gunicorn = "*"
 
 [dev-packages]
 
