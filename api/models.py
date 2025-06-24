@@ -343,7 +343,7 @@ class ArchivedName(models.Model):
 
 # # Favorite
 # class Favorite(models.Model):
-#     # user = models.ForeignKey(UserProfile, related_name='user_favorites', on_delete=models.CASCADE)
+#     user = models.ForeignKey(UserProfile, related_name='user_favorites', on_delete=models.CASCADE)
 #     created_at = models.DateTimeField(auto_now_add=True)
 
 #     def __str__(self):
