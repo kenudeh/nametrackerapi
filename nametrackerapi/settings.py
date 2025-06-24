@@ -39,8 +39,14 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
+#Dynamically switching allowed hosts values based on the value of Debug
+if DEBUG:
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.1:8000']
+else:
+    ALLOWED_HOSTS = ['*.railway.app', 'aitracker.io', 'www.aitracker.io']
 
-ALLOWED_HOSTS = json.loads(os.getenv("ALLOWED_HOSTS", '["127.0.0.1"]'))
+# Needed if we ever switch to full environment controll
+# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
 
 
 # Application definition
