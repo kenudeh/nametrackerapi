@@ -1173,3 +1173,45 @@ Bad Request: /auth/registration/
 "POST /auth/registration/ HTTP/1.1" 400 58
 Bad Request: /auth/registration/
 "POST /auth/registration/ HTTP/1.1" 400 58
+Watching for file changes with StatReloader
+"GET /admin/sites/site/ HTTP/1.1" 200 20092
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/1/change/ HTTP/1.1" 200 19732
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/ HTTP/1.1" 200 20092
+Internal Server Error: /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 144, in dispatch
+    return handler(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 229, in get
+    return self.render_to_response(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 202, in render_to_response
+    template=self.get_template_names(),
+             ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 214, in get_template_names
+    raise ImproperlyConfigured(
+django.core.exceptions.ImproperlyConfigured: TemplateResponseMixin requires either a definition of 'template_name' or an implementation of 'get_template_names()'
+"GET /auth/registration/account-confirm-email/MTA:1uT73S:21GPeXn9z7WtMTlOzjedkzB25P_Meq2--LyipbI5QQY/ HTTP/1.1" 500 93811
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\urls.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
+Watching for file changes with StatReloader
