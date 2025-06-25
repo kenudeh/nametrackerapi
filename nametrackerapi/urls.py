@@ -16,11 +16,16 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from api.email_confirmation_view import CustomConfirmEmailView
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('api.urls')),
-        path('auth/', include('dj_rest_auth.urls')),  # Login, logout, password reset
-    path('auth/registration/', include('dj_rest_auth.registration.urls')),  # Signup + email confirm
+    # Overriding email confirmation before dj-rest-auth takes over
+    path('auth/registration/account-confirm-email/<str:key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),
+    # Other auth routes
+    path('auth/', include('dj_rest_auth.urls')),  # Login, logout, password reset
+    path('auth/registration/', include('dj_rest_auth.registration.urls')),  # Signup + default email confirm
     path('auth/', include('allauth.socialaccount.urls')),  # Google login
 ]
