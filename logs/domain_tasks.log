@@ -1215,3 +1215,125 @@ C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py change
 Watching for file changes with StatReloader
 C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
 Watching for file changes with StatReloader
+Watching for file changes with StatReloader
+"GET /admin/auth/user/ HTTP/1.1" 200 22464
+"GET /static/admin/css/base.css HTTP/1.1" 304 0
+"GET /static/admin/js/theme.js HTTP/1.1" 304 0
+"GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+"GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+"GET /static/admin/js/actions.js HTTP/1.1" 304 0
+"GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+"GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+"GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+"GET /static/admin/js/core.js HTTP/1.1" 304 0
+"GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+"GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+"GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+"GET /static/admin/img/search.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-no.svg HTTP/1.1" 304 0
+"GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+"GET /static/admin/js/filters.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+"GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+"GET /admin/auth/user/2/change/ HTTP/1.1" 200 39077
+"GET /static/admin/css/forms.css HTTP/1.1" 304 0
+"GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+"GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+"GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+"GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+"GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+"GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+"GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22464
+"POST /admin/auth/user/ HTTP/1.1" 200 18427
+"GET /static/admin/js/cancel.js HTTP/1.1" 304 0
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+Unauthorized: /auth/registration/account-confirm-email/Mg:1uUHhb:XkhZYTwgwFJqAMPRDvClaf-Xby6K7J4DGHiyiRsR9gU/
+"GET /auth/registration/account-confirm-email/Mg:1uUHhb:XkhZYTwgwFJqAMPRDvClaf-Xby6K7J4DGHiyiRsR9gU/ HTTP/1.1" 401 5642
+"GET /static/rest_framework/css/prettify.css HTTP/1.1" 200 817
+"GET /static/rest_framework/css/default.css HTTP/1.1" 200 1152
+"GET /static/rest_framework/css/bootstrap-tweaks.css HTTP/1.1" 200 3426
+"GET /static/rest_framework/css/bootstrap.min.css HTTP/1.1" 200 121457
+"GET /static/rest_framework/js/csrf.js HTTP/1.1" 200 1793
+"GET /static/rest_framework/js/ajax-form.js HTTP/1.1" 200 3796
+"GET /static/rest_framework/js/bootstrap.min.js HTTP/1.1" 200 39680
+"GET /static/rest_framework/js/jquery-3.7.1.min.js HTTP/1.1" 200 87533
+"GET /static/rest_framework/js/load-ajax-form.js HTTP/1.1" 200 59
+"GET /static/rest_framework/img/grid.png HTTP/1.1" 200 1458
+"GET /static/rest_framework/js/default.js HTTP/1.1" 200 1268
+"GET /static/rest_framework/js/prettify-min.js HTTP/1.1" 200 13632
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
+Watching for file changes with StatReloader
+Bad Request: /auth/registration/account-confirm-email/Mg:1uUHhb:XkhZYTwgwFJqAMPRDvClaf-Xby6K7J4DGHiyiRsR9gU/
+"GET /auth/registration/account-confirm-email/Mg:1uUHhb:XkhZYTwgwFJqAMPRDvClaf-Xby6K7J4DGHiyiRsR9gU/ HTTP/1.1" 400 5901
+"GET /admin/ HTTP/1.1" 200 20673
+"GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+"GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+"GET /static/admin/img/icon-deletelink.svg HTTP/1.1" 200 392
+"GET /admin/sites/site/ HTTP/1.1" 200 20092
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/sites/site/1/change/ HTTP/1.1" 200 19732
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/sites/site/1/change/ HTTP/1.1" 302 0
+"GET /admin/sites/site/ HTTP/1.1" 200 20305
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\nametrackerapi\settings.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
+Watching for file changes with StatReloader
+C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\email_confirmation_view.py changed, reloading.
+Watching for file changes with StatReloader
+"GET /admin/sites/site/ HTTP/1.1" 200 20100
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /admin/auth/user/ HTTP/1.1" 200 22464
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22589
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+- Broken pipe from ('127.0.0.1', 65421)
+"POST /admin/auth/user/ HTTP/1.1" 200 18427
+"POST /admin/auth/user/ HTTP/1.1" 302 0
+"GET /admin/auth/user/ HTTP/1.1" 200 22139
+"GET /admin/jsi18n/ HTTP/1.1" 200 3342
+"POST /auth/registration/ HTTP/1.1" 201 38
+code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01ÿ\x01\x00\x01\x00\x00-\x00\x02\x01\x01\x00\x1b\x00\x03\x02\x00\x02\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('jj\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06S::\x00\x00\x00\x12\x00\x00ÿ\x01\x00\x01\x00\x00#\x00\x00\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('\x81µBDWÉù\x9e½\x00\x8fícÈ}æzIÇuqt\x90ÔÚ!\x987Lß\x87_P{¯\x1aº¬]é\x96%')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('Ãª')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('\x00\x12\x00\x10\x04\x03\x08\x04\x04\x01\x05\x03\x08\x05\x05\x01\x08\x06\x06\x01\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('5\x7f¢¢v\x83³k\x9d\x02')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('ù\x19\x90]GCÕ\x981¤ÞÖ¼')
+code 400, message Bad request version ('[s\x8d{è\x0f\x15\x8a\x7f/')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('ÊÊ\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('\x02h2\x08http/1.1\x00')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('ºº\x13\x01\x13\x02\x13\x03À+À/À,À0Ì©Ì¨À\x13À\x14\x00\x9c\x00\x9d\x00/\x005\x01\x00\x06\x93')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+code 400, message Bad request version ('dl,/Ý')
+You're accessing the development server over HTTPS, but it only supports HTTP.
+Watching for file changes with StatReloader
