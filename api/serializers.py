@@ -1,5 +1,21 @@
+# Importing the default User model from Django
+from django.contrib.auth.models import User
+# Importing the default registration serializer from dj-rest-auth so we can override it and enforce email uniqueness
+from dj_rest_auth.registration.serializers import RegisterSerializer
 from rest_framework import serializers
 from .models import Name, UseCase, NameTag, NameCategory
+
+
+# Email validation serializer (To be used in settings.py)
+class CustomRegisterSerializer(RegisterSerializer):
+    email = serializers.EmailField(required=True)
+
+    def validate_email(self, value):
+        if User.objects.filter(email__iexact=value).exists():
+            raise serializers.ValidationError("An account with this email already exists.")
+        return value
+
+
 
 class NameTagSerializer(serializers.ModelSerializer):
     class Meta:

@@ -121,6 +121,10 @@ ACCOUNT_SIGNUP_FIELDS = [
 ]
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 
+# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'users.serializers.CustomRegisterSerializer',
+}
 
 
 #Site ID
