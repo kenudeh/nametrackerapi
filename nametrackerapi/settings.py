@@ -46,7 +46,7 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.1:8000']
 else:
-    ALLOWED_HOSTS = ['nametrackerapi-production.up.railway.app', ' api.aitracker.io']
+    ALLOWED_HOSTS = ['nametrackerapi-production.up.railway.app', 'api.aitracker.io']
 
 # Needed if we ever switch to full environment controll
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
@@ -189,6 +189,7 @@ CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",  # For local development 
     "http://127.0.0.1:3000",
     "https://www.aitracker.io",  # My frontend URL
+    "https://aitracker.io",  # My frontend URL
 ]
 
 
