@@ -16,6 +16,9 @@ import dj_database_url
 import os
 import json
 from dotenv import load_dotenv
+import logging
+from logging.handlers import RotatingFileHandler
+
 
 
 # Load environment variables from .env file
@@ -129,6 +132,8 @@ REST_AUTH_REGISTER_SERIALIZERS = {
 
 #Site ID
 SITE_ID = 1
+# Ensures email use HTTPS
+ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 
 #Email Backend for Postmark
@@ -143,8 +148,6 @@ DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 
 DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 
-# Ensures email use HTTPS
-ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 # Redirect for confirmation page (NOT IN USE ANYMORE BECAUSE WE OVERRODE ALLAUTH DEFUALT CONFIRMATION VIEW DUE TO A TEMPLATE RENDERING ERROR)
 # ACCOUNT_CONFIRM_EMAIL_ON_GET = True
@@ -163,6 +166,9 @@ SOCIALACCOUNT_PROVIDERS = {
     }
 }
 
+
+#Pointing Allauth to use the custom adapter for activating a user's account on email confirmation
+ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
 
 
 
@@ -191,7 +197,7 @@ ROOT_URLCONF = 'nametrackerapi.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],  # Helps Django to look in my templates folder for email structure
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -290,27 +296,65 @@ LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
 if not os.path.exists(LOGGING_DIR):
     os.makedirs(LOGGING_DIR)
 
+LOG_LEVEL = 'DEBUG' if DEBUG else 'WARNING'
+SENSITIVE_VARIABLES = ['password', 'token', 'secret']
+
+
+
+LOG_LEVEL = 'WARNING' if not DEBUG else 'INFO'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
+
+    'formatters': {
+        'verbose': {
+            'format': '{levelname} {asctime} {module} {message}',
+            'style': '{',
+        },
+        'simple': {
+            'format': '{levelname}: {message}',
+            'style': '{',
+        },
+    },
+
     'handlers': {
-        'file': {
+        # ✅ Domain task logs (rotated)
+        'domain_file': {
             'level': 'INFO',
-            'class': 'logging.FileHandler',
+            'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
+            'maxBytes': 3 * 1024 * 1024,  # 3 MB
+            'backupCount': 3,
+            'formatter': 'verbose',
+            'encoding': 'utf8',
+        },
+        # ✅ General system logs (warnings and above)
+        'system_file': {
+            'level': 'WARNING',
+            'class': 'logging.handlers.RotatingFileHandler',
+            'filename': os.path.join(LOGGING_DIR, 'aitracker.log'),
+            'maxBytes': 5 * 1024 * 1024,
+            'backupCount': 5,
+            'formatter': 'verbose',
+            'encoding': 'utf8',
         },
         'console': {
             'class': 'logging.StreamHandler',
-        }
+            'formatter': 'simple',
+        },
     },
+
     'loggers': {
+        # ✅ For Django system errors (500s, etc.)
         'django': {
-            'handlers': ['file', 'console'],
-            'level': 'INFO',
+            'handlers': ['system_file', 'console'],
+            'level': LOG_LEVEL,
             'propagate': True,
         },
-        'api': {  # For everything in my app
-            'handlers': ['file', 'console'],
+        # ✅ Your app-specific task logs
+        'api.domain_tasks': {
+            'handlers': ['domain_file', 'console'],
             'level': 'INFO',
             'propagate': False,
         },
