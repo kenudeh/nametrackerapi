@@ -46,7 +46,7 @@ DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 if DEBUG:
     ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.1:8000']
 else:
-    ALLOWED_HOSTS = ['*.railway.app', 'aitracker.io', 'www.aitracker.io']
+    ALLOWED_HOSTS = ['nametrackerapi-production.up.railway.app', ' api.aitracker.io']
 
 # Needed if we ever switch to full environment controll
 # ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
