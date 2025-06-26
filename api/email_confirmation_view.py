@@ -6,6 +6,9 @@ from rest_framework.response import Response
 from django.shortcuts import redirect
 from rest_framework import status
 import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 class CustomConfirmEmailView(GenericAPIView):
     permission_classes = [AllowAny]
@@ -18,16 +21,24 @@ class CustomConfirmEmailView(GenericAPIView):
 
 
     def get(self, request, key, *args, **kwargs):
+        logger.info("Attempting email confirmation with key: %s", key)
         confirmation = EmailConfirmationHMAC.from_key(key)
 
         if confirmation:
             confirmation.confirm(request)
+            user = confirmation.get_user()
+            user.is_active = True
+            user.save()
+            logger.info("Email confirmed and user activated: %s", user.email)
+
+
             frontend_redirect_url = os.getenv(
                 'FRONTEND_CONFIRM_REDIRECT', 
-                'http://127.0.0.1:3000/email-confirmed'
+                'https://www.aitracker.io/email-confirmed'
             )
             return redirect(frontend_redirect_url)
         else:
+            logger.warning("Invalid or expired confirmation link attempted: %s", key)
             return Response(
                 {'detail': 'Invalid or expired confirmation link.'},
                 status=status.HTTP_400_BAD_REQUEST
