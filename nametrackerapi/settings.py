@@ -128,6 +128,7 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 
 ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.html"
 ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
+ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
 
 
 # For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
