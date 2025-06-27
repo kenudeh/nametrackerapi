@@ -1,45 +1,42 @@
-
-from allauth.account.models import EmailConfirmationHMAC
+from allauth.account.models import EmailConfirmation, EmailConfirmationHMAC
 from rest_framework.permissions import AllowAny
 from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
-from django.shortcuts import redirect
 from rest_framework import status
+from django.shortcuts import redirect
 import os
 import logging
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger("api")  # or your app logger
 
 class CustomConfirmEmailView(GenericAPIView):
     permission_classes = [AllowAny]
-    """
-    Custom email confirmation view that:
-    - Confirms user via token key.
-    - Avoids template rendering errors.
-    - Redirects user to React frontend after confirmation.
-    """
-
 
     def get(self, request, key, *args, **kwargs):
-        logger.info("Attempting email confirmation with key: %s", key)
+        logger.warning(f"Confirmation attempt with key: {key}")
+
+        # Try both HMAC and DB-stored confirmation keys
         confirmation = EmailConfirmationHMAC.from_key(key)
+        if confirmation is None:
+            try:
+                confirmation = EmailConfirmation.objects.get(key=key)
+            except EmailConfirmation.DoesNotExist:
+                confirmation = None
 
         if confirmation:
             confirmation.confirm(request)
-            user = confirmation.get_user()
+            user = confirmation.email_address.user
             user.is_active = True
             user.save()
-            logger.info("Email confirmed and user activated: %s", user.email)
 
-
-            frontend_redirect_url = os.getenv(
-                'FRONTEND_CONFIRM_REDIRECT', 
+            redirect_url = os.getenv(
+                'FRONTEND_CONFIRM_REDIRECT',
                 'https://www.aitracker.io/email-confirmed'
             )
-            return redirect(frontend_redirect_url)
+            return redirect(redirect_url)
         else:
-            logger.warning("Invalid or expired confirmation link attempted: %s", key)
+            logger.warning(f"Invalid or expired confirmation link attempted: {key}")
             return Response(
-                {'detail': 'Invalid or expired confirmation link.'},
+                {"detail": "Invalid or expired confirmation link."},
                 status=status.HTTP_400_BAD_REQUEST
             )
