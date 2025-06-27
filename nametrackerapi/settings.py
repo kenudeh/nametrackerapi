@@ -123,6 +123,8 @@ ACCOUNT_SIGNUP_FIELDS = [
     'password2*'     # Required password confirmation
 ]
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+
 
 # For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
 REST_AUTH_REGISTER_SERIALIZERS = {
