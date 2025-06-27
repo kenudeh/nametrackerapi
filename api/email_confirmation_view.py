@@ -7,7 +7,7 @@ from django.shortcuts import redirect
 import os
 import logging
 
-logger = logging.getLogger("api")  # or your app logger
+logger = logging.getLogger("api") 
 
 class CustomConfirmEmailView(GenericAPIView):
     permission_classes = [AllowAny]
@@ -36,7 +36,9 @@ class CustomConfirmEmailView(GenericAPIView):
             return redirect(redirect_url)
         else:
             logger.warning(f"Invalid or expired confirmation link attempted: {key}")
-            return Response(
-                {"detail": "Invalid or expired confirmation link."},
-                status=status.HTTP_400_BAD_REQUEST
+            # NEW: Redirect to a user-friendly expired/invalid page
+            error_redirect_url = os.getenv(
+                'FRONTEND_CONFIRM_EXPIRED_REDIRECT',
+                'https://www.aitracker.io/email-invalid-or-expired'
             )
+            return redirect(error_redirect_url)
