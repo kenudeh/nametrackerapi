@@ -1,5 +1,9 @@
 from allauth.account.adapter import DefaultAccountAdapter
 from django.http import JsonResponse
+from allauth.account.utils import send_email_confirmation
+
+
+# This custom adapter disables auto-login, to manually send the confirmation email, stop auto-login, and reject unconfirmed users login attempt
 
 class MyAccountAdapter(DefaultAccountAdapter):
     def is_open_for_signup(self, request):
@@ -10,6 +14,9 @@ class MyAccountAdapter(DefaultAccountAdapter):
         user.is_active = False  # prevent login before email confirmation
         if commit:
             user.save()
+        # Send confirmation email
+        send_email_confirmation(request, user)
+
         return user
 
     def is_auto_login_after_signup(self, request, user):
