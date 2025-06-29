@@ -87,7 +87,7 @@ REST_FRAMEWORK = {
         'dj_rest_auth.jwt_auth.JWTCookieAuthentication', #Switched away from JWTAuthentication
     ),
     "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAuthenticated",  # Change to `IsAuthenticated` for stricter access
+        "rest_framework.permissions.IsAuthenticated",  # Change to `AllowAny` for open access
     ),
     'DEFAULT_THROTTLE_RATES': {
         'post_request': '2/day',  # Allow 2 POST requests per day
@@ -96,32 +96,68 @@ REST_FRAMEWORK = {
 }
 
 SIMPLE_JWT = {
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=15),
+    'AUTH_HEADER_TYPES': ('Bearer',), # Fallback for non-cookie clients
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
     'BLACKLIST_AFTER_ROTATION': True,
-    'AUTH_HEADER_TYPES': ('Bearer',),
 }
 
-#DJ Rest Auth
-REST_USE_JWT = True
-
+#JWT Settings (for cookie-based auth)
 DJ_REST_AUTH = {
     'USE_JWT': True,
-    'TOKEN_MODEL': None,
+    'JWT_AUTH_COOKIE': 'access_token',  
+    'JWT_AUTH_REFRESH_COOKIE': 'refresh_token',
+    'JWT_AUTH_HTTPONLY': True,      # Block JavaScript access
+    'JWT_AUTH_SECURE': True,        # HTTPS-only 
+    'JWT_AUTH_SAMESITE': 'None',     # 
+    'TOKEN_MODEL': None,            # Disable DRF tokens (JWT only)
 }
+
+
+# Required for cookies
+CORS_ALLOW_CREDENTIALS = True 
+
+
+CORS_ALLOWED_ORIGINS = [
+    "http://localhost:3000",  # For local development 
+    "http://127.0.0.1:3000",
+    "https://www.aitracker.io",  # My frontend URL
+    "https://aitracker.io",  # My frontend URL
+]
+
+
+
+## CSRF
+CSRF_COOKIE_SAMESITE = 'None'
+CSRF_COOKIE_SECURE = True
+
+
+
+# Required if I'm using Django session auth, but I'm not
+# SESSION_COOKIE_SAMESITE = 'None'
+# SESSION_COOKIE_SECURE = True
+
+
+AUTHENTICATION_BACKENDS = (
+    'allauth.account.auth_backends.AuthenticationBackend',  # Required by django-allauth
+    'django.contrib.auth.backends.ModelBackend',            # Default
+)
+
+
 
 #Allauth (deprecated fields are commented out)
 # ACCOUNT_EMAIL_REQUIRED = True
+# ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # ACCOUNT_USERNAME_REQUIRED = False
-# ACCOUNT_AUTHENTICATION_METHOD = 'email'
-ACCOUNT_LOGIN_METHODS = {'email'}
+ACCOUNT_LOGIN_METHODS = {'email', 'username'}
 ACCOUNT_SIGNUP_FIELDS = [
     'username*', 
     'email*',        # Required email
     'password1*',    # Required password
     'password2*'     # Required password confirmation
 ]
+ACCOUNT_UNIQUE_EMAIL = True  # Crucial for email-as-username functionality
 ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
 ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 
@@ -130,11 +166,16 @@ ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.
 ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
 ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
 
-
+# CUSTOM SERIALIZERS ACTIVATION
 # For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
 REST_AUTH_REGISTER_SERIALIZERS = {
     'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer',
 }
+# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
+REST_AUTH_SERIALIZERS = {
+    'LOGIN_SERIALIZER': 'api.serializers.CustomLoginSerializer',
+}
+
 
 
 #Site ID
@@ -166,12 +207,25 @@ DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 SOCIALACCOUNT_PROVIDERS = {
     'google': {
         'APP': {
-            'client_id': 'YOUR_GOOGLE_CLIENT_ID',
-            'secret': 'YOUR_GOOGLE_CLIENT_SECRET',
+            'client_id': os.getenv('GOOGLE_CLOUD_CLIENT_ID'),
+            'secret': os.getenv('GOOGLE_CLOUD_SECRET'),
             'key': ''
-        }
+        },
+        'SCOPE': ['profile', 'email'],
+        'AUTH_PARAMS': {'access_type': 'online'},
+        # Needed to customize usernames:
+        'USER_FIELDS': ['email', 'username'],
     }
 }
+
+# Required for social login
+SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+SOCIALACCOUNT_EMAIL_REQUIRED = False
+SOCIALACCOUNT_QUERY_EMAIL = True
+
+# A custom pipeline to handle usernames during Google authentication
+SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
+
 
 
 #Pointing Allauth to use the custom adapter for activating a user's account on email confirmation
@@ -191,13 +245,6 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # For local development 
-    "http://127.0.0.1:3000",
-    "https://www.aitracker.io",  # My frontend URL
-    "https://aitracker.io",  # My frontend URL
-]
 
 
 ROOT_URLCONF = 'nametrackerapi.urls'
