@@ -20,39 +20,132 @@ import logging
 from logging.handlers import RotatingFileHandler
 
 
-
 # Load environment variables from .env file
 load_dotenv()
 
+# Helper function to parse environment variables that contain multiple comma-separated values (like allowed_hosts, csrf_trusted_origins, etc)
+def get_list_env(key, default=""):
+    return [item.strip() for item in os.getenv(key, default).split(",") if item.strip()]
+
+
+# Determine environment 
+IS_PRODUCTION = os.getenv('DJANGO_PRODUCTION', '').lower() == 'true'
+#Set debug value
+DEBUG = not IS_PRODUCTION
+# ===== Core Security =====
+SECURE_SSL_REDIRECT = IS_PRODUCTION  # This should only be True in production (Force HTTPS)
+
+
+# Base directory (Build paths inside the project like this: BASE_DIR / 'subdir'.)
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# ===== Shared Settings ===== 
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Dynadot API credentials
 DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
 DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+
+# CUSTOM SERIALIZERS ACTIVATION
+# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
+REST_AUTH_REGISTER_SERIALIZERS = {
+    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer',
+}
+# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
+REST_AUTH_SERIALIZERS = {
+    'LOGIN_SERIALIZER': 'api.serializers.CustomLoginSerializer',
+}
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.getenv("DEBUG", "False").lower() == "true"
 
+# SimpleJWT settings
+# SIMPLE_JWT = {
+#     'AUTH_HEADER_TYPES': ('Bearer',), # Fallback for non-cookie clients
+#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+#     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+#     'ROTATE_REFRESH_TOKENS': True,
+#     'BLACKLIST_AFTER_ROTATION': True,
+
+#     # These are crucial for cookie-based auth
+#     'AUTH_COOKIE': 'access_token',
+#     'AUTH_COOKIE_REFRESH': 'refresh_token',
+#     'AUTH_COOKIE_HTTP_ONLY': True,
+#     'AUTH_COOKIE_SECURE': True,
+#     'AUTH_COOKIE_SAMESITE': 'None',
+#     'AUTH_COOKIE_PATH': '/',
+# }
+
+
+# Rest-auth settings
+REST_AUTH = { #used to be named 'DJ_REST_AUTH'
+    'USE_JWT': True,  # enables JWT usage
+    'JWT_AUTH_COOKIE': 'access_cookie',
+    'JWT_AUTH_REFRESH_COOKIE': 'refresh_cookie',
+    'JWT_AUTH_HTTPONLY': True, # Block JS access to JWT cookies
+    # 'JWT_AUTH_SECURE': True, #HTTPS-only JWT cookies (True in production)
+    'JWT_AUTH_SAMESITE': 'None',
+    'JWT_AUTH_COOKIE_USE_CSRF': True,  # True in production
+    'TOKEN_MODEL': None,  # disables DRF token model
+    'JWT_AUTH_RETURN_EXPIRATION': False,  # Stop sending tokens in JSON
+    
+}
+
+
+# CSRF settings 
+# CSRF_COOKIE_SECURE = True  # True in production
+CSRF_COOKIE_SAMESITE = 'None'  
+# CSRF_TRUSTED_ORIGINS = [ #Add 'http://localhost:3000' for dev
+#     'https://www.aitracker.io', 
+#     'https://aitracker.io', 
+#     'https://api.aitracker.io' 
+# ] 
+CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
+
+#CORS settings
+CORS_ALLOW_CREDENTIALS = True # Required for cookies
+CORS_EXPOSE_HEADERS = ['X-CSRFToken'] # Let frontend read CSRF header
+CORS_ALLOWED_ORIGINS = get_list_env("DJANGO_CORS_ALLOWED_ORIGINS")
+
+
+# Sessions (Required for Admin)
+# SESSION_COOKIE_SECURE = True #Forces HTTPS for admin sessions
+SESSION_COOKIE_HTTPONLY=True #Blocks JS from reading sessionid
+SESSION_COOKIE_SAMESITE ='Lax' #prevent CSRF attacks (Balanced security for admin)
+SESSION_ENGINE = 'django.contrib.sessions.backends.cached_db'  # Faster sessions
+SESSION_COOKIE_NAME = 'admin_sessionid'  # Distinct from JWT cookies
+
+
+#========DYNAMIC ENVRIONMENT CHECKS ================
 #Dynamically switching allowed hosts values based on the value of Debug
 if DEBUG:
-    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '127.0.0.1:8000']
+    ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
 else:
-    ALLOWED_HOSTS = ['nametrackerapi-production.up.railway.app', 'api.aitracker.io']
-
-# Needed if we ever switch to full environment controll
-# ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS").split(',')
+    ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "").split(",")
 
 
-# Application definition
+# ===== Environment-Specific Overrides =====
+if IS_PRODUCTION:
+    # Production-only settings
+    CSRF_COOKIE_SECURE = True
+    SESSION_COOKIE_SECURE = True
+    REST_AUTH['JWT_AUTH_SECURE'] = True
+    CSRF_TRUSTED_ORIGINS = get_list_env("DJANGO_CSRF_TRUSTED_ORIGINS")
+else:
+    # Development-only settings
+    CSRF_COOKIE_SECURE = False
+    SESSION_COOKIE_SECURE = False
+    REST_AUTH['JWT_AUTH_SECURE'] = False
+    CSRF_TRUSTED_ORIGINS = get_list_env("DJANGO_CSRF_TRUSTED_ORIGINS")
+
+
+
+
+
+
+
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -61,17 +154,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django.contrib.sites',  # Required for allauth
+ 
 
     # Third-party apps
     'rest_framework',
-    'rest_framework.authtoken', #Not in use. Added to prevent the error with dj_rest
+    'rest_framework_simplejwt',
+    #'rest_framework.authtoken', #Not in use. 
     'corsheaders',
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
     'allauth.socialaccount.providers.google',
     'dj_rest_auth',
+    'django.contrib.sites',  # Required for allauth
     'dj_rest_auth.registration',
     'django_filters',
     'django_celery_beat',
@@ -84,7 +179,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication', #Switched away from JWTAuthentication
+        'dj_rest_auth.jwt_auth.JWTCookieAuthentication', #alternatively, use: 'dj_rest_auth.authentication.AllAuthJWTAuthentication', 
     ),
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated",  # Change to `AllowAny` for open access
@@ -95,55 +190,12 @@ REST_FRAMEWORK = {
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 
-SIMPLE_JWT = {
-    'AUTH_HEADER_TYPES': ('Bearer',), # Fallback for non-cookie clients
-    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-    'ROTATE_REFRESH_TOKENS': True,
-    'BLACKLIST_AFTER_ROTATION': True,
-}
-
-#JWT Settings (for cookie-based auth)
-DJ_REST_AUTH = {
-    'USE_JWT': True,
-    'JWT_AUTH_COOKIE': 'access_token',  
-    'JWT_AUTH_REFRESH_COOKIE': 'refresh_token',
-    'JWT_AUTH_HTTPONLY': True,      # Block JavaScript access
-    'JWT_AUTH_SECURE': True,        # HTTPS-only 
-    'JWT_AUTH_SAMESITE': 'None',     # 
-    'TOKEN_MODEL': None,            # Disable DRF tokens (JWT only)
-}
-
-
-# Required for cookies
-CORS_ALLOW_CREDENTIALS = True 
-
-
-CORS_ALLOWED_ORIGINS = [
-    "http://localhost:3000",  # For local development 
-    "http://127.0.0.1:3000",
-    "https://www.aitracker.io",  # My frontend URL
-    "https://aitracker.io",  # My frontend URL
-]
-
-
-
-## CSRF
-CSRF_COOKIE_SAMESITE = 'None'
-CSRF_COOKIE_SECURE = True
-
-
-
-# Required if I'm using Django session auth, but I'm not
-# SESSION_COOKIE_SAMESITE = 'None'
-# SESSION_COOKIE_SECURE = True
 
 
 AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',  # Required by django-allauth
     'django.contrib.auth.backends.ModelBackend',            # Default
 )
-
 
 
 #Allauth (deprecated fields are commented out)
@@ -165,17 +217,6 @@ ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.html"
 ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
 ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
-
-# CUSTOM SERIALIZERS ACTIVATION
-# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer',
-}
-# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
-REST_AUTH_SERIALIZERS = {
-    'LOGIN_SERIALIZER': 'api.serializers.CustomLoginSerializer',
-}
-
 
 
 #Site ID
@@ -236,7 +277,7 @@ ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.contrib.sessions.middleware.SessionMiddleware', # Required for admin
     'allauth.account.middleware.AccountMiddleware', #Required by allauth
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
