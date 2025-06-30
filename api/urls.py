@@ -13,7 +13,7 @@ urlpatterns = [
 
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
     #CSRF endpoint
-    path("auth/csrf/", get_csrf_token),
+    path("auth/csrf/", views.get_csrf_token),
 
 ] 
    
