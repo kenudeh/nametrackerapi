@@ -18,9 +18,9 @@ redis = "*"
 django-celery-beat = "*"
 django-allauth = "*"
 postmarker = "*"
-djangorestframework-simplejwt = "*"
 dj-rest-auth = "*"
 gunicorn = "*"
+djangorestframework-simplejwt = "*"
 
 [dev-packages]
 
