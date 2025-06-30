@@ -3862,3 +3862,15 @@ Traceback (most recent call last):
 django.core.exceptions.DisallowedHost: Invalid HTTP_HOST header: '127.0.0.1:8000'. You may need to add '127.0.0.1' to ALLOWED_HOSTS.
 WARNING 2025-06-30 03:41:59,721 basehttp "POST /auth/login/ HTTP/1.1" 400 143
 ERROR 2025-06-30 03:42:29,130 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2025-06-30 05:11:10,695 log Not Found: /auth 
+WARNING 2025-06-30 05:11:10,698 basehttp "POST /auth%20 HTTP/1.1" 404 3582
+WARNING 2025-06-30 05:17:07,148 log Not Found: /auth 
+WARNING 2025-06-30 05:17:07,155 basehttp "POST /auth%20 HTTP/1.1" 404 3582
+WARNING 2025-06-30 05:18:51,635 log Not Found: /auth 
+WARNING 2025-06-30 05:18:51,636 basehttp "POST /auth%20 HTTP/1.1" 404 3582
+WARNING 2025-06-30 05:21:07,434 log Bad Request: /auth/login/
+WARNING 2025-06-30 05:21:07,434 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-06-30 05:31:57,844 log Not Found: /auth 
+WARNING 2025-06-30 05:31:57,848 basehttp "POST /auth%20 HTTP/1.1" 404 3582
+WARNING 2025-06-30 05:32:30,257 log Not Found: /auth 
+WARNING 2025-06-30 05:32:30,268 basehttp "POST /auth%20 HTTP/1.1" 404 3582
