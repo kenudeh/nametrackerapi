@@ -11,7 +11,12 @@ from django.shortcuts import redirect
 from urllib.parse import urlencode
 from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
 from dj_rest_auth.registration.views import SocialLoginView
+# For csrf view
+from django.views.decorators.csrf import ensure_csrf_cookie
+from django.http import JsonResponse
+
 import logging
+
 
 logger = logging.getLogger(__name__)
 
@@ -72,6 +77,17 @@ class GoogleLogin(SocialLoginView):
             logger.info(f"New unverified user: {user.email}")
             # Add post-signup actions here if needed
            
+
+#CSRF
+@ensure_csrf_cookie
+def get_csrf_token(request):
+    return JsonResponse({"message": "CSRF cookie set"})
+
+
+
+#===================================
+        #APP-SPECIFIC views
+#====================================
 
 class NameListAPIView(APIView):
     def get(self, request):
