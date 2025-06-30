@@ -12,9 +12,6 @@ urlpatterns = [
     path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
 
     path('dj-rest-auth/', include('dj_rest_auth.urls')),
-    #CSRF endpoint
-    path("auth/csrf/", views.get_csrf_token),
-
 ] 
    
 
