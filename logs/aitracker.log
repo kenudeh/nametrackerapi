@@ -3874,3 +3874,71 @@ WARNING 2025-06-30 05:31:57,844 log Not Found: /auth
 WARNING 2025-06-30 05:31:57,848 basehttp "POST /auth%20 HTTP/1.1" 404 3582
 WARNING 2025-06-30 05:32:30,257 log Not Found: /auth 
 WARNING 2025-06-30 05:32:30,268 basehttp "POST /auth%20 HTTP/1.1" 404 3582
+WARNING 2025-06-30 22:15:58,627 log Method Not Allowed: /auth/login/
+WARNING 2025-06-30 22:15:58,627 basehttp "GET /auth/login/ HTTP/1.1" 405 40
+WARNING 2025-06-30 22:23:51,209 log Not Found: /auth 
+WARNING 2025-06-30 22:23:51,215 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:23:51,370 log Not Found: /auth 
+WARNING 2025-06-30 22:23:51,448 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:25:10,689 log Not Found: /auth 
+WARNING 2025-06-30 22:25:10,695 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:25:10,714 log Not Found: /auth 
+WARNING 2025-06-30 22:25:10,721 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:32:23,339 log Not Found: /auth 
+WARNING 2025-06-30 22:32:23,346 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:33:28,420 log Not Found: /auth 
+WARNING 2025-06-30 22:33:28,427 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:33:28,445 log Not Found: /auth 
+WARNING 2025-06-30 22:33:28,452 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:34:04,993 log Not Found: /auth 
+WARNING 2025-06-30 22:34:04,995 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:34:05,023 log Not Found: /auth 
+WARNING 2025-06-30 22:34:05,035 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:34:16,542 log Not Found: /auth 
+WARNING 2025-06-30 22:34:16,545 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:36:12,176 log Not Found: /auth 
+WARNING 2025-06-30 22:36:12,183 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:36:37,757 log Not Found: /auth 
+WARNING 2025-06-30 22:36:37,766 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:45:12,877 log Not Found: /auth 
+WARNING 2025-06-30 22:45:12,892 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:45:17,805 log Not Found: /auth 
+WARNING 2025-06-30 22:45:17,808 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:45:17,867 log Not Found: /auth 
+WARNING 2025-06-30 22:45:17,892 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:51:51,515 log Not Found: /auth 
+WARNING 2025-06-30 22:51:51,556 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:51:55,575 log Not Found: /auth 
+WARNING 2025-06-30 22:51:55,576 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:51:55,586 log Not Found: /auth 
+WARNING 2025-06-30 22:51:55,596 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-06-30 22:53:28,133 log Not Found: /api/auth/csrf/
+WARNING 2025-06-30 22:53:28,135 basehttp "GET /api/auth/csrf/ HTTP/1.1" 404 5258
+WARNING 2025-06-30 22:54:14,083 log Not Found: /api/auth/csrf/
+WARNING 2025-06-30 22:54:14,086 basehttp "GET /api/auth/csrf/ HTTP/1.1" 404 5258
+WARNING 2025-06-30 22:54:14,106 log Not Found: /api/auth/csrf/
+WARNING 2025-06-30 22:54:14,111 basehttp "GET /api/auth/csrf/ HTTP/1.1" 404 5258
+WARNING 2025-06-30 23:00:15,848 log Bad Request: /auth/login/
+WARNING 2025-06-30 23:00:15,850 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-01 00:23:40,060 log Bad Request: /auth/login/
+WARNING 2025-07-01 00:23:40,062 basehttp "POST /auth/login/ HTTP/1.1" 400 45
+WARNING 2025-07-01 00:23:57,251 log Bad Request: /auth/login/
+WARNING 2025-07-01 00:23:57,253 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-01 00:24:06,795 log Bad Request: /auth/login/
+WARNING 2025-07-01 00:24:06,797 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-01 04:45:14,321 log Not Found: /auth 
+WARNING 2025-07-01 04:45:14,338 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-07-01 04:48:29,057 log Not Found: /auth 
+WARNING 2025-07-01 04:48:29,060 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-07-01 04:48:32,501 log Not Found: /auth 
+WARNING 2025-07-01 04:48:32,504 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-07-01 04:48:33,646 log Not Found: /auth 
+WARNING 2025-07-01 04:48:33,650 basehttp "GET /auth%20 HTTP/1.1" 404 3755
+WARNING 2025-07-01 04:51:59,433 log Bad Request: /auth/login/
+WARNING 2025-07-01 04:51:59,438 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-02 07:43:24,083 log Bad Request: /auth/login/
+WARNING 2025-07-02 07:43:24,084 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-02 07:44:04,619 log Bad Request: /auth/login/
+WARNING 2025-07-02 07:44:04,622 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-02 08:10:08,711 log Bad Request: /auth/login/
+WARNING 2025-07-02 08:10:08,711 basehttp "POST /auth/login/ HTTP/1.1" 400 68

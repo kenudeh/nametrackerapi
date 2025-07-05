@@ -5,27 +5,46 @@ from dj_rest_auth.registration.serializers import RegisterSerializer
 # Importing dj-rest default login serializer
 from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import Name, UseCase, NameTag, NameCategory
-
- 
-# Email validation serializer (To be used in settings.py)
-class CustomRegisterSerializer(RegisterSerializer):
-    email = serializers.EmailField(required=True)
-
-    def validate_email(self, value):
-        if User.objects.filter(email__iexact=value).exists():
-            raise serializers.ValidationError("An account with this email already exists.")
-        return value
+from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription
 
 
-# Custom  login serializer to allow the frontend to submit either "email or username" in one field
-class CustomLoginSerializer(LoginSerializer):
-    def authenticate(self, **kwargs):
-        login_value = kwargs.get(self.username_field)
-        if login_value:
-            kwargs['username'] = login_value
-            kwargs['email'] = login_value
-        return super().authenticate(**kwargs)
+
+# ============================================
+# App User Serializer (with nested serializers)
+# ============================================
+class PlanModelSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = PlanModel
+        fields = ["plan_type", "description", "api_quota", "monthly_price"]
+
+class SubscriptionSerializer(serializers.ModelSerializer):
+    plan = PlanModelSerializer()  # Nested plan info
+
+    class Meta:
+        model = Subscription
+        fields = ["payment_status", "subscription_expiry", "isPaid", "plan"]
+
+
+
+class AppUserSerializer(serializers.ModelSerializer):
+    subscription = SubscriptionSerializer(read_only=True)
+
+    class Meta:
+        model = AppUser
+        fields = [
+            "clerk_id",
+            "email",
+            "first_name",
+            "last_name",
+            "created_at",
+            "subscription",
+        ]
+        read_only_fields = ["clerk_id", "email", "created_at", "subscription"]
+
+
+
+
+
 
 
 
@@ -46,6 +65,8 @@ class UseCaseSerializer(serializers.ModelSerializer):
     class Meta:
         model = UseCase
         fields = ['id', 'case_title', 'description', 'difficulty', 'competition', 'target_market', 'revenue_potential', 'order']
+
+
 
 class NameSerializer(serializers.ModelSerializer):
     tag = NameTagSerializer(many=True)
@@ -117,3 +138,28 @@ class NameSerializer(serializers.ModelSerializer):
         if len(value) > 3:
             raise serializers.ValidationError("A maximum of 3 use cases are allowed.")
         return value
+
+
+
+
+
+ 
+# Email validation serializer (To be used in settings.py) - Not in use as Auth is now with Clerk
+# class CustomRegisterSerializer(RegisterSerializer):
+#     email = serializers.EmailField(required=True)
+
+#     def validate_email(self, value):
+#         if User.objects.filter(email__iexact=value).exists():
+#             raise serializers.ValidationError("An account with this email already exists.")
+#         return value
+
+
+#  Custom  login serializer to allow the frontend to submit either "email or username" in one field (Not in use anymore - Clerk now handles auth)
+# class CustomLoginSerializer(LoginSerializer):
+#     def authenticate(self, **kwargs):
+#         login_value = kwargs.get(self.username_field)
+#         if login_value:
+#             kwargs['username'] = login_value
+#             kwargs['email'] = login_value
+#         return super().authenticate(**kwargs)
+

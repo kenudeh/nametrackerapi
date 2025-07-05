@@ -18,7 +18,7 @@ from django.contrib import admin
 from django.urls import path, include
 from api.email_confirmation_view import CustomConfirmEmailView
 from api.resend_email import resend_email_confirmation
-from api.views import GoogleLogin, get_csrf_token
+# from api.views import GoogleLogin, get_csrf_token
             
 
 urlpatterns = [
@@ -26,11 +26,13 @@ urlpatterns = [
     path('api/', include('api.urls')),
     # Email confirmation override
     path('auth/registration/account-confirm-email/<str:key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),
-    # Google OAuth endpoints (same view but different paths - just for frontend aesthetics)
-    path('auth/google/login/', GoogleLogin.as_view(), name='google_login'),  
-    path('auth/google/signup/', GoogleLogin.as_view(), name='google_signup'),  
-    # Other auth routes
-    path("auth/csrf/", get_csrf_token, name="csrf_handler"),  #CSRF endpoint
+
+    # # Google OAuth endpoints (same view but different paths - just for frontend aesthetics)
+    # path('auth/google/login/', GoogleLogin.as_view(), name='google_login'),  
+    # path('auth/google/signup/', GoogleLogin.as_view(), name='google_signup'),  
+    # # Other auth routes
+    # path("auth/csrf/", get_csrf_token, name="csrf_handler"),  #CSRF endpoint
+
     path('auth/', include('dj_rest_auth.urls')),  # Login, logout, password reset
     path('auth/registration/', include('dj_rest_auth.registration.urls')),
     path("auth/resend-email/", resend_email_confirmation, name="resend-email"),

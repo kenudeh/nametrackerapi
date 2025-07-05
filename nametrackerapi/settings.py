@@ -47,6 +47,13 @@ DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
 DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 
 
+# Clerk 
+CLERK_JWKS_URL = os.getenv("CLERK_JWKS_URL")  
+CLERK_ISSUER = os.getenv("CLERK_ISSUER")      
+CLERK_AUDIENCE = os.getenv("CLERK_AUDIENCE")  
+
+
+
 # CUSTOM SERIALIZERS ACTIVATION
 # For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
 REST_AUTH_REGISTER_SERIALIZERS = {
@@ -181,7 +188,7 @@ INSTALLED_APPS = [
 REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS': ['django_filters.rest_framework.DjangoFilterBackend'],
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'dj_rest_auth.jwt_auth.JWTCookieAuthentication', #alternatively, use: 'dj_rest_auth.authentication.AllAuthJWTAuthentication', 
+        'api.authentication.ClerkJWTAuthentication', #my custom auth class defined in authentication.py 
     ),
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated",  # Change to `AllowAny` for open access
