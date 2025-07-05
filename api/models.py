@@ -19,29 +19,52 @@ from .data.helpers import DROP_TIMES
 
 
 # ============================================
-# User profile model
+# User profile model - now syncs to Clerk 
 # ============================================
+#Old User model that extended Django's built-in model
+# class UserProfile(models.Model):
+#     user = models.OneToOneField(
+#         User, 
+#         on_delete=models.CASCADE
+#     )
+#     is_logged_in = models.BooleanField(default=False)
+#     payment_status = models.CharField(max_length=20, default='unpaid')
+#     subscription_expiry = models.DateField(null=True, blank=True)
+#     access_tier = models.CharField(max_length=20, default='free')
+#     isPaid = models.BooleanField( default='False')
+#     saved_names = models.PositiveIntegerField(null=True, blank=True)
+#     acquired = models.PositiveIntegerField(null=True, blank=True) # names acquired from the marketplace only
 
-class UserProfile(models.Model):
-    user = models.OneToOneField(
-        User, 
-        on_delete=models.CASCADE
-    )
-    is_logged_in = models.BooleanField(default=False)
-    payment_status = models.CharField(max_length=20, default='unpaid')
-    subscription_expiry = models.DateField(null=True, blank=True)
-    access_tier = models.CharField(max_length=20, default='free')
-    isPaid = models.BooleanField( default='False')
-    saved_names = models.PositiveIntegerField(null=True, blank=True)
-    acquired = models.PositiveIntegerField(null=True, blank=True) # names acquired from the marketplace only
+#     def __str__(self):
+#         return self.user.username
+    
+
+#Model syncing with clerk via the Authenticator logic
+class AppUser(models.Model):
+    clerk_id = models.CharField(max_length=128, primary_key=True)
+    email = models.EmailField(unique=True)
+    full_name = models.CharField(max_length=255, blank=True, null=True)
+    first_name = models.CharField(max_length=100, blank=True, null=True)
+    last_name = models.CharField(max_length=100, blank=True, null=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
 
     def __str__(self):
-        return self.user.username
+        return f"{self.first_name or self.email} ({self.clerk_id})"
     
-    
+    #Method for deriving first and last name from the full_name field
+    def split_full_name(self):
+        if self.full_name:
+            parts = self.full_name.strip().split(" ", 1)
+            self.first_name = parts[0]
+            self.last_name = parts[1] if len(parts) > 1 else ""
+            self.save(update_fields=["first_name", "last_name"])
 
 
 
+# ============================================
+# Name model
+# ============================================
 # Options for Name model
 class RegStatusOptions(models.TextChoices):
     PENDING = 'pending', 'Pending'
@@ -56,7 +79,6 @@ class ExtensionOptions(models.TextChoices):
     IO = 'io', 'Io'
     AI = 'ai', 'Ai'
 
-
 class DifficultyType(models.TextChoices):
     EASY = 'easy', 'Easy'
     MODERATE = 'moderate', 'Moderate'
@@ -66,7 +88,6 @@ class CompetitionType(models.TextChoices):
     LOW = 'low', 'Low'
     MEDIUM = 'medium', 'Medium'
     HIGH = 'high', 'High'
-
 
 class DomainListOptions(models.TextChoices):
     ALL_LIST = 'all_list', 'All List'
@@ -180,7 +201,11 @@ class Name(models.Model):
         return self.domain_name
 
 
+
+# ============================================
 # CATEGORY MODEL
+# ============================================
+
 class CategoryType(models.TextChoices):
     HEALTH = 'health_and_wellness', 'Health_And_Wellness'
     TECH = 'tech', 'Tech'
@@ -195,7 +220,11 @@ class NameCategory(models.Model):
     def __str__(self):
         return self.name
 
+
+
+# ============================================
 #TAG MODEL
+# ============================================
 class NameTag(models.Model):
     name = models.CharField(
         max_length=20,
@@ -207,7 +236,9 @@ class NameTag(models.Model):
 
 
 
-
+# ============================================
+# Use Case Model
+# ============================================
 #OPTIONS FOR USECASE MODEL
 class RevenueOptions(models.TextChoices):
     LOW = 'low', 'Low'
@@ -247,12 +278,9 @@ class UseCase(models.Model):
 
 
 
-
-
 # ============================================
 # Model to define Drop Time Rules Per Extension
 # ============================================
-
 class ExtensionDropInfo(models.Model):
     """
     Holds expected drop processing times per domain extension (.com, .co, .ai, .io),
@@ -270,7 +298,6 @@ class ExtensionDropInfo(models.Model):
 # ============================================
 # Model to Archive Names Older Than 90 Days
 # ============================================
-
 class ArchivedName(models.Model):
     """
     Stores minimal details of domain names whose drop dates exceeded 90 days,
@@ -286,9 +313,88 @@ class ArchivedName(models.Model):
 
 
     
+
+
+# ============================================
+# Saved Names
+# ============================================
+class SavedNames(models.Model):
+    user = models.ForeignKey(AppUser, related_name='saved_names', on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.user
+
+
+# ============================================
+# Acquired Names
+# ============================================
+class AcquiredNames(models.Model):
+    user = models.ForeignKey(AppUser, related_name='acquired_names', on_delete=models.CASCADE)
+    name = models.CharField(max_length=255)
+    acquired_at = models.DateTimeField(auto_now_add=True)
+
+
+    def __str__(self):
+        return self.user
+
+
+
+
+
+
+# ============================================
+# Plan model
+# ============================================
+#Plan type choices
+class PlanType(models.TextChoices):
+    FREE = 'free', 'Free'
+    PAID = 'paid', 'Paid'
+    FREEMIUM = 'freemium', 'Freemium'
+
+
+class PlanModel(models.Model):
+    plan_type = models.CharField(
+        max_length=20,
+        choices=PlanType.choices,
+        unique=True,
+    )
+    description = models.TextField(blank=True)
+    api_quota = models.IntegerField(default=0)  # Optional
+    monthly_price = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
+
+    def __str__(self):
+        return self.plan_type
+
+
     
-    
-    
+
+# ============================================
+# Subscription model - Ties a user to a plan
+# ============================================
+class PaymentType(models.TextChoices): 
+    UNPAID = 'unpaid', 'Unpaid' 
+    PAID = 'paid', 'Paid'
+
+
+class Subscription(models.Model):
+    user = models.OneToOneField(AppUser, on_delete=models.CASCADE, related_name='subscription')
+    plan = models.ForeignKey(PlanModel, on_delete=models.PROTECT)
+    payment_status = models.CharField(
+        max_length=20,
+        choices=PaymentType.choices,
+        default=PaymentType.UNPAID,
+    )
+    subscription_expiry = models.DateField(null=True, blank=True)
+    isPaid = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+    def is_active(self):
+        from django.utils import timezone
+        return self.isPaid and self.subscription_expiry and self.subscription_expiry >= timezone.now().date()
 
      
 
@@ -319,33 +425,7 @@ class ArchivedName(models.Model):
 
 
 
-# Subscription type
-# class SubscriptionType(models.TextChoices):
-#     FREE = 'free', 'Free'
-#     PAID = 'paid', 'Paid'
-#     FREEMIUM = 'freemium', 'Freemium'
 
 
 
-# class PlanModel(models.Model):
-#     type = models.CharField(
-#         max_length=20,
-#         choices=SubscriptionType.choices,
-#         unique=True,
-#     )
-    
-#     def __str__(self):
-#         return self.type
-  
-
-
-
-
-# # Favorite
-# class Favorite(models.Model):
-#     user = models.ForeignKey(UserProfile, related_name='user_favorites', on_delete=models.CASCADE)
-#     created_at = models.DateTimeField(auto_now_add=True)
-
-#     def __str__(self):
-#         return self.user
 

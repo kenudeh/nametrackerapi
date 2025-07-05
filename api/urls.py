@@ -11,7 +11,7 @@ urlpatterns = [
     path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
     path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
 
-    path('dj-rest-auth/', include('dj_rest_auth.urls')),
+    path('user/profile', views.UserProfileView.as_view(), name='user-profile'),
 ] 
    
 

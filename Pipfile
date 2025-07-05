@@ -21,6 +21,8 @@ postmarker = "*"
 dj-rest-auth = "*"
 gunicorn = "*"
 djangorestframework-simplejwt = "*"
+pyjwt = "*"
+requests = "*"
 
 [dev-packages]
 
