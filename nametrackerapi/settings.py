@@ -289,6 +289,7 @@ SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Fi
 
 
 MIDDLEWARE = [
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # Required for admin
@@ -369,8 +370,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
-#
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+#for WhiteNoise compression
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
