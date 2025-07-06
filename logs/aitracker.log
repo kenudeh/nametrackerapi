@@ -3942,3 +3942,5 @@ WARNING 2025-07-02 07:44:04,619 log Bad Request: /auth/login/
 WARNING 2025-07-02 07:44:04,622 basehttp "POST /auth/login/ HTTP/1.1" 400 68
 WARNING 2025-07-02 08:10:08,711 log Bad Request: /auth/login/
 WARNING 2025-07-02 08:10:08,711 basehttp "POST /auth/login/ HTTP/1.1" 400 68
+WARNING 2025-07-05 22:54:56,142 log Forbidden (CSRF cookie not set.): /onyia/admin/udeh/login/
+WARNING 2025-07-05 22:54:56,142 basehttp "POST /onyia/admin/udeh/login/?next=/onyia/admin/udeh/ HTTP/1.1" 403 2855

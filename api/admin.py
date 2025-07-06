@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, AppUser, NameCategory, NameTag, UseCase, ArchivedName
+from .models import Name, AppUser, NameCategory, NameTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredNames, SavedNames, ExtensionDropInfo
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -80,7 +80,7 @@ class NameAdmin(admin.ModelAdmin):
 
 @admin.register(AppUser)
 class AppUser(admin.ModelAdmin):
-    list_display = ('full_name',)
+    list_display = ('first_name', 'last_name', 'email')
    
 
 @admin.register(NameCategory)
@@ -98,6 +98,40 @@ class UseCaseAdmin(admin.ModelAdmin):
     list_display = ('case_title', 'domain_name', 'order', 'difficulty', 'competition', 'revenue_potential')
     list_filter = ('difficulty', 'competition', 'revenue_potential')
     search_fields = ('case_title', 'target_market')
+
+
+@admin.register(Subscription)
+class SubscriptionAdmin(admin.ModelAdmin):
+    list_display = ('user', 'plan', 'subscription_expiry', 'isPaid')
+    list_filter = ('plan', 'isPaid')
+    
+
+
+@admin.register(PlanModel)
+class PlanModelAdmin(admin.ModelAdmin):
+    list_display = ('plan_type', 'monthly_price')
+    
+
+
+
+@admin.register(AcquiredNames)
+class AcquiredNamesAdmin(admin.ModelAdmin):
+    list_display = ('user', 'name')
+    
+
+
+
+@admin.register(SavedNames)
+class SavedNamesAdmin(admin.ModelAdmin):
+    list_display = ('user', 'name')
+    
+
+@admin.register(ExtensionDropInfo)
+class ExtensionDropInfoAdmin(admin.ModelAdmin):
+    list_display = ('extension', 'first_check_delay_hours', 'second_check_delay_hours')
+    
+
+
 
 
 
