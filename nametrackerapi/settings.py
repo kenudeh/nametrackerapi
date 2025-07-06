@@ -253,25 +253,25 @@ DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 # ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
 
 
-#Google Login (Allauth)
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': os.getenv('GOOGLE_CLOUD_CLIENT_ID'),
-            'secret': os.getenv('GOOGLE_CLOUD_SECRET'),
-            'key': ''
-        },
-        'SCOPE': ['profile', 'email'],
-        'AUTH_PARAMS': {'access_type': 'online'},
-        # Needed to customize usernames:
-        'USER_FIELDS': ['email', 'username'],
-    }
-}
+#Google Login (Allauth) - Now handles by Clerk
+# SOCIALACCOUNT_PROVIDERS = {
+#     'google': {
+#         'APP': {
+#             'client_id': os.getenv('GOOGLE_CLOUD_CLIENT_ID'),
+#             'secret': os.getenv('GOOGLE_CLOUD_SECRET'),
+#             'key': ''
+#         },
+#         'SCOPE': ['profile', 'email'],
+#         'AUTH_PARAMS': {'access_type': 'online'},
+#         # Needed to customize usernames:
+#         'USER_FIELDS': ['email', 'username'],
+#     }
+# }
 
-# Required for social login
-SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
-SOCIALACCOUNT_EMAIL_REQUIRED = False
-SOCIALACCOUNT_QUERY_EMAIL = True
+# # Required for social login
+# SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
+# SOCIALACCOUNT_EMAIL_REQUIRED = False
+# SOCIALACCOUNT_QUERY_EMAIL = True
 
 # A custom pipeline to handle usernames during Google authentication
 SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
@@ -281,6 +281,11 @@ SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
 #Pointing Allauth to use the custom adapter for activating a user's account on email confirmation
 ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
 
+
+#Additional Security 
+SECURE_HSTS_SECONDS = 3600  # Tells browsers to only use HTTPS for your domain for the specified duration (e.g., 3600 = 1 hour starting small for testing).
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True #Applies that rule to all subdomains too (like api.example.com).
+SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Firefox, etc.) to always enforce HTTPS.
 
 
 MIDDLEWARE = [

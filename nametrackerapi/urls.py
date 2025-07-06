@@ -22,7 +22,7 @@ from api.resend_email import resend_email_confirmation
             
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('onyia/admin/udeh/', admin.site.urls),
     path('api/', include('api.urls')),
     # Email confirmation override
     path('auth/registration/account-confirm-email/<str:key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),
