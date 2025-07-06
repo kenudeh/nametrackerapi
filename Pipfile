@@ -23,6 +23,7 @@ gunicorn = "*"
 djangorestframework-simplejwt = "*"
 pyjwt = "*"
 requests = "*"
+whitenoise = "*"
 
 [dev-packages]
 
