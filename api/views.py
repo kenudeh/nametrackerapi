@@ -1,20 +1,27 @@
 from rest_framework.views import APIView
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticated
+from rest_framework.permissions import IsAuthenticated, AllowAny
+from rest_framework.throttling import UserRateThrottle
+from .throttles import PostRequestThrottle
 from rest_framework import status
 from django.shortcuts import get_object_or_404
-from .models import Name
-from .serializers import NameSerializer, AppUserSerializer
+from .models import Name, NewsLetter, PublicInquiry
+from .serializers import NameSerializer, AppUserSerializer, NewsletterSerializer, PublicInquirySerializer
+from .permissions import IsManagerOrReadOnly
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
+
 
 #Imports for google login view
-from django.core.cache import cache
-from django.shortcuts import redirect
-from urllib.parse import urlencode
-from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
-from dj_rest_auth.registration.views import SocialLoginView
-# For csrf view
-from django.views.decorators.csrf import ensure_csrf_cookie
-from django.http import JsonResponse
+# from django.core.cache import cache
+# from django.shortcuts import redirect
+# from urllib.parse import urlencode
+# from allauth.socialaccount.providers.google.views import GoogleOAuth2Adapter
+# from dj_rest_auth.registration.views import SocialLoginView
+# # For csrf view
+# from django.views.decorators.csrf import ensure_csrf_cookie
+# from django.http import JsonResponse
 
 import logging
 
@@ -96,6 +103,62 @@ class NameDeleteAPIView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
+
+#===================================
+# Newsletter views
+#====================================
+@method_decorator(csrf_exempt, name='dispatch')
+class NewsletterView(APIView):
+    permission_classes = [IsManagerOrReadOnly]
+    throttle_classes = [PostRequestThrottle]
+    authentication_classes = [] 
+
+
+    def post(self, request):
+        serializer = NewsletterSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            return Response({"message": "Successfully subscribed."}, status=status.HTTP_201_CREATED)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    def get(self, request):
+        newsletters = NewsLetter.objects.all()
+        serializer = NewsletterSerializer(newsletters, many=True)
+        return Response(serializer.data)
+
+
+
+
+#===================================
+# Public Inquiry views
+#====================================
+@method_decorator(csrf_exempt, name='dispatch')
+class PublicInquiryView(APIView):
+    permission_classes = [IsManagerOrReadOnly]
+    throttle_classes = [PostRequestThrottle]
+    authentication_classes = [] 
+
+
+    def post(self, request):
+        serializer = PublicInquirySerializer(data=request.data)
+        if serializer.is_valid():
+            ip_address = (
+                request.META.get("HTTP_X_FORWARDED_FOR", "").split(",")[0]
+                or request.META.get("REMOTE_ADDR")
+            )
+            serializer.save(ip_address=ip_address)
+
+            return Response({
+                "message": "Inquiry received. We'll get back to you shortly."
+            }, status=status.HTTP_201_CREATED)
+
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+    def get(self, request):
+        inquiries = PublicInquiry.objects.all().order_by('-created_at')
+        serializer = PublicInquirySerializer(inquiries, many=True)
+        return Response(serializer.data)
 
 
 
