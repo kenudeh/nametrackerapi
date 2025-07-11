@@ -1,11 +1,12 @@
 # Importing the default User model from Django
 from django.contrib.auth.models import User
 # Importing dj-rest default registration serializer from dj-rest-auth so I can override it and enforce email uniqueness
-from dj_rest_auth.registration.serializers import RegisterSerializer
+# from dj_rest_auth.registration.serializers import RegisterSerializer
 # Importing dj-rest default login serializer
-from dj_rest_auth.serializers import LoginSerializer
+# from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription
+from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription, NewsLetter, PublicInquiry
+import re
 
 
 
@@ -50,7 +51,9 @@ class AppUserSerializer(serializers.ModelSerializer):
 
 
 
-
+# ===========================================================================================================
+# Name Serializer - With related UseCaseSerializer, NameCategorySerializer and NameTagSerializer serilizers
+# ===========================================================================================================
 class NameTagSerializer(serializers.ModelSerializer):
     class Meta:
         model = NameTag
@@ -141,9 +144,73 @@ class NameSerializer(serializers.ModelSerializer):
 
 
 
+# ============================================
+# Newsletter Serializer
+# ============================================
+class NewsletterSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField()
+
+    class Meta:
+        model = NewsLetter
+        fields = ['email', 'created_at', 'updated_at']
+        read_only_fields = ['created_at', 'updated_at']
+
+    def validate_email(self, value):
+        if NewsLetter.objects.filter(email=value).exists():
+            raise serializers.ValidationError("This email is already subscribed.")
+        return value
 
 
- 
+
+# ============================================
+# Public Inquiry Serializer
+# ============================================
+class PublicInquirySerializer(serializers.ModelSerializer):
+    email = serializers.EmailField()
+
+    class Meta:
+        model = PublicInquiry
+        fields = ['name', 'email', 'message', 'ip_address', 'created_at', 'updated_at']
+        read_only_fields = ['ip_address', 'created_at', 'updated_at']
+
+    def validate_name(self, value):
+        if not value.strip():
+            raise serializers.ValidationError("Name cannot be empty.")
+        return value
+
+    def validate_message(self, value):
+        message = value.strip()
+        
+        # Check if message is empty
+        if not message:
+            raise serializers.ValidationError("Message cannot be empty.")
+
+        # Check for URL-like patterns
+        if re.search(r'https?://|www\.', message, re.IGNORECASE):
+            raise serializers.ValidationError(
+                "Messages containing links are not allowed. If you need to share a link, please reach out via official email."
+            )
+
+        # Check length
+        if len(message) > 500:
+            raise serializers.ValidationError("Message is too long. Please keep it under 500 characters.")
+
+        return message
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 # Email validation serializer (To be used in settings.py) - Not in use as Auth is now with Clerk
 # class CustomRegisterSerializer(RegisterSerializer):
 #     email = serializers.EmailField(required=True)

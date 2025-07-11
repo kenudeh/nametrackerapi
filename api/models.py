@@ -398,27 +398,30 @@ class Subscription(models.Model):
 
      
 
+# ============================================
+# Newsletter model
+# ============================================
+class NewsLetter(models.Model):
+    email = models.CharField(unique=True, max_length=255) 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-    
-    
-# class NewsLetter(models.Model):
-#     email = models.CharField(unique=True, max_length=255) #Added max_length
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
+    def __str__(self):
+        return self.email
 
-#     def __str__(self):
-#         return self.email
 
-    
-# class Support(models.Model):
-#     subject = models.CharField(max_length=50)
-#     message = models.TextField()
-#     email = models.EmailField()
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
 
-#     def __str__(self):
-#         return self.subject
+  
+class PublicInquiry(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    message = models.TextField()
+    ip_address = models.GenericIPAddressField(null=True, blank=True) 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.subject
     
     
 

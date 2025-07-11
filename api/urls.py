@@ -12,6 +12,9 @@ urlpatterns = [
     path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
 
     path('user/profile', views.UserProfileView.as_view(), name='user-profile'),
+
+    path('newsletter', views.NewsletterView.as_view(), name='newsletter'),
+    path('public/support', views.PublicInquiryView.as_view(), name='public_support'),
 ] 
    
 

@@ -18,6 +18,7 @@ import json
 from dotenv import load_dotenv
 import logging
 from logging.handlers import RotatingFileHandler
+from corsheaders.defaults import default_headers
 
 
 # Load environment variables from .env file
@@ -115,6 +116,11 @@ CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
 CORS_ALLOW_CREDENTIALS = True # Required for cookies
 CORS_EXPOSE_HEADERS = ['X-CSRFToken'] # Let frontend read CSRF header
 CORS_ALLOWED_ORIGINS = get_list_env("DJANGO_CORS_ALLOWED_ORIGINS")
+CORS_ALLOW_HEADERS = list(default_headers) + [
+    "authorization",
+]
+CORS_ALLOW_CREDENTIALS = True
+
 
 
 # Sessions (Required for Admin)
@@ -193,8 +199,12 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated",  # Change to `AllowAny` for open access
     ),
+    'DEFAULT_THROTTLE_CLASSES': [
+        'api.throttles.PostRequestThrottle',
+        'rest_framework.throttling.AnonRateThrottle', # optional fallback
+    ],
     'DEFAULT_THROTTLE_RATES': {
-        'post_request': '2/day',  # Allow 2 POST requests per day
+        'post_request': '5/day',  # Allow 5 POST requests per day for public submissions
     },
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
@@ -205,6 +215,9 @@ AUTHENTICATION_BACKENDS = (
     'allauth.account.auth_backends.AuthenticationBackend',  # Required by django-allauth
     'django.contrib.auth.backends.ModelBackend',            # Default
 )
+
+
+APPEND_SLASH = False
 
 
 #Allauth (deprecated fields are commented out)
@@ -289,8 +302,8 @@ SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Fi
 
 
 MIDDLEWARE = [
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'corsheaders.middleware.CorsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # Required for admin
     'allauth.account.middleware.AccountMiddleware', #Required by allauth
