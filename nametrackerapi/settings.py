@@ -51,7 +51,7 @@ DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 # Clerk 
 CLERK_JWKS_URL = os.getenv("CLERK_JWKS_URL")  
 CLERK_ISSUER = os.getenv("CLERK_ISSUER")      
-CLERK_AUDIENCE = os.getenv("CLERK_AUDIENCE")  
+CLERK_AUDIENCE = None #os.getenv("CLERK_AUDIENCE")  
 
 
 
@@ -114,12 +114,15 @@ CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
 
 #CORS settings
 CORS_ALLOW_CREDENTIALS = True # Required for cookies
-CORS_EXPOSE_HEADERS = ['X-CSRFToken'] # Let frontend read CSRF header
 CORS_ALLOWED_ORIGINS = get_list_env("DJANGO_CORS_ALLOWED_ORIGINS")
-CORS_ALLOW_HEADERS = list(default_headers) + [
-    "authorization",
+CORS_ALLOW_HEADERS = [
+    *default_headers,  # This unpacks the default headers
+    'authorization',
+    'content-type',
+    'x-csrftoken',
 ]
-CORS_ALLOW_CREDENTIALS = True
+CORS_EXPOSE_HEADERS = ['X-CSRFToken'] # Let frontend read CSRF header
+
 
 
 
@@ -395,11 +398,19 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#
+#Cache settings
+REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/1")
+
 CACHES = {
-    'default' : {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": REDIS_URL,
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+            # Optional: disable SSL verification in Railway
+            "SSL_CERT_REQS": None if "railway.app" in REDIS_URL else "required",
+        },
+        "KEY_PREFIX": "nametracker_"
     }
 }
 

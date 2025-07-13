@@ -4542,3 +4542,257 @@ WARNING 2025-07-10 01:03:06,945 log Too Many Requests: /api/public/support
 WARNING 2025-07-10 01:03:06,948 basehttp "POST /api/public/support HTTP/1.1" 429 72
 WARNING 2025-07-10 01:03:15,019 log Too Many Requests: /api/newsletter
 WARNING 2025-07-10 01:03:15,050 basehttp "POST /api/newsletter HTTP/1.1" 429 72
+WARNING 2025-07-11 05:26:30,872 log Bad Request: /api/newsletter
+WARNING 2025-07-11 05:26:30,872 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-11 18:23:57,071 log Forbidden: /api/user/profile
+WARNING 2025-07-11 18:23:57,113 basehttp "POST /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-11 18:24:15,369 log Forbidden: /api/user/profile
+WARNING 2025-07-11 18:24:15,370 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-11 22:44:23,107 log Not Found: /user/profile
+WARNING 2025-07-11 22:44:23,111 basehttp "GET /user/profile HTTP/1.1" 404 3245
+WARNING 2025-07-11 22:44:23,152 log Not Found: /user/profile
+WARNING 2025-07-11 22:44:23,154 basehttp "GET /user/profile HTTP/1.1" 404 3245
+WARNING 2025-07-11 22:44:23,173 log Not Found: /user/profile
+WARNING 2025-07-11 22:44:23,175 basehttp "GET /user/profile HTTP/1.1" 404 3245
+WARNING 2025-07-11 22:44:40,816 log Not Found: /user/profile
+WARNING 2025-07-11 22:44:40,817 basehttp "GET /user/profile HTTP/1.1" 404 3245
+WARNING 2025-07-11 22:44:40,822 log Not Found: /user/profile
+WARNING 2025-07-11 22:44:40,829 basehttp "GET /user/profile HTTP/1.1" 404 3245
+WARNING 2025-07-11 22:46:24,797 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:46:24,800 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:46:33,704 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:46:33,706 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:46:34,825 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:46:34,830 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:47:27,566 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:47:27,571 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:47:28,899 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:47:28,911 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:50:03,412 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:50:03,414 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:50:04,656 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:50:04,661 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:52:45,797 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:52:45,800 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:52:56,373 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:52:56,377 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:52:57,596 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:52:57,601 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:54:06,815 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:54:06,818 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 22:54:08,043 log Forbidden: /api/user/profile
+WARNING 2025-07-11 22:54:08,047 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:12:16,247 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:12:16,249 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:14:31,314 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:14:31,315 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:15:19,163 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:15:19,167 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:15:20,171 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:15:20,172 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:22:09,270 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:22:09,274 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:22:10,432 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:22:10,435 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:49:05,777 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:49:05,779 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:49:06,828 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:49:06,834 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:49:40,150 log Bad Request: /api/newsletter
+WARNING 2025-07-11 23:49:40,151 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-11 23:49:53,416 log Bad Request: /api/newsletter
+WARNING 2025-07-11 23:49:53,419 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-11 23:49:59,369 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:49:59,371 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:50:00,522 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:50:00,523 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:56:31,415 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:56:31,416 basehttp "GET /api/user/profile HTTP/1.1" 403 47
+WARNING 2025-07-11 23:57:11,491 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:57:11,498 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-11 23:57:43,794 log Forbidden: /api/user/profile
+WARNING 2025-07-11 23:57:43,795 basehttp "GET /api/user/profile HTTP/1.1" 403 47
+WARNING 2025-07-12 00:00:18,932 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:00:18,936 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-12 00:07:44,547 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:07:44,551 basehttp "GET /api/user/profile HTTP/1.1" 403 47
+WARNING 2025-07-12 00:24:04,410 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:24:04,415 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-12 00:24:05,600 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:24:05,602 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-12 00:26:01,308 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:26:01,312 basehttp "GET /api/user/profile HTTP/1.1" 403 118
+WARNING 2025-07-12 00:26:01,351 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:26:01,360 basehttp "GET /api/user/profile HTTP/1.1" 403 118
+WARNING 2025-07-12 00:32:51,287 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:32:51,289 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-12 00:32:54,190 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:32:54,191 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-12 00:57:40,371 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:57:40,373 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+WARNING 2025-07-12 00:57:41,378 log Forbidden: /api/user/profile
+WARNING 2025-07-12 00:57:41,379 basehttp "GET /api/user/profile HTTP/1.1" 403 106
+ERROR 2025-07-12 01:00:37,194 log Internal Server Error: /api/user/profile
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 421, in initial
+    self.check_permissions(request)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 338, in check_permissions
+    if not permission.has_permission(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\permissions.py", line 151, in has_permission
+    return bool(request.user and request.user.is_authenticated)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'is_authenticated'
+ERROR 2025-07-12 01:00:37,201 basehttp "GET /api/user/profile HTTP/1.1" 500 117514
+ERROR 2025-07-12 01:00:37,749 log Internal Server Error: /api/user/profile
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 503, in dispatch
+    self.initial(request, *args, **kwargs)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 421, in initial
+    self.check_permissions(request)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 338, in check_permissions
+    if not permission.has_permission(request, self):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\permissions.py", line 151, in has_permission
+    return bool(request.user and request.user.is_authenticated)
+                                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'dict' object has no attribute 'is_authenticated'
+ERROR 2025-07-12 01:00:37,755 basehttp "GET /api/user/profile HTTP/1.1" 500 117514
+WARNING 2025-07-12 03:12:34,186 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:12:34,187 basehttp "GET /api/user/profile HTTP/1.1" 403 75
+WARNING 2025-07-12 03:12:34,840 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:12:34,845 basehttp "GET /api/user/profile HTTP/1.1" 403 75
+WARNING 2025-07-12 03:13:46,738 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:13:46,740 basehttp "GET /api/user/profile HTTP/1.1" 403 49
+WARNING 2025-07-12 03:13:47,556 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:13:47,580 basehttp "GET /api/user/profile HTTP/1.1" 403 49
+WARNING 2025-07-12 03:17:41,025 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:17:41,026 basehttp "GET /api/user/profile HTTP/1.1" 403 49
+WARNING 2025-07-12 03:17:41,519 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:17:41,522 basehttp "GET /api/user/profile HTTP/1.1" 403 49
+WARNING 2025-07-12 03:24:55,327 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:24:55,328 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 03:24:55,861 log Forbidden: /api/user/profile
+WARNING 2025-07-12 03:24:55,864 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:26:57,178 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:26:57,180 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:27:05,134 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:27:05,134 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:38:17,283 log Bad Request: /api/newsletter
+WARNING 2025-07-12 05:38:17,287 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-12 05:38:32,798 log Bad Request: /api/newsletter
+WARNING 2025-07-12 05:38:32,799 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-12 05:39:30,345 log Bad Request: /api/newsletter
+WARNING 2025-07-12 05:39:30,348 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-12 05:40:04,173 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:40:04,180 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:40:11,132 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:40:11,133 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:49:20,373 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:49:20,381 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:49:27,521 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:49:27,524 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:52:52,879 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:52:52,883 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 05:53:01,057 log Forbidden: /api/user/profile
+WARNING 2025-07-12 05:53:01,063 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:00:41,234 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:00:41,243 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:00:48,286 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:00:48,291 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:11:29,318 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:11:29,324 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:11:36,022 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:11:36,024 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:18:08,293 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:18:08,300 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:18:15,918 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:18:15,919 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:41:34,617 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:41:34,617 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:41:43,525 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:41:43,528 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:50:24,050 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:50:24,054 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 06:50:32,938 log Forbidden: /api/user/profile
+WARNING 2025-07-12 06:50:32,946 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:05:33,625 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:05:33,632 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:05:34,386 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:05:34,386 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:07:05,883 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:07:05,889 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-12 17:07:05,894 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:07:05,897 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-12 17:08:15,092 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:08:15,098 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:08:15,471 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:08:15,471 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:09:45,627 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:09:45,629 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-12 17:09:45,636 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:09:45,640 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-12 17:19:48,848 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:19:48,909 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-12 17:19:48,948 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:19:48,978 basehttp "GET /api/user/profile HTTP/1.1" 403 58
+WARNING 2025-07-12 17:20:34,555 log Bad Request: /api/newsletter
+WARNING 2025-07-12 17:20:34,579 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-12 17:30:11,799 log Bad Request: /api/newsletter
+WARNING 2025-07-12 17:30:11,805 basehttp "POST /api/newsletter HTTP/1.1" 400 47
+WARNING 2025-07-12 17:34:04,973 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:34:04,973 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:34:05,328 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:34:05,329 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:34:14,838 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:34:14,853 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:34:15,225 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:34:21,024 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:34:21,028 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:34:21,324 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:44:22,303 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:44:22,303 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:44:22,563 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:44:29,944 log Forbidden: /api/user/profile
+WARNING 2025-07-12 17:44:29,948 basehttp "GET /api/user/profile HTTP/1.1" 403 34
+WARNING 2025-07-12 17:44:30,308 log Forbidden: /api/user/profile
