@@ -98,13 +98,17 @@ REST_AUTH = { #used to be named 'DJ_REST_AUTH'
 
 # CSRF settings 
 # CSRF_COOKIE_SECURE = True  # True in production
-CSRF_COOKIE_SAMESITE = 'None'  
+CSRF_COOKIE_PATH = '/'
+CSRF_COOKIE_SAMESITE = 'Lax'  
 # CSRF_TRUSTED_ORIGINS = [ #Add 'http://localhost:3000' for dev
 #     'https://www.aitracker.io', 
 #     'https://aitracker.io', 
 #     'https://api.aitracker.io' 
 # ] 
 CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
+CSRF_USE_SESSIONS = False
+
+
 
 #CORS settings
 CORS_ALLOW_CREDENTIALS = True # Required for cookies
@@ -222,21 +226,23 @@ APPEND_SLASH = False
 # ACCOUNT_EMAIL_REQUIRED = True
 # ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
 # ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_LOGIN_METHODS = {'email', 'username'}
-ACCOUNT_SIGNUP_FIELDS = [
-    'username*', 
-    'email*',        # Required email
-    'password1*',    # Required password
-    'password2*'     # Required password confirmation
-]
-ACCOUNT_UNIQUE_EMAIL = True  # Crucial for email-as-username functionality
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+
+#In use
+# ACCOUNT_LOGIN_METHODS = {'email', 'username'}
+# ACCOUNT_SIGNUP_FIELDS = [
+#     'username*', 
+#     'email*',        # Required email
+#     'password1*',    # Required password
+#     'password2*'     # Required password confirmation
+# ]
+# ACCOUNT_UNIQUE_EMAIL = True  # Crucial for email-as-username functionality
+# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
+# ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
 
 
-ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.html"
-ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
-ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
+# ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.html"
+# ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
+# ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
 
 
 #Site ID
