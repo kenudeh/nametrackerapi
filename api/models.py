@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from .utils import *
 from django.utils import timezone
@@ -61,6 +62,12 @@ class AppUser(models.Model):
             self.save(update_fields=["first_name", "last_name"])
 
 
+    @property
+    def is_authenticated(self):
+        """
+        Required by DRF's IsAuthenticated permission class.
+        """
+        return True
 
 # ============================================
 # Name model
@@ -124,6 +131,12 @@ class Name(models.Model):
         editable=False,
         null=True,
         blank=True
+    )
+    score = models.PositiveSmallIntegerField(
+        null=True,  # Allow nulls for now
+        blank=True, # Allow blank forms in admin if needed
+        validators=[MinValueValidator(1), MaxValueValidator(10)],
+        help_text="SaaS viability score (1–10), determined by the LLM"
     )
     competition = models.CharField(  # To be filled by post-save signal
         max_length=20,
@@ -212,7 +225,7 @@ class CategoryType(models.TextChoices):
  
 class NameCategory(models.Model):
     name = models.CharField(
-        max_length=20, 
+        max_length=50, 
         unique=True,
         choices=CategoryType.choices,
     )
@@ -227,7 +240,7 @@ class NameCategory(models.Model):
 # ============================================
 class NameTag(models.Model):
     name = models.CharField(
-        max_length=20,
+        max_length=100,
         unique=True
     )
 
@@ -251,7 +264,8 @@ class UseCase(models.Model):
         on_delete=models.CASCADE,
         related_name='use_cases_domain'
     )
-    case_title = models.CharField(max_length=50)
+    case_title = models.CharField(max_length=100)
+    slug = models.SlugField(max_length=60, editable=False, default='')  # Not user-editable
     description = models.CharField(max_length=200)
     difficulty = models.CharField(
         max_length=20,
@@ -261,7 +275,7 @@ class UseCase(models.Model):
         max_length=20,
         choices=DifficultyType.choices
     )
-    target_market = models.CharField(max_length=20)
+    target_market = models.CharField(max_length=100)
     revenue_potential = models.CharField(
         max_length=20,
         choices=RevenueOptions.choices
@@ -270,12 +284,31 @@ class UseCase(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(3)]
     )
 
+
     class Meta:
-        unique_together = ('domain_name', 'order')  # Enforce unique order per Name
+        unique_together = (
+            ('domain_name', 'order'),   # Prevent two use cases with same order for a domain
+            ('domain_name', 'slug')     # Prevent duplicate slugs per domain
+        )
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.case_title)
+            # Handle possible duplicate slugs within the same domain
+            slug = base_slug
+            i = 1
+            while UseCase.objects.filter(domain_name=self.domain_name, slug=slug).exists():
+                slug = f"{base_slug}-{i}"
+                i += 1
+            self.slug = slug
+
+        super().save(*args, **kwargs)
+
+
 
     def __str__(self):
-        return f"{self.case_title} for {self.domain}"
-
+        return f"{self.case_title} for {self.domain_name}"
 
 
 # ============================================

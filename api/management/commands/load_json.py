@@ -1,8 +1,14 @@
 import json
 from django.core.management.base import BaseCommand, CommandError
 from django.utils.dateparse import parse_date
-from api.validators import validate_domain_data  # Custom validator function
-from api.models import Name, NameTag, NameCategory, UseCase, DomainListOptions  # Import correct Enum
+from api.management.validators import validate_domain_data  # Custom validator function
+from api.models import Name, NameTag, NameCategory, UseCase, DomainListOptions, RegStatusOptions
+import traceback 
+
+
+
+# Example CLI usage:python manage.py load_json appname/data(a folder in app)/date.json(the exact json file) --drop_date=2025-07-01(a flag) --domain_list=marketplace(another flag)
+
 
 class Command(BaseCommand):
     help = 'Loads domain data from an AI-generated JSON file into the database.'
@@ -63,11 +69,11 @@ class Command(BaseCommand):
         # --- Determine 'status' based on the provided 'domain_list' ---
         # Note: domain_list is guaranteed valid because of 'choices' in add_arguments
         if domain_list == DomainListOptions.PENDING_DELETE:
-            status = Name.RegStatusOptions.PENDING
+            status = RegStatusOptions.PENDING
         elif domain_list == DomainListOptions.MARKETPLACE:
-            status = Name.RegStatusOptions.AVAILABLE
+            status = RegStatusOptions.AVAILABLE
         elif domain_list in [DomainListOptions.ALL_LIST, DomainListOptions.DELETED]:
-            status = Name.RegStatusOptions.PENDING  # Default assumption (can be adjusted if needed)
+            status = RegStatusOptions.PENDING  # Default assumption (can be adjusted if needed)
         else:
             # Safety net: Should never reach here because of argparse validation
             raise CommandError(f"Unexpected domain_list value encountered: {domain_list}")
@@ -136,4 +142,5 @@ class Command(BaseCommand):
             self.stdout.write(self.style.SUCCESS('All domain data loaded successfully.'))
 
         except Exception as e:
+            traceback.print_exc()  # To see full error, if any
             raise CommandError(f"Error loading JSON file: {e}")

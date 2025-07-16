@@ -32,7 +32,7 @@ logger = logging.getLogger(__name__)
 
 
 
-#===================================
+#=================================== 
 # User profile
 #====================================
 class UserProfileView(APIView):
@@ -41,19 +41,52 @@ class UserProfileView(APIView):
 
     def get(self, request):
         user = request.user  # Clerk-authenticated AppUser instance
+        username = getattr(user, 'username', None)  # Safe fallback
         serializer = AppUserSerializer(user)
+        logger.debug(f"Serialized user data: {serializer.data}")
         return Response(serializer.data)
 
-    def patch(self, request):
-        user = request.user
-        serializer = AppUserSerializer(user, data=request.data, partial=True)
+    # def patch(self, request):
+    #     user = request.user  # Your AppUser instance
+    #     data = request.data
 
-        if serializer.is_valid():
-            serializer.save()
-            return Response(serializer.data)
+    #     update_payload = {}
 
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+    #     if "first_name" in data:
+    #         update_payload["first_name"] = data["first_name"]
+    #     if "last_name" in data:
+    #         update_payload["last_name"] = data["last_name"]
+    #     if "email" in data:
+    #         update_payload["email_address"] = data["email"]
 
+    #     try:
+    #         response = requests.patch(
+    #             f"{settings.CLERK_API_BASE_URL}/users/{user.clerk_id}",
+    #             json=update_payload,
+    #             headers={
+    #                 "Authorization": f"Bearer {settings.CLERK_SECRET_KEY}",
+    #                 "Content-Type": "application/json"
+    #             },
+    #             timeout=5
+    #         )
+    #         response.raise_for_status()
+
+    #         # Optionally update your local AppUser model too
+    #         if "first_name" in data:
+    #             user.first_name = data["first_name"]
+    #         if "last_name" in data:
+    #             user.last_name = data["last_name"]
+    #         if "email" in data:
+    #             user.email = data["email"]
+    #         user.save()
+
+    #         return Response({"detail": "Profile updated"}, status=status.HTTP_200_OK)
+
+    #     except requests.RequestException as e:
+    #         return Response(
+    #             {"error": "Failed to update profile", "details": str(e)},
+    #             status=status.HTTP_400_BAD_REQUEST
+    #         )
 
 
 #===================================

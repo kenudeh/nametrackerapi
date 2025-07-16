@@ -28,8 +28,8 @@ class PostRequestThrottle(UserRateThrottle):
 
         return ident_hash
 
-        #If I only want to throttle POST requests (and not GET, PUT, etc.)
-        def allow_request(self, request, view):
-            if request.method != 'POST':
-                return True  # Do not throttle non-POST requests
-            return super().allow_request(request, view)
+    #If I only want to throttle POST requests (and not GET, PUT, etc.)
+    def allow_request(self, request, view):
+        if request.method != 'POST':
+            return True  # Do not throttle non-POST requests
+        return super().allow_request(request, view)

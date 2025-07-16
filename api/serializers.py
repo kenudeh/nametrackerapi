@@ -38,9 +38,8 @@ class AppUserSerializer(serializers.ModelSerializer):
             "first_name",
             "last_name",
             "created_at",
-            "subscription",
         ]
-        read_only_fields = ["clerk_id", "email", "created_at", "subscription"]
+        read_only_fields = ["clerk_id", "email", "created_at"]
 
 
 
@@ -78,7 +77,7 @@ class NameSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Name
-        fields = ['id', 'domain_name', 'extension', 'domain_list', 'status', 'length', 'syllables',
+        fields = ['id', 'domain_name', 'extension', 'domain_list', 'status', 'score', 'length', 'syllables',
                   'competition', 'difficulty', 'suggested_usecase', 'is_top_rated', 'is_favorite',
                   'category', 'tag', 'drop_date', 'drop_time', 'created_at', 'updated_at', 'use_cases']
 
