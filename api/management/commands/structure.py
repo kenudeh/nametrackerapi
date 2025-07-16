@@ -1,14 +1,31 @@
 # Took out the following from the AI prompt:
 
-# extension, 
-# domain_list,  HANDLED
-# status, HANDLED
+# extension, calculated in a model svae() method
+# domain_list,  supplied from input data
+# status, auto-assigned based on domain_list
 # competition, 
 # difficulty, 
 # suggested_usecase, 
 # is_top_rated, 
 # drop_date, (auto-fixed - all names in a batch should share one drop date)
 # drop_time (varies by extension)
+
+
+#If I mistakenly omit a field while loading data from input, run the command below to fix:
+
+#First enter python shell
+python manage.py shell
+#Then, run:
+from api.models import Name
+import json
+
+with open('api/data/15June25.json') as f:
+    data = json.load(f)
+
+for item in data:
+    Name.objects.filter(domain_name=item['domain_name']).update(score=item.get('score'))
+
+
 
 
 

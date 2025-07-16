@@ -113,6 +113,7 @@ class Command(BaseCommand):
                         'domain_list': domain_list,      # From CLI, overrides model default
                         'status': status,                # Derived earlier based on domain_list
                         'category': category_obj,        # From JSON (required key)
+                        'score': item.get('score', None),  # From JSON (required key)
                         # Model will handle calculated and signal fields
                     }
                 )

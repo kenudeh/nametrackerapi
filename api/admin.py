@@ -44,6 +44,7 @@ class NameAdmin(admin.ModelAdmin):
         'score',
         'competition',
         'difficulty',
+        'is_idea_of_the_day',
         'is_top_rated',
         'is_favorite',
         'drop_date',
@@ -54,6 +55,7 @@ class NameAdmin(admin.ModelAdmin):
         'domain_list',
         'status',
         'score',
+        'is_idea_of_the_day',
         'is_top_rated',
         'is_favorite',
         'category', 
@@ -65,17 +67,17 @@ class NameAdmin(admin.ModelAdmin):
     actions = [archive_selected_names]
 
     fieldsets = (
-        (None, {
-            'fields': ('domain_name', 'extension', 'domain_list', 'status')
+        (None, { 
+            'fields': ('domain_name', 'domain_list', 'status')
         }),
         ('Metrics', {
-            'fields': ('competition', 'difficulty', 'is_top_rated', 'is_favorite')
+            'fields': ('competition', 'difficulty', 'is_idea_of_the_day', 'is_top_rated', 'is_favorite')
         }),
         ('Relations', {
             'fields': ('category', 'suggested_usecase')  # Category is FK, suggested_usecase auto-set
         }),
         ('Timing', {
-            'fields': ('drop_date', 'drop_time')
+            'fields': ('drop_date',)
         }),
     )
 
@@ -161,5 +163,5 @@ class NewsLetterAdmin(admin.ModelAdmin):
 
 @admin.register(PublicInquiry)
 class PublicInquiryAdmin(admin.ModelAdmin):
-    list_display = ('name', 'email', 'ip_address', 'created_at')
+    list_display = ('name', 'email', 'message', 'ip_address', 'created_at')
     readonly_fields = ('ip_address', 'created_at', 'updated_at')

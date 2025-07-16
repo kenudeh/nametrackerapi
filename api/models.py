@@ -155,6 +155,7 @@ class Name(models.Model):
         blank=True,
         related_name='suggested_for'
     )
+    is_idea_of_the_day = models.BooleanField(default=False)
     is_top_rated = models.BooleanField(default=False)
     top_rated_date = models.DateField(null=True, blank=True)  # Used to isolate daily top-rated names
     is_favorite = models.BooleanField(default=False)
@@ -208,10 +209,18 @@ class Name(models.Model):
             # Default to timezone.now() if extension not found
             self.drop_time = timezone.now()
 
+        # One-way logic to update is_top_rated when is_idea_of_the_day is True:
+        if self.is_idea_of_the_day:
+            self.is_top_rated = True  # Force consistency
+
+
         super().save(*args, **kwargs)
 
+
+
     def __str__(self):
-        return self.domain_name
+        return f"{self.domain_name} | List: {self.domain_list} | Status: {self.status}"
+
 
 
 
@@ -227,11 +236,11 @@ class NameCategory(models.Model):
     name = models.CharField(
         max_length=50, 
         unique=True,
-        choices=CategoryType.choices,
     )
     
     def __str__(self):
         return self.name
+
 
 
 
@@ -273,7 +282,7 @@ class UseCase(models.Model):
     )
     competition = models.CharField(
         max_length=20,
-        choices=DifficultyType.choices
+        choices=CompetitionType.choices
     )
     target_market = models.CharField(max_length=100)
     revenue_potential = models.CharField(
@@ -454,7 +463,8 @@ class PublicInquiry(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
-        return self.subject
+        first_words = ' '.join(self.message.split()[:10])
+        return f"{self.name} ({self.email}): {first_words}..."
     
     
 
