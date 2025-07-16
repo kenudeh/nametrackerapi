@@ -48,12 +48,6 @@ DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
 DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 
 
-# Clerk 
-CLERK_JWKS_URL = os.getenv("CLERK_JWKS_URL")  
-CLERK_ISSUER = os.getenv("CLERK_ISSUER")      
-CLERK_AUDIENCE = None #os.getenv("CLERK_AUDIENCE")  
-
-
 
 # CUSTOM SERIALIZERS ACTIVATION
 # For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
@@ -204,10 +198,11 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_THROTTLE_CLASSES': [
         'api.throttles.PostRequestThrottle',
-        'rest_framework.throttling.AnonRateThrottle', # optional fallback
+        # 'rest_framework.throttling.AnonRateThrottle', # optional fallback
     ],
     'DEFAULT_THROTTLE_RATES': {
         'post_request': '5/day',  # Allow 5 POST requests per day for public submissions
+        # 'anon': '10000/day',  # basically unlimited
     },
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
@@ -401,22 +396,35 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Cache settings
 REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/1")
 
+# CACHES = {
+#     "default": {
+#         "BACKEND": "django_redis.cache.RedisCache",
+#         "LOCATION": REDIS_URL,
+#         "OPTIONS": {
+#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
+#             # Optional: disable SSL verification in Railway
+#             "SSL_CERT_REQS": None if "railway.app" in REDIS_URL else "required",
+#         },
+#         "KEY_PREFIX": "nametracker_"
+#     }
+# }
+
 CACHES = {
-    "default": {
-        "BACKEND": "django_redis.cache.RedisCache",
-        "LOCATION": REDIS_URL,
-        "OPTIONS": {
-            "CLIENT_CLASS": "django_redis.client.DefaultClient",
-            # Optional: disable SSL verification in Railway
-            "SSL_CERT_REQS": None if "railway.app" in REDIS_URL else "required",
-        },
-        "KEY_PREFIX": "nametracker_"
+    'default': {
+        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
+        'LOCATION': 'clerk-jwks-cache',
     }
 }
 
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+# Clerk 
+CLERK_JWKS_URL=os.getenv("CLERK_JWKS_URL") 
+CLERK_ISSUER=os.getenv("CLERK_ISSUER")      
+CLERK_AUDIENCE=os.getenv("CLERK_AUDIENCE") or None
+CLERK_API_BASE_URL = os.getenv("CLERK_API_BASE_URL")
+CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
+
 
 
 
@@ -427,6 +435,12 @@ CELERY_TASK_SERIALIZER = 'json'
 
 # CELERY BEAT SETTINGS
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 
 # Logging Setup
 LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
@@ -479,7 +493,13 @@ LOGGING = {
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
+            'level': 'DEBUG',  # <- change from WARNING to DEBUG (Remove later as it's for seeing debug errors in the console during dev)
         },
+    },
+
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',  # <- important (Remove block entirely later as it's for seeing debug errors in the console during dev))
     },
 
     'loggers': {
