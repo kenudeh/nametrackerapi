@@ -6,12 +6,18 @@ from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
 from rest_framework import status
 from django.shortcuts import get_object_or_404
-from .models import Name, NewsLetter, PublicInquiry
-from .serializers import NameSerializer, AppUserSerializer, NewsletterSerializer, PublicInquirySerializer
+from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName
+from .serializers import NameSerializer, AppUserSerializer, SavedNameSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
 from .permissions import IsManagerOrReadOnly
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
+from rest_framework.pagination import LimitOffsetPagination
+from django.utils.dateparse import parse_date
+from django.db.models import Q
+
+from rest_framework import filters # Can be more explicitly done and avoid using filters. prefix by switching to "from rest_framework.filters import OrderingFilter, SearchFilter"
+from django_filters.rest_framework import DjangoFilterBackend
 
 
 #Imports for google login view
@@ -136,6 +142,117 @@ class NameDeleteAPIView(APIView):
         name = get_object_or_404(Name, pk=pk)
         name.delete()
         return Response(status=status.HTTP_204_NO_CONTENT)
+
+
+
+
+
+#===============================================================================
+# Shared Mixin for views needing Pagination and Optonal filtering by date range
+#===============================================================================
+class DateRangePaginationMixin:
+    """
+    Reusable mixin for views that need:
+    - Pagination
+    - Optional filtering by start_date and end_date query params
+    """
+    def filter_by_date_range(self, queryset, request):
+        start_date_param = request.query_params.get('start_date')
+        end_date_param = request.query_params.get('end_date')
+
+        if start_date_param:
+            start_date = parse_date(start_date_param)
+            if start_date:
+                queryset = queryset.filter(created_at__date__gte=start_date)
+
+        if end_date_param:
+            end_date = parse_date(end_date_param)
+            if end_date:
+                queryset = queryset.filter(created_at__date__lte=end_date)
+
+        return queryset
+
+    def paginate(self, queryset, request, serializer_class):
+        paginator = LimitOffsetPagination()
+        paginated_qs = paginator.paginate_queryset(queryset, request)
+        return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+
+
+
+#===================================
+# SavedNames views
+#====================================
+class SavedNameView(APIView, DateRangePaginationMixin):
+    authentication_classes = [ClerkJWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    serializer_class = SavedNameSerializer
+    queryset = SavedName.objects.all()
+
+
+    # Enable filter and search backend for better UX
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend]
+    # Allow filtering by these fields
+    filterset_fields = ['domain_name', 'domain_list', 'status', 'created_at']  # 'name' maps to 'domain'
+    # Allow ordering by query string (like ?ordering=domain_name, etc)
+    ordering_fields = ['domain_name', 'domain_list', 'status', 'created_at']
+    ordering = ['-created_at', 'domain_name']  # Default ordering
+    search_fields = ['name__domain_name', 'name__competition', 'name__difficulty', 'name__suggested_usecase', 'name__category', 'name__tag']
+
+   
+    def get(self, request):
+        saved_qs = SavedName.objects.filter(user=request.user).select_related("name")
+        saved_qs = self.filter_by_date_range(saved_qs, request)
+        return self.paginate(saved_qs, request, SavedNameSerializer)
+
+
+    def post(self, request):
+        name_id = request.data.get("name_id")
+        if not name_id:
+            return Response({"error": "Missing name_id"}, status=status.HTTP_400_BAD_REQUEST)
+
+        try:
+            name = Name.objects.get(id=name_id)
+        except Name.DoesNotExist:
+            return Response({"error": "Invalid name_id"}, status=status.HTTP_404_NOT_FOUND)
+
+        saved, created = SavedName.objects.get_or_create(user=request.user, name=name)
+        if not created:
+            saved.delete()
+            return Response({"message": "Name unsaved"}, status=status.HTTP_200_OK)
+        return Response({"message": "Name saved"}, status=status.HTTP_201_CREATED)
+
+
+
+
+
+
+#===================================
+# AcquiredNames views
+#====================================
+class AcquiredNameView(APIView, DateRangePaginationMixin):
+    authentication_classes = [ClerkJWTAuthentication]
+    permission_classes = [IsAuthenticated]
+    serializer_class = AcquiredNameSerializer
+    queryset = AcquiredName.objects.all()
+
+    # Enable filter and search backend for better UX
+    filter_backends = [filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend]
+    # Allow filtering by these fields
+    filterset_fields = ['domain_name', 'domain_list', 'status', 'created_at']  # 'name' maps to 'domain'
+    # Allow ordering by query string (like ?ordering=domain_name, etc)
+    ordering_fields = ['domain_name', 'domain_list', 'status', 'created_at']
+    ordering = ['-created_at', 'domain_name']  # Default ordering
+    search_fields = ['name__domain_name', 'name__competition', 'name__difficulty', 'name__suggested_usecase', 'name__category', 'name__tag']
+
+
+
+    def get(self, request):
+        acquired_qs = AcquiredName.objects.filter(user=request.user).select_related("name")
+        acquired_qs = self.filter_by_date_range(acquired_qs, request)
+        return self.paginate(acquired_qs, request, AcquiredNameSerializer)
+
+
+
 
 
 

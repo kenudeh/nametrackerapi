@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Importing dj-rest default login serializer
 # from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription, NewsLetter, PublicInquiry
+from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
 import re
 
 
@@ -63,10 +63,19 @@ class NameCategorySerializer(serializers.ModelSerializer):
         model = NameCategory
         fields = ['id', 'name']
 
+
+
+
 class UseCaseSerializer(serializers.ModelSerializer):
+    domain_name = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='domain_name'  # This is the field in the Name model to display
+    )
+    
+
     class Meta:
         model = UseCase
-        fields = ['id', 'case_title', 'description', 'difficulty', 'competition', 'target_market', 'revenue_potential', 'order']
+        fields = ['id', 'domain_name', 'case_title', 'slug', 'description', 'difficulty', 'competition', 'target_market', 'revenue_potential', 'order']
 
 
 
@@ -74,6 +83,8 @@ class NameSerializer(serializers.ModelSerializer):
     tag = NameTagSerializer(many=True)
     category = NameCategorySerializer()
     use_cases = UseCaseSerializer(many=True, source='use_cases_domain')
+    suggested_usecase = UseCaseSerializer(read_only=True)
+
 
     class Meta:
         model = Name
@@ -140,6 +151,31 @@ class NameSerializer(serializers.ModelSerializer):
         if len(value) > 3:
             raise serializers.ValidationError("A maximum of 3 use cases are allowed.")
         return value
+
+
+
+# ============================================
+# Acquired Names Serializer
+# ============================================
+class AcquiredNameSerializer(serializers.ModelSerializer):
+    name = NameSerializer(read_only=True)  # Embed the full name details
+
+    class Meta:
+        model = AcquiredName
+        fields = ['id', 'name', 'created_at']
+
+
+
+# ============================================
+# Saved Names Serializer
+# ============================================
+class SavedNameSerializer(serializers.ModelSerializer):
+    name = NameSerializer(read_only=True)  # Embed the full name details
+
+    class Meta:
+        model = SavedName
+        fields = ['id', 'name', 'created_at']
+
 
 
 

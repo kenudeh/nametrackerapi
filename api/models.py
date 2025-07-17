@@ -360,27 +360,36 @@ class ArchivedName(models.Model):
 # ============================================
 # Saved Names
 # ============================================
-class SavedNames(models.Model):
+class SavedName(models.Model):
     user = models.ForeignKey(AppUser, related_name='saved_names', on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    name = models.ForeignKey(Name, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
+    class Meta:
+            unique_together = ('user', 'name')
+   
     def __str__(self):
-        return self.user
+        return f"User: {self.user} | Name: {self.name} | Created at: {self.created_at} "
+
+        
+
 
 
 # ============================================
 # Acquired Names
 # ============================================
-class AcquiredNames(models.Model):
+class AcquiredName(models.Model):
     user = models.ForeignKey(AppUser, related_name='acquired_names', on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    name = models.ForeignKey(Name, on_delete=models.CASCADE)
     acquired_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+            unique_together = ('user', 'name')
 
+            
     def __str__(self):
-        return self.user
+        return f"User: {self.user} | Name: {self.name} | Created at: {self.created_at} "
+
 
 
 
