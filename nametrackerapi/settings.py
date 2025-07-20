@@ -109,7 +109,7 @@ CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
 CSRF_USE_SESSIONS = False
 
 
-
+ 
 #CORS settings
 CORS_ALLOW_CREDENTIALS = True # Required for cookies
 CORS_ALLOWED_ORIGINS = get_list_env("DJANGO_CORS_ALLOWED_ORIGINS")

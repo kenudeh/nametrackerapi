@@ -1,3 +1,55 @@
+#  List Names  (with pagination, filters, search)
+## /names
+
+### GET
+ sample url: GET /names?search=tech&ordering=-score&page=2
+
+Response body:
+{
+  "count": 103,
+  "next": "...",
+  "previous": "...",
+  "results": [
+    {
+      "id": 17,
+      "domain_name": "TechGuru.co",
+      ...
+      "saved": true
+    },
+    ...
+  ]
+}
+
+
+# Get Name Details
+GET /names/17
+
+Sample response:
+{
+  "id": 17,
+  "domain_name": "TechGuru.co",
+  ...
+  "saved": true
+}
+
+
+
+
+
+
+# Toggle Save
+POST /names/17/toggle-save
+
+First call (saves):
+→ { "saved": true }
+
+Second call (unsaves):
+→ { "saved": false }
+
+
+
+
+
 ## /api/saved-names
 
 ### POST

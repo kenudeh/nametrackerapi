@@ -4,10 +4,9 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.throttling import UserRateThrottle
 from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
-from rest_framework import status
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName
-from .serializers import NameSerializer, AppUserSerializer, SavedNameSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
 from .permissions import IsManagerOrReadOnly
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
@@ -16,7 +15,7 @@ from rest_framework.pagination import LimitOffsetPagination
 from django.utils.dateparse import parse_date
 from django.db.models import Q
 
-from rest_framework import filters # Can be more explicitly done and avoid using filters. prefix by switching to "from rest_framework.filters import OrderingFilter, SearchFilter"
+from rest_framework import filters, generics, status # Filters import can be more explicitly done and avoid using filters. prefix by switching to "from rest_framework.filters import OrderingFilter, SearchFilter"
 from django_filters.rest_framework import DjangoFilterBackend
 
 
@@ -98,21 +97,31 @@ class UserProfileView(APIView):
 #===================================
 # Name views
 #====================================
-class NameListAPIView(APIView):
+class NameListAPIView(generics.ListAPIView):
+    queryset = Name.objects.all()
+    serializer_class = NameSerializer
     permission_classes = [IsAuthenticated]
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
+    filterset_fields = ['category__name', 'extension', 'is_top_rated', 'is_idea_of_the_day']
+    ordering_fields = ['score', 'length', 'created_at']
+    search_fields = ['domain_name', 'tag__name', 'category__name']
 
-    def get(self, request):
-        names = Name.objects.all()
-        serializer = NameSerializer(names, many=True)
-        return Response(serializer.data)
+    def get_serializer_context(self):
+        context = super().get_serializer_context()
+        context['request'] = self.request  # Needed to compute saved status
+        return context
+
+
 
 class NameDetailAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
     def get(self, request, pk):
         name = get_object_or_404(Name, pk=pk)
-        serializer = NameSerializer(name)
+        serializer = NameSerializer(name, context={'request': request})
         return Response(serializer.data)
+
+
 
 class NameCreateAPIView(APIView):
     permission_classes = [IsAuthenticated]
@@ -145,6 +154,22 @@ class NameDeleteAPIView(APIView):
 
 
 
+# View for toggling a SavedName instance for the current user and given domain ID.
+class ToggleSavedNameView(APIView):
+    permission_classes = [IsAuthenticated]
+
+    def post(self, request, name_id):
+        name = get_object_or_404(Name, id=name_id)
+        user = request.user
+
+        saved_obj = SavedName.objects.filter(user=user, name=name).first()
+
+        if saved_obj:
+            saved_obj.delete()
+            return Response({'saved': False}, status=status.HTTP_200_OK)
+        else:
+            SavedName.objects.create(user=user, name=name)
+            return Response({'saved': True}, status=status.HTTP_201_CREATED)
 
 
 #===============================================================================
@@ -182,48 +207,26 @@ class DateRangePaginationMixin:
 #===================================
 # SavedNames views
 #====================================
-class SavedNameView(APIView, DateRangePaginationMixin):
+class SavedNameListView(APIView, DateRangePaginationMixin):
     authentication_classes = [ClerkJWTAuthentication]
     permission_classes = [IsAuthenticated]
-    serializer_class = SavedNameSerializer
-    queryset = SavedName.objects.all()
+    serializer_class = SavedNameLightSerializer
 
-
-    # Enable filter and search backend for better UX
+    # Search and filtering setup
     filter_backends = [filters.OrderingFilter, filters.SearchFilter, DjangoFilterBackend]
-    # Allow filtering by these fields
-    filterset_fields = ['domain_name', 'domain_list', 'status', 'created_at']  # 'name' maps to 'domain'
-    # Allow ordering by query string (like ?ordering=domain_name, etc)
-    ordering_fields = ['domain_name', 'domain_list', 'status', 'created_at']
-    ordering = ['-created_at', 'domain_name']  # Default ordering
-    search_fields = ['name__domain_name', 'name__competition', 'name__difficulty', 'name__suggested_usecase', 'name__category', 'name__tag']
+    filterset_fields = ['name__domain_name', 'name__domain_list', 'name__status', 'name__created_at']
+    ordering_fields = ['name__domain_name', 'name__domain_list', 'name__status', 'name__created_at']
+    ordering = ['-name__created_at', 'name__domain_name']
+    search_fields = [
+        'name__domain_name', 'name__competition', 'name__difficulty',
+        'name__suggested_usecase', 'name__category', 'name__tag'
+    ]
 
-   
+
     def get(self, request):
         saved_qs = SavedName.objects.filter(user=request.user).select_related("name")
         saved_qs = self.filter_by_date_range(saved_qs, request)
-        return self.paginate(saved_qs, request, SavedNameSerializer)
-
-
-    def post(self, request):
-        name_id = request.data.get("name_id")
-        if not name_id:
-            return Response({"error": "Missing name_id"}, status=status.HTTP_400_BAD_REQUEST)
-
-        try:
-            name = Name.objects.get(id=name_id)
-        except Name.DoesNotExist:
-            return Response({"error": "Invalid name_id"}, status=status.HTTP_404_NOT_FOUND)
-
-        saved, created = SavedName.objects.get_or_create(user=request.user, name=name)
-        if not created:
-            saved.delete()
-            return Response({"message": "Name unsaved"}, status=status.HTTP_200_OK)
-        return Response({"message": "Name saved"}, status=status.HTTP_201_CREATED)
-
-
-
-
+        return self.paginate(saved_qs, request, self.serializer_class)
 
 
 #===================================
