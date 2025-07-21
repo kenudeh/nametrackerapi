@@ -5,12 +5,20 @@ from . import views
 
 
 urlpatterns = [
+    # Full name list
     path('names', views.NameListAPIView.as_view(), name='name-list'),
+    # Name detail
     path('names/<int:pk>', views.NameDetailAPIView.as_view(), name='name-detail'),
     path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
     path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
     path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
+    # User profile
     path('user/profile', views.UserProfileView.as_view(), name='user-profile'),
+    # Toggling saved status
+    path('names/<int:name_id>/toggle-save/', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),
+    # Full saved name list
+    path('saved-names', views.SavedNameListView.as_view(), name='saved-names'),
+    path('acquired-names', views.AcquiredNameView.as_view(), name='saved-names'),
 
 
     #Public paths

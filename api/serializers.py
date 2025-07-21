@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Importing dj-rest default login serializer
 # from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription, NewsLetter, PublicInquiry
+from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
 import re
 
 
@@ -63,10 +63,19 @@ class NameCategorySerializer(serializers.ModelSerializer):
         model = NameCategory
         fields = ['id', 'name']
 
+
+
+
 class UseCaseSerializer(serializers.ModelSerializer):
+    domain_name = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='domain_name'  # This is the field in the Name model to display
+    )
+    
+
     class Meta:
         model = UseCase
-        fields = ['id', 'case_title', 'description', 'difficulty', 'competition', 'target_market', 'revenue_potential', 'order']
+        fields = ['id', 'domain_name', 'case_title', 'slug', 'description', 'difficulty', 'competition', 'target_market', 'revenue_potential', 'order']
 
 
 
@@ -74,12 +83,23 @@ class NameSerializer(serializers.ModelSerializer):
     tag = NameTagSerializer(many=True)
     category = NameCategorySerializer()
     use_cases = UseCaseSerializer(many=True, source='use_cases_domain')
+    suggested_usecase = UseCaseSerializer(read_only=True)
+    saved = serializers.SerializerMethodField()
+
 
     class Meta:
         model = Name
         fields = ['id', 'domain_name', 'extension', 'domain_list', 'status', 'score', 'length', 'syllables',
-                  'competition', 'difficulty', 'suggested_usecase', 'is_top_rated', 'is_favorite',
-                  'category', 'tag', 'drop_date', 'drop_time', 'created_at', 'updated_at', 'use_cases']
+                  'competition', 'difficulty', 'suggested_usecase','is_idea_of_the_day', 'is_top_rated', 'is_favorite',
+                  'category', 'tag', 'drop_date', 'drop_time', 'created_at', 'updated_at', 'use_cases', 'saved'
+        ]
+
+    # Dynamically checks if the current user has saved the name.
+    def get_saved(self, obj):
+        request = self.context.get('request')
+        if request and request.user.is_authenticated:
+            return obj.savedname_set.filter(user=request.user).exists()
+        return False
 
     def create(self, validated_data):
         tag_data = validated_data.pop('tag')
@@ -141,6 +161,51 @@ class NameSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("A maximum of 3 use cases are allowed.")
         return value
 
+
+
+# ============================================
+# Acquired Names Serializer
+# ============================================
+class AcquiredNameSerializer(serializers.ModelSerializer):
+    name = NameSerializer(read_only=True)  # Embed the full name details
+
+    class Meta:
+        model = AcquiredName
+        fields = ['id', 'name', 'created_at']
+
+
+
+# ============================================
+# Saved Names Serializer
+# ============================================
+class SavedNameLightSerializer(serializers.ModelSerializer):
+    domain_name = serializers.CharField(source='name.domain_name')
+    domain_list = serializers.CharField(source='name.domain_list')
+    status = serializers.CharField(source='name.status')
+    created_at = serializers.DateTimeField(source='name.created_at')
+    saved = serializers.SerializerMethodField()
+
+    class Meta:
+        model = SavedName
+        fields = ['id', 'domain_name', 'domain_list', 'status', 'created_at', 'saved']
+
+    def get_saved(self, obj):
+        return True  # Always True because it's from the saved names list
+
+
+
+# class SavedNameSerializer(serializers.ModelSerializer):
+#     name = NameSerializer(read_only=True)  # Embed the full name details
+#     saved = serializers.SerializerMethodField() # Anotating the saved field instead of creating a method field
+
+
+#     class Meta:
+#         model = SavedName
+#         fields = ['id', 'name', 'created_at', 'saved']
+
+    
+#     def get_saved(self, obj):
+#         return True  # Since it's from the SavedName model, it's always saved
 
 
 # ============================================

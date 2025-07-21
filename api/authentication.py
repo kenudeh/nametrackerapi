@@ -46,9 +46,10 @@ class ClerkJWTAuthentication(BaseAuthentication):
         token = auth_header.split(" ")[1].strip()
 
         try:
-            # Decode without verification for debugging purposes
-            unverified = jwt.decode(token, options={"verify_signature": False})
-            logger.debug(f"Token claims (unverified): {unverified}")
+            # if settings.debug:
+            #     # Decode without verification for debugging purposes
+            #     unverified = jwt.decode(token, options={"verify_signature": False})
+            #     logger.debug(f"Token claims (unverified): {unverified}")
 
             # Get the signing key from Clerk
             signing_key = self.jwks_client.get_signing_key_from_jwt(token).key

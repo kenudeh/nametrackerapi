@@ -109,7 +109,7 @@ CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
 CSRF_USE_SESSIONS = False
 
 
-
+ 
 #CORS settings
 CORS_ALLOW_CREDENTIALS = True # Required for cookies
 CORS_ALLOWED_ORIGINS = get_list_env("DJANGO_CORS_ALLOWED_ORIGINS")
@@ -198,7 +198,7 @@ REST_FRAMEWORK = {
         'api.authentication.ClerkJWTAuthentication', #my custom auth class defined in authentication.py 
     ),
     "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAuthenticated",  # Change to `AllowAny` for open access
+        "rest_framework.permissions.IsAuthenticated", 
     ),
     'DEFAULT_THROTTLE_CLASSES': [
         'api.throttles.PostRequestThrottle',
@@ -208,6 +208,8 @@ REST_FRAMEWORK = {
         'post_request': '5/day',  # Allow 5 POST requests per day for public submissions
         # 'anon': '10000/day',  # basically unlimited
     },
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
 

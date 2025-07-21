@@ -1,0 +1,251 @@
+[
+  {
+    "domain_name": "PlantMate.ai",
+    "score": 7,
+    "category": {
+      "name": "AgriTech & IoT"
+    },
+    "tag": [
+      { "name": "agriculture" },
+      { "name": "automation" },
+      { "name": "smart devices" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "AI-Driven Plant Care Assistant",
+        "description": "A smart assistant that helps users monitor plant health using sensors and image recognition to recommend care actions.",
+        "difficulty": "moderate",
+        "competition": "low",
+        "target_market": "indoor plant owners, nurseries, smart home enthusiasts",
+        "revenue_potential": "medium",
+        "order": 1
+      },
+      {
+        "case_title": "Greenhouse Monitoring SaaS",
+        "description": "A sensor-integrated platform that automates irrigation, humidity, and light conditions in greenhouses using AI.",
+        "difficulty": "hard",
+        "competition": "medium",
+        "target_market": "commercial growers, agri-tech startups",
+        "revenue_potential": "high",
+        "order": 2
+      },
+      {
+        "case_title": "Plant Disease Detection API",
+        "description": "An API that can be integrated into apps or devices to detect common plant diseases from leaf images.",
+        "difficulty": "moderate",
+        "competition": "low",
+        "target_market": "gardening apps, farming platforms, device manufacturers",
+        "revenue_potential": "medium",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "TeraHealth.co",
+    "score": 8,
+    "category": {
+      "name": "Health & Wellness"
+    },
+    "tag": [
+      { "name": "telehealth" },
+      { "name": "data insights" },
+      { "name": "healthcare SaaS" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "Healthcare Data Platform",
+        "description": "A SaaS solution for clinics and hospitals to manage patient records, visualize health trends, and gain insights from patient data.",
+        "difficulty": "high",
+        "competition": "medium",
+        "target_market": "clinics, hospitals, private practices",
+        "revenue_potential": "high",
+        "order": 1
+      },
+      {
+        "case_title": "Remote Health Monitoring Dashboard",
+        "description": "A system for monitoring chronic conditions and syncing data from wearables into one health dashboard.",
+        "difficulty": "moderate",
+        "competition": "high",
+        "target_market": "patients, remote care providers, insurance firms",
+        "revenue_potential": "medium",
+        "order": 2
+      },
+      {
+        "case_title": "HIPAA-Compliant Communication Suite",
+        "description": "Secure messaging and file sharing for medical teams and patients.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "target_market": "digital health startups, private clinics",
+        "revenue_potential": "medium",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "DeepBase.co",
+    "score": 8,
+    "category": {
+      "name": "AI & Developer Tools"
+    },
+    "tag": [
+      { "name": "machine learning" },
+      { "name": "data infrastructure" },
+      { "name": "analytics" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "Model Training & Experimentation Platform",
+        "description": "A SaaS for tracking, managing, and evaluating deep learning experiments in a collaborative environment.",
+        "difficulty": "high",
+        "competition": "medium",
+        "target_market": "ML engineers, AI startups, research labs",
+        "revenue_potential": "high",
+        "order": 1
+      },
+      {
+        "case_title": "AI Dataset Management Tool",
+        "description": "A structured way to upload, tag, version, and explore datasets used in training AI models.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "target_market": "AI teams, data scientists, academic institutions",
+        "revenue_potential": "medium",
+        "order": 2
+      },
+      {
+        "case_title": "Inference and Deployment Tracker",
+        "description": "Monitor and manage deployed AI models with real-time performance analytics.",
+        "difficulty": "high",
+        "competition": "medium",
+        "target_market": "enterprise AI teams, SaaS providers",
+        "revenue_potential": "medium",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "HairNova.co",
+    "score": 7,
+    "category": {
+      "name": "Beauty & Lifestyle"
+    },
+    "tag": [
+      { "name": "AI personalization" },
+      { "name": "beauty SaaS" },
+      { "name": "salon tools" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "AI Hair Style Try-On App",
+        "description": "A virtual hair styling experience using augmented reality and AI personalization.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "target_market": "salons, beauty influencers, ecommerce apps",
+        "revenue_potential": "medium",
+        "order": 1
+      },
+      {
+        "case_title": "Salon Client Management Platform",
+        "description": "A SaaS product for booking, CRM, and loyalty management tailored to salons and hairstylists.",
+        "difficulty": "moderate",
+        "competition": "high",
+        "target_market": "salons, freelancers, beauty chains",
+        "revenue_potential": "medium",
+        "order": 2
+      },
+      {
+        "case_title": "Haircare Routine Optimizer",
+        "description": "An AI-driven tool that builds personalized routines based on user profile and hair data.",
+        "difficulty": "easy",
+        "competition": "medium",
+        "target_market": "haircare brands, ecommerce platforms",
+        "revenue_potential": "medium",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "PushToTalk.io",
+    "score": 8,
+    "category": {
+      "name": "Real-time Communication"
+    },
+    "tag": [
+      { "name": "voice" },
+      { "name": "real-time" },
+      { "name": "collaboration" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "Browser-Based Voice Messaging for Remote Teams",
+        "description": "Slack-like push-to-talk messaging for async audio communication across teams, with threading and transcription features.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "target_market": "distributed teams, freelancers, remote-first companies",
+        "revenue_potential": "medium",
+        "order": 1
+      },
+      {
+        "case_title": "Emergency Dispatch Voice SaaS",
+        "description": "Secure voice dispatch and coordination platform for emergency, medical, and delivery teams using push-to-talk architecture.",
+        "difficulty": "hard",
+        "competition": "low",
+        "target_market": "EMS units, logistics firms, field services",
+        "revenue_potential": "high",
+        "order": 2
+      },
+      {
+        "case_title": "SDK-Based Voice Integration for Games & Apps",
+        "description": "A developer SDK that adds push-to-talk functionality to gaming or productivity apps with minimal setup.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "target_market": "indie game devs, productivity app builders",
+        "revenue_potential": "medium",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "FreeBlog.io",
+    "score": 7,
+    "category": {
+      "name": "Content & Publishing"
+    },
+    "tags": [
+      { "name": "blog platform" },
+      { "name": "cms" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "Hosted Blogging SaaS",
+        "description": "A no‑code, hosted blog platform with easy setup, analytics, and custom domains.",
+        "difficulty": "moderate",
+        "competition": "high",
+        "target_market": "personal bloggers, niche writers, small businesses",
+        "revenue_potential": "medium",
+        "order": 1
+      }
+    ]
+  },
+  {
+    "domain_name": "SocialScrub.io",
+    "score": 6,
+    "category": {
+      "name": "Social Media Tools"
+    },
+    "tags": [
+      { "name": "automation" },
+      { "name": "social cleanup" }
+    ],
+    "use_cases": [
+      {
+        "case_title": "Social Account Cleaner",
+        "description": "A SaaS that helps users archive, delete, or clean up old posts and followers across social networks.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "target_market": "influencers, personal brands, marketing consultants",
+        "revenue_potential": "medium",
+        "order": 1
+      }
+    ]
+  }
+]

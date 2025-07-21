@@ -1,1 +1,276 @@
- 
+[
+    {
+      "domain_name": "AutoScan.co",
+      "score": 8,
+      "category": {
+        "name": "Document Automation"
+      },
+      "tag": [
+        {"name": "AI"},
+        {"name": "enterprise"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Automated Compliance Scanning",
+          "description": "AI-driven SaaS that scans contracts and legal documents for compliance risks in real-time.",
+          "difficulty": "hard",
+          "competition": "medium",
+          "target_market": "legal teams, enterprises, fintech",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Medical Record Digitization",
+          "description": "HIPAA-compliant tool for clinics to auto-scan and structure patient records into EHR systems.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "healthcare providers, medical scribes",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "FileKit.io",
+      "score": 9,
+      "category": {
+        "name": "Developer Infrastructure"
+      },
+      "tag": [
+        {"name": "APIs"},
+        {"name": "cloud"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Embedded File Storage for SaaS",
+          "description": "Drop-in SDK for SaaS platforms to add secure user file storage without managing infrastructure.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "SaaS startups, indie developers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Asset Pipeline for Web Apps",
+          "description": "Automated image/video compression, CDN upload, and responsive variant generation for dev teams.",
+          "difficulty": "moderate",
+          "competition": "low",
+          "target_market": "web agencies, app developers",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {   
+      "domain_name": "InsertAi.co",
+
+      "score": 8,
+      "category": {
+        "name": "AI Integration"
+      },
+      "tag": [
+        {"name": "workflow automation"},
+        {"name": "no-code"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Drag-and-Drop AI Workflow Builder",
+          "description": "SaaS that lets non-technical teams embed AI (e.g., GPT, Claude) into business processes without coding.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "operations teams, SMBs, agencies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "AI Model Orchestration for Enterprises",
+          "description": "Unified platform to deploy, switch, and monitor multiple LLMs across company workflows.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "CTOs, AI product teams",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "WebGuard.ai",
+      "score": 8,
+      "category": {
+        "name": "Cybersecurity"
+      },
+      "tag": [
+        {"name": "automation"},
+        {"name": "compliance"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "AI Website Threat Monitoring",
+          "description": "Real-time malware/DDoS protection with automated patching for SMB websites.",
+          "difficulty": "hard",
+          "competition": "high",
+          "target_market": "web agencies, SMBs, hosting providers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "GDPR Compliance Scanner",
+          "description": "Automatically detects and fixes privacy violations (e.g., cookie consent, data leaks).",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "EU-based e-commerce, SaaS companies",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "API Security Auditor",
+          "description": "Identifies vulnerabilities in API endpoints and suggests hardening measures.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "developers, fintech startups",
+          "revenue_potential": "high",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "domain_name": "RemoteAgent.io",
+      "score": 8,
+      "category": {
+        "name": "HR Tech"
+      },
+      "tag": [
+        {"name": "recruiting"},
+        {"name": "async work"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "AI Recruitment Coordinator",
+          "description": "Automates interview scheduling, candidate screening, and feedback collection.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "HR teams, remote-first companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Virtual Onboarding Assistant",
+          "description": "Guides new hires through paperwork, training, and team introductions via chat.",
+          "difficulty": "easy",
+          "competition": "low",
+          "target_market": "enterprises, distributed teams",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "AptChat.ai",
+      "score": 9,
+      "category": {
+        "name": "Real Estate Tech"
+      },
+      "tag": [
+        {"name": "automation"},
+        {"name": "conversational AI"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "AI Leasing Agent",
+          "description": "Handles rental inquiries, screens tenants, and schedules viewings 24/7.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "property managers, landlords",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Homebuyer Qualification Bot",
+          "description": "Pre-qualifies mortgage applicants via chat and connects them to realtors.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "real estate agencies, mortgage brokers",
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "HOA Communication Platform",
+          "description": "Automates resident queries, violation reporting, and meeting scheduling for HOAs.",
+          "difficulty": "easy",
+          "competition": "low",
+          "target_market": "homeowner associations, property developers",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+        {
+      "domain_name": "StudyCopilot.io",
+      "score": 8,
+      "category": {"name": "EdTech"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "LMS"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Study Analytics",
+          "description": "Tracks student engagement with materials and predicts at-risk learners for educators.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "universities, online course platforms",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "JobChat.io",
+      "score": 9,
+      "category": {"name": "HR Tech"},
+      "tag": [
+        {"name": "recruiting"},
+        {"name": "automation"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Async Video Interview Platform",
+          "description": "Candidates record responses to custom questions; AI scores and ranks them for recruiters.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "tech recruiters, hiring agencies",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "QuickLog.io",
+      "score": 7,
+      "category": {"name": "DevOps"},
+      "tag": [
+        {"name": "monitoring"},
+        {"name": "debugging"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Lightweight Error Tracking SaaS",
+          "description": "Simple API to capture and categorize application errors with minimal setup.",
+          "difficulty": "easy",
+          "competition": "high",
+          "target_market": "indie developers, startups",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "User Behavior Logger",
+          "description": "Privacy-focused tool to record key user flows for product analytics.",
+          "difficulty": "moderate",
+          "competition": "low",
+          "target_market": "product managers, UX teams",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    }
+]
