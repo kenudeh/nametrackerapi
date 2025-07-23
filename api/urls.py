@@ -15,7 +15,7 @@ urlpatterns = [
     # User profile
     path('user/profile', views.UserProfileView.as_view(), name='user-profile'),
     # Toggling saved status
-    path('names/<int:name_id>/toggle-save/', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),
+    path('names/<int:name_id>/toggle-save', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),
     # Full saved name list
     path('saved-names', views.SavedNameListView.as_view(), name='saved-names'),
     path('acquired-names', views.AcquiredNameView.as_view(), name='saved-names'),

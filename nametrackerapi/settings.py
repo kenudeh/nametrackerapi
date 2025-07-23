@@ -345,12 +345,35 @@ WSGI_APPLICATION = 'nametrackerapi.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
-        conn_max_age=600,
-        ssl_require=True
-    )
+# DATABASES = {
+#     "default": dj_database_url.config(
+#         default=os.getenv("DATABASE_URL"),
+#         conn_max_age=600,
+#         ssl_require=True
+#     )
+# }
+
+
+
+if os.getenv("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.getenv("DATABASE_URL"),
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("LOCAL_DB_NAME"),
+            "USER": os.getenv("LOCAL_DB_USER"),
+            "PASSWORD": os.getenv("LOCAL_DB_PASSWORD"),
+            "HOST": os.getenv("LOCAL_DB_HOST"),
+            "PORT": os.getenv("LOCAL_DB_PORT"),
+            "CONN_MAX_AGE": 600,
+        }
 }
 
 

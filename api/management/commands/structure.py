@@ -1,33 +1,3 @@
-# Took out the following from the AI prompt:
-
-# extension, calculated in a model svae() method
-# domain_list,  supplied from input data
-# status, auto-assigned based on domain_list
-# competition, 
-# difficulty, 
-# suggested_usecase, 
-# is_top_rated, 
-# drop_date, (auto-fixed - all names in a batch should share one drop date)
-# drop_time (varies by extension)
-
-
-#If I mistakenly omit a field while loading data from input, run the command below to fix:
-
-#First enter python shell
-python manage.py shell
-#Then, run:
-from api.models import Name
-import json
-
-with open('api/data/15June25.json') as f:
-    data = json.load(f)
-
-for item in data:
-    Name.objects.filter(domain_name=item['domain_name']).update(score=item.get('score'))
-
-
-
-
 
 #LLM Prompt
 You are a senior SaaS strategist and naming analyst. Your job is to critically evaluate a batch of domain names and return only those that are viable for building a SaaS (Software-as-a-Service) business.
@@ -81,6 +51,14 @@ For each valid domain name, return a JSON object in the following structure:
 
 Additional requirements:
 
+For categories:
+1. AI, ML & Data Intelligence – Use this category only for tools that focus on core AI, machine learning, or data intelligence workflows, such as model training, data labeling, or AI infrastructure. Do not assign this category to general-purpose tools that simply use AI features.
+
+2. Tech, Internet, Software – Use this as a fallback category when no other existing category naturally fits the tool or idea.
+
+3. Multiple-Fit Tools – If a tool appears to fit into more than one category, assign the single category that best reflects its primary purpose. Then, use the other relevant categories as tags to improve discoverability without creating overlap in the main classification.
+
+
 The score field must reflect the domain name’s SaaS viability — consider brandability, memorability, professional tone, and ability to support multiple strong product ideas.
 
 Each use_case must be realistic, not generic, and tied to a clearly defined problem and audience.
@@ -90,6 +68,28 @@ The order field ranks the use cases by business potential: 1 = best fit for the 
 Only include domains that confidently pass this test. Do not mention rejected ones.
 
 You may be given up to 20 domain names in one batch. Return them in a "domains" array as shown above.
+
+
+
+
+
+
+
+#If I mistakenly omit a field while loading data from input, run the command below to fix:
+
+#First enter python shell
+python manage.py shell
+#Then, run:
+from api.models import Name
+import json
+
+with open('api/data/15June25.json') as f:
+    data = json.load(f)
+
+for item in data:
+    Name.objects.filter(domain_name=item['domain_name']).update(score=item.get('score'))
+
+
 
 
 

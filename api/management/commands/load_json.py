@@ -7,7 +7,7 @@ import traceback
 
 
 
-# Example CLI usage:python manage.py load_json appname/data(a folder in app)/date.json(the exact json file) --drop_date=2025-07-01(a flag) --domain_list=marketplace(another flag)
+# Example CLI usage:python manage.py load_json appname/data(a folder in app)/date.json(the exact json file) --drop_date=2025-07-01(a flag) --domain_list=pending_delete | marketplace(another flag)
 
 
 class Command(BaseCommand):

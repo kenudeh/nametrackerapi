@@ -1,8 +1,176 @@
-{
-    "count": 0,
-    "next": null,
-    "previous": null,
-    "results": []
-}
-
-
+ [
+    {
+      "domain_name": "SetSeo.co",
+      "score": 8,
+      "category": {
+        "name": "SEO Automation"
+      },
+      "tag": [
+        { "name": "AI" },
+        { "name": "content teams" },
+        { "name": "web development" }
+      ],
+      "use_cases": [
+        {
+          "case_title": "Technical SEO Audits",
+          "description": "Automated crawler that identifies broken links, duplicate content, and indexing issues with one-click fixes.",
+          "difficulty": "moderate",
+          "competition": "high",
+          "target_market": "SEO agencies, web developers, content teams",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "DataMadeEasy.co",
+      "score": 9,
+      "category": {
+        "name": "Business Intelligence"
+      },
+      "tag": [
+        { "name": "no-code" },
+        { "name": "SMBs" },
+        { "name": "spreadsheets" }
+      ],
+      "use_cases": [
+        {
+          "case_title": "Google Sheets Supercharger",
+          "description": "Adds SQL-like querying, automation, and dashboarding to spreadsheets for non-technical teams.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "operations teams, startups, SMBs",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Spreadsheet-to-API Converter",
+          "description": "Instantly turns Excel/Sheets data into REST APIs for integration with other business tools.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "developers, IT teams, SaaS platforms",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "DietTracker.io",
+      "score": 7,
+      "category": {
+        "name": "Health Tech"
+      },
+      "tag": [
+        {"name": "nutrition"},
+        {"name": "wellness"},
+        {"name": "subscription"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "B2B Nutrition Monitoring",
+          "description": "White-label platform for clinics/dieticians to track client food intake and macros.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "healthcare providers, wellness coaches",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Food Logging API",
+          "description": "Developer tool for apps to add photo-based calorie tracking via computer vision.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "fitness apps, meal delivery services",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "BizPlanner.co",
+      "score": 8,
+      "category": {
+        "name": "Business Operations"
+      },
+      "tag": [
+        {"name": "SMB"},
+        {"name": "financial planning"},
+        {"name": "no-code"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "AI Business Plan Generator",
+          "description": "Automates creation of investor-ready business plans with financial projections and market analysis.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "startups, SMBs, consultants",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Scenario Planning Tool",
+          "description": "Models financial outcomes for different business decisions (pricing, hiring, etc.).",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "founders, CFOs",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "QuickBudget.co",
+      "score": 7,
+      "category": {
+        "name": "FinTech"
+      },
+      "tag": [
+        {"name": "personal finance"},
+        {"name": "SMB"},
+        {"name": "automation"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Real-Time Budget Monitoring",
+          "description": "Syncs with bank accounts to categorize spending and alert users before overspending.",
+          "difficulty": "moderate",
+          "competition": "high",
+          "target_market": "freelancers, solopreneurs",
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "BugBlast.co",
+      "score": 9,
+      "category": {
+        "name": "DevOps"
+      },
+      "tag": [
+        {"name": "debugging"},
+        {"name": "QA"},
+        {"name": "automation"}
+      ],
+      "use_cases": [
+        {
+          "case_title": "Automated Error Triage",
+          "description": "AI that categorizes and prioritizes bugs based on user impact and frequency.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "target_market": "engineering teams, SaaS companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Regression Test Generator",
+          "description": "Creates automated tests for common user flows after each bug fix.",
+          "difficulty": "hard",
+          "competition": "low",
+          "target_market": "QA teams, devops engineers",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    }
+  ]

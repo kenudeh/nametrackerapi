@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Importing dj-rest default login serializer
 # from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import AppUser, Name, UseCase, NameTag, NameCategory, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
+from .models import AppUser, Name, UseCase, UseCaseTag, UseCaseCategory, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
 import re
 
 
@@ -53,45 +53,85 @@ class AppUserSerializer(serializers.ModelSerializer):
 # ===========================================================================================================
 # Name Serializer - With related UseCaseSerializer, NameCategorySerializer and NameTagSerializer serilizers
 # ===========================================================================================================
-class NameTagSerializer(serializers.ModelSerializer):
+class UseCaseTagSerializer(serializers.ModelSerializer):
     class Meta:
-        model = NameTag
+        model = UseCaseTag
         fields = ['id', 'name']
 
-class NameCategorySerializer(serializers.ModelSerializer):
+class UseCaseCategorySerializer(serializers.ModelSerializer):
     class Meta:
-        model = NameCategory
+        model = UseCaseCategory
         fields = ['id', 'name']
 
 
 
 
 class UseCaseSerializer(serializers.ModelSerializer):
+    # domain_name = serializers.SlugRelatedField(
+    #     read_only=True,
+    #     slug_field='domain_name'  # This is the field in the Name model to display
+    # )
+    # domain_name = serializers.CharField(source='name.domain_name', read_only=True)
     domain_name = serializers.SlugRelatedField(
         read_only=True,
         slug_field='domain_name'  # This is the field in the Name model to display
     )
+    tag = UseCaseTagSerializer(many=True, read_only=True)
+    category = UseCaseCategorySerializer(read_only=True)
+    # category = serializers.StringRelatedField()
+    # tag = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
+
     
 
     class Meta:
         model = UseCase
-        fields = ['id', 'domain_name', 'case_title', 'slug', 'description', 'difficulty', 'competition', 'target_market', 'revenue_potential', 'order']
+        fields = [
+            'id', 'domain_name', 
+            'case_title', 'slug', 'description', 
+            "category", "tag",
+            'difficulty', 'competition', 
+            'target_market', 'revenue_potential', 
+            'order'
+        ]
+
+        
+
+# Suggested use case serializer
+class SuggestedUseCaseSerializer(serializers.ModelSerializer):
+    domain_name = serializers.SlugRelatedField(
+        read_only=True,
+        slug_field='domain_name'  # This is the field in the Name model to display
+    )
+    tag = UseCaseTagSerializer(many=True, read_only=True)
+    category = UseCaseCategorySerializer(read_only=True)
+    # category = serializers.StringRelatedField()
+    # tag = serializers.SlugRelatedField(many=True, slug_field="name", read_only=True)
+
+    
+    class Meta:
+        model = UseCase
+        fields = [
+            'id', 'domain_name', 
+            'case_title', 'slug', 'description', 
+            "category", "tag",
+            'difficulty', 'competition', 
+            'target_market', 'revenue_potential', 
+            'order'
+        ]
 
 
 
 class NameSerializer(serializers.ModelSerializer):
-    tag = NameTagSerializer(many=True)
-    category = NameCategorySerializer()
-    use_cases = UseCaseSerializer(many=True, source='use_cases_domain')
-    suggested_usecase = UseCaseSerializer(read_only=True)
+    suggested_usecase = SuggestedUseCaseSerializer(read_only=True)
+    other_use_cases = serializers.SerializerMethodField()
     saved = serializers.SerializerMethodField()
 
 
     class Meta:
         model = Name
         fields = ['id', 'domain_name', 'extension', 'domain_list', 'status', 'score', 'length', 'syllables',
-                  'competition', 'difficulty', 'suggested_usecase','is_idea_of_the_day', 'is_top_rated', 'is_favorite',
-                  'category', 'tag', 'drop_date', 'drop_time', 'created_at', 'updated_at', 'use_cases', 'saved'
+                'suggested_usecase', 'other_use_cases', 'is_idea_of_the_day', 'is_top_rated', 'is_favorite',
+                   'drop_date', 'drop_time', 'created_at', 'updated_at', 'saved'
         ]
 
     # Dynamically checks if the current user has saved the name.
@@ -101,57 +141,77 @@ class NameSerializer(serializers.ModelSerializer):
             return obj.savedname_set.filter(user=request.user).exists()
         return False
 
+    # Exclude the suggested one (order=1)
+    def get_other_use_cases(self, obj):
+        return UseCaseSerializer(
+            obj.use_cases.exclude(order=1), many=True
+        ).data
+        
+
     def create(self, validated_data):
-        tag_data = validated_data.pop('tag')
-        category_data = validated_data.pop('category')
-        use_cases_data = validated_data.pop('use_cases_domain')
+        use_cases_data = validated_data.pop('use_cases_domain', [])
 
-        # Get or create the category
-        category_obj, _ = NameCategory.objects.get_or_create(**category_data)
-        name = Name.objects.create(category=category_obj, **validated_data)
+        name = Name.objects.create(**validated_data)
 
-        # Handle tags
-        for tag in tag_data:
-            tag_obj, _ = NameTag.objects.get_or_create(**tag)
-            name.tag.add(tag_obj)
-
-        # Handle use cases (max 3 already validated)
         for use_case in use_cases_data:
-            UseCase.objects.create(domain_name=name, **use_case)
+            tag_data = use_case.pop('tag', [])
+            category_slug = use_case.pop('category', None)
+
+            # Get or create the category
+            if category_slug:
+                try:
+                    category_obj = NameCategory.objects.get(slug=category_slug)
+                except NameCategory.DoesNotExist:
+                    raise ValidationError(f"Category '{category_slug}' is invalid. Choose from predefined categories.")
+            
+            # Create use case
+            use_case_obj = UseCase.objects.create(
+                domain_name=name,
+                category=category_obj,
+                **use_case
+            )
+
+            # Handle tags
+            for tag in tag_data:
+                tag_obj, _ = NameTag.objects.get_or_create(**tag)
+                use_case_obj.tag.add(tag_obj)
 
         return name
 
+
     def update(self, instance, validated_data):
-        tag_data = validated_data.pop('tag', None)
-        category_data = validated_data.pop('category', None)
         use_cases_data = validated_data.pop('use_cases_domain', None)
 
-        # Update basic fields
+        # Update base fields
         for attr, value in validated_data.items():
             setattr(instance, attr, value)
         instance.save()
 
-        # Update or create category
-        if category_data:
-            category_obj, _ = NameCategory.objects.get_or_create(**category_data)
-            instance.category = category_obj
-            instance.save()
+        if use_cases_data is not None:
+            instance.use_cases_domain.all().delete()
 
-        # Update tags
-        if tag_data:
-            tag_objs = []
-            for tag in tag_data:
-                tag_obj, _ = NameTag.objects.get_or_create(**tag)
-                tag_objs.append(tag_obj)
-            instance.tag.set(tag_objs)
-
-        # Update use cases
-        if use_cases_data:
-            instance.use_cases_domain.all().delete()  # Remove old use cases
             for use_case in use_cases_data:
-                UseCase.objects.create(domain_name=instance, **use_case)
+                tag_data = use_case.pop('tag', [])
+                category_data = use_case.pop('category', None)
+
+                category_obj = None
+                if category_data:
+                    category_obj, _ = NameCategory.objects.get_or_create(**category_data)
+
+                use_case_obj = UseCase.objects.create(
+                    domain_name=instance,
+                    category=category_obj,
+                    **use_case
+                )
+
+                for tag in tag_data:
+                    tag_obj, _ = NameTag.objects.get_or_create(**tag)
+                    use_case_obj.tag.add(tag_obj)
 
         return instance
+
+
+
 
     def validate_use_cases(self, value):
         """
