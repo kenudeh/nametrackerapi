@@ -1,4 +1,4 @@
-from django.db import models
+from django.db import models, transaction
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from .utils import *
@@ -69,6 +69,8 @@ class AppUser(models.Model):
         """
         return True
 
+
+
 # ============================================
 # Name model
 # ============================================
@@ -106,7 +108,7 @@ class DomainListOptions(models.TextChoices):
 
 #NAME MODEL
 class Name(models.Model):
-    domain_name = models.CharField(max_length=20)
+    domain_name = models.CharField(max_length=20, unique=True)
     extension = models.CharField(
         max_length=20,
         choices=ExtensionOptions.choices,
@@ -138,16 +140,6 @@ class Name(models.Model):
         validators=[MinValueValidator(1), MaxValueValidator(10)],
         help_text="SaaS viability score (1–10), determined by the LLM"
     )
-    competition = models.CharField(  # To be filled by post-save signal
-        max_length=20,
-        null=True,
-        blank=True
-    )
-    difficulty = models.CharField(   # To be filled by post-save signal
-        max_length=20,
-        null=True,
-        blank=True
-    )
     suggested_usecase = models.ForeignKey(  # To be filled by post-save signal
         'UseCase',
         on_delete=models.SET_NULL,
@@ -159,16 +151,6 @@ class Name(models.Model):
     is_top_rated = models.BooleanField(default=False)
     top_rated_date = models.DateField(null=True, blank=True)  # Used to isolate daily top-rated names
     is_favorite = models.BooleanField(default=False)
-    category = models.ForeignKey(  # To be handled in loader
-        'NameCategory',
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='names'
-    )
-    tag = models.ManyToManyField(
-        'NameTag',
-        related_name='names'
-    )
     drop_date = models.DateField(
         help_text="Set manually in loader per batch"
     )
@@ -227,17 +209,10 @@ class Name(models.Model):
 # ============================================
 # CATEGORY MODEL
 # ============================================
+class UseCaseCategory(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
 
-class CategoryType(models.TextChoices):
-    HEALTH = 'health_and_wellness', 'Health_And_Wellness'
-    TECH = 'tech', 'Tech'
- 
-class NameCategory(models.Model):
-    name = models.CharField(
-        max_length=50, 
-        unique=True,
-    )
-    
     def __str__(self):
         return self.name
 
@@ -247,7 +222,7 @@ class NameCategory(models.Model):
 # ============================================
 #TAG MODEL
 # ============================================
-class NameTag(models.Model):
+class UseCaseTag(models.Model):
     name = models.CharField(
         max_length=100,
         unique=True
@@ -267,14 +242,20 @@ class RevenueOptions(models.TextChoices):
     MEDIUM = 'medium', 'Medium'
     HIGH = 'high', 'High'
 
+
+
 class UseCase(models.Model):
     domain_name = models.ForeignKey(
-        Name,
+        Name, 
         on_delete=models.CASCADE,
-        related_name='use_cases_domain'
+        related_name='use_cases'
     )
     case_title = models.CharField(max_length=100)
-    slug = models.SlugField(max_length=60, editable=False, default='')  # Not user-editable
+    slug = models.SlugField(
+        max_length=100,
+        blank=True,         # Let model validation pass if slug isn't provided yet
+        editable=False       # Hide from forms and admin
+    )
     description = models.CharField(max_length=200)
     difficulty = models.CharField(
         max_length=20,
@@ -292,9 +273,22 @@ class UseCase(models.Model):
     order = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(3)]
     )
+    category = models.ForeignKey(
+        'UseCaseCategory',
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False
+    ) 
+    tag = models.ManyToManyField(
+        'UseCaseTag',
+        blank=False
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
 
     class Meta:
+        ordering = ['order'] # adds an ordering rule, which controls queryset results (UseCase.objects.all() will return them sorted by order).
         unique_together = (
             ('domain_name', 'order'),   # Prevent two use cases with same order for a domain
             ('domain_name', 'slug')     # Prevent duplicate slugs per domain
@@ -303,14 +297,15 @@ class UseCase(models.Model):
 
     def save(self, *args, **kwargs):
         if not self.slug:
-            base_slug = slugify(self.case_title)
-            # Handle possible duplicate slugs within the same domain
+            base_slug = slugify(self.case_title)[:90]  # Leave space for suffix
             slug = base_slug
-            i = 1
-            while UseCase.objects.filter(domain_name=self.domain_name, slug=slug).exists():
-                slug = f"{base_slug}-{i}"
-                i += 1
-            self.slug = slug
+
+            with transaction.atomic():
+                i = 1
+                while UseCase.objects.filter(domain_name=self.domain_name, slug=slug).exists():
+                    slug = f"{base_slug}-{i}"
+                    i += 1
+                self.slug = slug
 
         super().save(*args, **kwargs)
 

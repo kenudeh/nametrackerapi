@@ -98,13 +98,18 @@ class UserProfileView(APIView):
 # Name views
 #====================================
 class NameListAPIView(generics.ListAPIView):
-    queryset = Name.objects.all()
+    queryset = Name.objects.all().select_related('suggested_usecase').prefetch_related(
+        'use_cases__tag', 
+        'use_cases__category',
+        'suggested_usecase__tag',
+        'suggested_usecase__category',
+    )
     serializer_class = NameSerializer
     permission_classes = [IsAuthenticated]
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    filterset_fields = ['category__name', 'extension', 'is_top_rated', 'is_idea_of_the_day']
+    filterset_fields = ['extension', 'is_top_rated', 'is_idea_of_the_day'] #removed 'category__name', 
     ordering_fields = ['score', 'length', 'created_at']
-    search_fields = ['domain_name', 'tag__name', 'category__name']
+    search_fields = ['domain_name',] #removed 'tag__name', 'category__name'
 
     def get_serializer_context(self):
         context = super().get_serializer_context()
@@ -219,7 +224,7 @@ class SavedNameListView(APIView, DateRangePaginationMixin):
     ordering = ['-name__created_at', 'name__domain_name']
     search_fields = [
         'name__domain_name', 'name__competition', 'name__difficulty',
-        'name__suggested_usecase', 'name__category', 'name__tag'
+        'name__suggested_usecase' # removed 'name__category', 'name__tag'
     ]
 
 
@@ -245,7 +250,7 @@ class AcquiredNameView(APIView, DateRangePaginationMixin):
     # Allow ordering by query string (like ?ordering=domain_name, etc)
     ordering_fields = ['domain_name', 'domain_list', 'status', 'created_at']
     ordering = ['-created_at', 'domain_name']  # Default ordering
-    search_fields = ['name__domain_name', 'name__competition', 'name__difficulty', 'name__suggested_usecase', 'name__category', 'name__tag']
+    search_fields = ['name__domain_name', 'name__competition', 'name__difficulty', 'name__suggested_usecase'] #removed 'name__category', 'name__tag'
 
 
 

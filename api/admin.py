@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, AppUser, NameCategory, NameTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter
+from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -13,9 +13,11 @@ class UseCaseInline(admin.StackedInline):
 # Since 'category' is now ForeignKey, no inline needed.
 
 # Inline for ManyToMany Tag relation (optional, as filter_horizontal can also be used)
-class NameTagInline(admin.TabularInline):
-    model = Name.tag.through  # Through table for ManyToMany relationship
-    extra = 1
+# class UseCaseTagInline(admin.TabularInline):
+#     model = UseCase.tag.through  # This is the intermediary model between UseCase and NameTag
+#     extra = 1
+
+
 
 #Bulk Action to Archive Manually - to be used in NameAdmin
 @admin.action(description='Archive selected names')
@@ -34,7 +36,7 @@ def archive_selected_names(modeladmin, request, queryset):
 @admin.register(Name)
 class NameAdmin(admin.ModelAdmin):
     readonly_fields = ('length', 'syllables', 'status') 
-    list_display = (
+    list_display = ( #removed 'competition' and 'difficulty'
         'domain_name',  
         'extension',
         'domain_list',
@@ -42,15 +44,13 @@ class NameAdmin(admin.ModelAdmin):
         'length',
         'syllables',
         'score',
-        'competition',
-        'difficulty',
         'is_idea_of_the_day',
         'is_top_rated',
         'is_favorite',
         'drop_date',
     )
     list_display_links = ('domain_name',) 
-    list_filter = (
+    list_filter = (  #removed 'category'
         'extension',
         'domain_list',
         'status',
@@ -58,12 +58,11 @@ class NameAdmin(admin.ModelAdmin):
         'is_idea_of_the_day',
         'is_top_rated',
         'is_favorite',
-        'category', 
     )
     search_fields = ('domain_name',)  
     date_hierarchy = 'drop_date'
-    inlines = [UseCaseInline, NameTagInline]  # Inlines for UseCase and Tags
-    filter_horizontal = ('tag',)  # Easier multi-select for tags
+    inlines = [UseCaseInline]  #Removed UseCaseTagInline ||| Inlines for UseCase and Tags
+    # filter_horizontal = ('tag',)  # Easier multi-select for tags
     actions = [archive_selected_names]
 
     fieldsets = (
@@ -71,10 +70,10 @@ class NameAdmin(admin.ModelAdmin):
             'fields': ('domain_name', 'domain_list', 'status')
         }),
         ('Metrics', {
-            'fields': ('competition', 'difficulty', 'is_idea_of_the_day', 'is_top_rated', 'is_favorite')
+            'fields': ('is_idea_of_the_day', 'is_top_rated', 'is_favorite')  #removed 'competition' and 'difficulty'
         }),
         ('Relations', {
-            'fields': ('category', 'suggested_usecase')  # Category is FK, suggested_usecase auto-set
+            'fields': ('suggested_usecase',) #removed 'category'  # Category is FK, suggested_usecase auto-set
         }),
         ('Timing', {
             'fields': ('drop_date',)
@@ -87,19 +86,19 @@ class AppUser(admin.ModelAdmin):
     list_display = ('first_name', 'last_name', 'email')
    
 
-@admin.register(NameCategory)
-class NameCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+@admin.register(UseCaseCategory)
+class UseCaseCategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'id')
     search_fields = ('name',)
 
-@admin.register(NameTag)
-class NameTagAdmin(admin.ModelAdmin):
+@admin.register(UseCaseTag)
+class UseCaseTagAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
 @admin.register(UseCase)
 class UseCaseAdmin(admin.ModelAdmin):
-    list_display = ('case_title', 'domain_name', 'order', 'difficulty', 'competition', 'revenue_potential')
+    list_display = ('case_title', 'domain_name', 'category', 'order', 'difficulty', 'competition', 'revenue_potential')
     list_filter = ('difficulty', 'competition', 'revenue_potential')
     search_fields = ('case_title', 'target_market')
 
