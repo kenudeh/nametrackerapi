@@ -1,0 +1,206 @@
+[
+  {
+    "domain_name": "TradeKit.co",
+    "score": 8,
+    "use_cases": [
+      {
+        "case_title": "Retail Trader Analytics Dashboard",
+        "description": "One-click integrations with broker APIs (Alpaca, TD Ameritrade) to visualize trades, P&L, and risk metrics.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "category": {"name": "Fintech"},
+        "tag": [
+          {"name": "trading"},
+          {"name": "API"}
+        ],
+        "target_market": "retail traders, investing enthusiasts",
+        "revenue_potential": "high",
+        "order": 1
+      },
+      {
+        "case_title": "Backtesting Toolkit for Crypto",
+        "description": "No-code backtesting for trading strategies with historical crypto data. Charge via premium data packs.",
+        "difficulty": "hard",
+        "competition": "low",
+        "category": {"name": "Cryptocurrency, Blockchain"},
+        "tag": [
+          {"name": "no-code"},
+          {"name": "crypto"}
+        ],
+        "target_market": "crypto traders, indie quant developers",
+        "revenue_potential": "medium",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "domain_name": "ProductJoy.io",
+    "score": 9,
+    "use_cases": [
+      {
+        "case_title": "PLG (Product-Led Growth) Microsurvey Tool",
+        "description": "Embeddable widgets to collect user feedback at key moments (e.g., after feature use). Free for startups, paid scaling.",
+        "difficulty": "easy",
+        "competition": "medium",
+        "category": {"name": "Customer Engagement & Support"},
+        "tag": [
+          {"name": "PLG"},
+          {"name": "feedback"}
+        ],
+        "target_market": "SaaS founders, product managers",
+        "revenue_potential": "high",
+        "order": 1
+      },
+      {
+        "case_title": "E-Commerce Upsell Optimizer",
+        "description": "AI-driven recommendations for post-purchase upsells (e.g., Shopify apps).",
+        "difficulty": "moderate",
+        "competition": "high",
+        "category": {"name": "E-Commerce & Retail"},
+        "tag": [
+          {"name": "AI"},
+          {"name": "conversion"}
+        ],
+        "target_market": "DTC brands, Shopify stores",
+        "revenue_potential": "medium",
+        "order": 2
+      }
+    ]
+  },
+  {
+  "domain_name": "BrainSync.co",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "Deep Work Assistant",
+      "description": "AI that blocks distractions + generates focus summaries (e.g., condenses research PDFs into bullet points). Integrates with Notion/Obsidian.",
+      "difficulty": "moderate",
+      "competition": "medium (vs. Otter.ai, Focus@Will)",
+      "category": {"name": "Productivity"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "neuroscience"}
+      ],
+      "target_market": "writers, researchers, indie hackers",
+      "revenue_potential": "medium (freemium + paid tiers)",
+      "order": 1
+    },
+    {
+      "case_title": "Meeting Sync Tool",
+      "description": "Records calls, extracts decisions/action items, and syncs them to project tools (Todoist, Jira). Differentiator: prioritizes *unspoken* tensions in team dynamics.",
+      "difficulty": "hard",
+      "competition": "high (Gong, Fireflies.ai)",
+      "category": {"name": "Communication & Collaboration"},
+      "tag": [
+        {"name": "psychology"},
+        {"name": "remote work"}
+      ],
+      "target_market": "small remote teams, therapists",
+      "revenue_potential": "low (niche)",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "HyperLite.co",
+  "score": 8,
+  "use_cases": [
+    {
+      "case_title": "Frontend Diet Tool",
+      "description": "Scans websites/blogs and recommends specific asset optimizations (e.g., convert images to WebP, prune unused CSS). Free analyzer + paid automation.",
+      "difficulty": "easy",
+      "competition": "low (PageSpeed insights lacks actionable steps)",
+      "category": {"name": "Developer Tools & Experience (DX)"},
+      "tag": [
+        {"name": "performance"},
+        {"name": "SEO"}
+      ],
+      "target_market": "bloggers, freelance devs",
+      "revenue_potential": "medium (affiliate upsells for hosting/CDNs)",
+      "order": 1
+    },
+    {
+      "case_title": "API Slimmer",
+      "description": "Proxy that strips unused fields from REST/GraphQL responses. Monetize via teams/enterprise (e.g., Shopify storefronts with bloated APIs).",
+      "difficulty": "moderate",
+      "competition": "none (direct)",
+      "category": {"name": "Developer Tools & Experience (DX)"},
+      "tag": [
+        {"name": "GraphQL"},
+        {"name": "proxy"}
+      ],
+      "target_market": "SaaS devs, mobile engineers",
+      "revenue_potential": "high (volume-based pricing)",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "ZenTrader.io",
+  "score": 6,
+  "use_cases": [
+    {
+      "case_title": "API-First Trading Journal",
+      "description": "Auto-imports trades from Coinbase/Binance to analyze performance. No fluff—just P&L and emotion tracking.",
+      "difficulty": "hard",
+      "competition": "low (existing tools are bloated)",
+      "category": {"name": "Cryptocurrency, Blockchain"},
+      "tag": [
+        {"name": "trading psychology"},
+        {"name": "API"}
+      ],
+      "target_market": "retail crypto traders",
+      "revenue_potential": "medium (charge for tax-reporting features)",
+      "order": 1
+    },
+    {
+      "case_title": "Discord Bot for Price Alerts",
+      "description": "Privacy-focused bot that pings custom crypto price thresholds (no data collection). Monetize via premium thresholds.",
+      "difficulty": "moderate",
+      "competition": "high (existing bots are spyware-heavy)",
+      "category": {"name": "Cryptocurrency, Blockchain"},
+      "tag": [
+        {"name": "privacy"},
+        {"name": "Discord"}
+      ],
+      "target_market": "crypto Discord communities",
+      "revenue_potential": "low (hard to scale)",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "InnerFocus.io",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "Focus Session Optimizer",
+      "description": "AI that analyzes your calendar, energy levels, and task types to schedule distraction-free blocks. Syncs with Todoist/Google Calendar.",
+      "difficulty": "moderate",
+      "competition": "medium (vs. RescueTime, FocusMate)",
+      "category": {"name": "Productivity"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "time management"}
+      ],
+      "target_market": "freelancers, indie hackers, students",
+      "revenue_potential": "medium (subscription + affiliate links for tools like Pomodone)",
+      "order": 1
+    },
+    {
+      "case_title": "Email Triage Assistant",
+      "description": "Chrome extension that hides non-urgent emails and surfaces high-priority ones based on past behavior.",
+      "difficulty": "easy",
+      "competition": "high (Superhuman, SaneBox)",
+      "category": {"name": "Communication & Collaboration"},
+      "tag": [
+        {"name": "email"},
+        {"name": "minimalism"}
+      ],
+      "target_market": "overwhelmed knowledge workers",
+      "revenue_potential": "low (one-time purchase)",
+      "order": 2
+    }
+  ]
+}
+]

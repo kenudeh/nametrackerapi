@@ -7314,3 +7314,37 @@ AssertionError: The field 'tag' was declared on serializer UseCaseSerializer, bu
 ERROR 2025-07-23 04:14:52,679 basehttp "GET /api/names HTTP/1.1" 500 219407
 WARNING 2025-07-23 04:23:45,508 log Not Found: /favicon.ico
 WARNING 2025-07-23 04:23:45,510 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-24 10:58:33,261 log Forbidden: /api/acquired-names
+WARNING 2025-07-24 10:58:33,261 log Forbidden: /api/saved-names
+WARNING 2025-07-24 10:58:33,277 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-24 10:58:33,350 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-24 10:58:33,384 log Forbidden: /api/acquired-names
+WARNING 2025-07-24 10:58:33,393 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-24 10:58:33,393 log Forbidden: /api/saved-names
+WARNING 2025-07-24 10:58:33,408 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-24 12:44:00,221 log Not Found: /favicon.ico
+WARNING 2025-07-24 12:44:00,223 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-24 17:27:39,954 log Forbidden: /api/saved-names
+WARNING 2025-07-24 17:27:39,970 log Forbidden: /api/acquired-names
+WARNING 2025-07-24 17:27:39,970 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-24 17:27:39,970 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-24 17:27:39,970 log Forbidden: /api/saved-names
+WARNING 2025-07-24 17:27:39,985 log Forbidden: /api/acquired-names
+WARNING 2025-07-24 17:27:39,985 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-24 17:27:39,985 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-24 23:24:03,325 log Not Found: /favicon.ico
+WARNING 2025-07-24 23:24:03,325 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-25 00:39:08,409 log Not Found: /favicon.ico
+WARNING 2025-07-25 00:39:08,409 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-26 14:18:04,423 log Not Found: /favicon.ico
+WARNING 2025-07-26 14:18:04,426 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-28 07:54:59,799 log Forbidden: /api/saved-names
+WARNING 2025-07-28 07:54:59,799 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 07:54:59,807 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 07:54:59,823 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 07:54:59,834 log Forbidden: /api/saved-names
+WARNING 2025-07-28 07:54:59,840 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 07:54:59,848 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 07:54:59,875 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 07:56:52,115 log Not Found: /favicon.ico
+WARNING 2025-07-28 07:56:52,119 basehttp "GET /favicon.ico HTTP/1.1" 404 3242

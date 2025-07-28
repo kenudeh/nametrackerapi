@@ -1,0 +1,70 @@
+[
+    {
+        "domain_name": "TaskTitans.io",
+        "score": 8,
+        "use_cases": [
+            {
+            "case_title": "Frictionless Team Task Delegation",
+            "description": "One-click task assignment with AI-driven role matching (e.g., ‘Design this’ auto-suggests your Figma-savvy teammate). No status meetings needed.",
+            "difficulty": "moderate",
+            "competition": "medium (vs. ClickUp, Asana)",
+            "category": {"name": "Productivity"},
+            "tag": [
+                {"name": "AI"},
+                {"name": "remote work"}
+            ],
+            "target_market": "startup teams, agency owners",
+            "revenue_potential": "high (per-seat pricing)",
+            "order": 1
+            },
+            {
+            "case_title": "Freelancer Battle Mode",
+            "description": "Time-blocking + client billing in one view. Tracks ‘deep work’ hours and auto-generates invoices.",
+            "difficulty": "easy",
+            "competition": "low (existing tools are fragmented)",
+            "category": {"name": "Professional Services"},
+            "tag": [
+                {"name": "freelancers"},
+                {"name": "time tracking"}
+            ],
+            "target_market": "solopreneurs, indie consultants",
+            "revenue_potential": "medium (one-time purchase)",
+            "order": 2
+            }
+        ]
+    },
+    {
+        "domain_name": " ProKit.io",
+        "score": 9,
+        "use_cases": [
+            {
+                "case_title": "Starter Kits for Micro-SaaS",
+                "description": "Pre-built Next.js/Node.js stacks with auth, payments, and analytics. Charge for niche templates (e.g., ‘OnlyFans for gardeners’).",
+                "difficulty": "easy",
+                "competition": "medium (vs. Divjoy, Outseta)",
+                "category": {"name": "Developer Tools & Experience (DX)"},
+                "tag": [
+                    {"name": "boilerplate"},
+                    {"name": "micro-SaaS"}
+                ],
+                "target_market": "indie makers, startup CTOs",
+                "revenue_potential": "high (marketplace + premium support)",
+                "order": 1
+            },
+            {
+                "case_title": "Content Creator Kits",
+                "description": "Plug-and-play templates for YouTube scripts, newsletter swipes, and TikTok hooks. Bundled with analytics (e.g., ‘Viral hooks that work’).",
+                "difficulty": "easy",
+                "competition": "low (Canva lacks depth for scripts)",
+                "category": {"name": "Content & CMS"},
+                "tag": [
+                    {"name": "templates"},
+                    {"name": "creators"}
+                ],
+                "target_market": "YouTubers, newsletter writers",
+                "revenue_potential": "medium (subscription for updates)",
+                "order": 2
+            }
+        ]
+    }
+]

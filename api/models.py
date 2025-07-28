@@ -258,16 +258,16 @@ class UseCase(models.Model):
     )
     description = models.CharField(max_length=200)
     difficulty = models.CharField(
-        max_length=20,
+        max_length=100,
         choices=DifficultyType.choices
     )
     competition = models.CharField(
-        max_length=20,
+        max_length=100,
         choices=CompetitionType.choices
     )
     target_market = models.CharField(max_length=100)
     revenue_potential = models.CharField(
-        max_length=20,
+        max_length=100,
         choices=RevenueOptions.choices
     )
     order = models.PositiveSmallIntegerField(
