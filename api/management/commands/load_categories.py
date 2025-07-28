@@ -5,6 +5,7 @@ from api.models import UseCaseCategory
 
 class Command(BaseCommand):
     help = "Load categories from JSON and auto-generate slugs"
+    #usage: python manage.py load_categories
 
     def handle(self, *args, **kwargs):
         # Path to your JSON file (adjust if needed)

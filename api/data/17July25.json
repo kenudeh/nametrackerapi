@@ -1,0 +1,186 @@
+[
+  {
+    "domain_name": "TeraHealth.co",
+    "score": 7,
+    "use_cases": [
+      {
+        "case_title": "Clinic Analytics Dashboard",
+        "description": "Turn EHR data into actionable insights (e.g., patient no-show predictions, treatment cost trends) for small practices. Avoids enterprise complexity.",
+        "difficulty": "hard",
+        "competition": "medium",
+        "category": {"name": "Health & Wellness"},
+        "tag": [
+          {"name": "data insights"},
+          {"name": "SMB"}
+        ],
+        "target_market": "private clinics, telehealth startups",
+        "revenue_potential": "medium",
+        "order": 1
+      },
+      {
+        "case_title": "Wearable Data Sync for Chronic Conditions",
+        "description": "Aggregate data from Apple Watch/Fitbit into a patient-facing dashboard for diabetes/hypertension management. Partner with clinics for referrals.",
+        "difficulty": "moderate",
+        "competition": "high",
+        "category": {"name": "Health & Wellness"},
+        "tag": [
+          {"name": "remote monitoring"},
+          {"name": "patient engagement"}
+        ],
+        "target_market": "functional medicine providers, patients over 50",
+        "revenue_potential": "medium",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "domain_name": "DeepBase.co",
+    "score": 9,
+    "use_cases": [
+      {
+        "case_title": "No-Code AI Experiment Tracker",
+        "description": "GitHub for AI models—version, compare, and share experiments without CLI chaos. Targets small teams avoiding MLflow complexity.",
+        "difficulty": "moderate",
+        "competition": "medium (vs. Weights & Biases, Comet.ml)",
+        "category": {"name": "AI, ML & Data Intelligence"},
+        "tag": [
+          {"name": "collaboration"},
+          {"name": "no-code"}
+        ],
+        "target_market": "indie AI startups, bootstrapped research labs",
+        "revenue_potential": "high (per-user SaaS pricing)",
+        "order": 1
+      },
+      {
+        "case_title": "Dataset Curation Marketplace",
+        "description": "Upload, clean, and license niche datasets (e.g., “Drone imagery of construction sites”). Earn revenue share on sales.",
+        "difficulty": "hard",
+        "competition": "low (Kaggle lacks curation tools)",
+        "category": {"name": "AI, ML & Data Intelligence"},
+        "tag": [
+          {"name": "marketplace"},
+          {"name": "data labeling"}
+        ],
+        "target_market": "freelance data annotators, AI startups",
+        "revenue_potential": "medium (transaction fees)",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "domain_name": "HairNova.co",
+    "score": 6,
+    "use_cases": [
+      {
+        "case_title": "AR Hair Try-On for E-Commerce",
+        "description": "White-label widget for haircare brands to embed AI-powered virtual try-ons on product pages. Focus on conversions, not just engagement.",
+        "difficulty": "moderate",
+        "competition": "high (Perfect Corp, YouCam)",
+        "category": {"name": "E-Commerce & Retail"},
+        "tag": [
+          {"name": "AR"},
+          {"name": "beauty tech"}
+        ],
+        "target_market": "DTC haircare brands, Shopify stores",
+        "revenue_potential": "medium (per-usage API pricing)",
+        "order": 1
+      },
+      {
+        "case_title": "Salon Client Retention Add-On",
+        "description": "Automated post-visit haircare routines (via SMS/email) with product upsells. Integrates with existing booking tools like Fresha.",
+        "difficulty": "easy",
+        "competition": "low (most tools focus on booking, not retention)",
+        "category": {"name": "Professional Services"},
+        "tag": [
+          {"name": "CRM"},
+          {"name": "automation"}
+        ],
+        "target_market": "independent stylists, boutique salons",
+        "revenue_potential": "medium (subscription + affiliate revenue)",
+        "order": 2
+      },
+      {
+        "case_title": "Hair Trend Reports for Stylists",
+        "description": "Weekly PDF/email with trending cuts/colors in their city (scraped from Instagram). Charge $10/month.",
+        "difficulty": "easy",
+        "competition": "none",
+        "category": {"name": "Professional Services"},
+        "tag": [
+          {"name": "data scraping"},
+          {"name": "niche content"}
+        ],
+        "target_market": "freelance stylists",
+        "revenue_potential": "low (but scalable to 1,000+ users)",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "PushToTalk.io",
+    "score": 8,
+    "use_cases": [
+      {
+        "case_title": "Lightweight Voice Chat for Remote Teams",
+        "description": "Browser-based push-to-talk for async standups and quick voice notes. No downloads, with automatic transcription and Slack integration.",
+        "difficulty": "moderate",
+        "competition": "medium (vs. Discord, Zulip)",
+        "category": {"name": "Communication & Collaboration"},
+        "tag": [
+          {"name": "async"},
+          {"name": "remote work"}
+        ],
+        "target_market": "startups, indie hacker teams, freelancers",
+        "revenue_potential": "medium ($5/user/month)",
+        "order": 1
+      },
+      {
+        "case_title": "Game Dev Voice SDK",
+        "description": "Drop-in push-to-talk for Unity/Godot games. Monetize via usage tiers (free for small devs, paid for commercial games).",
+        "difficulty": "moderate",
+        "competition": "low (most solutions are full VoIP stacks)",
+        "category": {"name": "Gaming"},
+        "tag": [
+          {"name": "SDK"},
+          {"name": "indie dev"}
+        ],
+        "target_market": "solopreneur game developers",
+        "revenue_potential": "medium (scales with game popularity)",
+        "order": 2
+      }
+    ]
+  },
+  {
+    "domain_name": "SocialScrub.io",
+    "score": 7,
+    "use_cases": [
+      {
+        "case_title": "LinkedIn Profile Sanitizer",
+        "description": "AI-powered tool to flag and remove unprofessional posts, comments, and connections before job applications or executive reviews. Includes ‘Resume Mode’ to hide old activity.",
+        "difficulty": "moderate",
+        "competition": "low (existing tools are manual)",
+        "category": {"name": "Professional Services"},
+        "tag": [
+          {"name": "career growth"},
+          {"name": "AI auditing"}
+        ],
+        "target_market": "corporate job seekers, executives, board candidates",
+        "revenue_potential": "high ($15/user one-time or $99/year for ongoing monitoring)",
+        "order": 1
+      },
+      {
+        "case_title": "Twitter/Facebook ‘Youthful Indiscretion’ Cleaner",
+        "description": "Archive/delete old tweets/posts containing risky keywords (politics, NSFW) with manual review. Markets differently than LinkedIn tool.",
+        "difficulty": "moderate",
+        "competition": "medium (vs. TweetDeleter)",
+        "category": {"name": "Privacy, Compliance & Identity"},
+        "tag": [
+          {"name": "reputation management"},
+          {"name": "automation"}
+        ],
+        "target_market": "politicians, academics, public figures",
+        "revenue_potential": "medium ($8/month subscription)",
+        "order": 2
+      }
+    ]
+  }
+]

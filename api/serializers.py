@@ -67,20 +67,12 @@ class UseCaseCategorySerializer(serializers.ModelSerializer):
 
 
 class UseCaseSerializer(serializers.ModelSerializer):
-    # domain_name = serializers.SlugRelatedField(
-    #     read_only=True,
-    #     slug_field='domain_name'  # This is the field in the Name model to display
-    # )
-    # domain_name = serializers.CharField(source='name.domain_name', read_only=True)
     domain_name = serializers.SlugRelatedField(
         read_only=True,
         slug_field='domain_name'  # This is the field in the Name model to display
     )
     tag = UseCaseTagSerializer(many=True, read_only=True)
     category = UseCaseCategorySerializer(read_only=True)
-    # category = serializers.StringRelatedField()
-    # tag = serializers.SlugRelatedField(many=True, read_only=True, slug_field='name')
-
     
 
     class Meta:
@@ -94,6 +86,46 @@ class UseCaseSerializer(serializers.ModelSerializer):
             'order'
         ]
 
+
+    
+    def validate(self, data):
+        """
+        Custom validation for UseCase creation or update.
+
+        Ensures:
+        - No more than 3 use cases per domain name.
+        - Each use case has a unique `order` value between 1 and 3.
+        """
+        domain = data.get('domain_name')
+        order = data.get('order')
+
+        if not domain:
+            # FK validation might happen later, so we catch it here just in case
+            raise serializers.ValidationError("Each use case must belong to a domain.")
+
+        # Get all existing use cases for this domain (excluding the one being updated, if any)
+        existing_qs = UseCase.objects.filter(domain_name=domain)
+        if self.instance:
+            # Exclude current instance if updating
+            existing_qs = existing_qs.exclude(pk=self.instance.pk)
+
+        # Count check: only allow up to 3 use cases per domain
+        if existing_qs.count() >= 3:
+            raise serializers.ValidationError(
+                f"Only 3 use cases are allowed per domain. "
+                f"'{domain}' already has {existing_qs.count()}."
+            )
+
+        # Order uniqueness check
+        if existing_qs.filter(order=order).exists():
+            raise serializers.ValidationError(
+                f"Use case with order={order} already exists for '{domain}'. "
+                f"Each domain must have one use case for each of order 1, 2, and 3."
+            )
+
+        return data
+        
+
         
 
 # Suggested use case serializer
@@ -104,8 +136,6 @@ class SuggestedUseCaseSerializer(serializers.ModelSerializer):
     )
     tag = UseCaseTagSerializer(many=True, read_only=True)
     category = UseCaseCategorySerializer(read_only=True)
-    # category = serializers.StringRelatedField()
-    # tag = serializers.SlugRelatedField(many=True, slug_field="name", read_only=True)
 
     
     class Meta:
@@ -131,7 +161,7 @@ class NameSerializer(serializers.ModelSerializer):
         model = Name
         fields = ['id', 'domain_name', 'extension', 'domain_list', 'status', 'score', 'length', 'syllables',
                 'suggested_usecase', 'other_use_cases', 'is_idea_of_the_day', 'is_top_rated', 'is_favorite',
-                   'drop_date', 'drop_time', 'created_at', 'updated_at', 'saved'
+                'drop_date', 'drop_time', 'created_at', 'updated_at', 'saved'
         ]
 
     # Dynamically checks if the current user has saved the name.
