@@ -121,10 +121,11 @@ class NameListAPIView(generics.ListAPIView):
 class NameDetailAPIView(APIView):
     permission_classes = [IsAuthenticated]
 
-    def get(self, request, pk):
-        name = get_object_or_404(Name, pk=pk)
+    def get(self, request, slug):
+        name = get_object_or_404(Name, domain_name=slug)
         serializer = NameSerializer(name, context={'request': request})
         return Response(serializer.data)
+
 
 
 
@@ -159,12 +160,12 @@ class NameDeleteAPIView(APIView):
 
 
 
-# View for toggling a SavedName instance for the current user and given domain ID.
+# View for toggling a SavedName instance for the current user and given domain slug
 class ToggleSavedNameView(APIView):
     permission_classes = [IsAuthenticated]
 
-    def post(self, request, name_id):
-        name = get_object_or_404(Name, id=name_id)
+    def post(self, request, slug):  # Keep parameter named 'slug' for URL consistency
+        name = get_object_or_404(Name, domain_name=slug)  # Lookup by domain_name but using slug parameter
         user = request.user
 
         saved_obj = SavedName.objects.filter(user=user, name=name).first()
@@ -176,7 +177,7 @@ class ToggleSavedNameView(APIView):
             SavedName.objects.create(user=user, name=name)
             return Response({'saved': True}, status=status.HTTP_201_CREATED)
 
-
+            
 #===============================================================================
 # Shared Mixin for views needing Pagination and Optonal filtering by date range
 #===============================================================================
