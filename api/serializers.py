@@ -271,6 +271,7 @@ class AcquiredNameSerializer(serializers.ModelSerializer):
 # ============================================
 class SavedNameLightSerializer(serializers.ModelSerializer):
     domain_name = serializers.CharField(source='name.domain_name')
+    extension = serializers.CharField(source='name.extension')
     domain_list = serializers.CharField(source='name.domain_list')
     slug = serializers.CharField(source='name.slug')
     status = serializers.CharField(source='name.status')
@@ -279,7 +280,7 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = SavedName
-        fields = ['slug', 'domain_name', 'domain_list', 'status', 'created_at', 'saved']
+        fields = ['slug', 'domain_name', 'extension', 'domain_list', 'status', 'created_at', 'saved']
 
     def get_saved(self, obj):
         return True  # Always True because it's from the saved names list

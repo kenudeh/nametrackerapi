@@ -9259,3 +9259,507 @@ WARNING 2025-07-30 09:07:37,968 basehttp "GET /api/acquired-names HTTP/1.1" 403 
 WARNING 2025-07-30 09:08:46,224 log Forbidden: /api/saved-names
 WARNING 2025-07-30 09:08:46,227 log Forbidden: /api/acquired-names
 WARNING 2025-07-30 09:08:46,245 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:08:46,394 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:10:58,376 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:10:58,381 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 26
+WARNING 2025-07-30 09:17:01,881 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:17:01,885 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:17:16,686 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:17:16,689 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:17:26,688 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:17:26,694 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:18:06,262 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:18:06,286 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:18:19,287 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:18:19,300 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:19:30,761 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:30,762 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:30,764 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:30,765 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:32,303 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:32,306 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:32,312 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:32,314 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:35,002 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:35,002 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:37,393 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:37,399 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:37,399 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:19:37,404 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:21:26,671 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 09:21:26,673 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 09:21:32,683 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 09:21:32,716 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 09:22:05,746 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 09:22:05,765 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 09:23:05,655 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:23:05,657 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:23:05,667 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:23:05,690 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:01:11,770 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:11,773 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:11,793 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:11,796 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:13,382 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:13,385 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:13,388 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:13,389 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:16,076 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:16,079 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:16,085 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:16,087 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:20,922 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:20,924 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:23,523 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:23,527 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:23,527 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:01:23,546 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:05:46,690 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:05:46,694 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:05:46,700 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:05:46,711 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:06:00,750 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:06:00,751 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:06:00,755 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:06:00,757 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:08:21,136 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:08:21,138 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:08:21,162 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:08:21,164 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:09:14,275 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:09:14,275 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:09:14,280 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:09:14,281 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:11:38,572 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:11:38,577 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:11:38,594 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:11:38,603 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:12:25,843 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:12:25,845 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:12:25,850 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:12:25,852 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:16:01,991 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:16:01,994 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:16:01,997 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:16:01,998 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:18:20,205 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:18:20,205 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:18:20,205 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:18:20,205 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:01,498 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:01,498 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 14:44:01,501 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:01,504 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:02,550 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:02,563 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 14:44:02,565 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:02,568 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:14,266 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:14,266 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 14:44:14,266 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:14,266 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:17,539 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:17,539 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 14:44:20,214 log Not Found: /favicon.ico
+WARNING 2025-07-30 14:44:20,215 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-30 15:02:10,774 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:02:10,778 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:02:13,365 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:02:13,365 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:02:13,371 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:02:13,373 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:12:54,493 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:12:54,495 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:12:54,538 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:12:54,542 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:19:41,756 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:41,773 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:41,973 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:41,974 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:43,442 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:43,442 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:43,711 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:43,735 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:46,153 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:46,158 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:46,484 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:46,487 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:51,801 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:51,813 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:52,215 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:52,229 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:58,560 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:58,562 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:58,568 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:19:58,569 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:20:21,581 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 15:20:21,587 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 15:20:28,636 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:20:28,639 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:20:28,643 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:20:28,644 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 21:02:10,902 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 21:02:10,922 log Forbidden: /api/saved-names
+WARNING 2025-07-30 21:02:10,928 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:02:10,929 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:02:14,984 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 21:02:14,992 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:02:15,189 log Forbidden: /api/saved-names
+WARNING 2025-07-30 21:02:15,189 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:11:38,694 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 21:11:38,766 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 21:14:08,653 log Forbidden: /api/saved-names
+WARNING 2025-07-30 21:14:08,672 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 21:14:08,672 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 21:14:08,685 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:01:50,260 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:50,266 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:50,278 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:50,283 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:51,724 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:51,724 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:51,790 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:51,808 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:53,987 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:53,987 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:54,069 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:54,072 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:58,339 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:58,345 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:58,357 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:58,358 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:02:09,305 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:02:09,332 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:02:09,360 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:02:09,364 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:11:01,286 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:01,289 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:01,543 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:01,548 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:02,591 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:02,596 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:02,768 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:02,770 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:04,807 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:04,812 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:05,123 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:05,126 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:09,060 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:09,065 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:09,373 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:09,374 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:02,638 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:15:02,640 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:02,668 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:15:02,671 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:03,945 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:15:03,952 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:04,034 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:15:04,040 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:06,272 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:15:06,321 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:06,485 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:15:06,487 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:16:39,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:16:39,074 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:16:39,083 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:16:39,086 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:51,278 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:19:51,286 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:19:51,332 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:51,350 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:52,917 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:19:52,927 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:52,970 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:19:53,019 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:56,006 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:19:56,014 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:19:56,021 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:19:56,039 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:20:51,040 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:20:51,048 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:20:51,098 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:20:51,100 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:21:00,788 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 22:21:00,799 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 22:21:05,211 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:21:05,220 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:21:05,223 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:21:05,234 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:22:47,859 log Forbidden: /api/names/DietTracker.io/toggle-save
+WARNING 2025-07-30 22:22:47,862 basehttp "POST /api/names/DietTracker.io/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-30 22:23:04,982 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:23:04,986 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:23:04,990 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:23:04,994 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:24:24,637 log Forbidden: /api/names/QuickLog.io/toggle-save
+WARNING 2025-07-30 22:24:24,641 basehttp "POST /api/names/QuickLog.io/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-30 22:24:34,307 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:24:34,328 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:24:34,453 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:24:34,471 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:27:14,156 log Forbidden: /api/names/AutoScan.co
+WARNING 2025-07-30 22:27:14,158 basehttp "GET /api/names/AutoScan.co HTTP/1.1" 403 26
+WARNING 2025-07-30 22:28:59,041 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:28:59,043 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:28:59,046 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:28:59,047 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:29:58,642 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:29:58,646 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:29:58,665 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:29:58,667 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:30:16,611 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:30:16,614 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:30:16,626 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:30:16,632 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:36:35,978 log Forbidden: /api/names/KeyLabs.co
+WARNING 2025-07-30 22:36:35,979 basehttp "GET /api/names/KeyLabs.co HTTP/1.1" 403 26
+WARNING 2025-07-30 22:43:17,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:43:17,078 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:43:17,092 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:43:17,094 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:43:18,912 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:43:18,914 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:43:21,064 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:43:21,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:43:21,079 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:43:21,109 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:15,753 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 22:45:15,758 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:21,125 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:45:21,139 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:21,145 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:45:21,154 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:28,350 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 22:45:28,355 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:31,754 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:45:31,764 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:45:31,767 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:31,779 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:07,158 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:07,193 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:07,368 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:07,369 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:08,620 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:08,622 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:08,697 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:08,713 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:11,216 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:11,220 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:11,297 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:11,301 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:15,734 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:15,736 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:15,739 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:15,740 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:26,173 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:26,176 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:26,176 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:26,176 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:27,280 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:27,280 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:27,284 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:27,285 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:59:13,411 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:59:13,413 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:59:13,416 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:59:13,453 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,903 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:01:05,905 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:01:05,911 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,911 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,921 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:01:05,926 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:01:05,927 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,934 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:40,683 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:07:40,691 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:43,089 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:07:43,101 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:07:43,101 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:43,136 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:50,129 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:07:50,135 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:52,922 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:07:52,926 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:07:52,928 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:52,931 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:13:43,038 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:13:43,040 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:13:43,040 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:13:43,040 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:13:55,762 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:13:55,770 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:01,969 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:14:01,972 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:14:01,976 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:01,977 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:37,077 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:14:37,078 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:14:37,081 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:37,106 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:18,025 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:18,032 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:18,066 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:18,072 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:19,413 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:19,464 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:19,467 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:19,470 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:23,313 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:23,323 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:23,340 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:23,341 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:36,653 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:23:36,658 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:40,950 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:40,953 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:40,955 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:40,958 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:51,337 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:23:51,343 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:24:12,285 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:24:12,290 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:24:12,317 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:24:12,323 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:35:28,641 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:35:28,643 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:35:34,041 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:35:34,043 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:35:34,047 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:35:34,048 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:10,277 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:36:10,282 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:25,958 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:36:25,961 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:36:25,963 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:25,966 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:55,267 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:36:55,269 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:36:55,273 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:55,274 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:37:28,679 log Not Found: /api/names/AptChat.io/toggle-save
+WARNING 2025-07-30 23:37:28,681 basehttp "POST /api/names/AptChat.io/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-30 23:37:36,617 log Not Found: /api/names/AptChat.co/toggle-save
+WARNING 2025-07-30 23:37:36,618 basehttp "POST /api/names/AptChat.co/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-30 23:38:39,022 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:38:39,024 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:38:39,032 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:38:39,034 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:39:16,649 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:39:16,665 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:39:23,889 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:39:23,891 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:39:23,894 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:39:23,897 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:44:01,750 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:44:01,754 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:44:05,900 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:44:05,903 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:44:05,906 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:44:05,908 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:27,863 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:00:27,866 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:00:27,868 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:27,870 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:44,288 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-31 00:00:44,295 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:57,062 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:00:57,091 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:00:57,092 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:57,103 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:01:31,628 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:01:31,632 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:01:31,633 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:01:31,648 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:50:40,300 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-31 00:50:40,305 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:12,590 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:55:12,592 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:55:12,597 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:12,624 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:23,145 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-31 00:55:23,147 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:26,407 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:55:26,409 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:55:26,417 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:26,418 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 01:03:07,214 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-31 01:03:07,215 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:36,819 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:36,821 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:36,823 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:36,827 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:38,525 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:38,527 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:38,545 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:38,551 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:41,331 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:41,333 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:41,337 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:41,338 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:48,755 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:48,755 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:48,820 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 01:04:48,829 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 01:24:08,855 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:24:08,859 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:24:08,863 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:24:08,878 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:24:10,590 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:24:10,594 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:24:10,599 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:24:10,603 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:21,918 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:01:21,933 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:01:21,945 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:21,947 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:33,649 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:01:33,651 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:33,694 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:01:33,696 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:02:31,860 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:02:31,862 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:02:31,865 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:02:31,873 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:02:32,966 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:02:32,966 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:02:32,986 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:02:32,993 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:06:58,209 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:06:58,210 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:06:58,221 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:06:58,243 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:05,669 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:07:05,672 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:07:05,676 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:05,682 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:06,891 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:07:06,896 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:07:06,901 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:06,903 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:15,821 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:21,667 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:21,670 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:08:45,277 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:45,282 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:08:45,284 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:45,286 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:46,312 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:46,314 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:08:46,318 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:46,319 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:20,416 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:20,660 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:33,708 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:33,715 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:33,730 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:33,735 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:34,817 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:34,819 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:34,822 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:34,823 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:36,853 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:36,853 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:36,869 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:36,873 basehttp "GET /api/saved-names HTTP/1.1" 403 58
