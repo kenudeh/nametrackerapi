@@ -7348,3 +7348,2418 @@ WARNING 2025-07-28 07:54:59,848 log Forbidden: /api/acquired-names
 WARNING 2025-07-28 07:54:59,875 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
 WARNING 2025-07-28 07:56:52,115 log Not Found: /favicon.ico
 WARNING 2025-07-28 07:56:52,119 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-28 18:23:58,236 log Forbidden: /api/saved-names
+WARNING 2025-07-28 18:23:58,236 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 18:23:58,247 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 18:23:58,249 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:01:14,948 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:01:14,956 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:01:14,963 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:01:14,976 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:01:14,986 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:01:14,988 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:01:14,991 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:01:14,998 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:09:36,284 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:09:36,287 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:09:36,289 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:36,290 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:37,544 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:09:37,546 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:37,598 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:09:37,600 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:39,813 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:09:39,819 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:39,836 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:09:39,839 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:44,004 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:09:44,008 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:44,045 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:09:44,046 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:09:59,178 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:09:59,188 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:09:59,212 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:09:59,228 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:10:16,687 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:10:16,687 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:10:16,692 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:10:16,693 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:11:14,685 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:11:14,689 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:11:14,723 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:11:14,750 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:12:36,770 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:12:36,776 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:12:36,826 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:12:36,841 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:20:27,034 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:20:27,037 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:27,042 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:20:27,044 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:28,334 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:20:28,344 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:28,346 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:20:28,351 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:30,688 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:20:30,688 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:30,723 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:20:30,723 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:34,988 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:20:34,989 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:20:35,004 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:20:35,004 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-28 19:21:12,106 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:21:12,115 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:21:12,121 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:21:12,121 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:28:48,333 log Forbidden: /api/saved-names
+WARNING 2025-07-28 19:28:48,333 log Forbidden: /api/acquired-names
+WARNING 2025-07-28 19:28:48,340 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-28 19:28:48,373 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:26,508 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:00:26,517 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:00:26,525 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:26,533 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:29,206 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:00:29,209 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:00:29,214 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:29,221 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:32,350 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:00:32,356 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:00:32,361 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:32,364 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:36,397 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:00:36,402 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:00:36,405 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:36,411 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:51,872 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:00:51,880 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:00:51,880 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:00:51,963 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:03:58,031 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:03:58,036 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:03:58,049 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:03:58,068 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:12:08,859 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:12:08,861 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:09,166 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:12:09,167 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:10,094 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:12:10,097 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:10,380 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:12:10,381 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:12,311 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:12:12,313 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:12,605 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:12:12,612 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:16,551 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:12:16,552 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:17,354 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:12:17,358 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 03:12:22,706 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:12:22,708 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:12:22,716 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:12:22,736 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:13:49,128 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:13:49,169 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:13:49,169 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:13:49,271 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:14:20,417 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:14:20,425 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:14:20,442 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:14:20,442 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:15:16,614 log Method Not Allowed: /api/saved-names
+WARNING 2025-07-29 03:15:16,618 basehttp "POST /api/saved-names HTTP/1.1" 405 41
+WARNING 2025-07-29 03:15:27,503 log Method Not Allowed: /api/saved-names
+WARNING 2025-07-29 03:15:27,505 basehttp "PATCH /api/saved-names HTTP/1.1" 405 42
+WARNING 2025-07-29 03:16:38,666 log Forbidden: /api/names/16/toggle-save
+WARNING 2025-07-29 03:16:38,666 basehttp "POST /api/names/16/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 03:16:50,739 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:16:50,746 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:16:50,816 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:16:50,834 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:17:21,882 log Forbidden: /api/names/14/toggle-save
+WARNING 2025-07-29 03:17:21,882 basehttp "POST /api/names/14/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 03:17:33,765 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:17:33,765 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:17:33,871 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:17:33,874 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:19:09,171 log Forbidden: /api/names/1
+WARNING 2025-07-29 03:19:09,171 basehttp "GET /api/names/1 HTTP/1.1" 403 26
+WARNING 2025-07-29 03:19:09,808 log Forbidden: /api/names/1
+WARNING 2025-07-29 03:19:09,812 basehttp "GET /api/names/1 HTTP/1.1" 403 26
+WARNING 2025-07-29 03:19:10,454 log Not Found: /api/names/1
+WARNING 2025-07-29 03:19:10,458 basehttp "GET /api/names/1 HTTP/1.1" 404 45
+WARNING 2025-07-29 03:19:11,137 log Not Found: /api/names/1
+WARNING 2025-07-29 03:19:11,137 basehttp "GET /api/names/1 HTTP/1.1" 404 45
+WARNING 2025-07-29 03:19:20,271 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:19:20,272 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:19:20,282 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:19:20,286 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:19:58,400 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:19:58,413 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:19:58,414 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:19:58,414 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:20:13,893 log Not Found: /api/names/1/toggle-save
+WARNING 2025-07-29 03:20:13,895 basehttp "POST /api/names/1/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 03:20:18,927 log Too Many Requests: /api/names/12/toggle-save
+WARNING 2025-07-29 03:20:18,931 basehttp "POST /api/names/12/toggle-save HTTP/1.1" 429 72
+WARNING 2025-07-29 03:36:05,812 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:36:05,820 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:36:05,823 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:36:05,823 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:36:54,802 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:36:54,802 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:36:54,811 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:36:54,811 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:38:40,911 log Forbidden: /api/names/5
+WARNING 2025-07-29 03:38:40,911 basehttp "GET /api/names/5 HTTP/1.1" 403 26
+WARNING 2025-07-29 03:38:41,638 log Forbidden: /api/names/5
+WARNING 2025-07-29 03:38:41,640 basehttp "GET /api/names/5 HTTP/1.1" 403 26
+WARNING 2025-07-29 03:38:42,165 log Not Found: /api/names/5
+WARNING 2025-07-29 03:38:42,176 basehttp "GET /api/names/5 HTTP/1.1" 404 45
+WARNING 2025-07-29 03:38:42,889 log Not Found: /api/names/5
+WARNING 2025-07-29 03:38:42,903 basehttp "GET /api/names/5 HTTP/1.1" 404 45
+WARNING 2025-07-29 03:39:56,788 log Forbidden: /api/names/5/toggle-save
+WARNING 2025-07-29 03:39:56,806 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 03:39:57,919 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 03:39:57,937 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 03:40:28,061 log Forbidden: /api/saved-names
+WARNING 2025-07-29 03:40:28,064 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 03:40:28,075 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 03:40:28,075 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:01:48,691 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:01:48,694 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:01:48,697 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:48,705 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:50,329 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:01:50,334 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:01:50,342 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:50,352 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:53,090 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:01:53,108 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:01:53,121 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:53,191 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:57,731 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:01:57,736 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:01:57,903 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:01:57,907 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:02:04,475 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:02:04,478 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:02:04,479 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:02:04,518 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:03:00,965 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:03:00,965 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:03:01,391 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:03:01,394 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:03:02,183 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:03:02,188 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:03:03,032 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:03:03,035 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:03:06,407 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:03:06,410 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:03:06,448 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:03:06,459 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:03,877 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:03,884 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:03,892 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:03,899 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:04,970 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:04,970 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:04,975 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:04,976 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:07,045 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:07,045 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:07,045 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:07,050 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:22,175 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:22,187 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:22,187 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:22,204 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:31,661 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:31,661 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:31,724 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:31,724 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:32,747 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:32,751 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:32,761 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:32,792 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:34,918 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:34,918 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:34,926 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:34,926 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:38,943 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:38,943 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:38,950 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:38,951 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:16:43,729 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:16:43,729 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:16:43,735 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:16:43,742 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:17:16,333 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:17:16,336 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:17:16,362 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:17:16,364 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:23:56,372 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:23:56,402 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:23:56,664 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:23:56,667 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:16,075 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:24:16,078 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:16,574 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:24:16,731 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:18,274 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:24:18,279 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:19,095 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:24:19,150 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:22,506 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:24:22,509 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:23,926 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:24:23,940 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:24:28,201 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:24:28,205 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:24:28,218 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:24:28,225 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:25:47,743 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:25:47,748 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:25:47,770 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:25:47,771 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:28:16,786 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:28:16,788 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:28:16,795 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:28:16,804 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:28:28,257 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:28:28,257 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:28:28,290 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:28:28,292 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:35:55,704 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:35:55,793 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:35:55,865 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:35:55,963 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:35:57,511 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:35:57,517 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:35:57,523 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:35:57,560 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:35:57,575 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:35:57,579 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:35:57,621 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:35:57,624 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:36:00,129 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:36:00,134 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:36:00,138 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:36:00,143 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:47,809 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:37:47,819 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:47,886 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:37:47,896 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:48,940 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:37:48,943 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:37:48,944 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:48,949 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:50,307 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:37:50,310 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:50,579 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:37:50,588 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:37:53,795 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:37:53,795 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:37:53,837 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:37:53,861 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:38:12,495 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:38:12,501 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:38:12,505 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:38:12,506 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:38:19,582 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:38:19,583 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:38:19,587 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:38:19,591 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:45:47,630 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:45:47,663 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:45:47,683 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:45:47,704 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:52:02,665 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:52:02,667 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:52:02,680 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:02,716 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:04,091 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:52:04,093 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:04,452 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:52:04,454 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:06,337 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:52:06,339 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:07,126 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:52:07,130 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:10,812 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:52:10,823 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:11,833 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:52:11,839 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:52:16,391 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:52:16,393 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:52:16,398 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:52:16,400 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:59:12,704 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:59:12,766 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:59:12,768 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:12,770 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:14,056 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:59:14,057 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:14,431 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:59:14,435 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:16,656 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:59:16,659 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:16,713 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:59:16,715 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:21,101 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:59:21,105 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:59:21,105 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:21,118 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 04:59:27,262 log Forbidden: /api/saved-names
+WARNING 2025-07-29 04:59:27,267 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 04:59:27,287 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 04:59:27,287 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:11:46,720 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:11:46,727 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:11:46,737 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:11:46,743 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:14:53,567 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:14:53,574 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:14:53,578 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:14:53,582 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:28:43,795 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:28:43,809 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:43,829 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:28:43,829 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:45,366 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:28:45,366 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:28:45,386 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:45,398 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:47,910 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:28:47,917 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:47,966 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:28:47,967 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:52,451 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:28:52,451 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:28:52,475 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:28:52,481 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:29:00,215 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:29:00,216 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:29:00,224 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:29:00,225 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:30:52,552 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:30:52,623 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:30:52,656 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:30:52,669 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:37:32,645 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:37:32,651 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:37:32,655 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:32,670 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:34,491 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:37:34,493 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:37:34,501 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:34,528 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:37,146 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:37:37,146 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:37:37,154 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:37,158 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:41,829 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:37:41,840 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:37:41,840 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:41,864 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:37:48,310 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:37:48,310 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:37:48,321 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:37:48,321 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:43:18,646 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:43:18,648 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:43:18,694 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:43:18,853 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:50:32,297 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:50:32,298 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:50:32,301 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:50:32,329 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:50:34,008 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:50:34,012 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:50:34,034 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:50:34,047 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:50:36,638 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:50:36,638 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:50:36,716 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:50:36,718 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:57:13,283 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:57:13,284 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:57:13,364 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:57:13,366 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:57:15,522 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:57:15,527 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:57:15,530 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:57:15,532 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 05:57:19,388 log Forbidden: /api/saved-names
+WARNING 2025-07-29 05:57:19,389 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 05:57:19,415 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 05:57:19,538 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:05:23,735 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:05:23,738 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:24,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:05:24,075 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:24,979 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:05:24,980 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:25,234 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:05:25,234 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:27,489 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:05:27,489 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:27,776 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:05:27,776 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:32,016 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:05:32,016 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:05:32,320 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:05:32,320 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:06:34,933 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:06:34,936 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:06:34,972 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:06:34,972 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:06:36,581 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:06:36,606 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:06:38,737 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:06:38,739 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:06:38,750 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:06:38,762 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:07:34,063 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 06:07:34,065 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 06:07:41,311 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:07:41,320 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:07:41,323 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:07:41,325 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:09:50,938 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:09:50,941 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:09:50,946 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:09:50,967 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:15:59,294 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:15:59,296 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:15:59,331 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:15:59,332 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 06:55:42,909 log Forbidden: /api/saved-names
+WARNING 2025-07-29 06:55:42,909 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 06:55:42,976 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 06:55:42,990 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:22:16,856 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:22:16,856 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:22:16,875 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:22:16,875 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:22:19,417 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:22:19,417 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:22:19,455 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:22:19,456 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:22:23,799 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:22:23,801 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:22:23,819 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 07:22:23,842 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 07:22:31,304 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:22:31,304 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:22:39,877 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:22:39,877 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:23:00,801 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:23:00,801 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:23:04,264 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:23:04,265 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:04,268 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:23:04,271 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:06,768 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:23:06,769 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:06,803 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:23:06,804 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:11,248 log Forbidden: /api/names/5/toggle-save
+WARNING 2025-07-29 07:23:11,249 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:11,308 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:23:11,309 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:11,332 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:23:11,333 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:23:12,169 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:23:12,170 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:23:26,427 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:23:26,428 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:24:22,290 log Forbidden: /api/names/4/toggle-save
+WARNING 2025-07-29 07:24:22,290 basehttp "POST /api/names/4/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 07:24:23,222 log Not Found: /api/names/4/toggle-save
+WARNING 2025-07-29 07:24:23,222 basehttp "POST /api/names/4/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:24:36,755 log Not Found: /api/names/3/toggle-save
+WARNING 2025-07-29 07:24:36,755 basehttp "POST /api/names/3/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:24:45,562 log Not Found: /api/names/1/toggle-save
+WARNING 2025-07-29 07:24:45,577 basehttp "POST /api/names/1/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:24:55,113 log Not Found: /api/names/4/toggle-save
+WARNING 2025-07-29 07:24:55,113 basehttp "POST /api/names/4/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:25:41,388 log Forbidden: /api/names/5/toggle-save
+WARNING 2025-07-29 07:25:41,388 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 07:25:41,990 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:25:41,990 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:26:33,587 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:26:33,589 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:26:33,591 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 07:26:33,592 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 07:31:16,900 log Forbidden: /api/names/5/toggle-save
+WARNING 2025-07-29 07:31:16,900 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 07:31:17,728 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 07:31:17,728 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 07:35:48,866 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:35:48,934 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:35:49,212 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:35:49,229 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:35:50,425 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:35:50,442 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 07:35:50,685 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:35:52,673 log Forbidden: /api/saved-names
+WARNING 2025-07-29 07:35:52,679 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 07:35:52,684 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 07:35:52,712 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:03:55,824 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:03:55,832 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:03:55,878 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:03:55,878 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:03:57,530 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:03:57,530 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:03:57,545 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:03:57,549 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:04:00,288 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:04:00,305 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:04:00,305 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:04:00,330 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:04:05,002 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:04:05,002 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:04:05,024 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:04:05,029 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:04:10,680 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:04:10,682 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:04:10,684 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:04:10,687 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:06:34,700 log Forbidden: /api/names/5/toggle-save
+WARNING 2025-07-29 08:06:34,700 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-29 08:06:35,838 log Not Found: /api/names/5/toggle-save
+WARNING 2025-07-29 08:06:35,841 basehttp "POST /api/names/5/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-29 08:06:49,975 log Not Found: /api/names/4
+WARNING 2025-07-29 08:06:49,975 basehttp "GET /api/names/4 HTTP/1.1" 404 45
+WARNING 2025-07-29 08:06:50,325 log Not Found: /api/names/4
+WARNING 2025-07-29 08:06:50,328 basehttp "GET /api/names/4 HTTP/1.1" 404 45
+WARNING 2025-07-29 08:07:01,358 log Not Found: /api/names/4
+WARNING 2025-07-29 08:07:01,363 basehttp "GET /api/names/4 HTTP/1.1" 404 45
+WARNING 2025-07-29 08:07:01,689 log Not Found: /api/names/4
+WARNING 2025-07-29 08:07:01,696 basehttp "GET /api/names/4 HTTP/1.1" 404 45
+WARNING 2025-07-29 08:16:56,219 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:16:56,255 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:16:56,263 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:16:56,268 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:27:38,481 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:27:38,483 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:27:38,487 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:27:38,490 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:27:40,686 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:27:40,689 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:27:40,693 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:27:40,695 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:27:43,516 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:27:43,516 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:27:43,533 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:27:43,553 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:27:47,706 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:27:47,709 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:27:47,712 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:27:47,713 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:28:18,965 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:28:18,965 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:28:18,965 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:28:18,965 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:34:28,221 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:34:28,222 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:28,271 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:34:28,272 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:29,910 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:34:29,912 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:29,979 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:34:29,993 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:32,578 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:34:32,588 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:34:32,594 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:32,598 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:37,283 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:34:37,283 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:34:37,290 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:37,292 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:34:44,298 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:34:44,301 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:34:44,302 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:34:44,305 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:46:36,694 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:46:36,696 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:46:37,040 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:46:37,043 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 08:46:38,473 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:46:41,814 log Forbidden: /api/saved-names
+WARNING 2025-07-29 08:46:41,824 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 08:46:41,972 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 08:46:42,087 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:16:34,426 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:16:34,426 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:16:34,429 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:34,433 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:36,086 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:16:36,090 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:36,113 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:16:36,120 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:38,904 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:16:38,907 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:16:38,911 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:38,918 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:43,565 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:16:43,571 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:43,590 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:16:43,592 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:16:47,809 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:16:47,812 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:16:47,816 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:16:47,820 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:16:52,946 log Not Found: /api/names/14
+WARNING 2025-07-29 09:16:52,948 basehttp "GET /api/names/14 HTTP/1.1" 404 45
+WARNING 2025-07-29 09:16:53,746 log Not Found: /api/names/14
+WARNING 2025-07-29 09:16:53,746 basehttp "GET /api/names/14 HTTP/1.1" 404 45
+WARNING 2025-07-29 09:19:49,295 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:19:49,298 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:19:49,302 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:19:49,307 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+ERROR 2025-07-29 09:19:50,927 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:19:50,943 basehttp "GET /api/saved-names HTTP/1.1" 500 164074
+ERROR 2025-07-29 09:19:53,576 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:19:53,598 basehttp "GET /api/saved-names HTTP/1.1" 500 164074
+ERROR 2025-07-29 09:19:58,205 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:19:58,216 basehttp "GET /api/saved-names HTTP/1.1" 500 164074
+WARNING 2025-07-29 09:20:02,187 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:20:02,191 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:20:02,193 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:20:02,196 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+ERROR 2025-07-29 09:20:03,567 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:20:03,607 basehttp "GET /api/saved-names HTTP/1.1" 500 164074
+ERROR 2025-07-29 09:20:06,002 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:20:06,043 basehttp "GET /api/saved-names HTTP/1.1" 500 164074
+ERROR 2025-07-29 09:20:10,329 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:20:10,368 basehttp "GET /api/saved-names HTTP/1.1" 500 164074
+WARNING 2025-07-29 09:20:51,014 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:20:51,014 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:20:51,058 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:20:51,060 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:20:54,182 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:20:54,185 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:20:54,214 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:20:54,238 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+ERROR 2025-07-29 09:20:56,212 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:20:56,265 basehttp "GET /api/saved-names HTTP/1.1" 500 160828
+ERROR 2025-07-29 09:20:58,899 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:20:58,938 basehttp "GET /api/saved-names HTTP/1.1" 500 160828
+ERROR 2025-07-29 09:21:03,601 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:21:03,621 basehttp "GET /api/saved-names HTTP/1.1" 500 160828
+ERROR 2025-07-29 09:21:20,492 log Internal Server Error: /api/saved-names
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 235, in get
+    return self.paginate(saved_qs, request, self.serializer_class)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 209, in paginate
+    return paginator.get_paginated_response(serializer_class(paginated_qs, many=True).data)
+                                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 797, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 715, in to_representation
+    return [
+           ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 716, in <listcomp>
+    self.child.to_representation(item) for item in iterable
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 525, in to_representation
+    for field in fields:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 386, in _readable_fields
+    for field in self.fields.values():
+                 ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 47, in __get__
+    res = instance.__dict__[self.name] = self.func(instance)
+                                         ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 374, in fields
+    for key, value in self.get_fields().items():
+                      ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1081, in get_fields
+    field_names = self.get_field_names(declared_fields, info)
+                  ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 1177, in get_field_names
+    assert field_name in fields, (
+AssertionError: The field 'slug' was declared on serializer SavedNameLightSerializer, but has not been included in the 'fields' option.
+ERROR 2025-07-29 09:21:20,525 basehttp "GET /api/saved-names HTTP/1.1" 500 159915
+WARNING 2025-07-29 09:22:05,128 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:22:05,130 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:22:05,137 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:22:05,157 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:22:09,711 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:22:09,711 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:22:11,318 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:22:12,584 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:22:12,588 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:22:12,589 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:22:12,594 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:25:12,942 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:25:12,946 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:25:12,992 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:25:12,996 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:26:07,587 log Forbidden: /api/names/12
+WARNING 2025-07-29 09:26:07,587 basehttp "GET /api/names/12 HTTP/1.1" 403 26
+WARNING 2025-07-29 09:26:14,937 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:26:14,958 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:26:15,035 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:26:15,125 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:26:26,541 log Not Found: /api/names/12
+WARNING 2025-07-29 09:26:26,541 basehttp "GET /api/names/12 HTTP/1.1" 404 45
+WARNING 2025-07-29 09:26:36,532 log Not Found: /api/names/aptchat
+WARNING 2025-07-29 09:26:36,532 basehttp "GET /api/names/aptchat HTTP/1.1" 404 45
+WARNING 2025-07-29 09:26:57,198 log Not Found: /api/names/studypal
+WARNING 2025-07-29 09:26:57,198 basehttp "GET /api/names/studypal HTTP/1.1" 404 45
+WARNING 2025-07-29 09:27:31,188 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:27:31,191 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:27:31,234 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:27:31,241 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:27:41,897 log Not Found: /api/names/studypad
+WARNING 2025-07-29 09:27:41,897 basehttp "GET /api/names/studypad HTTP/1.1" 404 45
+WARNING 2025-07-29 09:28:02,790 log Not Found: /api/names/StudyPad
+WARNING 2025-07-29 09:28:02,790 basehttp "GET /api/names/StudyPad HTTP/1.1" 404 45
+WARNING 2025-07-29 09:28:35,244 log Forbidden: /api/names/StudyPad
+WARNING 2025-07-29 09:28:35,245 basehttp "GET /api/names/StudyPad HTTP/1.1" 403 26
+WARNING 2025-07-29 09:28:50,895 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:28:50,897 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:28:50,904 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:28:50,905 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:29:13,526 log Not Found: /api/names/StudyPad
+WARNING 2025-07-29 09:29:13,543 basehttp "GET /api/names/StudyPad HTTP/1.1" 404 45
+WARNING 2025-07-29 09:29:20,075 log Not Found: /api/names/DealDeck
+WARNING 2025-07-29 09:29:20,075 basehttp "GET /api/names/DealDeck HTTP/1.1" 404 45
+WARNING 2025-07-29 09:31:33,886 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:31:33,886 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:31:34,314 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:31:34,314 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:31:35,486 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:31:35,486 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 09:31:35,891 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:31:37,069 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:31:37,075 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:31:37,077 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:31:37,080 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:31:58,670 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 09:31:58,675 log Forbidden: /api/saved-names
+WARNING 2025-07-29 09:31:58,689 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 09:31:58,702 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 10:02:26,383 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-29 10:02:26,390 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-29 10:02:26,415 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-29 10:02:26,419 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-29 10:08:38,878 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-29 10:08:38,884 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-29 11:08:05,707 log Forbidden: /api/saved-names
+WARNING 2025-07-29 11:08:05,721 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 11:08:05,723 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 11:08:05,743 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 14:54:41,019 log Forbidden: /api/saved-names
+WARNING 2025-07-29 14:54:41,028 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 14:54:41,031 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 14:54:41,046 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 15:26:06,542 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:26:06,544 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:06,826 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:26:06,826 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:07,878 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:26:07,891 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:08,122 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:26:08,129 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:10,240 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:26:10,259 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:10,921 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:26:10,921 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:14,714 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:26:14,716 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:15,428 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:26:15,448 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:26:21,054 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:26:21,056 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:26:21,099 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 15:26:21,104 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 15:27:42,981 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-29 15:27:42,986 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:49,053 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:40:49,070 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:49,118 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:40:49,126 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:50,773 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:40:50,779 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:50,784 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:40:50,789 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:53,602 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:40:53,638 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:40:53,643 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:53,652 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:58,397 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:40:58,402 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:40:58,406 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:40:58,421 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 15:41:28,440 log Forbidden: /api/saved-names
+WARNING 2025-07-29 15:41:28,449 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 15:41:28,450 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 15:41:28,474 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 15:52:51,496 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-29 15:52:51,505 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-29 15:57:51,864 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-29 15:57:51,884 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-29 16:04:43,374 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-29 16:04:43,387 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-29 16:08:27,350 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:08:27,355 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:27,368 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:08:27,375 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:29,023 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:08:29,023 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:08:29,039 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:29,045 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:31,608 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:08:31,608 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:08:31,608 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:31,626 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:36,214 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:08:36,215 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:36,275 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:08:36,279 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:08:44,681 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:08:44,684 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:08:44,688 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-29 16:08:44,689 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-29 16:10:20,125 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:10:20,126 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:10:20,128 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:10:20,129 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:10:20,938 log Forbidden: /api/acquired-names
+WARNING 2025-07-29 16:10:20,938 log Forbidden: /api/saved-names
+WARNING 2025-07-29 16:10:20,954 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-29 16:10:20,969 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-29 23:43:04,190 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-29 23:43:04,204 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-29 23:43:17,937 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-29 23:43:17,946 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-29 23:46:32,073 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-29 23:46:32,073 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:36,079 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:00:36,083 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:36,102 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:00:36,132 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:37,838 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:00:37,840 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:00:37,848 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:37,851 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:40,501 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:00:40,503 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:40,538 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:00:40,541 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:45,062 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:00:45,063 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:45,109 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:00:45,110 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:00:49,768 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:00:49,770 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:00:49,782 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 00:00:49,805 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 00:03:40,512 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 00:03:40,517 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 00:12:14,443 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:12:14,443 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:12:14,453 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:12:14,480 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:12:16,161 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:12:16,177 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:12:16,177 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:12:16,177 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:12:21,309 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:12:21,309 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:12:21,316 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 00:12:21,319 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 00:14:38,404 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:14:38,407 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:14:38,423 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:14:38,426 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:14:41,167 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:14:41,169 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:14:41,171 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:14:41,172 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:14:45,875 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:14:45,875 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:14:45,882 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:14:45,883 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 00:14:52,927 log Forbidden: /api/saved-names
+WARNING 2025-07-30 00:14:52,931 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 00:14:52,972 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 00:14:53,063 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:17:57,080 log Forbidden: /api/saved-names
+WARNING 2025-07-30 03:17:57,084 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 03:17:57,087 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:17:57,088 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:18:49,594 log Forbidden: /api/saved-names
+WARNING 2025-07-30 03:18:49,631 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 03:18:49,646 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:18:49,669 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:18:55,574 log Forbidden: /api/saved-names
+WARNING 2025-07-30 03:18:55,582 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:18:55,612 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 03:18:55,624 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 03:26:34,776 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:26:34,780 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 03:33:11,901 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:33:11,904 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 03:40:41,062 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:40:41,139 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 03:46:05,199 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:46:05,203 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:46:05,203 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 03:46:05,217 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 03:47:00,332 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:47:00,335 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-30 03:51:28,312 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:51:28,314 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 03:56:45,345 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 03:56:45,347 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:01:55,297 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:01:55,299 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:03:54,898 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:03:54,902 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:07:21,739 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:07:21,743 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:10:07,379 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:10:07,386 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:13:36,761 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:13:36,786 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:15:28,826 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:15:28,835 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:20:55,275 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:20:55,278 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:26:29,805 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:26:29,888 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:28:40,817 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:28:40,850 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-30 04:29:10,877 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:29:10,880 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:31:05,247 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:31:05,251 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-30 04:35:21,254 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:35:21,269 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:35:58,501 log Forbidden: /api/saved-names
+WARNING 2025-07-30 04:35:58,501 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 04:35:58,516 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 04:35:58,532 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 04:36:00,032 log Forbidden: /api/saved-names
+WARNING 2025-07-30 04:36:00,032 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 04:36:00,032 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 04:36:00,051 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 04:36:03,811 log Forbidden: /api/saved-names
+WARNING 2025-07-30 04:36:03,813 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 04:36:03,818 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 04:36:03,819 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 04:41:11,311 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:41:11,311 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:49:40,700 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-30 04:49:40,702 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:55:08,432 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-30 04:55:08,436 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 26
+WARNING 2025-07-30 04:55:09,558 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 04:55:09,562 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 05:00:25,651 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 05:00:25,655 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 05:00:55,656 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-30 05:00:55,658 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 26
+WARNING 2025-07-30 05:09:53,579 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-30 05:09:53,585 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-30 05:11:59,028 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-30 05:11:59,038 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 58
+WARNING 2025-07-30 05:23:43,355 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 05:23:43,358 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 05:23:47,141 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 05:23:47,143 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 05:24:11,296 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 05:24:11,303 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-30 05:29:41,331 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 05:29:41,334 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 05:32:06,382 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 05:32:06,386 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 05:32:08,720 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 05:32:08,722 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 05:33:15,636 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 05:33:15,646 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 05:38:52,651 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 05:38:52,668 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 26
+WARNING 2025-07-30 05:41:22,852 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 05:41:22,921 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 05:42:16,243 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 05:42:16,248 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 07:08:46,865 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 07:08:46,866 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 07:34:01,030 log Forbidden: /api/names/DealDeck.io
+WARNING 2025-07-30 07:34:01,089 basehttp "GET /api/names/DealDeck.io HTTP/1.1" 403 58
+WARNING 2025-07-30 07:40:56,812 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:40:56,813 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:40:56,814 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:40:56,815 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:40:58,404 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:40:58,406 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:40:58,412 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:40:58,413 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:00,970 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:00,970 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:00,970 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:00,970 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:05,568 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:05,568 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:05,598 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:05,599 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:27,687 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:27,687 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:27,687 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:27,687 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:29,165 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:29,179 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:29,200 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:29,213 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:31,692 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:31,692 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:31,707 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:31,707 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:36,191 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:36,191 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:36,233 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:36,236 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 07:41:39,660 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:41:39,662 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:41:39,669 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 07:41:39,673 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 07:43:00,111 log Forbidden: /api/saved-names
+WARNING 2025-07-30 07:43:00,113 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 07:43:00,116 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 07:43:00,119 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 07:48:08,316 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 07:48:08,322 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 07:49:26,717 log Forbidden: /api/names/onesignature.io
+WARNING 2025-07-30 07:49:26,717 basehttp "GET /api/names/onesignature.io HTTP/1.1" 403 26
+WARNING 2025-07-30 07:49:33,415 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 07:49:33,438 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 07:49:46,247 log Not Found: /api/names/onesignature.io
+WARNING 2025-07-30 07:49:46,247 basehttp "GET /api/names/onesignature.io HTTP/1.1" 404 45
+WARNING 2025-07-30 07:54:31,261 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 07:54:31,263 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 07:56:38,930 log Not Found: /api/names/31/toggle-save'
+WARNING 2025-07-30 07:56:38,930 basehttp "POST /api/names/31/toggle-save' HTTP/1.1" 404 6179
+WARNING 2025-07-30 07:56:46,251 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 07:56:46,253 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 07:56:56,459 log Not Found: /api/names/31/toggle-save'
+WARNING 2025-07-30 07:56:56,490 basehttp "POST /api/names/31/toggle-save' HTTP/1.1" 404 6179
+WARNING 2025-07-30 07:58:40,847 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 07:58:40,856 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 08:09:55,192 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 08:09:55,235 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 08:10:21,635 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 08:10:21,659 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 26
+WARNING 2025-07-30 08:18:23,593 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 08:18:23,631 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 08:24:32,252 log Not Found: /api/names/AptChat.ai/toggle-save
+WARNING 2025-07-30 08:24:32,254 basehttp "POST /api/names/AptChat.ai/toggle-save HTTP/1.1" 404 6185
+WARNING 2025-07-30 08:24:39,335 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 08:24:39,342 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 08:24:59,220 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:24:59,234 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:24:59,250 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:24:59,250 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:25:10,976 log Not Found: /api/names/StudyPad.io/toggle-save
+WARNING 2025-07-30 08:25:10,979 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 404 6188
+WARNING 2025-07-30 08:26:54,336 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:26:54,336 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:26:54,363 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:26:54,366 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:27:13,139 log Not Found: /api/names/DealDeck.io/toggle-save
+WARNING 2025-07-30 08:27:13,143 basehttp "POST /api/names/DealDeck.io/toggle-save HTTP/1.1" 404 6188
+WARNING 2025-07-30 08:28:08,428 log Forbidden: /api/names/StudyPad.io/toggle-save
+WARNING 2025-07-30 08:28:08,429 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 403 26
+ERROR 2025-07-30 08:28:12,736 log Internal Server Error: /api/names/StudyPad.io/toggle-save
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ToggleSavedNameView.post() got an unexpected keyword argument 'name_slug'
+ERROR 2025-07-30 08:28:12,754 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 500 102105
+ERROR 2025-07-30 08:28:34,443 log Internal Server Error: /api/names/DealDeck.io/toggle-save
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: ToggleSavedNameView.post() got an unexpected keyword argument 'slug'
+ERROR 2025-07-30 08:28:34,468 basehttp "POST /api/names/DealDeck.io/toggle-save HTTP/1.1" 500 102045
+WARNING 2025-07-30 08:29:43,645 log Forbidden: /api/names/StudyPad.io
+WARNING 2025-07-30 08:29:43,675 basehttp "GET /api/names/StudyPad.io HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:29,566 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:33:29,581 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:29,585 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:33:29,602 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:31,282 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:33:31,282 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:33:31,287 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:31,306 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:33,831 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:33:33,834 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:33,911 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:33:33,914 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:33:40,042 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:33:40,052 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:33:40,062 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:33:40,064 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:33:47,313 log Not Found: /api/names/StudyPad.io/toggle-save
+WARNING 2025-07-30 08:33:47,313 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 404 6186
+WARNING 2025-07-30 08:35:22,077 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:35:22,080 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:35:22,093 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:35:22,106 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:36:42,047 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:36:42,050 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:36:42,052 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:36:42,053 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 08:36:46,314 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:36:46,317 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:36:46,378 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:36:46,380 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:36:51,777 log Not Found: /api/names/StudyPad.io/toggle-save
+WARNING 2025-07-30 08:36:51,778 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 404 6186
+WARNING 2025-07-30 08:37:07,192 log Not Found: /api/names/DealDeck.io/toggle-save
+WARNING 2025-07-30 08:37:07,192 basehttp "POST /api/names/DealDeck.io/toggle-save HTTP/1.1" 404 6186
+WARNING 2025-07-30 08:38:06,022 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:38:06,025 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:38:06,029 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:38:06,144 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:38:12,516 log Not Found: /api/names/DealDeck.io/toggle-save
+WARNING 2025-07-30 08:38:12,520 basehttp "POST /api/names/DealDeck.io/toggle-save HTTP/1.1" 404 6186
+WARNING 2025-07-30 08:42:01,583 log Not Found: /api/names/AptChat.ai/toggle-save
+WARNING 2025-07-30 08:42:01,589 basehttp "POST /api/names/AptChat.ai/toggle-save HTTP/1.1" 404 6183
+WARNING 2025-07-30 08:43:13,575 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:43:13,593 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:43:13,641 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:43:13,645 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:48:28,431 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:48:28,436 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:48:28,482 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:48:28,503 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:48:34,089 log Not Found: /api/names/StudyPad.io/toggle-save
+WARNING 2025-07-30 08:48:34,092 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 404 6186
+WARNING 2025-07-30 08:52:35,962 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:52:35,963 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:52:35,965 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:52:35,969 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+ERROR 2025-07-30 08:52:44,199 log Internal Server Error: /api/names/StudyPad.io/toggle-save
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 184, in post
+    name = get_object_or_404(Name, slug=slug)  # Now using slug to lookup the Name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 619, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'slug' into field. Choices are: acquiredname, created_at, domain_list, domain_name, drop_date, drop_time, extension, id, is_favorite, is_idea_of_the_day, is_top_rated, last_checked, length, savedname, score, status, suggested_usecase, suggested_usecase_id, syllables, top_rated_date, updated_at, use_cases
+ERROR 2025-07-30 08:52:44,240 basehttp "POST /api/names/StudyPad.io/toggle-save HTTP/1.1" 500 164738
+WARNING 2025-07-30 08:56:41,441 log Forbidden: /api/saved-names
+WARNING 2025-07-30 08:56:41,442 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 08:56:41,453 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 08:56:41,468 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+ERROR 2025-07-30 08:56:49,419 log Internal Server Error: /api/names/AptChat.ai/toggle-save
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 184, in post
+    name = get_object_or_404(Name, slug=slug)  # Now using slug to lookup the Name
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\shortcuts.py", line 90, in get_object_or_404
+    return queryset.get(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 619, in get
+    clone = self._chain() if self.query.combinator else self.filter(*args, **kwargs)
+                                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1493, in filter
+    return self._filter_or_exclude(False, args, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1511, in _filter_or_exclude
+    clone._filter_or_exclude_inplace(negate, args, kwargs)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1518, in _filter_or_exclude_inplace
+    self._query.add_q(Q(*args, **kwargs))
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1646, in add_q
+    clause, _ = self._add_q(q_object, can_reuse)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1678, in _add_q
+    child_clause, needed_inner = self.build_filter(
+                                 ^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1526, in build_filter
+    lookups, parts, reffed_expression = self.solve_lookup_type(arg, summarize)
+                                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1333, in solve_lookup_type
+    _, field, _, lookup_parts = self.names_to_path(lookup_splitted, self.get_meta())
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'slug' into field. Choices are: acquiredname, created_at, domain_list, domain_name, drop_date, drop_time, extension, id, is_favorite, is_idea_of_the_day, is_top_rated, last_checked, length, savedname, score, status, suggested_usecase, suggested_usecase_id, syllables, top_rated_date, updated_at, use_cases
+ERROR 2025-07-30 08:56:49,481 basehttp "POST /api/names/AptChat.ai/toggle-save HTTP/1.1" 500 164705
+WARNING 2025-07-30 09:07:37,965 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:07:37,965 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:07:37,967 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:07:37,968 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:08:46,224 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:08:46,227 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:08:46,245 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:08:46,394 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:10:58,376 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:10:58,381 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 26
+WARNING 2025-07-30 09:17:01,881 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:17:01,885 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:17:16,686 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:17:16,689 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:17:26,688 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:17:26,694 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:18:06,262 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:18:06,286 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:18:19,287 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 09:18:19,300 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 09:19:30,761 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:30,762 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:30,764 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:30,765 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:32,303 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:32,306 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:32,312 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:32,314 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 09:19:35,002 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:35,002 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:37,393 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:19:37,399 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:19:37,399 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:19:37,404 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:21:26,671 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 09:21:26,673 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-07-30 09:21:32,683 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 09:21:32,716 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 09:22:05,746 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-30 09:22:05,765 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-30 09:23:05,655 log Forbidden: /api/saved-names
+WARNING 2025-07-30 09:23:05,657 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 09:23:05,667 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 09:23:05,690 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:01:11,770 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:11,773 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:11,793 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:11,796 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:13,382 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:13,385 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:13,388 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:13,389 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:16,076 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:16,079 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:16,085 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:16,087 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 10:01:20,922 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:20,924 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:23,523 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:01:23,527 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:01:23,527 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:01:23,546 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:05:46,690 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:05:46,694 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:05:46,700 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:05:46,711 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:06:00,750 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:06:00,751 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:06:00,755 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:06:00,757 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:08:21,136 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:08:21,138 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:08:21,162 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:08:21,164 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:09:14,275 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:09:14,275 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:09:14,280 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:09:14,281 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:11:38,572 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:11:38,577 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:11:38,594 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:11:38,603 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:12:25,843 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:12:25,845 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:12:25,850 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:12:25,852 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:16:01,991 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:16:01,994 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:16:01,997 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:16:01,998 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:18:20,205 log Forbidden: /api/saved-names
+WARNING 2025-07-30 10:18:20,205 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 10:18:20,205 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 10:18:20,205 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:01,498 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:01,498 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 14:44:01,501 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:01,504 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:02,550 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:02,563 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 14:44:02,565 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:02,568 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:14,266 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:14,266 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 14:44:14,266 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:14,266 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 14:44:17,539 log Forbidden: /api/saved-names
+WARNING 2025-07-30 14:44:17,539 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 14:44:20,214 log Not Found: /favicon.ico
+WARNING 2025-07-30 14:44:20,215 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-07-30 15:02:10,774 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:02:10,778 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:02:13,365 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:02:13,365 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:02:13,371 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:02:13,373 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:12:54,493 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:12:54,495 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:12:54,538 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:12:54,542 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:19:41,756 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:41,773 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:41,973 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:41,974 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:43,442 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:43,442 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:43,711 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:43,735 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:46,153 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:46,158 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:46,484 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:46,487 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:51,801 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:51,813 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:52,215 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:52,229 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 15:19:58,560 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:19:58,562 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:19:58,568 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:19:58,569 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:20:21,581 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 15:20:21,587 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 15:20:28,636 log Forbidden: /api/saved-names
+WARNING 2025-07-30 15:20:28,639 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 15:20:28,643 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 15:20:28,644 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 21:02:10,902 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 21:02:10,922 log Forbidden: /api/saved-names
+WARNING 2025-07-30 21:02:10,928 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:02:10,929 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:02:14,984 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 21:02:14,992 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:02:15,189 log Forbidden: /api/saved-names
+WARNING 2025-07-30 21:02:15,189 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 21:11:38,694 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 21:11:38,766 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 21:14:08,653 log Forbidden: /api/saved-names
+WARNING 2025-07-30 21:14:08,672 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 21:14:08,672 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 21:14:08,685 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:01:50,260 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:50,266 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:50,278 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:50,283 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:51,724 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:51,724 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:51,790 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:51,808 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:53,987 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:53,987 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:54,069 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:54,072 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:58,339 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:01:58,345 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:01:58,357 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:01:58,358 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:02:09,305 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:02:09,332 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:02:09,360 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:02:09,364 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:11:01,286 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:01,289 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:01,543 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:01,548 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:02,591 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:02,596 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:02,768 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:02,770 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:04,807 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:04,812 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:05,123 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:05,126 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:09,060 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:11:09,065 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:11:09,373 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:11:09,374 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:02,638 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:15:02,640 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:02,668 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:15:02,671 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:03,945 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:15:03,952 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:04,034 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:15:04,040 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:06,272 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:15:06,321 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:15:06,485 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:15:06,487 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:16:39,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:16:39,074 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:16:39,083 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:16:39,086 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:51,278 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:19:51,286 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:19:51,332 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:51,350 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:52,917 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:19:52,927 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:52,970 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:19:53,019 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:19:56,006 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:19:56,014 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:19:56,021 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:19:56,039 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:20:51,040 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:20:51,048 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:20:51,098 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:20:51,100 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:21:00,788 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-30 22:21:00,799 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-07-30 22:21:05,211 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:21:05,220 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:21:05,223 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:21:05,234 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:22:47,859 log Forbidden: /api/names/DietTracker.io/toggle-save
+WARNING 2025-07-30 22:22:47,862 basehttp "POST /api/names/DietTracker.io/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-30 22:23:04,982 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:23:04,986 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:23:04,990 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:23:04,994 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:24:24,637 log Forbidden: /api/names/QuickLog.io/toggle-save
+WARNING 2025-07-30 22:24:24,641 basehttp "POST /api/names/QuickLog.io/toggle-save HTTP/1.1" 403 26
+WARNING 2025-07-30 22:24:34,307 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:24:34,328 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:24:34,453 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:24:34,471 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:27:14,156 log Forbidden: /api/names/AutoScan.co
+WARNING 2025-07-30 22:27:14,158 basehttp "GET /api/names/AutoScan.co HTTP/1.1" 403 26
+WARNING 2025-07-30 22:28:59,041 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:28:59,043 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:28:59,046 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:28:59,047 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:29:58,642 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:29:58,646 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:29:58,665 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:29:58,667 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:30:16,611 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:30:16,614 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:30:16,626 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:30:16,632 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:36:35,978 log Forbidden: /api/names/KeyLabs.co
+WARNING 2025-07-30 22:36:35,979 basehttp "GET /api/names/KeyLabs.co HTTP/1.1" 403 26
+WARNING 2025-07-30 22:43:17,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:43:17,078 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:43:17,092 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:43:17,094 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:43:18,912 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:43:18,914 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:43:21,064 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:43:21,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:43:21,079 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:43:21,109 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:15,753 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 22:45:15,758 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:21,125 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:45:21,139 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:21,145 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:45:21,154 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:28,350 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 22:45:28,355 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:31,754 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:45:31,764 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:45:31,767 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:45:31,779 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:07,158 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:07,193 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:07,368 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:07,369 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:08,620 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:08,622 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:08,697 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:08,713 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:11,216 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:11,220 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:11,297 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:11,301 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:15,734 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:15,736 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:15,739 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:15,740 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 22:57:26,173 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:26,176 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:26,176 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:26,176 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:27,280 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:57:27,280 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:57:27,284 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:57:27,285 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:59:13,411 log Forbidden: /api/saved-names
+WARNING 2025-07-30 22:59:13,413 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 22:59:13,416 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 22:59:13,453 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,903 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:01:05,905 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:01:05,911 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,911 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,921 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:01:05,926 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:01:05,927 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:01:05,934 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:40,683 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:07:40,691 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:43,089 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:07:43,101 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:07:43,101 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:43,136 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:50,129 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:07:50,135 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:52,922 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:07:52,926 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:07:52,928 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:07:52,931 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:13:43,038 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:13:43,040 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:13:43,040 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:13:43,040 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:13:55,762 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:13:55,770 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:01,969 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:14:01,972 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:14:01,976 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:01,977 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:37,077 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:14:37,078 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:14:37,081 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:14:37,106 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:18,025 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:18,032 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:18,066 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:18,072 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:19,413 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:19,464 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:19,467 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:19,470 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-30 23:23:23,313 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:23,323 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:23,340 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:23,341 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:36,653 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:23:36,658 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:40,950 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:23:40,953 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:23:40,955 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:40,958 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:23:51,337 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:23:51,343 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:24:12,285 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:24:12,290 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:24:12,317 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:24:12,323 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:35:28,641 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:35:28,643 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:35:34,041 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:35:34,043 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:35:34,047 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:35:34,048 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:10,277 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:36:10,282 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:25,958 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:36:25,961 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:36:25,963 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:25,966 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:55,267 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:36:55,269 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:36:55,273 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:36:55,274 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:37:28,679 log Not Found: /api/names/AptChat.io/toggle-save
+WARNING 2025-07-30 23:37:28,681 basehttp "POST /api/names/AptChat.io/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-30 23:37:36,617 log Not Found: /api/names/AptChat.co/toggle-save
+WARNING 2025-07-30 23:37:36,618 basehttp "POST /api/names/AptChat.co/toggle-save HTTP/1.1" 404 45
+WARNING 2025-07-30 23:38:39,022 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:38:39,024 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:38:39,032 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:38:39,034 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:39:16,649 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-07-30 23:39:16,665 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:39:23,889 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:39:23,891 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:39:23,894 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:39:23,897 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:44:01,750 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-30 23:44:01,754 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-30 23:44:05,900 log Forbidden: /api/saved-names
+WARNING 2025-07-30 23:44:05,903 log Forbidden: /api/acquired-names
+WARNING 2025-07-30 23:44:05,906 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-30 23:44:05,908 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:27,863 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:00:27,866 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:00:27,868 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:27,870 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:44,288 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-31 00:00:44,295 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:57,062 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:00:57,091 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:00:57,092 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:00:57,103 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:01:31,628 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:01:31,632 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:01:31,633 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:01:31,648 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:50:40,300 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-31 00:50:40,305 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:12,590 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:55:12,592 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:55:12,597 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:12,624 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:23,145 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-31 00:55:23,147 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:26,407 log Forbidden: /api/saved-names
+WARNING 2025-07-31 00:55:26,409 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 00:55:26,417 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 00:55:26,418 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 01:03:07,214 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-07-31 01:03:07,215 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:36,819 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:36,821 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:36,823 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:36,827 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:38,525 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:38,527 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:38,545 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:38,551 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:41,331 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:41,333 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:41,337 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:41,338 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:04:48,755 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:04:48,755 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:04:48,820 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 01:04:48,829 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 01:24:08,855 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:24:08,859 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:24:08,863 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:24:08,878 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:24:10,590 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 01:24:10,594 log Forbidden: /api/saved-names
+WARNING 2025-07-31 01:24:10,599 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 01:24:10,603 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:21,918 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:01:21,933 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:01:21,945 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:21,947 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:33,649 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:01:33,651 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:01:33,694 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:01:33,696 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:02:31,860 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:02:31,862 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:02:31,865 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:02:31,873 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:02:32,966 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:02:32,966 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:02:32,986 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:02:32,993 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:06:58,209 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:06:58,210 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:06:58,221 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:06:58,243 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:05,669 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:07:05,672 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:07:05,676 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:05,682 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:06,891 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:07:06,896 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:07:06,901 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:07:06,903 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:15,821 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:21,667 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:21,670 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 07:08:45,277 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:45,282 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:08:45,284 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:45,286 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:46,312 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:08:46,314 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:08:46,318 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:08:46,319 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:20,416 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:20,660 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:33,708 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:33,715 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:33,730 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:33,735 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:34,817 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:34,819 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:34,822 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:34,823 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:36,853 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:18:36,853 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:18:36,869 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:18:36,873 basehttp "GET /api/saved-names HTTP/1.1" 403 58

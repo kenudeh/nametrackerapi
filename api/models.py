@@ -163,8 +163,16 @@ class Name(models.Model):
     last_checked = models.DateTimeField(null=True, blank=True)
 
 
+    # A computed property (method) that generates a slug from the domain_name field
+    @property
+    def slug(self):
+        return self.domain_name 
 
+    def get_absolute_url(self):
+        return reverse('name-detail', kwargs={'slug': self.slug})
     
+
+
     def save(self, *args, **kwargs):
         """
         Override save method to compute:

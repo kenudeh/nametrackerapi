@@ -200,10 +200,7 @@ REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": (
         "rest_framework.permissions.IsAuthenticated", 
     ),
-    'DEFAULT_THROTTLE_CLASSES': [
-        'api.throttles.PostRequestThrottle',
-        # 'rest_framework.throttling.AnonRateThrottle', # optional fallback
-    ],
+    'DEFAULT_THROTTLE_CLASSES': [],
     'DEFAULT_THROTTLE_RATES': {
         'post_request': '5/day',  # Allow 5 POST requests per day for public submissions
         # 'anon': '10000/day',  # basically unlimited

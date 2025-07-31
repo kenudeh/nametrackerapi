@@ -155,13 +155,14 @@ class NameSerializer(serializers.ModelSerializer):
     suggested_usecase = SuggestedUseCaseSerializer(read_only=True)
     other_use_cases = serializers.SerializerMethodField()
     saved = serializers.SerializerMethodField()
+    slug = serializers.CharField(source='domain_name', read_only=True)
 
 
     class Meta:
         model = Name
-        fields = ['id', 'domain_name', 'extension', 'domain_list', 'status', 'score', 'length', 'syllables',
-                'suggested_usecase', 'other_use_cases', 'is_idea_of_the_day', 'is_top_rated', 'is_favorite',
-                'drop_date', 'drop_time', 'created_at', 'updated_at', 'saved'
+        fields = ['domain_name', 'extension', 'domain_list', 'status', 'score', 'length', 'syllables',
+                'suggested_usecase', 'other_use_cases', 'is_idea_of_the_day', 'is_top_rated',
+                'drop_date', 'created_at', 'updated_at', 'saved', 'slug'
         ]
 
     # Dynamically checks if the current user has saved the name.
@@ -270,14 +271,16 @@ class AcquiredNameSerializer(serializers.ModelSerializer):
 # ============================================
 class SavedNameLightSerializer(serializers.ModelSerializer):
     domain_name = serializers.CharField(source='name.domain_name')
+    extension = serializers.CharField(source='name.extension')
     domain_list = serializers.CharField(source='name.domain_list')
+    slug = serializers.CharField(source='name.slug')
     status = serializers.CharField(source='name.status')
     created_at = serializers.DateTimeField(source='name.created_at')
     saved = serializers.SerializerMethodField()
 
     class Meta:
         model = SavedName
-        fields = ['id', 'domain_name', 'domain_list', 'status', 'created_at', 'saved']
+        fields = ['slug', 'domain_name', 'extension', 'domain_list', 'status', 'created_at', 'saved']
 
     def get_saved(self, obj):
         return True  # Always True because it's from the saved names list
