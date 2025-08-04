@@ -209,7 +209,7 @@ REST_FRAMEWORK = {
     "PAGE_SIZE": 10,
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
-
+ 
 
 
 AUTHENTICATION_BACKENDS = (

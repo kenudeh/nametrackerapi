@@ -281,6 +281,7 @@ class UseCase(models.Model):
     order = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(3)]
     )
+    # is_idea_of_the_day = models.BooleanField(default=False)
     category = models.ForeignKey(
         'UseCaseCategory',
         on_delete=models.CASCADE,
