@@ -232,6 +232,7 @@ class SavedNameListView(APIView, DateRangePaginationMixin):
     def get(self, request):
         saved_qs = SavedName.objects.filter(user=request.user).select_related("name")
         saved_qs = self.filter_by_date_range(saved_qs, request)
+        # return paginated data via the limit-offset pagination define in the mixin
         return self.paginate(saved_qs, request, self.serializer_class)
 
 

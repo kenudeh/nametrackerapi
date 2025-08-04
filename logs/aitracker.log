@@ -9763,3 +9763,972 @@ WARNING 2025-07-31 07:18:36,853 log Forbidden: /api/acquired-names
 WARNING 2025-07-31 07:18:36,853 log Forbidden: /api/saved-names
 WARNING 2025-07-31 07:18:36,869 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
 WARNING 2025-07-31 07:18:36,873 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:25:41,479 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:25:41,504 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:26:05,281 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:26:05,284 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:26:05,286 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:26:05,287 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:09,823 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:43:12,831 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:43:22,167 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:43:22,172 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:43:22,173 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:22,179 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:23,249 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:43:23,251 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:43:23,253 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:23,254 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:55,561 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:43:55,565 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:43:55,593 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:55,596 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:56,614 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:43:56,618 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:43:56,623 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:56,624 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:58,659 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 07:43:58,659 log Forbidden: /api/saved-names
+WARNING 2025-07-31 07:43:58,671 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:43:58,684 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 07:44:47,265 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-31 07:44:47,273 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-07-31 08:02:58,131 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-07-31 08:03:06,069 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:03:06,073 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:03:06,078 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:03:06,096 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:03:07,179 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:03:07,179 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:03:07,192 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:03:07,192 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:04:30,064 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:04:30,064 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:04:30,070 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:04:30,083 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:04:31,168 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:04:31,168 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:04:31,179 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:04:31,182 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:06:28,921 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:06:28,921 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:06:28,952 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:06:28,963 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:06:29,998 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:06:29,998 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:06:30,003 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:06:30,004 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:15:47,710 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:15:47,719 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:15:47,727 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:15:47,731 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:15:55,931 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:15:55,931 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:15:58,497 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:15:58,504 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:15:58,506 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:15:58,509 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:15:59,594 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:15:59,608 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:15:59,614 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:15:59,616 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:22:11,088 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:22:11,088 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:22:11,098 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:11,101 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:19,382 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:22:19,386 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:22:19,388 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:19,391 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:31,275 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:22:31,285 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:31,292 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:22:31,301 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:45,548 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:22:45,561 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:22:45,567 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:22:45,577 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 08:28:54,234 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:28:54,234 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:28:57,986 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:28:57,988 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:28:57,989 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:28:57,997 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:28:59,087 log Forbidden: /api/saved-names
+WARNING 2025-07-31 08:28:59,087 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 08:28:59,096 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 08:28:59,098 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 11:05:52,463 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 11:05:52,468 log Forbidden: /api/saved-names
+WARNING 2025-07-31 11:05:52,475 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 11:05:52,482 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 11:05:52,486 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 11:05:52,499 log Forbidden: /api/saved-names
+WARNING 2025-07-31 11:05:52,501 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 11:05:52,503 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 13:32:24,951 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-07-31 13:32:24,954 log Forbidden: /api/saved-names
+WARNING 2025-07-31 13:32:24,955 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 13:32:24,960 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:24,964 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:24,968 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:28,143 log Forbidden: /api/saved-names
+WARNING 2025-07-31 13:32:28,145 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:28,423 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 13:32:28,428 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:29,782 log Forbidden: /api/saved-names
+WARNING 2025-07-31 13:32:29,782 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:29,962 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 13:32:29,967 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:32,531 log Forbidden: /api/saved-names
+WARNING 2025-07-31 13:32:32,534 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:32,583 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 13:32:32,585 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:34,385 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 13:32:34,395 log Forbidden: /api/saved-names
+WARNING 2025-07-31 13:32:34,416 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:34,425 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:35,083 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 13:32:35,086 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 13:32:35,154 log Forbidden: /api/saved-names
+WARNING 2025-07-31 13:32:35,157 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:22:28,441 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:22:28,443 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:22:28,452 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:28,455 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:30,879 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:22:30,884 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:22:30,888 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:30,889 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:33,813 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:22:33,888 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:22:34,141 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:34,345 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:38,296 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:22:38,298 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:22:38,705 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:22:38,715 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:26:36,312 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:26:36,314 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:26:36,318 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:26:36,322 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:34:41,945 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:34:41,952 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:34:41,952 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:41,952 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:43,252 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:34:43,252 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:34:43,252 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:43,256 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:45,595 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:34:45,596 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:34:45,597 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:45,598 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:49,917 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:34:49,918 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:34:49,918 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:49,918 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:34:57,279 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:34:57,317 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:34:57,320 basehttp "GET /api/saved-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:34:57,327 basehttp "GET /api/acquired-names HTTP/1.1" 403 58
+WARNING 2025-07-31 15:41:06,753 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:41:06,754 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:41:06,755 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:06,755 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:08,585 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:41:08,587 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:41:08,588 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:08,589 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:11,261 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:41:11,261 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:41:11,297 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:11,297 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:15,833 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 15:41:15,841 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 15:41:15,923 log Forbidden: /api/saved-names
+WARNING 2025-07-31 15:41:15,924 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 20:58:11,905 log Forbidden: /api/acquired-names
+WARNING 2025-07-31 20:58:11,905 basehttp "GET /api/acquired-names HTTP/1.1" 403 26
+WARNING 2025-07-31 20:58:11,948 log Forbidden: /api/saved-names
+WARNING 2025-07-31 20:58:11,948 basehttp "GET /api/saved-names HTTP/1.1" 403 26
+WARNING 2025-07-31 22:42:23,650 log Not Found: /api/saved-names
+WARNING 2025-07-31 22:42:23,650 log Not Found: /api/acquired-names
+WARNING 2025-07-31 22:42:23,656 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-07-31 22:42:23,663 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-07-31 22:42:23,716 log Not Found: /api/saved-names
+WARNING 2025-07-31 22:42:23,738 log Not Found: /api/acquired-names
+WARNING 2025-07-31 22:42:23,751 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-07-31 22:42:23,759 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-07-31 23:16:42,002 log Forbidden: /api/domains/saved
+WARNING 2025-07-31 23:16:42,010 log Forbidden: /api/domains/saved
+WARNING 2025-07-31 23:16:42,010 log Forbidden: /api/domains/saved
+WARNING 2025-07-31 23:16:42,019 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-07-31 23:16:42,019 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-07-31 23:16:42,035 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:34:18,165 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:34:18,161 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:34:18,197 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:34:18,213 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:34:20,258 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:34:20,265 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:34:20,267 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:34:20,276 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:34:24,302 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:34:24,305 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:34:24,351 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:34:24,359 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:10,561 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:10,568 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:10,575 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:10,576 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:35,560 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:35,566 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:35,569 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:35,571 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:36,692 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:36,694 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:36,697 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:36,698 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:38,736 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:38,738 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:36:38,738 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:36:38,750 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:37:02,841 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:02,890 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:02,902 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 15:37:02,908 basehttp "GET /api/domains/saved HTTP/1.1" 403 26
+WARNING 2025-08-02 15:37:28,857 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:28,861 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:37:28,874 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:28,879 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:37:29,915 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:29,926 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:29,932 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:37:29,935 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:37:31,967 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:31,970 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:37:32,010 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:37:32,013 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:38:25,675 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:38:25,678 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:38:25,683 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:38:25,702 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 15:40:52,108 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 15:40:52,120 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 15:40:52,168 log Not Found: /api/acquired-names
+WARNING 2025-08-02 15:40:52,174 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 15:40:53,287 log Not Found: /api/acquired-names
+WARNING 2025-08-02 15:40:53,296 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 15:40:55,355 log Not Found: /api/acquired-names
+WARNING 2025-08-02 15:40:55,356 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 15:40:59,431 log Not Found: /api/acquired-names
+WARNING 2025-08-02 15:40:59,436 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:42:48,586 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:42:48,608 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:42:48,608 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:42:48,616 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 21:42:58,026 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:42:58,117 log Not Found: /api/saved-names
+WARNING 2025-08-02 21:42:58,130 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:42:58,132 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-02 21:42:58,182 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:42:58,239 log Not Found: /api/saved-names
+WARNING 2025-08-02 21:42:58,239 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:42:58,262 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-02 21:47:32,866 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:47:32,901 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:47:32,916 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 21:47:32,920 basehttp "GET /api/domains/saved HTTP/1.1" 403 58
+WARNING 2025-08-02 21:47:34,040 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:34,040 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:47:36,081 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:36,089 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:47:40,167 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:40,175 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:47:46,080 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:47:46,095 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:46,109 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 21:47:46,111 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:47:47,201 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:47,206 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:47:49,259 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:49,269 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:47:53,327 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:47:53,331 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:53:51,430 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:53:51,460 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:53:51,462 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 21:53:51,464 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:53:52,579 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:53:52,580 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:53:54,621 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:53:54,626 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:53:58,673 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:53:58,677 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:05,796 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:54:05,813 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:05,825 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 21:54:05,863 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:06,972 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:06,980 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:09,056 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:09,064 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:13,088 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:13,097 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:38,420 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:54:38,437 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:38,486 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:38,499 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 21:54:39,630 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:39,645 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:41,699 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:41,708 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:54:45,761 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:54:45,873 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:58:24,591 log Not Found: /api/acquired-names
+WARNING 2025-08-02 21:58:24,612 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 21:58:26,403 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:58:26,407 basehttp "GET /api/domains/saved HTTP/1.1" 403 26
+WARNING 2025-08-02 21:58:29,069 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:58:29,072 basehttp "GET /api/domains/saved HTTP/1.1" 403 26
+WARNING 2025-08-02 21:58:34,111 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 21:58:34,115 basehttp "GET /api/domains/saved HTTP/1.1" 403 26
+WARNING 2025-08-02 22:00:48,770 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:00:48,774 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:00:48,781 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-02 22:00:48,784 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:03:24,777 log Forbidden: /api/names/DietTracker.io
+WARNING 2025-08-02 22:03:24,783 basehttp "GET /api/names/DietTracker.io HTTP/1.1" 403 58
+WARNING 2025-08-02 22:03:34,601 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:03:34,603 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:03:34,608 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:03:34,654 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-02 22:04:17,463 log Forbidden: /api/names/QuickLog.io
+WARNING 2025-08-02 22:04:17,469 basehttp "GET /api/names/QuickLog.io HTTP/1.1" 403 58
+WARNING 2025-08-02 22:04:21,652 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:04:21,653 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:04:21,658 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:04:21,664 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-02 22:10:35,066 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:10:35,074 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:10:35,098 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:10:35,100 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:10:36,347 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:10:36,364 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:10:36,368 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:10:36,379 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:10:38,756 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:10:38,762 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:10:38,766 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:10:38,771 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:20:04,832 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:20:04,835 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:22:12,329 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:22:12,335 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:22:27,091 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-02 22:22:27,131 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-08-02 22:22:32,068 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:22:32,072 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:22:43,836 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-08-02 22:22:43,847 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-08-02 22:22:50,180 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:22:50,189 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:30:21,316 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:21,318 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:21,319 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:30:21,323 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:21,324 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:21,349 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:23,164 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:23,197 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:30:23,227 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:23,227 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:23,260 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:23,281 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:26,185 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:30:26,189 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:26,244 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:26,251 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:26,258 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:26,276 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:30,588 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:30,590 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:30,592 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:30,599 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:31,047 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:30:31,051 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-02 22:30:37,112 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:37,122 log Forbidden: /api/domains/acquired
+WARNING 2025-08-02 22:30:37,126 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:30:37,127 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:30:37,128 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-02 22:30:37,167 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-02 22:36:01,908 log Not Found: /api/acquired-names
+WARNING 2025-08-02 22:36:01,927 log Not Found: /api/saved-names
+WARNING 2025-08-02 22:36:02,130 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-02 22:36:02,183 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 22:36:02,287 log Not Found: /api/saved-names
+WARNING 2025-08-02 22:36:02,329 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-02 22:36:02,418 log Not Found: /api/acquired-names
+WARNING 2025-08-02 22:36:02,455 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 22:36:27,427 log Not Found: /api/saved-names
+WARNING 2025-08-02 22:36:27,442 log Not Found: /api/acquired-names
+WARNING 2025-08-02 22:36:27,445 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-02 22:36:27,470 log Not Found: /api/saved-names
+WARNING 2025-08-02 22:36:27,490 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 22:36:27,506 log Not Found: /api/acquired-names
+WARNING 2025-08-02 22:36:27,507 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-02 22:36:27,509 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-02 22:36:51,348 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:36:51,353 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:36:53,085 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:36:53,089 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:36:55,852 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:36:55,857 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:37:00,665 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:37:00,667 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-02 22:37:10,821 log Forbidden: /api/domains/saved
+WARNING 2025-08-02 22:37:10,823 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 05:38:38,942 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 05:38:38,942 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 05:38:38,948 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 05:38:38,950 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 05:43:07,431 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 05:43:07,432 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 05:43:07,436 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 05:43:07,437 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 05:43:53,374 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-03 05:43:53,382 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-08-03 05:44:58,618 log Not Found: /api/saved-names
+WARNING 2025-08-03 05:44:58,633 log Not Found: /api/acquired-names
+WARNING 2025-08-03 05:44:58,633 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-03 05:44:58,633 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-03 05:44:58,664 log Not Found: /api/acquired-names
+WARNING 2025-08-03 05:44:58,670 log Not Found: /api/saved-names
+WARNING 2025-08-03 05:44:58,675 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-03 05:44:58,677 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-03 06:02:22,380 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-03 06:02:22,384 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-03 06:02:25,561 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:02:25,565 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:02:25,572 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:02:25,575 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:02:36,165 log Forbidden: /api/names/OneSignature.io
+WARNING 2025-08-03 06:02:36,167 basehttp "GET /api/names/OneSignature.io HTTP/1.1" 403 58
+WARNING 2025-08-03 06:02:41,842 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:02:41,847 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:02:41,848 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:02:41,855 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:10:48,124 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:10:48,126 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:48,144 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:10:48,147 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:49,319 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:10:49,319 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:49,335 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:10:49,335 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:51,711 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:10:51,711 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:51,946 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:10:51,946 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:56,176 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:10:56,176 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:10:56,243 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:10:56,243 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:11:59,228 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:11:59,228 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:11:59,273 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:11:59,288 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:12:00,861 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:12:00,893 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:12:03,357 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:12:03,360 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:12:03,361 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:12:03,362 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 06:25:10,563 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:25:10,573 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:25:10,575 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:25:10,587 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:25:12,140 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:25:12,140 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:25:12,157 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:25:12,159 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:25:15,829 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:25:15,831 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:25:15,834 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:25:15,837 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 06:32:17,916 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:32:17,916 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:17,934 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:32:17,936 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:19,528 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:32:19,528 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:32:19,528 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:19,528 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:22,151 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:32:22,153 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:22,159 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:32:22,160 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:26,706 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:32:26,706 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:32:26,706 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:26,706 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:32:36,213 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:32:36,215 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:32:36,218 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 06:32:36,219 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:35:27,285 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:35:27,288 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:27,444 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:35:27,444 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:28,663 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:35:28,667 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:28,866 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:35:28,867 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:31,268 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:35:31,284 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:31,393 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:35:31,409 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:35,765 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:35:35,765 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:35,914 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:35:35,914 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:57,452 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:35:57,452 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:57,452 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:35:57,452 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:58,686 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:35:58,687 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:35:58,987 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:35:58,987 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:36:00,903 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:36:00,903 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:36:01,489 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:36:01,536 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:36:05,116 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:36:05,116 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:36:05,742 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:36:05,742 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:36:24,320 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:36:24,322 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:36:24,357 basehttp "GET /api/domains/saved?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:36:24,358 basehttp "GET /api/domains/acquired?limit=20&offset=0&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:39:56,662 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:39:56,663 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:39:56,969 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:39:56,969 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:39:57,875 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:39:57,875 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:39:58,134 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:39:58,134 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:40:00,086 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:40:00,087 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 06:40:00,319 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:40:00,319 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 06:40:05,531 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:40:05,533 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:40:05,535 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 06:40:05,536 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:46:51,377 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:46:51,430 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:46:53,157 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 06:46:53,161 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 06:46:53,162 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 06:46:53,165 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 06:51:58,497 log Not Found: /api/acquired-names
+WARNING 2025-08-03 06:51:58,513 log Not Found: /api/saved-names
+WARNING 2025-08-03 06:51:58,521 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-03 06:51:58,529 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-03 06:51:58,591 log Not Found: /api/acquired-names
+WARNING 2025-08-03 06:51:58,592 log Not Found: /api/saved-names
+WARNING 2025-08-03 06:51:58,604 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-03 06:51:58,606 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-03 07:59:43,390 log Not Found: /api/saved-names
+WARNING 2025-08-03 07:59:43,406 log Not Found: /api/acquired-names
+WARNING 2025-08-03 07:59:43,411 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-03 07:59:43,416 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-03 07:59:43,450 log Not Found: /api/saved-names
+WARNING 2025-08-03 07:59:43,467 log Not Found: /api/acquired-names
+WARNING 2025-08-03 07:59:43,475 basehttp "GET /api/saved-names HTTP/1.1" 404 6134
+WARNING 2025-08-03 07:59:43,477 basehttp "GET /api/acquired-names HTTP/1.1" 404 6143
+WARNING 2025-08-03 08:05:50,823 log Not Found: /favicon.ico
+WARNING 2025-08-03 08:05:50,825 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-08-03 08:20:41,498 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:20:41,502 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 08:20:41,593 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:20:41,601 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 08:20:43,326 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:20:43,327 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:20:43,328 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 08:20:43,329 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 08:20:49,351 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:20:49,351 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:20:49,370 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 08:20:49,373 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 08:30:52,951 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:30:52,955 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:30:52,960 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 08:30:52,968 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 08:31:14,760 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:31:14,763 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:31:14,841 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 08:31:14,844 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 08:36:36,967 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:36:36,969 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:36:36,971 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 08:36:36,975 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 08:37:06,021 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:37:06,024 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:37:06,029 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 08:37:06,030 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 08:48:33,370 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:48:33,371 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 08:48:33,635 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:48:33,638 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 08:48:34,597 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:48:34,598 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 08:48:34,911 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:48:34,914 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 08:48:37,074 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:48:37,075 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 08:48:37,374 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:48:37,375 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 08:51:47,752 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:51:47,755 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 08:51:48,093 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:51:48,098 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 08:51:52,250 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 08:51:52,252 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 08:51:52,253 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 08:51:52,254 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 09:06:59,938 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 09:06:59,940 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 09:07:04,127 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 09:07:04,130 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 09:07:04,157 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 09:07:04,158 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 21:52:35,382 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 21:52:35,409 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 21:52:35,450 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 21:52:35,469 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 22:27:21,114 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:27:21,118 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:27:21,145 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 22:27:21,148 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 22:27:25,200 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:27:25,208 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:27:25,283 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:27:25,314 basehttp "GET /api/domains/acquired HTTP/1.1" 403 58
+WARNING 2025-08-03 22:40:51,278 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:40:51,282 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 22:40:51,303 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:40:51,305 basehttp "GET /api/domains/acquired HTTP/1.1" 403 26
+WARNING 2025-08-03 22:49:27,987 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:49:27,996 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:49:28,002 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:49:28,003 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:52:09,333 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:52:09,338 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:52:09,344 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:52:09,346 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:52:22,048 log Method Not Allowed: /api/names/SocialScrub.io/toggle-save
+WARNING 2025-08-03 22:52:22,050 basehttp "GET /api/names/SocialScrub.io/toggle-save HTTP/1.1" 405 40
+WARNING 2025-08-03 22:53:27,362 log Forbidden: /api/names/DataMadeEasy.co\t/toggle-save
+WARNING 2025-08-03 22:53:27,364 basehttp "POST /api/names/DataMadeEasy.co%09/toggle-save HTTP/1.1" 403 26
+WARNING 2025-08-03 22:53:39,352 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:53:39,358 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:53:39,364 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:53:39,367 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:54:55,803 log Forbidden: /api/names/DeepBase.co
+WARNING 2025-08-03 22:54:55,805 basehttp "GET /api/names/DeepBase.co HTTP/1.1" 403 26
+WARNING 2025-08-03 22:58:27,832 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:58:27,833 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:58:28,053 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:58:28,080 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:59:11,174 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:59:11,174 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:59:11,214 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:59:11,231 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:59:33,017 log Forbidden: /api/names/FutureKit.io
+WARNING 2025-08-03 22:59:33,023 basehttp "GET /api/names/FutureKit.io HTTP/1.1" 403 58
+WARNING 2025-08-03 22:59:34,891 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 22:59:34,896 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 22:59:34,898 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 22:59:34,908 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 23:09:15,026 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 23:09:15,026 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 23:09:15,026 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:15,026 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:16,480 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 23:09:16,480 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 23:09:16,495 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:16,495 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:18,736 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 23:09:18,736 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:18,787 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 23:09:18,789 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:23,168 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 23:09:23,175 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 23:09:23,186 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:09:23,194 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-03 23:28:51,848 log Forbidden: /api/domains/acquired
+WARNING 2025-08-03 23:28:51,848 log Forbidden: /api/domains/saved
+WARNING 2025-08-03 23:28:51,850 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-03 23:28:51,853 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 00:01:21,913 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:01:21,914 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:01:21,923 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:21,926 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:23,817 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:01:23,818 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:01:23,821 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:23,822 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:26,690 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:01:26,693 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:01:26,701 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:26,710 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:31,395 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:01:31,397 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:01:31,404 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:01:31,405 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:02:00,253 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:02:00,256 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:02:00,258 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 00:02:00,258 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+ERROR 2025-08-04 00:02:10,257 log Internal Server Error: /api/names/AptChat.ai
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 243, in __get__
+    rel_obj = self.field.get_cached_value(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\mixins.py", line 37, in get_cached_value
+    return instance._state.fields_cache[self.cache_name]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'suggested_usecase'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column api_usecase.is_idea_of_the_day does not exist
+LINE 1: ...case"."revenue_potential", "api_usecase"."order", "api_useca...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 127, in get
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 261, in __get__
+    rel_obj = self.get_object(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 224, in get_object
+    return qs.get(self.field.get_reverse_related_filter(instance))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 629, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column api_usecase.is_idea_of_the_day does not exist
+LINE 1: ...case"."revenue_potential", "api_usecase"."order", "api_useca...
+                                                             ^
+
+ERROR 2025-08-04 00:02:10,314 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 500 227549
+ERROR 2025-08-04 00:02:12,130 log Internal Server Error: /api/names/AptChat.ai
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 243, in __get__
+    rel_obj = self.field.get_cached_value(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\mixins.py", line 37, in get_cached_value
+    return instance._state.fields_cache[self.cache_name]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+KeyError: 'suggested_usecase'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+psycopg2.errors.UndefinedColumn: column api_usecase.is_idea_of_the_day does not exist
+LINE 1: ...case"."revenue_potential", "api_usecase"."order", "api_useca...
+                                                             ^
+
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 127, in get
+    return Response(serializer.data)
+                    ^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 261, in __get__
+    rel_obj = self.get_object(instance)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\fields\related_descriptors.py", line 224, in get_object
+    return qs.get(self.field.get_reverse_related_filter(instance))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 629, in get
+    num = len(clone)
+          ^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 366, in __len__
+    self._fetch_all()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1949, in _fetch_all
+    self._result_cache = list(self._iterable_class(self))
+                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 91, in __iter__
+    results = compiler.execute_sql(
+              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\compiler.py", line 1623, in execute_sql
+    cursor.execute(sql, params)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 122, in execute
+    return super().execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 79, in execute
+    return self._execute_with_wrappers(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 92, in _execute_with_wrappers
+    return executor(sql, params, many, context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 100, in _execute
+    with self.db.wrap_database_errors:
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\utils.py", line 91, in __exit__
+    raise dj_exc_value.with_traceback(traceback) from exc_value
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\backends\utils.py", line 105, in _execute
+    return self.cursor.execute(sql, params)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+django.db.utils.ProgrammingError: column api_usecase.is_idea_of_the_day does not exist
+LINE 1: ...case"."revenue_potential", "api_usecase"."order", "api_useca...
+                                                             ^
+
+ERROR 2025-08-04 00:02:12,190 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 500 227549
+WARNING 2025-08-04 00:03:12,040 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-04 00:03:12,040 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-08-04 00:09:57,634 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-04 00:09:57,634 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-04 00:20:23,782 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-04 00:20:23,794 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:13,793 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:48:13,794 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:14,187 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:48:14,202 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:15,579 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:48:15,589 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:15,925 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:48:15,927 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:17,978 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:48:17,982 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:18,412 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:48:18,415 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:22,326 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 00:48:22,330 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 00:48:22,691 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 00:48:22,691 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:11:49,176 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:11:49,190 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:11:49,199 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 04:11:49,207 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 04:11:49,231 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-04 04:11:49,255 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58

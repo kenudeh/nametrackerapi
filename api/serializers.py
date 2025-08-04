@@ -128,7 +128,7 @@ class UseCaseSerializer(serializers.ModelSerializer):
 
         
 
-# Suggested use case serializer
+# Suggested use case serializer - For use in the Name serializer
 class SuggestedUseCaseSerializer(serializers.ModelSerializer):
     domain_name = serializers.SlugRelatedField(
         read_only=True,
@@ -285,20 +285,6 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
     def get_saved(self, obj):
         return True  # Always True because it's from the saved names list
 
-
-
-# class SavedNameSerializer(serializers.ModelSerializer):
-#     name = NameSerializer(read_only=True)  # Embed the full name details
-#     saved = serializers.SerializerMethodField() # Anotating the saved field instead of creating a method field
-
-
-#     class Meta:
-#         model = SavedName
-#         fields = ['id', 'name', 'created_at', 'saved']
-
-    
-#     def get_saved(self, obj):
-#         return True  # Since it's from the SavedName model, it's always saved
 
 
 # ============================================
