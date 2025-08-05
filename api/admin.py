@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter
+from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -102,6 +102,11 @@ class UseCaseAdmin(admin.ModelAdmin):
     list_filter = ('difficulty', 'competition', 'revenue_potential')
     search_fields = ('case_title', 'target_market')
 
+
+@admin.register(IdeaOfTheDay)
+class IdeaOfTheDayAdmin(admin.ModelAdmin):
+    list_display = ('use_case', 'date', 'category')
+   
 
 @admin.register(Subscription)
 class SubscriptionAdmin(admin.ModelAdmin):

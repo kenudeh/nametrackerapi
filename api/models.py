@@ -324,6 +324,27 @@ class UseCase(models.Model):
         return f"{self.case_title} for {self.domain_name}"
 
 
+
+
+# ============================================
+# Model to define The Idea of The Day
+# ============================================
+class IdeaOfTheDay(models.Model):
+    use_case = models.ForeignKey(UseCase, on_delete=models.CASCADE)
+    date = models.DateField(unique=True)
+    category = models.CharField(choices=[("pending", "Pending Delete"), ("deleted", "Deleted")], max_length=20)
+
+    class Meta:
+        unique_together = ('date', 'category')  # So only one idea per category per day
+
+    def __str__(self):
+        return f"{self.category} idea for {self.date}: {self.use_case.name.name}"
+
+
+
+
+
+
 # ============================================
 # Model to define Drop Time Rules Per Extension
 # ============================================
