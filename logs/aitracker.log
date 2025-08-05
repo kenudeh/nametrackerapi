@@ -10732,3 +10732,173 @@ WARNING 2025-08-04 04:11:49,199 basehttp "GET /api/domains/acquired?limit=10&ord
 WARNING 2025-08-04 04:11:49,207 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
 WARNING 2025-08-04 04:11:49,231 log Forbidden: /api/names/AptChat.ai
 WARNING 2025-08-04 04:11:49,255 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-08-04 04:21:32,773 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:21:32,774 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:21:32,781 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:21:32,786 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:21:35,445 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:21:35,446 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:21:35,450 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:21:35,453 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:21:40,261 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:21:40,264 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:21:40,266 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:21:40,272 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:05,968 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-04 04:23:05,973 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:07,999 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:23:08,001 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:08,247 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:23:08,248 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:09,384 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:23:09,387 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:09,514 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:23:09,530 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:12,008 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:23:12,008 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:12,215 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:23:12,215 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:16,292 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:23:16,297 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:16,740 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:23:16,747 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:23:43,955 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:23:43,959 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:23:43,964 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 04:23:43,968 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 04:31:50,442 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:31:50,448 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:31:50,455 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:31:50,477 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:31:51,428 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-04 04:31:51,430 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-04 04:31:54,164 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:31:54,173 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:31:54,213 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:31:54,237 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:31:58,133 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:31:58,138 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:31:58,139 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:31:58,141 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:32:02,837 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:32:02,840 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:32:02,872 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:32:02,877 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 04:32:12,658 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 04:32:12,664 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 04:32:12,671 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 04:32:12,686 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 06:38:09,781 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 06:38:09,783 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 06:38:09,836 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 06:38:09,836 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 06:38:12,003 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 06:38:12,007 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 06:38:12,357 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 06:38:12,357 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 06:38:16,603 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 06:38:16,603 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 06:38:16,636 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 06:38:16,653 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 06:47:08,165 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 06:47:08,170 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 06:47:08,174 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 06:47:08,188 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 13:47:23,767 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 13:47:23,767 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 13:47:23,770 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 13:47:23,771 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 13:48:09,225 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 13:48:09,230 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 13:48:09,231 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 13:48:09,233 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 14:12:40,620 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:12:40,623 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:12:40,634 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:40,637 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:42,373 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:12:42,376 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:12:42,387 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:42,406 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:45,146 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:12:45,150 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:12:45,165 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:45,169 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:49,961 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:12:49,968 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:12:50,001 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:12:50,032 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:18:08,644 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:18:08,650 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:18:09,002 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:18:09,014 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:25:27,880 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:25:27,880 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:25:27,888 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:25:27,907 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:25:35,160 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:25:35,162 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:25:35,166 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 14:25:35,168 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 14:25:47,314 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:25:47,322 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:25:47,325 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:25:47,335 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:25:50,701 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:25:50,705 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:25:50,729 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 14:25:50,732 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 14:32:41,424 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:32:41,424 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:32:41,424 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:41,437 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:43,881 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:32:43,881 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:32:43,896 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:43,907 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:47,580 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:32:47,580 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:32:47,590 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:47,597 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:52,549 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:32:52,552 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:32:52,552 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:32:52,585 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-04 14:33:02,582 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 14:33:02,592 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 14:33:02,596 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 14:33:02,606 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:08,830 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 15:22:08,831 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 15:22:08,831 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:08,847 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 15:22:08,847 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:08,858 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 15:22:08,858 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:08,865 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:44,542 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 15:22:44,558 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 15:22:44,558 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:44,572 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:46,576 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 15:22:46,581 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:22:46,601 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 15:22:46,609 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:23:01,238 log Forbidden: /api/domains/saved
+WARNING 2025-08-04 15:23:01,243 log Forbidden: /api/domains/acquired
+WARNING 2025-08-04 15:23:01,251 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-04 15:23:01,251 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-05 02:47:58,613 log Forbidden: /api/domains/saved
+WARNING 2025-08-05 02:47:58,614 log Forbidden: /api/domains/acquired
+WARNING 2025-08-05 02:47:58,634 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-05 02:47:58,673 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-05 02:48:00,926 log Forbidden: /api/domains/saved
+WARNING 2025-08-05 02:48:00,928 log Forbidden: /api/domains/acquired
+WARNING 2025-08-05 02:48:00,932 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-05 02:48:00,932 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-05 02:48:13,090 log Not Found: /favicon.ico
+WARNING 2025-08-05 02:48:13,093 basehttp "GET /favicon.ico HTTP/1.1" 404 3242
+WARNING 2025-08-05 04:48:23,553 log Forbidden: /api/domains/saved
+WARNING 2025-08-05 04:48:23,567 log Forbidden: /api/domains/acquired
+WARNING 2025-08-05 04:48:23,567 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-05 04:48:23,583 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58

@@ -5,7 +5,7 @@ import traceback
 
 
 from api.management.validators import validate_domain_data  # Custom validator function
-from api.models import Name, UseCaseTag, UseCaseCategory, UseCase, DomainListOptions, RegStatusOptions
+from api.models import Name, UseCaseTag, UseCaseCategory, UseCase, IdeaOfTheDay, DomainListOptions, RegStatusOptions
 
 
 
@@ -93,6 +93,8 @@ class Command(BaseCommand):
                 UseCaseCategory.objects.values_list('name', flat=True)
             )
 
+            # To track domains and their scores
+            top_scoring_domains = [] 
             records_processed = 0  # Count successful inserts
 
             # --- Process each domain entry ---
@@ -174,9 +176,68 @@ class Command(BaseCommand):
                             tag_obj, _ = UseCaseTag.objects.get_or_create(name=tag_name)
                             use_case_obj.tag.add(tag_obj)
 
+
                  # --- Log success for this domain ---
                 self.stdout.write(self.style.SUCCESS(f"Processed: {domain_name}"))
+
+
+                # --- Track top scoring domains (for idea assignment later)
+                if domain_list == DomainListOptions.PENDING_DELETE and item.get('score') is not None:
+                    top_scoring_domains.append({
+                        'domain_obj': name_obj,
+                        'score': item.get('score'),
+                    })
+
+
                 records_processed += 1
+
+            # --- Assign IdeaOfTheDay for 'pending_delete' domains if applicable ---
+            if domain_list == DomainListOptions.PENDING_DELETE and top_scoring_domains:
+                # Sort by score (descending), pick the top one (or more with same score)
+                top_scoring_domains.sort(key=lambda x: x['score'], reverse=True)
+                top_score = top_scoring_domains[0]['score']
+
+                # Filter domains with the same top score
+                tied_top_domains = [
+                    d['domain_obj'] for d in top_scoring_domains if d['score'] == top_score
+                ]
+
+                # Pick the first one deterministically (if tie)
+                selected_domain = tied_top_domains[0]
+
+                # Get its top use case (order=1)
+                top_use_case = selected_domain.use_cases.filter(order=1).first()
+
+                if top_use_case:
+                    # Check if an IdeaOfTheDay already exists for this date and list to avoid duplicates
+                    existing = IdeaOfTheDay.objects.filter(
+                        drop_date=drop_date,
+                        domain_list=DomainListOptions.PENDING_DELETE
+                    ).exists()
+
+                    if not existing:
+                        IdeaOfTheDay.objects.create(
+                            use_case=top_use_case,
+                            drop_date=drop_date,
+                            domain_list=DomainListOptions.PENDING_DELETE
+                        )
+                        self.stdout.write(self.style.SUCCESS(
+                            f"IdeaOfTheDay created for drop_date {drop_date} from domain '{selected_domain.domain_name}'"
+                        ))
+                    else:
+                        self.stdout.write(self.style.WARNING(
+                            f"Skipped IdeaOfTheDay creation: already exists for {drop_date} and pending_delete."
+                        ))
+                else:
+                    self.stdout.write(self.style.WARNING(
+                        f"Skipped IdeaOfTheDay creation: no top use case (order=1) found for domain '{selected_domain.domain_name}'."
+                    ))
+
+
+
+
+
+
 
             # --- Final success message ---
             self.stdout.write(self.style.SUCCESS(f'Total domains processed: {records_processed}'))
