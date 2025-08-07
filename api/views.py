@@ -18,6 +18,13 @@ from django.db.models import Q
 from rest_framework import filters, generics, status # Filters import can be more explicitly done and avoid using filters. prefix by switching to "from rest_framework.filters import OrderingFilter, SearchFilter"
 from django_filters.rest_framework import DjangoFilterBackend
 
+# Admin-file loader view imports
+import subprocess
+from django.contrib.admin.views.decorators import staff_member_required
+from django.core.files.storage import FileSystemStorage
+from django.shortcuts import render
+from django.http import HttpResponse
+
 
 #Imports for google login view
 # from django.core.cache import cache
@@ -33,6 +40,39 @@ import logging
 
 
 logger = logging.getLogger(__name__)
+
+
+
+
+#=================================== 
+# Admin file loader page view
+#====================================
+@staff_member_required
+def upload_file(request):
+    if request.method == "POST" and request.FILES.get("file"):
+        drop_date = request.POST.get("drop_date")
+        domain_list = request.POST.get("domain_list", "pending_delete")
+        
+        # Save to Railway volume
+        fs = FileSystemStorage(location="/mnt/data")
+        filename = fs.save(request.FILES["file"].name, request.FILES["file"])
+        file_path = f"/mnt/data/{filename}"
+
+        # Call my management command directly
+        cmd = [
+            "python", "manage.py", "load_json",
+            file_path,
+            f"--drop_date={drop_date}",
+            f"--domain_list={domain_list}"
+        ]
+        result = subprocess.run(cmd, capture_output=True, text=True)
+
+        return HttpResponse(
+            f"<pre>{result.stdout}</pre><pre>{result.stderr}</pre>"
+        )
+
+    return render(request, "upload.html")
+
 
 
 

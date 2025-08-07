@@ -421,28 +421,30 @@ STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
+REDIS_URL = os.getenv("REDIS_URL")
+
 #Cache settings
-REDIS_URL = os.getenv("REDIS_URL", "redis://127.0.0.1:6379/1")
-
-# CACHES = {
-#     "default": {
-#         "BACKEND": "django_redis.cache.RedisCache",
-#         "LOCATION": REDIS_URL,
-#         "OPTIONS": {
-#             "CLIENT_CLASS": "django_redis.client.DefaultClient",
-#             # Optional: disable SSL verification in Railway
-#             "SSL_CERT_REQS": None if "railway.app" in REDIS_URL else "required",
-#         },
-#         "KEY_PREFIX": "nametracker_"
-#     }
-# }
-
 CACHES = {
-    'default': {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'clerk-jwks-cache',
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": REDIS_URL,
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
     }
 }
+
+
+# CELERY SETTINGS
+CELERY_BROKER_URL = REDIS_URL
+CELERY_RESULT_BACKEND = REDIS_URL
+
+CELERY_ACCEPT_CONTENT = ['json']
+CELERY_TASK_SERIALIZER = 'json'
+
+
+# CELERY BEAT SETTINGS
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 
 
@@ -454,15 +456,6 @@ CLERK_API_BASE_URL = os.getenv("CLERK_API_BASE_URL")
 CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 
 
-
-
-# CELERY SETTINGS
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Points to Redis running in Docker
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-
-# CELERY BEAT SETTINGS
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 
 MEDIA_URL = '/media/'

@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+{% block content %}
+<h1>Upload Domain Data</h1>
+<form method="post" enctype="multipart/form-data" style="margin-top: 20px;">
+    {% csrf_token %}
+    <div>
+        <label><strong>JSON File:</strong></label><br>
+        <input type="file" name="file" required>
+    </div>
+    <br>
+    <div>
+        <label><strong>Drop Date (YYYY-MM-DD):</strong></label><br>
+        <input type="text" name="drop_date" placeholder="YYYY-MM-DD" required>
+    </div>
+    <br>
+    <div>
+        <label><strong>Domain List:</strong></label><br>
+        <select name="domain_list">
+            <option value="pending_delete">Pending Delete</option>
+            <option value="deleted">Deleted</option>
+            <option value="marketplace">Marketplace</option>
+            <option value="all_list">All List</option>
+        </select>
+    </div>
+    <br>
+    <button type="submit" class="default">Upload & Load</button>
+</form>
+{% endblock %}
