@@ -25,6 +25,7 @@ pyjwt = "*"
 requests = "*"
 whitenoise = "*"
 django-redis = "*"
+tenacity = "*"
 
 [dev-packages]
 

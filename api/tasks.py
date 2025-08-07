@@ -5,7 +5,7 @@ from django.db.models import Q
 from django.db import transaction
 
 from .models import Name, ArchivedName, IdeaOfTheDay, UseCase
-from .services import DynadotAPI
+from .handlers.services import DynadotAPI
 
 import logging
 logger = logging.getLogger(__name__)
@@ -208,3 +208,32 @@ def full_domain_availability_task():
         trigger_bulk_availability_check_task.s(),
         second_check_task.s()
     )()
+
+
+
+# Auto-Loader Task
+@shared_task
+def process_pending_files():
+    """
+    Check for unprocessed JSON files and call the loader command.
+    """
+    from pathlib import Path
+    from django.conf import settings
+    from .models import UploadedFile
+    import subprocess
+
+    volume_path = Path(settings.UPLOAD_DIR)  # e.g., /mnt/data
+    for file in volume_path.glob("*.json"):
+        if not UploadedFile.objects.filter(filename=file.name, processed=True).exists():
+            # Run the loader
+            cmd = [
+                "python", "manage.py", "load_json",
+                str(file)
+            ]
+            subprocess.call(cmd)
+
+            # Mark as processed
+            UploadedFile.objects.update_or_create(
+                filename=file.name,
+                defaults={'processed': True}
+            )

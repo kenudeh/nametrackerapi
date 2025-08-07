@@ -52,13 +52,16 @@ def upload_file(request):
     if request.method == "POST" and request.FILES.get("file"):
         drop_date = request.POST.get("drop_date")
         domain_list = request.POST.get("domain_list", "pending_delete")
-        
+
         # Save to Railway volume
         fs = FileSystemStorage(location="/mnt/data")
         filename = fs.save(request.FILES["file"].name, request.FILES["file"])
         file_path = f"/mnt/data/{filename}"
 
-        # Call my management command directly
+        # ✅ Track uploaded file
+        UploadedFile.objects.get_or_create(filename=filename)
+
+        # Call management command
         cmd = [
             "python", "manage.py", "load_json",
             file_path,
@@ -72,7 +75,6 @@ def upload_file(request):
         )
 
     return render(request, "upload.html")
-
 
 
 
