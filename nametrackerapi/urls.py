@@ -18,11 +18,14 @@ from django.contrib import admin
 from django.urls import path, include
 from api.email_confirmation_view import CustomConfirmEmailView
 from api.resend_email import resend_email_confirmation
-# from api.views import GoogleLogin, get_csrf_token
+from api.views import upload_file #GoogleLogin, get_csrf_token
             
 
 urlpatterns = [
     path('onyia/admin/udeh/', admin.site.urls),
+    # Admin file upload view
+    path("admin/upload-data/", upload_file, name="upload_file"),
+
     path('api/', include('api.urls')),
     # Email confirmation override
     path('auth/registration/account-confirm-email/<str:key>/', CustomConfirmEmailView.as_view(), name='account_confirm_email'),

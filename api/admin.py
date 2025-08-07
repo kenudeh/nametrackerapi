@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay
+from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -169,3 +169,9 @@ class NewsLetterAdmin(admin.ModelAdmin):
 class PublicInquiryAdmin(admin.ModelAdmin):
     list_display = ('name', 'email', 'message', 'ip_address', 'created_at')
     readonly_fields = ('ip_address', 'created_at', 'updated_at')
+
+
+@admin.register(UploadedFile)
+class UploadedFileAdmin(admin.ModelAdmin):
+    list_display = ('filename', 'uploaded_at', 'processed')
+    readonly_fields = ('uploaded_at', 'processed', 'filename',)
