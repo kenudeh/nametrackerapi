@@ -5,7 +5,7 @@ from rest_framework.throttling import UserRateThrottle
 from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
 from django.shortcuts import get_object_or_404
-from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName
+from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile
 from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
 from .permissions import IsManagerOrReadOnly
 from django.views.decorators.csrf import csrf_exempt
@@ -19,11 +19,14 @@ from rest_framework import filters, generics, status # Filters import can be mor
 from django_filters.rest_framework import DjangoFilterBackend
 
 # Admin-file loader view imports
-import subprocess
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.files.storage import FileSystemStorage
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.management import call_command
+import os
+from pathlib import Path
+from django.conf import settings
 
 
 #Imports for google login view
@@ -53,28 +56,58 @@ def upload_file(request):
         drop_date = request.POST.get("drop_date")
         domain_list = request.POST.get("domain_list", "pending_delete")
 
-        # Save to Railway volume
-        fs = FileSystemStorage(location="/mnt/data")
+        # Save file (uses UPLOAD_DIR from settings)
+        fs = FileSystemStorage(location=str(settings.UPLOAD_DIR))
         filename = fs.save(request.FILES["file"].name, request.FILES["file"])
-        file_path = f"/mnt/data/{filename}"
+        file_path = str(settings.UPLOAD_DIR / filename)  # Full path
 
-        # ✅ Track uploaded file
+        # Track uploaded file (optional)
         UploadedFile.objects.get_or_create(filename=filename)
 
-        # Call management command
-        cmd = [
-            "python", "manage.py", "load_json",
-            file_path,
-            f"--drop_date={drop_date}",
-            f"--domain_list={domain_list}"
-        ]
-        result = subprocess.run(cmd, capture_output=True, text=True)
-
-        return HttpResponse(
-            f"<pre>{result.stdout}</pre><pre>{result.stderr}</pre>"
-        )
+        # Execute management command DIRECTLY (no subprocess)
+        try:
+            call_command(
+                "load_json", 
+                file_path, 
+                drop_date=drop_date, 
+                domain_list=domain_list
+            )
+            return HttpResponse("File processed successfully.")
+        except Exception as e:
+            return HttpResponse(f"Error: {str(e)}", status=500)
 
     return render(request, "upload.html")
+
+# @staff_member_required 
+# def upload_file(request):
+#     if request.method == "POST" and request.FILES.get("file"):
+#         drop_date = request.POST.get("drop_date")
+#         domain_list = request.POST.get("domain_list", "pending_delete")
+
+#         # Save to Railway volume
+#         # fs = FileSystemStorage(location="/mnt/data")
+#         fs = FileSystemStorage(location="/mnt/data/uploads")
+#         filename = fs.save(request.FILES["file"].name, request.FILES["file"])
+#         # file_path = f"/mnt/data/{filename}"
+#         file_path = f"/mnt/data/uploads/{filename}"
+
+#         # ✅ Track uploaded file
+#         UploadedFile.objects.get_or_create(filename=filename)
+
+#         # Call management command
+#         cmd = [
+#             "python", "manage.py", "load_json",
+#             file_path,
+#             f"--drop_date={drop_date}",
+#             f"--domain_list={domain_list}"
+#         ]
+#         result = subprocess.run(cmd, capture_output=True, text=True)
+
+#         return HttpResponse(
+#             f"<pre>{result.stdout}</pre><pre>{result.stderr}</pre>"
+#         )
+
+#     return render(request, "upload.html")
 
 
 

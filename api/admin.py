@@ -105,7 +105,7 @@ class UseCaseAdmin(admin.ModelAdmin):
 
 @admin.register(IdeaOfTheDay)
 class IdeaOfTheDayAdmin(admin.ModelAdmin):
-    list_display = ('use_case', 'date', 'category')
+    list_display = ('use_case', 'drop_date', 'domain_list')
    
 
 @admin.register(Subscription)
