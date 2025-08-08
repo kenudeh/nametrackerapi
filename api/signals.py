@@ -1,10 +1,15 @@
 from django.core.cache import cache
 from django.contrib.auth.models import User
 
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, pre_delete
 from django.dispatch import receiver
-from .models import Name, UseCase 
+from .models import Name, UseCase, UploadedFile 
 
+from django.conf import settings
+import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Creating a UserProfile instance automatically when a new user is registered(Overriden by switching to CLerk for authentication)
 # @receiver(post_save, sender=User)
@@ -49,3 +54,18 @@ def clean_up_suggested_usecase(sender, instance, **kwargs):
             name.save(update_fields=["suggested_usecase"])
     except Name.DoesNotExist:
         pass  # Safe fail if related name is already gone
+
+
+
+@receiver(pre_delete, sender=UploadedFile)
+def delete_uploaded_file(sender, instance, **kwargs):
+    """
+    Deletes physical files when their UploadedFile records are deleted.
+    """
+    try:
+        file_path = os.path.join(settings.UPLOAD_DIR, instance.filename)
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            logger.info(f"Deleted file: {file_path}")
+    except Exception as e:
+        logger.error(f"Failed to delete file {instance.filename}: {str(e)}")
