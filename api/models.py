@@ -331,14 +331,19 @@ class UseCase(models.Model):
 # ============================================
 class IdeaOfTheDay(models.Model):
     use_case = models.ForeignKey(UseCase, on_delete=models.CASCADE)
-    date = models.DateField(unique=True)
-    category = models.CharField(choices=[("pending", "Pending Delete"), ("deleted", "Deleted")], max_length=20)
+    drop_date = models.DateField()  # Non-nullable
+    domain_list = models.CharField(  # Non-nullable
+        max_length=50,
+        choices=DomainListOptions.choices,
+        default=DomainListOptions.PENDING_DELETE,
+    )
 
     class Meta:
-        unique_together = ('date', 'category')  # So only one idea per category per day
+        unique_together = ('drop_date', 'domain_list')
+
 
     def __str__(self):
-        return f"{self.category} idea for {self.date}: {self.use_case.name.name}"
+        return f"{self.domain_list} idea for {self.drop_date}: {self.use_case.name.name}"
 
 
 

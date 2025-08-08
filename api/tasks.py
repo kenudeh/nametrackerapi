@@ -4,10 +4,17 @@ from datetime import timedelta
 from django.db.models import Q
 from django.db import transaction
 
-from .models import Name, ArchivedName, IdeaOfTheDay, UseCase
+from .models import Name, ArchivedName, IdeaOfTheDay, UseCase, UploadedFile
 from .handlers.services import DynadotAPI
 
+from pathlib import Path
+from django.conf import settings
+import subprocess
+from datetime import date
 import logging
+
+logger = logging.getLogger('api.domain_tasks')
+
 logger = logging.getLogger(__name__)
 
 
@@ -217,19 +224,20 @@ def process_pending_files():
     """
     Check for unprocessed JSON files and call the loader command.
     """
-    from pathlib import Path
-    from django.conf import settings
-    from .models import UploadedFile
-    import subprocess
+ 
+    today = date.today().isoformat()
+    volume_path = Path(settings.UPLOAD_DIR)
 
-    volume_path = Path(settings.UPLOAD_DIR)  # e.g., /mnt/data
     for file in volume_path.glob("*.json"):
         if not UploadedFile.objects.filter(filename=file.name, processed=True).exists():
             # Run the loader
             cmd = [
                 "python", "manage.py", "load_json",
-                str(file)
+                str(file),
+                "--drop_date", today,
+                "--domain_list", "pending_delete"
             ]
+            logger.info(f"Running loader for file: {file.name}")
             subprocess.call(cmd)
 
             # Mark as processed
@@ -237,3 +245,4 @@ def process_pending_files():
                 filename=file.name,
                 defaults={'processed': True}
             )
+            logger.info(f"Marked {file.name} as processed.")

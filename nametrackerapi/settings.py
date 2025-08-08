@@ -20,6 +20,10 @@ import logging
 from logging.handlers import RotatingFileHandler
 from corsheaders.defaults import default_headers
 
+#location for json uploads
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Load environment variables from .env file
 load_dotenv()
@@ -457,6 +461,15 @@ CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 
 
 
+# # Upload directory for railways persistent storage
+# UPLOAD_DIR = '/mnt/data/uploads'
+# # Create it if it doesn't exist
+# os.makedirs(UPLOAD_DIR, exist_ok=True)
+# Uploads directory (Railway persistent storage in prod, local 'uploads/' in dev)
+# UPLOAD_DIR = Path('/mnt/data/uploads') if not settings.DEBUG else Path(settings.BASE_DIR) / 'uploads'
+UPLOAD_DIR = BASE_DIR / 'uploads' if DEBUG else Path('/mnt/data/uploads')
+os.makedirs(UPLOAD_DIR, exist_ok=True)  # Ensure directory exists
+
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
@@ -472,9 +485,6 @@ LOG_LEVEL = 'DEBUG' if DEBUG else 'WARNING'
 SENSITIVE_VARIABLES = ['password', 'token', 'secret']
 
 
-
-LOG_LEVEL = 'WARNING' if not DEBUG else 'INFO'
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -484,24 +494,19 @@ LOGGING = {
             'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
         },
-        'simple': {
-            'format': '{levelname}: {message}',
-            'style': '{',
-        },
     },
 
     'handlers': {
-        # ✅ Domain task logs (rotated)
+        # Domain task logs (rotated)
         'domain_file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
-            'maxBytes': 3 * 1024 * 1024,  # 3 MB
+            'maxBytes': 3 * 1024 * 1024,
             'backupCount': 3,
             'formatter': 'verbose',
-            'encoding': 'utf8',
         },
-        # ✅ General system logs (warnings and above)
+        # General system logs (warnings and above)
         'system_file': {
             'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
@@ -509,30 +514,21 @@ LOGGING = {
             'maxBytes': 5 * 1024 * 1024,
             'backupCount': 5,
             'formatter': 'verbose',
-            'encoding': 'utf8',
-        },
-        'console': {
-            'class': 'logging.StreamHandler',
-            'formatter': 'simple',
-            'level': 'DEBUG',  # <- change from WARNING to DEBUG (Remove later as it's for seeing debug errors in the console during dev)
         },
     },
 
-    'root': {
-        'handlers': ['console'],
-        'level': 'DEBUG',  # <- important (Remove block entirely later as it's for seeing debug errors in the console during dev))
-    },
+
 
     'loggers': {
-        # ✅ For Django system errors (500s, etc.)
+        # For Django system errors (500s, etc.)
         'django': {
-            'handlers': ['system_file', 'console'],
+            'handlers': ['system_file'],
             'level': LOG_LEVEL,
             'propagate': True,
         },
-        # ✅ Your app-specific task logs
+        # my app-specific task logs
         'api.domain_tasks': {
-            'handlers': ['domain_file', 'console'],
+            'handlers': ['domain_file'],
             'level': 'INFO',
             'propagate': False,
         },

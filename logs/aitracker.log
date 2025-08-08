@@ -11518,3 +11518,21 @@ Traceback (most recent call last):
     from tenacity import retry, stop_after_attempt, wait_fixed, retry_if_exception_type
 ModuleNotFoundError: No module named 'tenacity'
 ERROR 2025-08-07 05:33:53,371 basehttp "GET /onyia/admin/udeh/django_celery_beat/periodictask/add/ HTTP/1.1" 500 314440
+ERROR 2025-08-07 14:52:42,692 log Internal Server Error: /admin/upload-data/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 62, in upload_file
+    UploadedFile.objects.get_or_create(filename=filename)
+    ^^^^^^^^^^^^
+NameError: name 'UploadedFile' is not defined
+ERROR 2025-08-07 14:52:42,725 basehttp "POST /admin/upload-data/ HTTP/1.1" 500 88474
+ERROR 2025-08-07 23:24:00,523 log Internal Server Error: /admin/upload-data/
+ERROR 2025-08-07 23:24:00,531 basehttp "POST /admin/upload-data/ HTTP/1.1" 500 135

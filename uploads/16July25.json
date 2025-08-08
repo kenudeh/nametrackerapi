@@ -1,0 +1,248 @@
+[
+    {
+  "domain_name": "AutoScan.co",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "Prior-Auth Workflow Automator for Specialty Clinics",
+      "description": "AI tool for EHR patient data extraction, auto-populating insurance prior-authorization for high-denial specialties (fertility, pain management, bariatrics), with built-in error-checking.",
+      "difficulty": "hard",
+      "competition": "low",
+      "category": {
+        "name": "Medical"
+      },
+      "tag": [
+        {"name": "hipaa"},
+        {"name": "insurance-workflows"},
+        {"name": "niche-healthcare"}
+      ],
+      "target_market": "specialty clinics with 5-20 providers",
+      "revenue_potential": "high",
+      "order": 1
+    }
+  ]
+},
+    {
+      "domain_name": "FileKit.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Regulated Document Processor for Fintech",
+          "description": "End-to-end encrypted file handling for financial apps with built-in KYC/AML checks (ID scans, signature verification, tax doc parsing).",
+          "difficulty": "hard",
+          "competition": "medium",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "compliance"},
+            {"name": "document-ai"},
+            {"name": "banking-api"}
+          ],
+          "target_market": "neobanks, lending platforms, payroll SaaS",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "AI Training Data Pipeline",
+          "description": "Secure ingestion and preprocessing pipeline for sensitive training data (medical records, legal contracts) with built-in redaction.",
+          "difficulty": "hard",
+          "competition": "low",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "data-privacy"},
+            {"name": "enterprise-ai"},
+            {"name": "gdpr"}
+          ],
+          "target_market": "AI startups handling PII",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+  {
+    "domain_name": "WebGuard.ai",
+    "score": 7,
+    "use_cases": [
+      {
+        "case_title": "Automated Compliance Orchestrator for Fintech",
+        "description": "End-to-end platform that continuously monitors and enforces financial compliance (SOC2, PCI DSS) across web apps/APIs with audit-ready reporting.",
+        "difficulty": "hard",
+        "competition": "medium",
+        "category": {
+          "name": "Privacy, Compliance & Identity"
+        },
+        "tag": [
+          {"name": "fintech"},
+          {"name": "automated-remediation"},
+          {"name": "audit-trails"}
+        ],
+        "target_market": "Series B+ fintech companies",
+        "revenue_potential": "high",
+        "order": 1
+      },
+      {
+          "case_title": "Automated Cookie Consent Enforcer",
+          "description": "One-click GDPR/CCPA compliance for Shopify/Wix sites with auto-updating rules based on jurisdiction.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "Privacy, Compliance & Identity"
+          },
+          "tag": [
+            {"name": "cookie-compliance"},
+            {"name": "small-business"},
+            {"name": "no-code"}
+          ],
+          "target_market": "Shopify/Wix agencies, SMBs",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+    ]
+  },
+  {
+  "domain_name": "AptChat.ai",
+  "score": 8,
+  "use_cases": [
+      {
+      "case_title": "Short-Term Rental Guest Screening",
+      "description": "Automated chat interface that verifies guest identities, collects rental agreements, and answers FAQs for Airbnb/VRBO hosts.",
+      "difficulty": "moderate",
+      "competition": "low",
+      "category": {
+        "name": "Property Management"
+      },
+      "tag": [
+        {"name": "vacation-rentals"},
+        {"name": "automated-onboarding"},
+        {"name": "compliance"}
+      ],
+      "target_market": "Airbnb hosts with 5+ properties",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "DIY Landlord Inquiry Assistant",
+      "description": "Pre-built chatbot for small landlords to handle basic tenant questions (pricing, availability, pet policies) via WhatsApp/SMS.",
+      "difficulty": "easy",
+      "competition": "low",
+      "category": {
+        "name": "Property Management"
+      },
+      "tag": [
+        {"name": "solopreneur"},
+        {"name": "SMS-first"},
+        {"name": "no-code-setup"}
+      ],
+      "target_market": "small landlords (1-10 units)",
+      "revenue_potential": "medium",
+      "order": 2
+    }
+  ]
+},
+    {
+      "domain_name": "StudyCopilot.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Micro-Certification Exam Crammer",
+          "description": "Ultra-focused test prep for in-demand certifications (AWS, CompTIA, Notion) with AI-generated study drills and cheat sheets.",
+          "difficulty": "moderate",
+          "competition": "low",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "certification-prep"},
+            {"name": "developer-tools"},
+            {"name": "just-in-time-learning"}
+          ],
+          "target_market": "career-switchers, promo-seeking tech workers",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "JobChat.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Niche Technical Screening Platform",
+          "description": "Async coding interviews with AI-assisted scoring for specific tech stacks (e.g., Rust, Solidity).",
+          "difficulty": "moderate",
+          "competition": "low",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "technical-hiring"},
+            {"name": "developer-tools"},
+            {"name": "niche-languages"}
+          ],
+          "target_market": "Web3/AI startups hiring specialists",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "High-Volume Hourly Hiring Assistant",
+          "description": "Automated SMS screening for service businesses (restaurants, retail) with basic competency checks.",
+          "difficulty": "easy",
+          "competition": "low",
+          "category": {
+            "name": "Recruitment & Staffing"
+          },
+          "tag": [
+            {"name": "SMS-first"},
+            {"name": "high-turnover"},
+            {"name": "service-industry"}
+          ],
+          "target_market": "local businesses with hourly workers",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+        ]
+    },
+    {
+      "domain_name": "QuickLog.io",
+      "score": 6,
+      "use_cases": [
+          {
+          "case_title": "Serverless Audit Trail Micro-SaaS",
+          "description": "Pre-built solution for solo founders to track critical backend events (logins, payments, API calls) without infrastructure work.",
+          "difficulty": "moderate",
+          "competition": "low",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "audit-trails"},
+            {"name": "serverless"},
+            {"name": "compliance-lite"}
+          ],
+          "target_market": "indie hackers building regulated micro-SaaS",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Minimalist Error Tracking for Micro-SaaS",
+          "description": "Drop-in logging library with simple dashboard for solo developers building niche tools (no Sentry complexity).",
+          "difficulty": "easy",
+          "competition": "high",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "micro-SaaS"},
+            {"name": "lightweight"},
+            {"name": "bootstrap-friendly"}
+          ],
+          "target_market": "indie hackers building niche tools",
+          "revenue_potential": "low",
+          "order": 2
+        } 
+    ]
+  }
+]
