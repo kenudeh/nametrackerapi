@@ -27,7 +27,9 @@ from django.core.management import call_command
 import os
 from pathlib import Path
 from django.conf import settings
+from django.utils.text import get_valid_filename 
 
+from django.db import transaction
 
 #Imports for google login view
 # from django.core.cache import cache
@@ -52,32 +54,57 @@ logger = logging.getLogger(__name__)
 #====================================
 @staff_member_required
 def upload_file(request):
-    if request.method == "POST" and request.FILES.get("file"):
+    if request.method == "POST" and (uploaded_file := request.FILES.get("file")):
         drop_date = request.POST.get("drop_date")
         domain_list = request.POST.get("domain_list", "pending_delete")
 
-        # Save file (uses UPLOAD_DIR from settings)
-        fs = FileSystemStorage(location=str(settings.UPLOAD_DIR))
-        filename = fs.save(request.FILES["file"].name, request.FILES["file"])
-        file_path = str(settings.UPLOAD_DIR / filename)  # Full path
+        # Validate inputs
+        if not drop_date:
+            return HttpResponse("Drop date is required", status=400)
+        if uploaded_file.size > settings.MAX_UPLOAD_SIZE:
+            return HttpResponse(f"File exceeds maximum size of {settings.MAX_UPLOAD_SIZE} bytes", 
+                              status=413)
 
-        # Track uploaded file (optional)
-        UploadedFile.objects.get_or_create(filename=filename)
+        # Prepare file
+        filename = get_valid_filename(uploaded_file.name)
+        file_path = Path(settings.UPLOAD_DIR) / filename
 
-        # Execute management command DIRECTLY (no subprocess)
+        # Atomic transaction block
+        try:
+            with transaction.atomic():
+                # Check for existing records
+                if file_path.exists() or UploadedFile.objects.filter(filename=filename).exists():
+                    return HttpResponse("File already exists", status=409)
+                
+                # Save file and create record
+                fs = FileSystemStorage(location=str(settings.UPLOAD_DIR))
+                fs.save(filename, uploaded_file)
+                UploadedFile.objects.create(filename=filename)
+
+        except Exception as e:
+            return HttpResponse(f"File save failed: {str(e)}", status=500)
+
+        # Process file with cleanup on failure
         try:
             call_command(
-                "load_json", 
-                file_path, 
-                drop_date=drop_date, 
+                "load_json",
+                str(file_path),
+                drop_date=drop_date,
                 domain_list=domain_list
             )
-            return HttpResponse("File processed successfully.")
+            return HttpResponse("File processed successfully")
+        
         except Exception as e:
-            return HttpResponse(f"Error: {str(e)}", status=500)
+            # Cleanup if processing fails
+            if file_path.exists():
+                try:
+                    os.unlink(file_path)
+                except OSError:
+                    pass
+            UploadedFile.objects.filter(filename=filename).delete()
+            return HttpResponse(f"Processing failed: {str(e)}", status=500)
 
     return render(request, "upload.html")
-
 # @staff_member_required 
 # def upload_file(request):
 #     if request.method == "POST" and request.FILES.get("file"):

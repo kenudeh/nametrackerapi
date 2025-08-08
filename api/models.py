@@ -14,7 +14,11 @@ import textstat
 # For drop times for different extensions
 from .data.helpers import DROP_TIMES
 
-
+# For auto file deletion
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.conf import settings
+import os
 
 
 
@@ -343,7 +347,7 @@ class IdeaOfTheDay(models.Model):
 
 
     def __str__(self):
-        return f"{self.domain_list} idea for {self.drop_date}: {self.use_case.name.name}"
+        return f"{self.domain_list} idea of the day for {self.drop_date}: {self.use_case.domain_name.domain_name}"
 
 
 
@@ -493,6 +497,9 @@ class NewsLetter(models.Model):
 
 
   
+# ============================================
+# Public inquiry model
+# ============================================
 class PublicInquiry(models.Model):
     name = models.CharField(max_length=50)
     email = models.EmailField()
@@ -509,6 +516,9 @@ class PublicInquiry(models.Model):
 
 
 
+# ============================================
+# Uploaded files model
+# ============================================
 class UploadedFile(models.Model):
     filename = models.CharField(max_length=50, unique=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
@@ -516,7 +526,4 @@ class UploadedFile(models.Model):
 
     def __str__(self):
         return self.filename
-
-
-
-
+    

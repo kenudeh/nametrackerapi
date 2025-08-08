@@ -24,7 +24,6 @@ from corsheaders.defaults import default_headers
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-
 # Load environment variables from .env file
 load_dotenv()
 
@@ -469,6 +468,10 @@ CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 # UPLOAD_DIR = Path('/mnt/data/uploads') if not settings.DEBUG else Path(settings.BASE_DIR) / 'uploads'
 UPLOAD_DIR = BASE_DIR / 'uploads' if DEBUG else Path('/mnt/data/uploads')
 os.makedirs(UPLOAD_DIR, exist_ok=True)  # Ensure directory exists
+
+
+# Validator for json uploads
+MAX_UPLOAD_SIZE = 5 * 1024 * 1024  # 5MB in bytes
 
 
 MEDIA_URL = '/media/'
