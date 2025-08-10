@@ -1,0 +1,159 @@
+[
+    {
+    "domain_name": "DebitBook.io",
+    "score": 7,
+    "use_cases": [
+        {
+        "case_title": "Micro-SaaS Expense Reconciliation",
+        "description": "Automated matching of bank debits with invoices/receipts for bootstrapped SaaS businesses. Focuses on Stripe/PayPal transactions.",
+        "difficulty": "moderate",
+        "competition": "low (existing tools target enterprises)",
+        "category": {"name": "Finance"},
+        "tag": [
+            {"name": "automation"},
+            {"name": "SMB"}
+        ],
+        "target_market": "bootstrapped SaaS founders, indie makers",
+        "revenue_potential": "high ($15/user/month)",
+        "order": 1
+        },
+        {
+        "case_title": "Freelancer Cash Flow Dashboard",
+        "description": "Real-time tracking of debits, invoices, and tax-ready expense categorization for solo professionals.",
+        "difficulty": "moderate",
+        "competition": "medium",
+        "category": {"name": "Finance"},
+        "tag": [
+            {"name": "freelancers"},
+            {"name": "taxes"}
+        ],
+        "target_market": "solopreneurs, consultants",
+        "revenue_potential": "medium",
+        "order": 2
+        },
+        {
+        "case_title": "Subscription Audit Tool",
+        "description": "Identifies and cancels unused subscriptions by analyzing debit transactions. Monetizes via affiliate partnerships with budgeting apps.",
+        "difficulty": "easy",
+        "competition": "medium (vs. Truebill, Rocket Money)",
+        "category": {"name": "Finance"},
+        "tag": [
+            {"name": "subscriptions"},
+            {"name": "privacy"}
+        ],
+        "target_market": "consumers, personal finance bloggers",
+        "revenue_potential": "medium (affiliate revenue)",
+        "order": 3
+        }
+    ]
+    },
+    {
+  "domain_name": "BetterForm.co",
+  "score": 8,
+  "use_cases": [
+    {
+      "case_title": "AI Form Field Generator",
+      "description": "Instantly converts user goals (e.g., 'collect patient intake info') into optimized form fields with validation logic. No manual setup.",
+      "difficulty": "moderate",
+      "competition": "low (existing tools require manual config)",
+      "category": {"name": "Productivity"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "no-code"}
+      ],
+      "target_market": "healthcare admins, event planners",
+      "revenue_potential": "high ($20/user/month)",
+      "order": 1
+    }
+  ]
+},
+{
+  "domain_name": "DebtCure.co",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "Debt Negotiation Automation",
+      "description": "AI drafts hardship letters/negotiation scripts for users to send to creditors, with success rate tracking.",
+      "difficulty": "moderate",
+      "competition": "none (Truebill focuses on tracking, not negotiation)",
+      "category": {"name": "Fintech"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "consumer finance"}
+      ],
+      "target_market": "indebted consumers, financial coaches",
+      "revenue_potential": "medium (15% of saved debt)",
+      "order": 1
+    }
+  ]
+},
+{
+  "domain_name": "BedStory.ai",
+  "score": 8,
+  "use_cases": [
+    {
+      "case_title": "AI-Powered Bedtime Story Generator",
+      "description": "Personalized children's stories generated from user inputs (child's name, interests, moral themes), with optional narration and illustrations.",
+      "difficulty": "moderate",
+      "competition": "low (existing tools lack customization/narration)",
+      "category": {"name": "Education & Learning"},
+      "tag": [
+        {"name": "AI storytelling"},
+        {"name": "parenting"}
+      ],
+      "target_market": "parents, preschool educators",
+      "revenue_potential": "high (subscription + premium story packs)",
+      "order": 1
+    },
+    {
+      "case_title": "Therapeutic Storytelling for Kids",
+      "description": "Stories designed to address childhood anxieties (e.g., fear of darkness) with psychologist-approved narratives.",
+      "difficulty": "hard",
+      "competition": "none (untapped niche)",
+      "category": {"name": "Health & Wellness"},
+      "tag": [
+        {"name": "child psychology"},
+        {"name": "behavioral therapy"}
+      ],
+      "target_market": "child therapists, parents of neurodivergent kids",
+      "revenue_potential": "medium (B2B licensing to clinics)",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "SafetyDocs.ai",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "AI-Powered Compliance Auditor",
+      "description": "Automatically reviews OSHA/ISO docs for gaps and generates corrective action plans.",
+      "difficulty": "moderate",
+      "competition": "low",
+      "category": {"name": "Privacy, Compliance & Identity"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "enterprise"}
+      ],
+      "target_market": "manufacturing, construction SMBs",
+      "revenue_potential": "high ($99/month)",
+      "order": 1
+    },
+    {
+      "case_title": "Safety Training Generator",
+      "description": "Creates customized training modules (videos, quizzes) from company policies.",
+      "difficulty": "easy",
+      "competition": "medium",
+      "category": {"name": "Education & Learning"},
+      "tag": [
+        {"name": "HR"},
+        {"name": "automation"}
+      ],
+      "target_market": "HR teams, factories",
+      "revenue_potential": "medium ($50/month)",
+      "order": 2
+    }
+  ]
+}
+
+]

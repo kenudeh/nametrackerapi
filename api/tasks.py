@@ -8,9 +8,9 @@ from .models import Name, ArchivedName, IdeaOfTheDay, UseCase, UploadedFile
 from .handlers.services import DynadotAPI
 
 from pathlib import Path
-from django.conf import settings
+# from django.conf import settings
 import subprocess
-from datetime import date
+# from datetime import date
 import logging
 
 logger = logging.getLogger('api.domain_tasks')
@@ -221,28 +221,69 @@ def full_domain_availability_task():
 # Auto-Loader Task
 @shared_task
 def process_pending_files():
-    """
-    Check for unprocessed JSON files and call the loader command.
-    """
+    """Automated periodic processing"""
+    from .utils import process_file
+    for record in UploadedFile.objects.filter(processed=False):
+        try:
+            process_file(record)
+            record.processing_method = 'celery'
+            record.save()
+        except Exception as e:
+            logger.error(f"Auto-process failed {record.filename}: {str(e)}")
+
+# @shared_task
+# def process_pending_files():
+#     """Process files not marked as processed"""
+#     unprocessed_files = UploadedFile.objects.filter(processed=False)
+    
+#     for record in unprocessed_files:
+#         file_path = Path(settings.UPLOAD_DIR) / record.filename
+        
+#         try:
+#             with transaction.atomic():
+#                 # Use call_command instead of subprocess
+#                 call_command(
+#                     "load_json",
+#                     str(file_path),
+#                     "--drop_date", date.today().isoformat(),
+#                     "--domain_list", "pending_delete"
+#                 )
+                
+#                 record.processed = True
+#                 record.processed_at = timezone.now()
+#                 record.processing_method = 'celery'
+#                 record.save()
+                
+#                 logger.info(f"Processed {record.filename}")
+                
+#         except Exception as e:
+#             logger.error(f"Failed processing {record.filename}: {str(e)}")
+
+
+# @shared_task
+# def process_pending_files():
+#     """
+#     Check for unprocessed JSON files and call the loader command.
+#     """
  
-    today = date.today().isoformat()
-    volume_path = Path(settings.UPLOAD_DIR)
+#     today = date.today().isoformat()
+#     volume_path = Path(settings.UPLOAD_DIR)
 
-    for file in volume_path.glob("*.json"):
-        if not UploadedFile.objects.filter(filename=file.name, processed=True).exists():
-            # Run the loader
-            cmd = [
-                "python", "manage.py", "load_json",
-                str(file),
-                "--drop_date", today,
-                "--domain_list", "pending_delete"
-            ]
-            logger.info(f"Running loader for file: {file.name}")
-            subprocess.call(cmd)
+#     for file in volume_path.glob("*.json"):
+#         if not UploadedFile.objects.filter(filename=file.name, processed=True).exists():
+#             # Run the loader
+#             cmd = [
+#                 "python", "manage.py", "load_json",
+#                 str(file),
+#                 "--drop_date", today,
+#                 "--domain_list", "pending_delete"
+#             ]
+#             logger.info(f"Running loader for file: {file.name}")
+#             subprocess.call(cmd)
 
-            # Mark as processed
-            UploadedFile.objects.update_or_create(
-                filename=file.name,
-                defaults={'processed': True}
-            )
-            logger.info(f"Marked {file.name} as processed.")
+#             # Mark as processed
+#             UploadedFile.objects.update_or_create(
+#                 filename=file.name,
+#                 defaults={'processed': True}
+#             )
+#             logger.info(f"Marked {file.name} as processed.")

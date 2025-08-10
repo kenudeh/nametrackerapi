@@ -1,0 +1,144 @@
+[
+        {
+    "domain_name": "SwiftLend.co",
+    "score": 9,
+    "use_cases": [
+        {
+        "case_title": "White-Label Payroll Advance for SaaS Platforms",
+        "description": "Embeddable widget that lets HR/finance SaaS platforms offer on-demand salary advances (up to 50% of earned wages) to their users. Charges SaaS companies for API access, not end-users.",
+        "difficulty": "moderate",
+        "competition": "low (only DailyPay targets this niche indirectly)",
+        "category": {"name": "Fintech"},
+        "tag": [
+            {"name": "embedded finance"},
+            {"name": "HR tech"}
+        ],
+        "target_market": "SMB payroll providers, HR tools (e.g., Gusto, Rippling competitors)",
+        "revenue_potential": "high ($2-5K/month per SaaS partner)",
+        "order": 1
+        },
+        {
+        "case_title": "Revenue-Based Cash Advances for Freelancers",
+        "description": "Automated cash advances (up to $5k) based on verified freelance platform earnings (Upwork, Fiverr). Repay as a % of future income.",
+        "difficulty": "moderate",
+        "competition": "low (only Kickpay competes directly)",
+        "category": {"name": "Fintech"},
+        "tag": [
+            {"name": "freelancers"},
+            {"name": "automation"}
+        ],
+        "target_market": "high-earning freelancers, indie consultants",
+        "revenue_potential": "high (10-15% fee per advance)",
+        "order": 2
+        }
+    ]
+    },
+    {
+  "domain_name": "SmarterLoans.ai",
+  "score": 6,
+  "use_cases": [
+    {
+      "case_title": "Loan Eligibility Pre-Checker",
+      "description": "AI predicts approval odds for SMB loans without hard credit checks by analyzing cash flow data.",
+      "difficulty": "hard",
+      "competition": "medium",
+      "category": {"name": "Fintech"},
+      "tag": [
+        {"name": "SMB"},
+        {"name": "underwriting"}
+      ],
+      "target_market": "small business owners",
+      "revenue_potential": "medium (lead gen fees)",
+      "order": 1
+    }
+  ]
+},
+{
+  "domain_name": "ProDetect.co",
+  "score": 7,
+  "use_cases": [
+      {
+      "case_title": "Brand Impersonation Monitor",
+      "description": "Scans social media and the web for fake accounts, counterfeit listings, or phishing sites using your brand assets.",
+      "difficulty": "easy",
+      "competition": "medium (vs. Brandwatch, Red Points)",
+      "category": {"name": "Marketing & Advertising"},
+      "tag": [
+        {"name": "brand protection"},
+        {"name": "automation"}
+      ],
+      "target_market": "DTC brands, SMBs with trademarks",
+      "revenue_potential": "medium ($49/month)",
+      "order": 1
+    },
+    {
+      "case_title": "AI-Powered Plagiarism Scanner for Businesses",
+      "description": "Detects duplicate content, internal leaks, or stolen IP across documents and contracts.",
+      "difficulty": "moderate",
+      "competition": "low",
+      "category": {"name": "Privacy, Compliance & Identity"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "security"}
+      ],
+      "target_market": "publishers, legal teams, content agencies",
+      "revenue_potential": "high ($99/month)",
+      "order": 2
+    },
+    {
+    "case_title": "Contract Clause Anomaly Detector",
+    "description": "AI compares contracts against your approved templates to flag non-standard terms, hidden fees, or risky language (e.g., auto-renewals, liability caps). Includes redline suggestions for negotiation.",
+    "difficulty": "moderate",
+    "competition": "low (vs. manual legal reviews)",
+    "category": {"name": "Law, Legal, Attorney"},
+    "tag": [
+        {"name": "AI"},
+        {"name": "compliance"}
+    ],
+    "target_market": "freelancers, SMBs, legal ops teams",
+    "revenue_potential": "high ($150/user/month)",
+    "order": 3
+    }
+  ]
+},
+{
+  "domain_name": "LeanTravel.co",
+  "score": 6,
+  "use_cases": [
+    {
+      "case_title": "Bleisure Trip Optimizer",
+      "description": "Plans work-leisure travel itineraries by syncing calendars/flight data to maximize productivity and local experiences.",
+      "difficulty": "moderate",
+      "competition": "none (niche)",
+      "category": {"name": "Travel & Hospitality"},
+      "tag": [
+        {"name": "productivity"},
+        {"name": "remote work"}
+      ],
+      "target_market": "digital nomads, consultants",
+      "revenue_potential": "low ($10/month)",
+      "order": 1
+    }
+  ]
+},
+{
+  "domain_name": "ToolWrangler.co",
+  "score": 6,
+  "use_cases": [
+    {
+      "case_title": "SaaS Stack Optimizer",
+      "description": "Analyzes your tool subscriptions (via email receipts) to find overlaps, underused licenses, and cheaper alternatives.",
+      "difficulty": "easy",
+      "competition": "low (vs. manual spreadsheets)",
+      "category": {"name": "Productivity"},
+      "tag": [
+        {"name": "SaaS"},
+        {"name": "automation"}
+      ],
+      "target_market": "startups, SMBs",
+      "revenue_potential": "medium (affiliate fees)",
+      "order": 1
+    }
+  ]
+}
+]

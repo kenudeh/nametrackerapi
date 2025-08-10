@@ -117,17 +117,17 @@ class Command(BaseCommand):
                 try:
                     validate_domain_data([item])  # Validator expects a list, but we're passing domains one by one for scalability purposes.
                 except ValueError as e:
-                    # self.stdout.write(self.style.ERROR(
-                    #     f"Skipped '{domain_name}' due to validation error: {e}"
-                    # ))
+                    self.stdout.write(self.style.ERROR(
+                        f"Skipped '{domain_name}' due to validation error: {e}"
+                    ))
                     logger.error(f"Skipped '{domain_name}' due to validation error: {e}")
                     continue  #Block this domain from being saved
 
                 # --- Check if domain already exists in DB ---
                 if Name.objects.filter(domain_name=domain_name).exists():
-                    # self.stdout.write(self.style.WARNING(
-                    #     f"Skipped '{domain_name}': already exists in DB."
-                    # ))
+                    self.stdout.write(self.style.WARNING(
+                        f"Skipped '{domain_name}': already exists in DB."
+                    ))
                     logger.warning(f"Skipped '{domain_name}': already exists in DB.")
                     continue
 
@@ -143,9 +143,9 @@ class Command(BaseCommand):
                     name for name in use_case_categories if name not in allowed_categories
                 ]
                 if invalid_categories:
-                    # self.stdout.write(self.style.WARNING(
-                    #     f"Skipped '{domain_name}': unknown categories used: {', '.join(invalid_categories)}"
-                    # ))
+                    self.stdout.write(self.style.WARNING(
+                        f"Skipped '{domain_name}': unknown categories used: {', '.join(invalid_categories)}"
+                    ))
                     logger.warning(f"Skipped '{domain_name}': unknown categories used: {', '.join(invalid_categories)}")
                     continue
 
@@ -193,7 +193,7 @@ class Command(BaseCommand):
 
 
                  # --- Log success for this domain ---
-                # self.stdout.write(self.style.SUCCESS(f"Processed: {domain_name}"))
+                self.stdout.write(self.style.SUCCESS(f"Processed: {domain_name}"))
                 logger.info(f"Processed: {domain_name}")
 
                 # --- Track top scoring domains (for idea assignment later)
@@ -236,9 +236,9 @@ class Command(BaseCommand):
                             drop_date=drop_date,
                             domain_list=DomainListOptions.PENDING_DELETE
                         )
-                        # self.stdout.write(self.style.SUCCESS(
-                        #     f"IdeaOfTheDay created for drop_date {drop_date} from domain '{selected_domain.domain_name}'"
-                        # ))
+                        self.stdout.write(self.style.SUCCESS(
+                            f"IdeaOfTheDay created for drop_date {drop_date} from domain '{selected_domain.domain_name}'"
+                        ))
                         logger.info(f"IdeaOfTheDay created for drop_date {drop_date} from domain '{selected_domain.domain_name}'")
                     else:
                         # self.stdout.write(self.style.WARNING(
@@ -258,7 +258,7 @@ class Command(BaseCommand):
 
 
             # --- Final success message ---
-            # self.stdout.write(self.style.SUCCESS(f'Total domains processed: {records_processed}'))
+            self.stdout.write(self.style.SUCCESS(f'Total domains processed: {records_processed}'))
             logger.info(f'Total domains processed: {records_processed}')
             # self.stdout.write(self.style.SUCCESS('All domain data loaded successfully.'))
 

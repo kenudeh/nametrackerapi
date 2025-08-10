@@ -22,10 +22,13 @@ from corsheaders.defaults import default_headers
 
 #location for json uploads
 from pathlib import Path
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Base directory definition
+BASE_DIR = Path(__file__).resolve().parent.parent
+
 
 # Helper function to parse environment variables that contain multiple comma-separated values (like allowed_hosts, csrf_trusted_origins, etc)
 def get_list_env(key, default=""):
@@ -39,9 +42,6 @@ DEBUG = not IS_PRODUCTION
 # ===== Core Security =====
 SECURE_SSL_REDIRECT = IS_PRODUCTION  # This should only be True in production (Force HTTPS)
 
-
-# Base directory (Build paths inside the project like this: BASE_DIR / 'subdir'.)
-BASE_DIR = Path(__file__).resolve().parent.parent
 
 # ===== Shared Settings ===== 
 SECRET_KEY = os.getenv('SECRET_KEY')
@@ -445,6 +445,13 @@ CELERY_RESULT_BACKEND = REDIS_URL
 CELERY_ACCEPT_CONTENT = ['json']
 CELERY_TASK_SERIALIZER = 'json'
 
+CELERY_TIMEZONE = TIME_ZONE  # Critical for beat scheduling
+CELERY_TASK_TRACK_STARTED = True  # Enables task state tracking
+CELERY_TASK_ALWAYS_EAGER = False  # Explicitly disable eager mode (safety check)
+CELERY_TASK_IGNORE_RESULT = False  # Store results
+CELERY_TASK_TIME_LIMIT = 60 * 60  # 60 minute timeout
+CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
+
 
 # CELERY BEAT SETTINGS
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
@@ -460,12 +467,7 @@ CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
 
 
 
-# # Upload directory for railways persistent storage
-# UPLOAD_DIR = '/mnt/data/uploads'
-# # Create it if it doesn't exist
-# os.makedirs(UPLOAD_DIR, exist_ok=True)
-# Uploads directory (Railway persistent storage in prod, local 'uploads/' in dev)
-# UPLOAD_DIR = Path('/mnt/data/uploads') if not settings.DEBUG else Path(settings.BASE_DIR) / 'uploads'
+# Upload directory
 UPLOAD_DIR = BASE_DIR / 'uploads' if DEBUG else Path('/mnt/data/uploads')
 os.makedirs(UPLOAD_DIR, exist_ok=True)  # Ensure directory exists
 
@@ -488,6 +490,9 @@ LOG_LEVEL = 'DEBUG' if DEBUG else 'WARNING'
 SENSITIVE_VARIABLES = ['password', 'token', 'secret']
 
 
+
+LOG_LEVEL = 'WARNING' if not DEBUG else 'INFO'
+
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -497,19 +502,24 @@ LOGGING = {
             'format': '{levelname} {asctime} {module} {message}',
             'style': '{',
         },
+        'simple': {
+            'format': '{levelname}: {message}',
+            'style': '{',
+        },
     },
 
     'handlers': {
-        # Domain task logs (rotated)
+        # ✅ Domain task logs (rotated)
         'domain_file': {
             'level': 'INFO',
             'class': 'logging.handlers.RotatingFileHandler',
             'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
-            'maxBytes': 3 * 1024 * 1024,
+            'maxBytes': 3 * 1024 * 1024,  # 3 MB
             'backupCount': 3,
             'formatter': 'verbose',
+            'encoding': 'utf8',
         },
-        # General system logs (warnings and above)
+        # ✅ General system logs (warnings and above)
         'system_file': {
             'level': 'WARNING',
             'class': 'logging.handlers.RotatingFileHandler',
@@ -517,24 +527,98 @@ LOGGING = {
             'maxBytes': 5 * 1024 * 1024,
             'backupCount': 5,
             'formatter': 'verbose',
+            'encoding': 'utf8',
+        },
+        'celery': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/celery_tasks.log',
+            'filename': os.path.join(LOGGING_DIR, 'celery_tasks.log'),
+        },
+        'console': {
+            'class': 'logging.StreamHandler',
+            'formatter': 'simple',
+            'level': 'DEBUG',  # <- change from WARNING to DEBUG (Remove later as it's for seeing debug errors in the console during dev)
         },
     },
 
-
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',  # <- important (Remove block entirely later as it's for seeing debug errors in the console during dev))
+    },
 
     'loggers': {
-        # For Django system errors (500s, etc.)
+        # ✅ For Django system errors (500s, etc.)
         'django': {
-            'handlers': ['system_file'],
+            'handlers': ['system_file', 'console'],
             'level': LOG_LEVEL,
             'propagate': True,
         },
-        # my app-specific task logs
+        # ✅ Your app-specific task logs
         'api.domain_tasks': {
-            'handlers': ['domain_file'],
+            'handlers': ['domain_file', 'console', 'celery'],
             'level': 'INFO',
             'propagate': False,
         },
     },
 }
+
+
+# LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
+# if not os.path.exists(LOGGING_DIR):
+#     os.makedirs(LOGGING_DIR)
+
+# LOG_LEVEL = 'DEBUG' if DEBUG else 'WARNING'
+# SENSITIVE_VARIABLES = ['password', 'token', 'secret']
+
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {message}',
+#             'style': '{',
+#         },
+#     },
+
+#     'handlers': {
+#         # Domain task logs (rotated)
+#         'domain_file': {
+#             'level': 'INFO',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
+#             'maxBytes': 3 * 1024 * 1024,
+#             'backupCount': 3,
+#             'formatter': 'verbose',
+#         },
+#         # General system logs (warnings and above)
+#         'system_file': {
+#             'level': 'WARNING',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(LOGGING_DIR, 'aitracker.log'),
+#             'maxBytes': 5 * 1024 * 1024,
+#             'backupCount': 5,
+#             'formatter': 'verbose',
+#         },
+#     },
+
+
+
+#     'loggers': {
+#         # For Django system errors (500s, etc.)
+#         'django': {
+#             'handlers': ['system_file'],
+#             'level': LOG_LEVEL,
+#             'propagate': True,
+#         },
+#         # my app-specific task logs
+#         'api.domain_tasks': {
+#             'handlers': ['domain_file'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#     },
+# }
 
