@@ -523,7 +523,14 @@ class UploadedFile(models.Model):
     filename = models.CharField(max_length=50, unique=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     processed = models.BooleanField(default=False)
+    processed_at = models.DateTimeField(null=True, blank=True)  # New field
+    processing_method = models.CharField(  # Track how file was processed
+        max_length=20,
+        choices=[('manual', 'Manual'), ('celery', 'Auto')],
+        default='manual'
+    )
 
-    def __str__(self):
-        return self.filename
-    
+    class Meta:
+        indexes = [
+            models.Index(fields=['processed']),  # Faster lookups
+        ]

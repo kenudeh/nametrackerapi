@@ -1,6 +1,8 @@
 # admin.py
 from django.contrib import admin
 from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile
+from .tasks import process_pending_files
+
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -48,6 +50,7 @@ class NameAdmin(admin.ModelAdmin):
         'is_top_rated',
         'is_favorite',
         'drop_date',
+        'created_at',
     )
     list_display_links = ('domain_name',) 
     list_filter = (  #removed 'category'
@@ -171,7 +174,25 @@ class PublicInquiryAdmin(admin.ModelAdmin):
     readonly_fields = ('ip_address', 'created_at', 'updated_at')
 
 
-@admin.register(UploadedFile)
+
+@admin.action(description="Process selected files NOW")
+def process_files_immediately(modeladmin, request, queryset):
+    from .utils import process_file
+    for obj in queryset.filter(processed=False):
+        try:
+            process_file(obj)
+            obj.processing_method = 'manual'
+            obj.save()
+            modeladmin.message_user(request, f"Processed {obj.filename}")
+        except Exception as e:
+            modeladmin.message_user(request, f"Failed {obj.filename}: {str(e)}", level='error')
+
+
 class UploadedFileAdmin(admin.ModelAdmin):
-    list_display = ('filename', 'uploaded_at', 'processed')
-    readonly_fields = ('uploaded_at', 'processed', 'filename',)
+    list_display = ('filename', 'processed', 'uploaded_at')
+    actions = [process_files_immediately]   # This adds the action to the admin dropdown
+    readonly_fields = ('processed_at',)
+
+admin.site.register(UploadedFile, UploadedFileAdmin)
+
+

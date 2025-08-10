@@ -79,63 +79,38 @@ def upload_file(request):
                 # Save file and create record
                 fs = FileSystemStorage(location=str(settings.UPLOAD_DIR))
                 fs.save(filename, uploaded_file)
-                UploadedFile.objects.create(filename=filename)
+                UploadedFile.objects.create(
+                    filename=filename,
+                    processed=False  # Explicitly mark as unprocessed
+                )
 
         except Exception as e:
             return HttpResponse(f"File save failed: {str(e)}", status=500)
 
-        # Process file with cleanup on failure
-        try:
-            call_command(
-                "load_json",
-                str(file_path),
-                drop_date=drop_date,
-                domain_list=domain_list
-            )
-            return HttpResponse("File processed successfully")
+        # # Process file with cleanup on failure
+        # try:
+        #     call_command(
+        #         "load_json",
+        #         str(file_path),
+        #         drop_date=drop_date,
+        #         domain_list=domain_list
+        #     )
+        #     return HttpResponse("File processed successfully")
         
-        except Exception as e:
-            # Cleanup if processing fails
-            if file_path.exists():
-                try:
-                    os.unlink(file_path)
-                except OSError:
-                    pass
-            UploadedFile.objects.filter(filename=filename).delete()
-            return HttpResponse(f"Processing failed: {str(e)}", status=500)
+        # except Exception as e:
+        #     # Cleanup if processing fails
+        #     if file_path.exists():
+        #         try:
+        #             os.unlink(file_path)
+        #         except OSError:
+        #             pass
+        #     UploadedFile.objects.filter(filename=filename).delete()
+        #     return HttpResponse(f"Processing failed: {str(e)}", status=500)
+
+        # DON'T process immediately - just return success
+        return HttpResponse("File uploaded successfully - awaiting processing", status=202)
 
     return render(request, "upload.html")
-# @staff_member_required 
-# def upload_file(request):
-#     if request.method == "POST" and request.FILES.get("file"):
-#         drop_date = request.POST.get("drop_date")
-#         domain_list = request.POST.get("domain_list", "pending_delete")
-
-#         # Save to Railway volume
-#         # fs = FileSystemStorage(location="/mnt/data")
-#         fs = FileSystemStorage(location="/mnt/data/uploads")
-#         filename = fs.save(request.FILES["file"].name, request.FILES["file"])
-#         # file_path = f"/mnt/data/{filename}"
-#         file_path = f"/mnt/data/uploads/{filename}"
-
-#         # ✅ Track uploaded file
-#         UploadedFile.objects.get_or_create(filename=filename)
-
-#         # Call management command
-#         cmd = [
-#             "python", "manage.py", "load_json",
-#             file_path,
-#             f"--drop_date={drop_date}",
-#             f"--domain_list={domain_list}"
-#         ]
-#         result = subprocess.run(cmd, capture_output=True, text=True)
-
-#         return HttpResponse(
-#             f"<pre>{result.stdout}</pre><pre>{result.stderr}</pre>"
-#         )
-
-#     return render(request, "upload.html")
-
 
 
 
