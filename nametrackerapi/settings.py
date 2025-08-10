@@ -223,6 +223,10 @@ AUTHENTICATION_BACKENDS = (
 
 APPEND_SLASH = False
 
+# For -s_top_rated flag on the Name model
+TOP_RATED_THRESHOLD = 8
+
+
 
 #Allauth (deprecated fields are commented out)
 # ACCOUNT_EMAIL_REQUIRED = True

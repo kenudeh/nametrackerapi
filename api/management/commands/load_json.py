@@ -10,6 +10,8 @@ from api.models import Name, UseCaseTag, UseCaseCategory, UseCase, IdeaOfTheDay,
 import logging
 logger = logging.getLogger(__name__)
 
+from django.conf import settings
+
 
 # Example CLI usage:python manage.py load_json appname/data(a folder in app)/date.json(the exact json file) --drop_date=2025-07-01(a flag) --domain_list=pending_delete | marketplace(another flag)
 
@@ -150,12 +152,17 @@ class Command(BaseCommand):
                     continue
 
                 # --- Create the Name entry ---
+                score = item.get('score', None)
+                is_top_rated = score is not None and score >= settings.TOP_RATED_THRESHOLD
+
                 name_obj = Name.objects.create(
                     domain_name=domain_name,
                     drop_date=drop_date,
                     domain_list=domain_list,
                     status=status,
-                    score=item.get('score', None)
+                    score=score,
+                    is_top_rated=is_top_rated,
+                    top_rated_date=drop_date if is_top_rated else None
                 )
 
                 # --- Collect and assign unique tags across all use cases ---
@@ -250,10 +257,6 @@ class Command(BaseCommand):
                     #     f"Skipped IdeaOfTheDay creation: no top use case (order=1) found for domain '{selected_domain.domain_name}'."
                     # ))
                     logger.warning( f"Skipped IdeaOfTheDay creation: no top use case (order=1) found for domain '{selected_domain.domain_name}'.")
-
-
-
-
 
 
 
