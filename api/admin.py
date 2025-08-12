@@ -3,6 +3,62 @@ from django.contrib import admin
 from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile
 from .tasks import process_pending_files
 
+from django_celery_beat.admin import PeriodicTaskAdmin, CrontabScheduleAdmin
+from django_celery_beat.models import PeriodicTask, CrontabSchedule
+from django.utils.html import format_html
+
+
+# 1. First, unregister the auto-registered models
+# This must happen BEFORE our custom registration
+admin.site.unregister(PeriodicTask)
+admin.site.unregister(CrontabSchedule)
+
+
+# Celery beat setup
+PROTECTED_TASKS = [ # Core tasks that should never be modified in production
+    'full_domain_processing',
+    'daily_archival',
+    'pending_transitions'
+]
+
+
+# Custom admin classes that INHERIT from defaults
+@admin.register(PeriodicTask)
+class CustomPeriodicTaskAdmin(PeriodicTaskAdmin):  # Inherit from default admin
+    list_display = PeriodicTaskAdmin.list_display + ('schedule_info',)
+    readonly_fields = PeriodicTaskAdmin.readonly_fields + ('last_run_at',)
+    
+    def schedule_info(self, obj):
+        if obj.crontab:
+            return f"{obj.crontab.hour}:{obj.crontab.minute} (UTC)"
+        return "-"
+    schedule_info.short_description = "Schedule"
+
+    def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj)
+        if obj and obj.name in PROTECTED_TASKS:
+            return list(fields) + [f.name for f in self.model._meta.fields]
+        return fields
+
+    def has_delete_permission(self, request, obj=None):
+        if obj and obj.name in PROTECTED_TASKS:
+            return False
+        return super().has_delete_permission(request, obj)
+
+@admin.register(CrontabSchedule)
+class CustomCrontabScheduleAdmin(CrontabScheduleAdmin):  # Inherit from default
+    list_display = CrontabScheduleAdmin.list_display + ('human_readable',)
+    
+    def human_readable(self, obj):
+        return format_html(
+            '<span style="color: #007BFF;">{}</span>',
+            obj.human_readable
+        )
+    human_readable.short_description = "Schedule"
+
+
+    
+
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):

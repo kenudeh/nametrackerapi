@@ -29,6 +29,8 @@ load_dotenv()
 # Base directory definition
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Ensuirng all DateTimeFields in the database will store values in UTC. Can be converted to local time when displaying them to users.
+USE_TZ = True
 
 # Helper function to parse environment variables that contain multiple comma-separated values (like allowed_hosts, csrf_trusted_origins, etc)
 def get_list_env(key, default=""):
@@ -95,7 +97,7 @@ REST_AUTH = { #used to be named 'DJ_REST_AUTH'
     'JWT_AUTH_COOKIE_USE_CSRF': True,  # True in production
     'TOKEN_MODEL': None,  # disables DRF token model
     'JWT_AUTH_RETURN_EXPIRATION': False,  # Stop sending tokens in JSON
-    
+    'USE_ALL_AUTH': False
 }
 
 
@@ -297,12 +299,12 @@ DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 # SOCIALACCOUNT_QUERY_EMAIL = True
 
 # A custom pipeline to handle usernames during Google authentication
-SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
+# SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
 
 
 
 #Pointing Allauth to use the custom adapter for activating a user's account on email confirmation
-ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
+# ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
 
 
 #Additional Security 
@@ -442,6 +444,7 @@ CACHES = {
 }
 
 
+
 # CELERY SETTINGS
 CELERY_BROKER_URL = REDIS_URL
 CELERY_RESULT_BACKEND = REDIS_URL
@@ -458,8 +461,14 @@ CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
 
 
 # CELERY BEAT SETTINGS
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-
+# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_SCHEDULE = {
+    'initialize_schedules': {
+        'task': 'celery_schedules.initialize_schedules',
+        'schedule': 5.0,  # Runs 5 seconds after startup
+        'options': {'expires': 10}
+    },
+}
 
 
 # Clerk 
