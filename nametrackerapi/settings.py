@@ -29,6 +29,8 @@ load_dotenv()
 # Base directory definition
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# Ensuirng all DateTimeFields in the database will store values in UTC. Can be converted to local time when displaying them to users.
+USE_TZ = True
 
 # Helper function to parse environment variables that contain multiple comma-separated values (like allowed_hosts, csrf_trusted_origins, etc)
 def get_list_env(key, default=""):
@@ -51,52 +53,6 @@ DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
 DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
 
 
-
-# CUSTOM SERIALIZERS ACTIVATION
-# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer',
-}
-# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
-REST_AUTH_SERIALIZERS = {
-    'LOGIN_SERIALIZER': 'api.serializers.CustomLoginSerializer',
-}
-
-
-
-
-
-# SimpleJWT settings
-# SIMPLE_JWT = {
-#     'AUTH_HEADER_TYPES': ('Bearer',), # Fallback for non-cookie clients
-#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-#     'ROTATE_REFRESH_TOKENS': True,
-#     'BLACKLIST_AFTER_ROTATION': True,
-
-#     # These are crucial for cookie-based auth
-#     'AUTH_COOKIE': 'access_token',
-#     'AUTH_COOKIE_REFRESH': 'refresh_token',
-#     'AUTH_COOKIE_HTTP_ONLY': True,
-#     'AUTH_COOKIE_SECURE': True,
-#     'AUTH_COOKIE_SAMESITE': 'None',
-#     'AUTH_COOKIE_PATH': '/',
-# }
-
-
-# Rest-auth settings
-REST_AUTH = { #used to be named 'DJ_REST_AUTH'
-    'USE_JWT': True,  # enables JWT usage
-    'JWT_AUTH_COOKIE': 'access_cookie',
-    'JWT_AUTH_REFRESH_COOKIE': 'refresh_cookie',
-    'JWT_AUTH_HTTPONLY': True, # Block JS access to JWT cookies
-    # 'JWT_AUTH_SECURE': True, #HTTPS-only JWT cookies (True in production)
-    'JWT_AUTH_SAMESITE': 'None',
-    'JWT_AUTH_COOKIE_USE_CSRF': True,  # True in production
-    'TOKEN_MODEL': None,  # disables DRF token model
-    'JWT_AUTH_RETURN_EXPIRATION': False,  # Stop sending tokens in JSON
-    
-}
 
 
 # CSRF settings 
@@ -148,7 +104,6 @@ if IS_PRODUCTION:
     # Production-only settings
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
-    REST_AUTH['JWT_AUTH_SECURE'] = True
     CSRF_TRUSTED_ORIGINS = get_list_env("DJANGO_CSRF_TRUSTED_ORIGINS")
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     USE_X_FORWARDED_HOST = True
@@ -156,13 +111,7 @@ else:
     # Development-only settings
     CSRF_COOKIE_SECURE = False
     SESSION_COOKIE_SECURE = False
-    REST_AUTH['JWT_AUTH_SECURE'] = False
     CSRF_TRUSTED_ORIGINS = get_list_env("DJANGO_CSRF_TRUSTED_ORIGINS")
-
-
-
-
-
 
 
 
@@ -173,23 +122,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
- 
-
     # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
-    #'rest_framework.authtoken', #Not in use. 
     'corsheaders',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
-    'dj_rest_auth',
     'django.contrib.sites',  # Required for allauth
-    'dj_rest_auth.registration',
     'django_filters',
     'django_celery_beat',
-
     #My app
     'api.apps.ApiConfig',
 ]
@@ -216,52 +155,28 @@ REST_FRAMEWORK = {
 
 
 AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',  # Required by django-allauth
     'django.contrib.auth.backends.ModelBackend',            # Default
 )
 
 
 APPEND_SLASH = False
 
-# For -s_top_rated flag on the Name model
+# For is_top_rated flag on the Name model
 TOP_RATED_THRESHOLD = 8
 
 
 
-#Allauth (deprecated fields are commented out)
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# ACCOUNT_USERNAME_REQUIRED = False
-
-#In use
-# ACCOUNT_LOGIN_METHODS = {'email', 'username'}
-# ACCOUNT_SIGNUP_FIELDS = [
-#     'username*', 
-#     'email*',        # Required email
-#     'password1*',    # Required password
-#     'password2*'     # Required password confirmation
-# ]
-# ACCOUNT_UNIQUE_EMAIL = True  # Crucial for email-as-username functionality
-# ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-# ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
-
-
-# ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.html"
-# ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
-# ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
-
-
 #Site ID
-SITE_ID = 1
+# SITE_ID = 1
+
 # Ensures email use HTTPS
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 
 #Email Backend for Postmark
-# Use custom Postmark API backend for sending emails:
-EMAIL_BACKEND = 'api.postmark_backend.EmailBackend'
+EMAIL_BACKEND = 'api.postmark_backend.EmailBackend' # Use custom Postmark API backend for sending emails:
 
-# Where the Postmark API token is stored (already in your .env):
+# Where the Postmark API token is stored (already in .env):
 POSTMARK_API_TOKEN = os.getenv('POSTMARK_API_TOKEN')
 
 # Default "From" email address (also from .env):
@@ -269,40 +184,6 @@ DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 
 DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 
-
-# Redirect for confirmation page (NOT IN USE ANYMORE BECAUSE WE OVERRODE ALLAUTH DEFUALT CONFIRMATION VIEW DUE TO A TEMPLATE RENDERING ERROR)
-# ACCOUNT_CONFIRM_EMAIL_ON_GET = True
-# ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
-# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
-
-
-#Google Login (Allauth) - Now handles by Clerk
-# SOCIALACCOUNT_PROVIDERS = {
-#     'google': {
-#         'APP': {
-#             'client_id': os.getenv('GOOGLE_CLOUD_CLIENT_ID'),
-#             'secret': os.getenv('GOOGLE_CLOUD_SECRET'),
-#             'key': ''
-#         },
-#         'SCOPE': ['profile', 'email'],
-#         'AUTH_PARAMS': {'access_type': 'online'},
-#         # Needed to customize usernames:
-#         'USER_FIELDS': ['email', 'username'],
-#     }
-# }
-
-# # Required for social login
-# SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
-# SOCIALACCOUNT_EMAIL_REQUIRED = False
-# SOCIALACCOUNT_QUERY_EMAIL = True
-
-# A custom pipeline to handle usernames during Google authentication
-SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
-
-
-
-#Pointing Allauth to use the custom adapter for activating a user's account on email confirmation
-ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
 
 
 #Additional Security 
@@ -316,7 +197,6 @@ MIDDLEWARE = [
     'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware', # Required for admin
-    'allauth.account.middleware.AccountMiddleware', #Required by allauth
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -347,18 +227,6 @@ WSGI_APPLICATION = 'nametrackerapi.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-# DATABASES = {
-#     "default": dj_database_url.config(
-#         default=os.getenv("DATABASE_URL"),
-#         conn_max_age=600,
-#         ssl_require=True
-#     )
-# }
-
-
-
 if os.getenv("DATABASE_URL"):
     DATABASES = {
         "default": dj_database_url.config(
@@ -442,6 +310,7 @@ CACHES = {
 }
 
 
+
 # CELERY SETTINGS
 CELERY_BROKER_URL = REDIS_URL
 CELERY_RESULT_BACKEND = REDIS_URL
@@ -458,8 +327,14 @@ CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
 
 
 # CELERY BEAT SETTINGS
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-
+# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_SCHEDULE = {
+    'initialize_schedules': {
+        'task': 'celery_schedules.initialize_schedules',
+        'schedule': 5.0,  # Runs 5 seconds after startup
+        'options': {'expires': 10}
+    },
+}
 
 
 # Clerk 

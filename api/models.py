@@ -121,12 +121,14 @@ class Name(models.Model):
     domain_list = models.CharField(
         max_length=50,
         choices = DomainListOptions.choices,
-        default = DomainListOptions.PENDING_DELETE
+        default = DomainListOptions.PENDING_DELETE,
+        db_index=True
     )
     status = models.CharField(
         max_length = 20,
         choices = RegStatusOptions.choices,
         default = RegStatusOptions.PENDING,
+        db_index=True
     )
     length = models.PositiveIntegerField(
         editable=False,
@@ -156,10 +158,12 @@ class Name(models.Model):
     top_rated_date = models.DateField(null=True, blank=True)  # Used to isolate daily top-rated names
     is_favorite = models.BooleanField(default=False)
     drop_date = models.DateField(
+        db_index=True,
         help_text="Set manually in loader per batch"
     )
     drop_time = models.DateTimeField(
         editable=False,
+        db_index=True,
         help_text="Auto-computed in save() based on extension"
     )
     created_at = models.DateTimeField(auto_now_add=True)
@@ -195,12 +199,10 @@ class Name(models.Model):
         # Compute drop_time from extension lookup table (DROP_TIMES)
         drop_time_value = DROP_TIMES.get(self.extension)
         if drop_time_value:
-            # Combine drop_date with the corresponding drop time
-            self.drop_time = timezone.make_aware(
-                timezone.datetime.combine(self.drop_date, drop_time_value)
-            )
+            # Combine date + time then mark it as UTC so comparisons against timezone.now() (UTC) are correct.
+            naive_dt = datetime.combine(self.drop_date, drop_time_value)
+            self.drop_time = timezone.make_aware(naive_dt, timezone=timezone.utc)
         else:
-            # Default to timezone.now() if extension not found
             self.drop_time = timezone.now()
 
         # One-way logic to update is_top_rated when is_idea_of_the_day is True:

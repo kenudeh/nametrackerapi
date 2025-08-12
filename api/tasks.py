@@ -13,6 +13,12 @@ import subprocess
 # from datetime import date
 import logging
 
+from django.db import transaction
+from django.db.models import F
+from django.utils import timezone
+from itertools import islice
+
+
 logger = logging.getLogger('api.domain_tasks')
 
 logger = logging.getLogger(__name__)
@@ -27,33 +33,78 @@ EXTENSION_CHECK_DELAYS = {
 }
 
 BATCH_SIZE = 50  # Upper limit per Dynadot batch
-
+BULK_CHUNK = 50
 
 
 @shared_task
 def archive_old_domains_task():
     """
-    Archives domains older than 90 days from 'Name' to 'ArchivedName'.
+    Bulk archives domains older than 90 days with improved:
+    - Memory efficiency via chunking
+    - Transaction safety
+    - Batch operations
+    - Error handling
     """
+    ARCHIVAL_AGE_DAYS = 90
+    ARCHIVE_BATCH_SIZE = 500  # Optimal for most DBs
+
     now = timezone.now()
-    ninety_days_ago = now - timedelta(days=90)
-    old_domains = Name.objects.filter(drop_date__lt=ninety_days_ago.date())
+    cutoff_date = (now - timedelta(days=ARCHIVAL_AGE_DAYS)).date()
 
-    for domain in old_domains:
-        ArchivedName.objects.create(
-            domain=domain.domain,
-            extension=domain.extension,
-            drop_date=domain.drop_date,
-            drop_time=domain.drop_time,
-            domain_list=domain.domain_list,
-            status=domain.status,
-            last_checked=domain.last_checked,
-            created_at=domain.created_at
+    try:
+        with transaction.atomic():
+            # Get queryset iterator for memory efficiency
+            old_domains = Name.objects.filter(
+                drop_date__lt=cutoff_date
+            ).iterator(chunk_size=ARCHIVE_BATCH_SIZE)
+
+            archived_count = 0
+            current_batch = []
+
+            for domain in old_domains:
+                current_batch.append(
+                    ArchivedName(
+                        domain=domain.domain,
+                        extension=domain.extension,
+                        drop_date=domain.drop_date,
+                        drop_time=domain.drop_time,
+                        domain_list=domain.domain_list,
+                        status=domain.status,
+                        last_checked=domain.last_checked,
+                        created_at=domain.created_at
+                    )
+                )
+                archived_count += 1
+
+                # Process in batches
+                if len(current_batch) >= ARCHIVE_BATCH_SIZE:
+                    ArchivedName.objects.bulk_create(current_batch)
+                    Name.objects.filter(
+                        id__in=[d.id for d in current_batch]
+                    ).delete()
+                    current_batch = []
+
+            # Process final partial batch
+            if current_batch:
+                ArchivedName.objects.bulk_create(current_batch)
+                Name.objects.filter(
+                    id__in=[d.id for d in current_batch]
+                ).delete()
+
+            logger.info(
+                "Successfully archived %d domains older than %s",
+                archived_count,
+                cutoff_date
+            )
+            return archived_count
+
+    except Exception as e:
+        logger.error(
+            "Archival failed for domains older than %s: %s",
+            cutoff_date,
+            str(e)
         )
-        domain.delete()
-
-    logger.info(f"Archived {old_domains.count()} old domains.")
-
+        raise self.retry(exc=e)
 
 
 
@@ -61,92 +112,181 @@ def archive_old_domains_task():
 @shared_task
 def transition_pending_to_deleted_task():
     """
-    Moves 'pending_delete' domains to 'deleted' if drop_date has arrived.
-    Assigns IdeaOfTheDay for:
-        1. Yesterday's 'pending_delete' batch (now deleted)
-        2. Today's 'pending_delete' batch
+    Transition domains from pending_delete to deleted status when their drop_time has passed.
+    
+    Processing Rules:
+    1. Only move Names where domain_list='pending_delete' and drop_time <= now
+    2. Set status='unverified' for all moved names
+    3. For moved names with is_top_rated=True, set top_rated_date = drop_date
+    4. Update IdeaOfTheDay with:
+       - deleted_idea: Highest scoring domain from the entire batch being moved
+       - pending_delete_idea: Highest scoring remaining pending_delete domain for today
+    
+    Implementation Notes:
+    - Uses nested functions for task-specific helpers to avoid namespace pollution
+    - Maintains chunked updates for memory efficiency
+    - Single atomic transaction ensures data consistency
     """
     now = timezone.now()
     today = now.date()
-    yesterday = today - timedelta(days=1)
+    logger.info("Starting pending->deleted transition at %s", now)
 
-    # --- Transition pending -> deleted for yesterday ---
-    pending_yesterday = Name.objects.filter(
-        domain_list='pending_delete',
-        drop_date=yesterday
+    def process_bulk_transitions(ready_ids_iter):
+        """Handle the bulk updates in memory-efficient chunks."""
+        chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
+        while chunk:
+            # Batch update 1: Transition status
+            Name.objects.filter(id__in=chunk).update(
+                domain_list='deleted',
+                status='unverified'
+            )
+            
+            # Batch update 2: Handle top-rated dates
+            Name.objects.filter(id__in=chunk, is_top_rated=True).update(
+                top_rated_date=F('drop_date')
+            )
+            
+            chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
+
+    def get_top_pending_idea():
+        """Get the highest-scoring pending idea for the day."""
+        return (
+            Name.objects
+            .filter(domain_list='pending_delete', drop_date=today)
+            .exclude(score__isnull=True)
+            .order_by('-score')
+            .first()
+        )
+
+    def update_ideas(top_deleted, top_pending):
+        """Authoritative update of both idea fields."""
+        idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
+        update_needed = False
+        
+        if top_deleted and idea_obj.deleted_idea != top_deleted:
+            idea_obj.deleted_idea = top_deleted
+            update_needed = True
+            logger.debug("Set deleted_idea for %s to %s", today, top_deleted.domain)
+        
+        if top_pending and idea_obj.pending_delete_idea != top_pending:
+            idea_obj.pending_delete_idea = top_pending
+            update_needed = True
+            logger.debug("Set pending_idea for %s to %s", today, top_pending.domain)
+        
+        if update_needed:
+            idea_obj.save()
+
+    # --- Main execution flow ---
+    ready_qs = (
+        Name.objects
+        .filter(domain_list='pending_delete', drop_time__lte=now)
+        .order_by('-score')  # Critical for correct top selection
+        .only('id', 'score', 'domain', 'is_top_rated', 'drop_date')
     )
 
-    for domain in pending_yesterday:
-        domain.domain_list = 'deleted'
-        domain.status = 'unverified'
-        if domain.is_top_rated:
-            domain.top_rated_date = yesterday
-        domain.save()
+    ready_count = ready_qs.count()
+    if ready_count == 0:
+        # Handle pending idea update when no transitions occur
+        if top_pending := get_top_pending_idea():
+            idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
+            idea_obj.pending_delete_idea = top_pending
+            idea_obj.save()
+            logger.info("Updated pending idea for %s: %s", today, top_pending.domain)
+        return
 
-    logger.info(f"Moved {pending_yesterday.count()} domains from pending_delete to deleted (yesterday batch).")
+    # Get all qualifying IDs up front (memory efficient iterator)
+    all_ready_ids = ready_qs.values_list('id', flat=True)
+    top_deleted = ready_qs.first()  # Already ordered by -score
+    top_pending = get_top_pending_idea()
 
-    # --- Get top domain from yesterday's batch ---
-    top_deleted = pending_yesterday.exclude(score__isnull=True).order_by('-score').first()
+    with transaction.atomic():
+        process_bulk_transitions(all_ready_ids)
+        update_ideas(top_deleted, top_pending)
 
-    # --- Create/update IdeaOfTheDay entry for today ---
-    idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
-
-    if top_deleted:
-        idea_obj.deleted_idea = top_deleted
-        logger.info(f"Set deleted_idea for {today} as {top_deleted.domain}")
-
-    # --- Assign today's pending delete idea ---
-    pending_today = Name.objects.filter(
-        domain_list='pending_delete',
-        drop_date=today
+    logger.info(
+        "Transitioned %d domains (top: %s) at %s",
+        ready_count,
+        top_deleted.domain if top_deleted else "none",
+        now
     )
 
-    top_pending = pending_today.exclude(score__isnull=True).order_by('-score').first()
-
-    if top_pending:
-        idea_obj.pending_delete_idea = top_pending
-        logger.info(f"Set pending_delete_idea for {today} as {top_pending.domain}")
-
-    idea_obj.save()
 
 
 
 
+# Helper function for availability check tasks
+def get_eligible_check_domains():
+    """Centralized query for domains ready for availability checks"""
+    now = timezone.now()
+    return Name.objects.filter(
+        domain_list='deleted',
+        status='unverified',
+    ).annotate(
+        check_time=F('drop_time') + timedelta(
+            hours=EXTENSION_CHECK_DELAYS.get(F('extension'), 0)
+        )
+    ).filter(
+        check_time__lte=now
+    )
 
 
 @shared_task
 def check_domain_availability_subtask(domain_ids):
     """
-    Subtask: Checks availability of a batch of domains by IDs.
+    Subtask: Checks availability of pre-qualified domains.
+    
+    Requirements:
+    - Only processes domains that are:
+      * In 'deleted' list
+      * With 'unverified' status
+      * Past their extension-specific check time
+    - Updates status to available/taken/unverified
+    - Handles API failures gracefully
     """
     now = timezone.now()
     dynadot_api = DynadotAPI()
-    domains = Name.objects.filter(id__in=domain_ids)
+    
+    # Double-check eligibility (defensive programming)
+    domains = get_eligible_check_domains().filter(id__in=domain_ids)
+    if not domains.exists():
+        logger.debug(f"Skipping batch - no eligible domains in {domain_ids}")
+        return
 
     domain_names = [d.domain for d in domains]
-    availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+    try:
+        availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+    except Exception as e:
+        logger.error(f"API failed for batch {domain_ids}: {str(e)}")
+        raise self.retry(exc=e)
 
-    # Update domain statuses based on availability
+    updates = []
     for domain in domains:
         availability = availability_map.get(domain.domain, 'unknown')
+        new_status = (
+            'available' if availability == 'available' else
+            'taken' if availability == 'taken' else
+            'unverified'
+        )
+        updates.append((domain.id, new_status, now))
 
-        if availability == 'available':
-            domain.status = 'available'
-        elif availability == 'taken':
-            domain.status = 'taken'
-        else:
-            domain.status = 'unverified' # Will retry in next cycle
-        domain.last_checked = now
+    # Bulk update in a single operation
+    Name.objects.bulk_update(
+        [Name(id=id, status=status, last_checked=last_checked) 
+        for id, status, last_checked in updates
+        ],
+        fields=['status', 'last_checked']
+    )
 
-    Name.objects.bulk_update(domains, ['status', 'last_checked'])
-
+    # Detailed logging
     counts = {
-        'available': sum(1 for d in domains if d.status == 'available'),
-        'taken': sum(1 for d in domains if d.status == 'taken'),
-        'unknown': sum(1 for d in domains if d.status == 'unverified')
+        'available': sum(1 for _, status, _ in updates if status == 'available'),
+        'taken': sum(1 for _, status, _ in updates if status == 'taken'),
+        'unknown': sum(1 for _, status, _ in updates if status == 'unverified')
     }
-    logger.info(f"Processed batch: {len(domains)} domains. {counts}")
-
+    logger.info(
+        "Processed %d domains (A:%d/T:%d/U:%d)", 
+        len(updates), counts['available'], counts['taken'], counts['unknown']
+    )
 
 
 
@@ -154,19 +294,47 @@ def check_domain_availability_subtask(domain_ids):
 @shared_task
 def trigger_bulk_availability_check_task():
     """
-     Parent task: Splits 'deleted' domains into batches and triggers availability checks.
+    Parent task: Orchestrates availability checks for eligible domains.
+    
+    Workflow:
+    1. Finds all domains meeting check criteria:
+       - In 'deleted' list
+       - With 'unverified' status
+       - Past their extension-specific check time (drop_time + EXTENSION_CHECK_DELAYS)
+    2. Splits them into batches (respecting Dynadot's API limits)
+    3. Creates a chain of subtasks for processing
     """
-    domains = Name.objects.filter(domain_list='deleted', status='unverified')
-    domain_ids = list(domains.values_list('id', flat=True))
+    eligible_domains = get_eligible_check_domains()
+    eligible_count = eligible_domains.count()
+    
+    if eligible_count == 0:
+        logger.info("No domains currently eligible for availability checks")
+        return
 
-    # Split into batches
-    batches = [domain_ids[i:i + BATCH_SIZE] for i in range(0, len(domain_ids), BATCH_SIZE)]
-    logger.info(f"Scheduling {len(batches)} availability check subtasks.")
+    # Get just IDs for efficient batching
+    domain_ids = eligible_domains.values_list('id', flat=True)
+    
+    logger.info(
+        "Preparing %d domains for checking (extensions: %s)",
+        eligible_count,
+        ", ".join(eligible_domains.values_list('extension', flat=True).distinct())
+    )
 
-    # Chain subtasks for Celery to process
-    subtasks = [check_domain_availability_subtask.s(batch) for batch in batches]
-    chain(*subtasks)()
+    # Create batches respecting BATCH_SIZE constant
+    batches = [list(islice(domain_ids, i, i + BATCH_SIZE)) 
+              for i in range(0, eligible_count, BATCH_SIZE)]
+    
+    # Build subtask chain
+    chain(
+        check_domain_availability_subtask.s(batch) 
+        for batch in batches
+    ).apply_async()
 
+    logger.info(
+        "Dispatched %d batches (%d domains total) for availability checking",
+        len(batches),
+        eligible_count
+    )
 
 
 
@@ -174,27 +342,69 @@ def trigger_bulk_availability_check_task():
 @shared_task
 def second_check_task():
     """
-    Re-checks 'available' domains after 12 hours.
+    Periodic recheck of domains in 'available' or 'unverified' status.
+    Applies extension-specific check intervals and handles all states properly.
     """
     now = timezone.now()
     dynadot_api = DynadotAPI()
+    
     domains = Name.objects.filter(
         domain_list='deleted',
-        status='available',
-        last_checked__lte=now - timedelta(hours=12)
+        status__in=['available', 'unverified'],
+    ).annotate(
+        # Dynamic check intervals based on extension
+        min_check_hours=Greatest(
+            Value(12),  # Minimum 12 hour interval
+            Value(EXTENSION_CHECK_DELAYS.get(F('extension'), 12)),
+            output_field=IntegerField()
+        ),
+        next_check_time=F('last_checked') + timedelta(
+            hours=F('min_check_hours')
+        )
+    ).filter(
+        next_check_time__lte=now
     )
 
-    domain_names = [d.domain for d in domains]
-    availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+    if not domains.exists():
+        logger.debug("No domains currently due for recheck")
+        return
 
+    domain_names = [d.domain for d in domains]
+    try:
+        availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+    except Exception as e:
+        logger.error(f"Recheck API failed: {str(e)}")
+        raise self.retry(exc=e)
+
+    updates = []
     for domain in domains:
         availability = availability_map.get(domain.domain, 'unknown')
-        if availability == 'taken':
-            domain.status = 'taken' # Now taken; remove from 'available'
-        domain.last_checked = now
+        new_status = 'taken' if availability == 'taken' else domain.status
+        updates.append((domain.id, new_status, now))
 
-    Name.objects.bulk_update(domains, ['status', 'last_checked'])
-    logger.info(f"Performed 12-hour recheck on {len(domains)} domains.")
+    Name.objects.bulk_update(
+        [Name(id=id, status=status, last_checked=last_checked) 
+         for id, status, last_checked in updates],
+        fields=['status', 'last_checked']
+    )
+
+    # Detailed status reporting
+    status_counts = {
+        'previously_available': domains.filter(status='available').count(),
+        'previously_unverified': domains.filter(status='unverified').count(),
+        'now_taken': sum(1 for _, status, _ in updates if status == 'taken'),
+        'still_available': sum(1 for _, status, _ in updates 
+                          if status == 'available'),
+        'still_unverified': sum(1 for _, status, _ in updates 
+                             if status == 'unverified')
+    }
+
+    logger.info(
+        "Recheck completed. Previous: A:%(previously_available)d/U:%(previously_unverified)d. "
+        "Now: T:%(now_taken)d/A:%(still_available)d/U:%(still_unverified)d",
+        status_counts
+    )
+
 
 
 
@@ -202,19 +412,27 @@ def second_check_task():
 @shared_task
 def full_domain_availability_task():
     """
-    Master task that runs all required domain handling steps in order.
-    Includes:
-    - Archiving old names
-    - Moving pending -> deleted
-    - Assigning daily ideas
-    - Availability checks
+    Master workflow now with improved scheduling and error handling.
     """
-    chain(
-        archive_old_domains_task.s(),
-        transition_pending_to_deleted_task.s(),
-        trigger_bulk_availability_check_task.s(),
-        second_check_task.s()
-    )()
+    from celery import chain, group
+
+    # Main sequential workflow
+    workflow = chain(
+        archive_old_domains_task.si(),
+        transition_pending_to_deleted_task.si(),
+        trigger_bulk_availability_check_task.si()
+    )
+
+    # Parallelize the periodic checks
+    periodic_checks = group(
+        second_check_task.si(),
+        # Could add other maintenance tasks here
+    )
+
+    # Execute workflow then periodic checks
+    (workflow | periodic_checks).apply_async()
+
+    logger.info("Initiated full domain availability pipeline")
 
 
 
