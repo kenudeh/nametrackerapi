@@ -1,1 +1,1 @@
-web: gunicorn nametrackerapi.wsgi
+web: gunicorn nametrackerapi.wsgi:application

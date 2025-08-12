@@ -1,0 +1,11 @@
+{
+  "build": {
+    "command": "python manage.py collectstatic --noinput"
+  },
+  "release": {
+    "command": "python manage.py migrate"
+  },
+  "start": {
+    "command": "gunicorn nametrackerapi.wsgi:application"
+  }
+}
