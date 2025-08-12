@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f597620ba860e7a8256811513da2a20fb03ecf2ce9406af047d0100a5bf232a4"
+            "sha256": "007bbfaa9289011ed15d9ff4ce93444b6c6eff466d86e94b5475037da52a2f82"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -217,14 +217,6 @@
             "index": "pypi",
             "version": "==2.3.0"
         },
-        "dj-rest-auth": {
-            "hashes": [
-                "sha256:3f8c744cbcf05355ff4bcbef0c8a63645da38e29a0fdef3c3332d4aced52fb90"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==7.0.1"
-        },
         "django": {
             "hashes": [
                 "sha256:60c35bd96201b10c6e7a78121bd0da51084733efa303cc19ead021ab179cef5e",
@@ -233,14 +225,6 @@
             "index": "pypi",
             "markers": "python_version >= '3.10'",
             "version": "==5.2.4"
-        },
-        "django-allauth": {
-            "hashes": [
-                "sha256:a06bca9974df44321e94c33bcf770bb6f924d1a44b57defbce4d7ec54a55483e"
-            ],
-            "index": "pypi",
-            "markers": "python_version >= '3.8'",
-            "version": "==65.9.0"
         },
         "django-celery-beat": {
             "hashes": [

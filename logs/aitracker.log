@@ -12471,3 +12471,41 @@ Traceback (most recent call last):
     raise ConnectionError(self._error_message(e))
 redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
 ERROR 2025-08-11 02:39:01,666 basehttp "GET /onyia/admin/udeh/api/uploadedfile/ HTTP/1.1" 500 206404
+WARNING 2025-08-12 03:34:44,421 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 03:34:44,423 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 03:34:44,425 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:34:44,426 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:36:08,721 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 03:36:08,721 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 03:36:08,740 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:36:08,740 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:37:43,123 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-12 03:37:43,140 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
+WARNING 2025-08-12 03:38:03,406 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 03:38:03,412 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 03:38:03,420 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:38:03,434 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:41:48,241 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 03:41:48,241 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 03:41:48,244 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 03:41:48,245 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 04:04:13,652 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 04:04:13,652 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 04:04:13,705 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:13,709 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:15,114 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 04:04:15,115 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:15,429 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 04:04:15,433 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:17,375 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 04:04:17,507 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:18,048 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 04:04:18,055 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:21,791 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 04:04:21,798 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:22,621 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 04:04:22,625 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-12 04:04:36,385 log Forbidden: /api/domains/saved
+WARNING 2025-08-12 04:04:36,387 log Forbidden: /api/domains/acquired
+WARNING 2025-08-12 04:04:36,388 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-12 04:04:36,390 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
