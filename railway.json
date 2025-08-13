@@ -1,9 +1,9 @@
 {
   "build": {
-    "command": "mkdir -p /app/staticfiles && python manage.py collectstatic --noinput --clear && cp -r staticfiles/* /app/staticfiles/"
+    "command": ""
   },
   "release": {
-    "command": "python manage.py migrate"
+    "command": "python manage.py migrate && python manage.py collectstatic --noinput --clear"
   },
   "start": {
     "command": "gunicorn nametrackerapi.wsgi:application --chdir /app"
