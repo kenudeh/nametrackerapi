@@ -167,7 +167,7 @@ TOP_RATED_THRESHOLD = 8
 
 
 #Site ID
-# SITE_ID = 1
+SITE_ID = 1
 
 # Ensures email use HTTPS
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
@@ -194,8 +194,8 @@ SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Fi
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware', # Required for admin
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',

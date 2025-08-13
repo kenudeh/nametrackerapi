@@ -1,6 +1,6 @@
 {
   "build": {
-    "command": "python manage.py collectstatic --noinput && cp -r staticfiles /app/staticfiles"
+    "command": "mkdir -p /app/staticfiles && python manage.py collectstatic --noinput --clear && cp -r staticfiles/* /app/staticfiles/"
   },
   "release": {
     "command": "python manage.py migrate"
