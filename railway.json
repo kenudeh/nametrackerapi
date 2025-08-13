@@ -6,7 +6,7 @@
   },
   "deploy": {
     "preDeployCommand": ["python manage.py migrate"],
-    "startCommand": "python manage.py createsuperuser --noinput && gunicorn nametrackerapi.wsgi:application --chdir /app",
+    "startCommand": "gunicorn nametrackerapi.wsgi:application --chdir /app",
     "restartPolicyType": "ON_FAILURE"
   }
 }
