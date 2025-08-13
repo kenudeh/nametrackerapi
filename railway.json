@@ -3,9 +3,9 @@
     "command": ""
   },
   "release": {
-    "command": "python manage.py migrate && python manage.py collectstatic --noinput --clear"
+    "command": "python manage.py migrate"
   },
   "start": {
-    "command": "gunicorn nametrackerapi.wsgi:application --chdir /app"
+    "command": "python manage.py collectstatic --noinput --clear && gunicorn nametrackerapi.wsgi:application --chdir /app"
   }
 }
