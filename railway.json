@@ -1,11 +1,12 @@
 {
+  "$schema": "https://railway.com/railway.schema.json",
   "build": {
-    "command": ""
+    "builder": "NIXPACKS",
+    "buildCommand": "python manage.py collectstatic --noinput --clear"
   },
-  "release": {
-    "command": "python manage.py migrate"
-  },
-  "start": {
-    "command": "python manage.py collectstatic --noinput --clear && gunicorn nametrackerapi.wsgi:application --chdir /app"
+  "deploy": {
+    "preDeployCommand": ["python manage.py migrate"],
+    "startCommand": "gunicorn nametrackerapi.wsgi:application --chdir /app",
+    "restartPolicyType": "ON_FAILURE"
   }
 }
