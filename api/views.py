@@ -39,7 +39,10 @@ from django.db import transaction
 # from dj_rest_auth.registration.views import SocialLoginView
 # # For csrf view
 # from django.views.decorators.csrf import ensure_csrf_cookie
-# from django.http import JsonResponse
+
+from django.http import JsonResponse
+from django.utils import timezone
+from celery import current_app
 
 import logging
 
@@ -111,6 +114,37 @@ def upload_file(request):
         return HttpResponse("File uploaded successfully - awaiting processing", status=202)
 
     return render(request, "upload.html")
+
+
+
+
+
+#=================================== 
+# Health check 
+#====================================
+def health_check(request):
+    # Default values
+    django_status = "ok"
+    celery_status = "inactive"
+    worker_count = 0
+
+    try:
+        # Try to inspect Celery workers
+        workers = current_app.control.inspect(timeout=1.0).active()
+        if workers:
+            celery_status = "active"
+            worker_count = len(workers)
+    except Exception:
+        # Celery is not running or unreachable
+        celery_status = "inactive"
+
+    return JsonResponse({
+        "django": django_status,
+        "celery": celery_status,
+        "workers": worker_count,
+        "timestamp": timezone.now().isoformat()
+    })
+
 
 
 

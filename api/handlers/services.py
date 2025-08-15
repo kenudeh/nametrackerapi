@@ -9,12 +9,12 @@ logger = logging.getLogger(__name__)
 # Dynadot API Logic
 # This file handles Dynadot's availability check via its API
 # via a class-based structure for reuse, clarity, and testability.
-class DynadotAPI:
+class DynadotAPI: 
     """
     Handles communication with the Dynadot API for domain availability checks (bulk supported).
     """
 
-    BASE_URL = "https://api.dynadot.com/api3.json"
+    DYNADOT_BASE_URL = settings.DYNADOT_BASE_URL
 
     def __init__(self):
         self.api_key = settings.DYNADOT_API_KEY
@@ -39,7 +39,7 @@ class DynadotAPI:
         }
 
         try:
-            response = requests.get(self.BASE_URL, params=params, timeout=20)
+            response = requests.get(self.DYNADOT_BASE_URL, params=params, timeout=20)
             response.raise_for_status()
             data = response.json()
 
