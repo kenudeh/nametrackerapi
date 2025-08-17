@@ -22,6 +22,9 @@ urlpatterns = [
     #Public paths
     path('newsletter', views.NewsletterView.as_view(), name='newsletter'),
     path('public/support', views.PublicInquiryView.as_view(), name='public_support'),
+
+    #Healt check
+    path('health/', views.health_check, name='health_check'),
 ] 
    
 

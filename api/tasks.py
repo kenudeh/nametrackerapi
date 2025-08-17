@@ -1,4 +1,6 @@
 from celery import shared_task, chain
+from celery.exceptions import Retry
+
 from django.utils import timezone
 from datetime import timedelta
 from django.db.models import Q
@@ -18,6 +20,9 @@ from django.db.models import F
 from django.utils import timezone
 from itertools import islice
 
+from django.core.cache import cache
+
+
 
 logger = logging.getLogger('api.domain_tasks')
 
@@ -36,8 +41,9 @@ BATCH_SIZE = 50  # Upper limit per Dynadot batch
 BULK_CHUNK = 50
 
 
-@shared_task
-def archive_old_domains_task():
+# --- Archive old domains with lock ---
+@shared_task(bind=True, time_limit=3600, ignore_result=True)
+def archive_old_domains_task(self):
     """
     Bulk archives domains older than 90 days with improved:
     - Memory efficiency via chunking
@@ -45,72 +51,113 @@ def archive_old_domains_task():
     - Batch operations
     - Error handling
     """
-    ARCHIVAL_AGE_DAYS = 90
-    ARCHIVE_BATCH_SIZE = 500  # Optimal for most DBs
-
-    now = timezone.now()
-    cutoff_date = (now - timedelta(days=ARCHIVAL_AGE_DAYS)).date()
-
+    lock_key = "archive_old_domains_lock"
     try:
-        with transaction.atomic():
-            # Get queryset iterator for memory efficiency
-            old_domains = Name.objects.filter(
-                drop_date__lt=cutoff_date
-            ).iterator(chunk_size=ARCHIVE_BATCH_SIZE)
+        with cache.lock(lock_key, timeout=4000):  # ~1h + buffer
+            ARCHIVAL_AGE_DAYS = 90
+            BATCH_SIZE = 500
 
-            archived_count = 0
-            current_batch = []
+            cutoff = timezone.now() - timedelta(days=ARCHIVAL_AGE_DAYS)
+            qs = Name.objects.filter(drop_date__lt=cutoff.date()).order_by('id')
 
-            for domain in old_domains:
-                current_batch.append(
-                    ArchivedName(
-                        domain=domain.domain,
-                        extension=domain.extension,
-                        drop_date=domain.drop_date,
-                        drop_time=domain.drop_time,
-                        domain_list=domain.domain_list,
-                        status=domain.status,
-                        last_checked=domain.last_checked,
-                        created_at=domain.created_at
-                    )
-                )
-                archived_count += 1
-
-                # Process in batches
-                if len(current_batch) >= ARCHIVE_BATCH_SIZE:
-                    ArchivedName.objects.bulk_create(current_batch)
-                    Name.objects.filter(
-                        id__in=[d.id for d in current_batch]
-                    ).delete()
-                    current_batch = []
-
-            # Process final partial batch
-            if current_batch:
-                ArchivedName.objects.bulk_create(current_batch)
-                Name.objects.filter(
-                    id__in=[d.id for d in current_batch]
-                ).delete()
-
-            logger.info(
-                "Successfully archived %d domains older than %s",
-                archived_count,
-                cutoff_date
-            )
-            return archived_count
-
+            try:
+                with transaction.atomic():
+                    # Single-pass batch processing
+                    for ids in batch(qs.values_list('id', flat=True), BATCH_SIZE):
+                        batch_domains = Name.objects.filter(id__in=ids)
+                        ArchivedName.objects.bulk_create(
+                            [ArchivedName(**{
+                                f.name: getattr(d, f.name)
+                                for f in ArchivedName._meta.fields
+                                if hasattr(d, f.name)
+                            }) for d in batch_domains]
+                        )
+                        batch_domains.delete()
+                        logger.info(f"Archived batch {ids[0]}-{ids[-1]}")
+            except Exception as e:
+                logger.exception("Archival failed at batch")
+                raise self.retry(exc=e, countdown=300)
     except Exception as e:
-        logger.error(
-            "Archival failed for domains older than %s: %s",
-            cutoff_date,
-            str(e)
-        )
-        raise self.retry(exc=e)
+        logger.error(f"Failed to acquire lock for archive_old_domains_task: {str(e)}")
+        raise self.retry(exc=e, countdown=300)
+
+        
+# @shared_task
+# def archive_old_domains_task(ignore_result=True, time_limit=1800):
+#     """
+#     Bulk archives domains older than 90 days with improved:
+#     - Memory efficiency via chunking
+#     - Transaction safety
+#     - Batch operations
+#     - Error handling
+#     """
+#     ARCHIVAL_AGE_DAYS = 90
+#     ARCHIVE_BATCH_SIZE = 500  # Optimal for most DBs
+
+#     now = timezone.now()
+#     cutoff_date = (now - timedelta(days=ARCHIVAL_AGE_DAYS)).date()
+
+#     try:
+#         with transaction.atomic():
+#             # Get queryset iterator for memory efficiency
+#             old_domains = Name.objects.filter(
+#                 drop_date__lt=cutoff_date
+#             ).iterator(chunk_size=ARCHIVE_BATCH_SIZE)
+
+#             archived_count = 0
+#             current_batch = []
+
+#             for domain in old_domains:
+#                 current_batch.append(
+#                     ArchivedName(
+#                         domain=domain.domain,
+#                         extension=domain.extension,
+#                         drop_date=domain.drop_date,
+#                         drop_time=domain.drop_time,
+#                         domain_list=domain.domain_list,
+#                         status=domain.status,
+#                         last_checked=domain.last_checked,
+#                         created_at=domain.created_at
+#                     )
+#                 )
+#                 archived_count += 1
+
+#                 # Process in batches
+#                 if len(current_batch) >= ARCHIVE_BATCH_SIZE:
+#                     ArchivedName.objects.bulk_create(current_batch)
+#                     Name.objects.filter(
+#                         id__in=[d.id for d in current_batch]
+#                     ).delete()
+#                     current_batch = []
+
+#             # Process final partial batch
+#             if current_batch:
+#                 ArchivedName.objects.bulk_create(current_batch)
+#                 Name.objects.filter(
+#                     id__in=[d.id for d in current_batch]
+#                 ).delete()
+
+#             logger.info(
+#                 "Successfully archived %d domains older than %s",
+#                 archived_count,
+#                 cutoff_date
+#             )
+#             return archived_count
+
+#     except Exception as e:
+#         logger.error(
+#             "Archival failed for domains older than %s: %s",
+#             cutoff_date,
+#             str(e)
+#         )
+#         raise self.retry(exc=e)
 
 
 
 
-@shared_task
-def transition_pending_to_deleted_task():
+# --- Pending to deleted transition (daily lock) ---
+@shared_task(bind=True, time_limit=1200, ignore_result=True)
+def transition_pending_to_deleted_task(self):
     """
     Transition domains from pending_delete to deleted status when their drop_time has passed.
     
@@ -127,88 +174,91 @@ def transition_pending_to_deleted_task():
     - Maintains chunked updates for memory efficiency
     - Single atomic transaction ensures data consistency
     """
-    now = timezone.now()
-    today = now.date()
-    logger.info("Starting pending->deleted transition at %s", now)
+    lock_key = f"pending_transition_lock_{timezone.now().date()}"
 
-    def process_bulk_transitions(ready_ids_iter):
-        """Handle the bulk updates in memory-efficient chunks."""
-        chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
-        while chunk:
-            # Batch update 1: Transition status
-            Name.objects.filter(id__in=chunk).update(
-                domain_list='deleted',
-                status='unverified'
-            )
-            
-            # Batch update 2: Handle top-rated dates
-            Name.objects.filter(id__in=chunk, is_top_rated=True).update(
-                top_rated_date=F('drop_date')
-            )
-            
-            chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
-
-    def get_top_pending_idea():
-        """Get the highest-scoring pending idea for the day."""
-        return (
-            Name.objects
-            .filter(domain_list='pending_delete', drop_date=today)
-            .exclude(score__isnull=True)
-            .order_by('-score')
-            .first()
-        )
-
-    def update_ideas(top_deleted, top_pending):
-        """Authoritative update of both idea fields."""
-        idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
-        update_needed = False
-        
-        if top_deleted and idea_obj.deleted_idea != top_deleted:
-            idea_obj.deleted_idea = top_deleted
-            update_needed = True
-            logger.debug("Set deleted_idea for %s to %s", today, top_deleted.domain)
-        
-        if top_pending and idea_obj.pending_delete_idea != top_pending:
-            idea_obj.pending_delete_idea = top_pending
-            update_needed = True
-            logger.debug("Set pending_idea for %s to %s", today, top_pending.domain)
-        
-        if update_needed:
-            idea_obj.save()
-
-    # --- Main execution flow ---
-    ready_qs = (
-        Name.objects
-        .filter(domain_list='pending_delete', drop_time__lte=now)
-        .order_by('-score')  # Critical for correct top selection
-        .only('id', 'score', 'domain', 'is_top_rated', 'drop_date')
-    )
-
-    ready_count = ready_qs.count()
-    if ready_count == 0:
-        # Handle pending idea update when no transitions occur
-        if top_pending := get_top_pending_idea():
-            idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
-            idea_obj.pending_delete_idea = top_pending
-            idea_obj.save()
-            logger.info("Updated pending idea for %s: %s", today, top_pending.domain)
+    if not cache.add(lock_key, "locked", timeout=3600):
+        logger.warning("Task already running for today")
         return
 
-    # Get all qualifying IDs up front (memory efficient iterator)
-    all_ready_ids = ready_qs.values_list('id', flat=True)
-    top_deleted = ready_qs.first()  # Already ordered by -score
-    top_pending = get_top_pending_idea()
+    try:
+        now = timezone.now()
+        today = now.date()
+        logger.info("Starting pending->deleted transition at %s", now)
 
-    with transaction.atomic():
-        process_bulk_transitions(all_ready_ids)
-        update_ideas(top_deleted, top_pending)
+        def process_bulk_transitions(ready_ids_iter):
+            """Handle the bulk updates in memory-efficient chunks."""
+            chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
+            while chunk:
+                Name.objects.filter(id__in=chunk).update(
+                    domain_list='deleted',
+                    status='unverified'
+                )
+                Name.objects.filter(id__in=chunk, is_top_rated=True).update(
+                    top_rated_date=F('drop_date')
+                )
+                chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
 
-    logger.info(
-        "Transitioned %d domains (top: %s) at %s",
-        ready_count,
-        top_deleted.domain if top_deleted else "none",
-        now
-    )
+        def get_top_pending_idea():
+            """Get the highest-scoring pending idea for the day."""
+            return (
+                Name.objects
+                .filter(domain_list='pending_delete', drop_date=today)
+                .exclude(score__isnull=True)
+                .order_by('-score')
+                .first()
+            )
+
+        def update_ideas(top_deleted, top_pending):
+            """Authoritative update of both idea fields."""
+            idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
+            update_needed = False
+
+            if top_deleted and idea_obj.deleted_idea != top_deleted:
+                idea_obj.deleted_idea = top_deleted
+                update_needed = True
+                logger.debug("Set deleted_idea for %s to %s", today, top_deleted.domain)
+
+            if top_pending and idea_obj.pending_delete_idea != top_pending:
+                idea_obj.pending_delete_idea = top_pending
+                update_needed = True
+                logger.debug("Set pending_idea for %s to %s", today, top_pending.domain)
+
+            if update_needed:
+                idea_obj.save()
+
+        ready_qs = (
+            Name.objects
+            .filter(domain_list='pending_delete', drop_time__lte=now)
+            .order_by('-score')
+            .only('id', 'score', 'domain', 'is_top_rated', 'drop_date')
+        )
+
+        ready_count = ready_qs.count()
+        if ready_count == 0:
+            if top_pending := get_top_pending_idea():
+                idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
+                idea_obj.pending_delete_idea = top_pending
+                idea_obj.save()
+                logger.info("Updated pending idea for %s: %s", today, top_pending.domain)
+            return
+
+        all_ready_ids = ready_qs.values_list('id', flat=True)
+        top_deleted = ready_qs.first()
+        top_pending = get_top_pending_idea()
+
+        with transaction.atomic():
+            process_bulk_transitions(all_ready_ids)
+            update_ideas(top_deleted, top_pending)
+
+        logger.info(
+            "Transitioned %d domains (top: %s) at %s",
+            ready_count,
+            top_deleted.domain if top_deleted else "none",
+            now
+        )
+    finally:
+        cache.delete(lock_key) # Release lock
+
 
 
 
@@ -230,8 +280,10 @@ def get_eligible_check_domains():
     )
 
 
-@shared_task
-def check_domain_availability_subtask(domain_ids):
+
+
+@shared_task(bind=True, ignore_result=True, time_limit=900)
+def check_domain_availability_subtask(self, domain_ids):
     """
     Subtask: Checks availability of pre-qualified domains.
     
@@ -291,8 +343,8 @@ def check_domain_availability_subtask(domain_ids):
 
 
 
-@shared_task
-def trigger_bulk_availability_check_task():
+@shared_task(bind=True, ignore_result=True, time_limit=900)
+def trigger_bulk_availability_check_task(self):
     """
     Parent task: Orchestrates availability checks for eligible domains.
     
@@ -304,141 +356,172 @@ def trigger_bulk_availability_check_task():
     2. Splits them into batches (respecting Dynadot's API limits)
     3. Creates a chain of subtasks for processing
     """
-    eligible_domains = get_eligible_check_domains()
-    eligible_count = eligible_domains.count()
-    
-    if eligible_count == 0:
-        logger.info("No domains currently eligible for availability checks")
-        return
+    lock_key = "dynadot_api_lock"
+    lock_timeout = 1800
 
-    # Get just IDs for efficient batching
-    domain_ids = eligible_domains.values_list('id', flat=True)
-    
-    logger.info(
-        "Preparing %d domains for checking (extensions: %s)",
-        eligible_count,
-        ", ".join(eligible_domains.values_list('extension', flat=True).distinct())
-    )
+    try:
+        # Attempt to acquire lock
+        with cache.lock(lock_key, timeout=lock_timeout):
+            # Main task logic 
+            eligible_domains = get_eligible_check_domains()
+            eligible_count = eligible_domains.count()
 
-    # Create batches respecting BATCH_SIZE constant
-    batches = [list(islice(domain_ids, i, i + BATCH_SIZE)) 
-              for i in range(0, eligible_count, BATCH_SIZE)]
-    
-    # Build subtask chain
-    chain(
-        check_domain_availability_subtask.s(batch) 
-        for batch in batches
-    ).apply_async()
+            if eligible_count == 0:
+                logger.info("No domains currently eligible for availability checks")
+                return
 
-    logger.info(
-        "Dispatched %d batches (%d domains total) for availability checking",
-        len(batches),
-        eligible_count
-    )
+            # Get just IDs for efficient batching
+            domain_ids = eligible_domains.values_list('id', flat=True)
+            logger.info(
+                "Preparing %d domains for checking (extensions: %s)",
+                eligible_count,
+                ", ".join(eligible_domains.values_list('extension', flat=True).distinct())
+            )
+
+            # Create batches respecting BATCH_SIZE constant
+            batches = [list(islice(domain_ids, i, i + BATCH_SIZE))
+                for i in range(0, eligible_count, BATCH_SIZE)]
+
+            # Build subtask chain
+            chain(
+                check_domain_availability_subtask.s(batch)
+                for batch in batches
+            ).apply_async()
+
+            logger.info(
+                "Dispatched %d batches (%d domains total) for availability checking",
+                len(batches),
+                eligible_count
+            )
+ 
+    except Exception as e:
+        logger.error(f"Failed to acquire lock or execute task: {str(e)}")
+        raise self.retry(exc=e, countdown=300)
 
 
 
 
-@shared_task
-def second_check_task():
+
+@shared_task(bind=True, ignore_result=True, time_limit=900)
+def second_check_task(self):
     """
     Periodic recheck of domains in 'available' or 'unverified' status.
     Applies extension-specific check intervals and handles all states properly.
     """
-    now = timezone.now()
-    dynadot_api = DynadotAPI()
-    
-    domains = Name.objects.filter(
-        domain_list='deleted',
-        status__in=['available', 'unverified'],
-    ).annotate(
-        # Dynamic check intervals based on extension
-        min_check_hours=Greatest(
-            Value(12),  # Minimum 12 hour interval
-            Value(EXTENSION_CHECK_DELAYS.get(F('extension'), 12)),
-            output_field=IntegerField()
-        ),
-        next_check_time=F('last_checked') + timedelta(
-            hours=F('min_check_hours')
-        )
-    ).filter(
-        next_check_time__lte=now
-    )
+    lock_key = "dynadot_second_check_lock"
+    lock_timeout = 1800
 
-    if not domains.exists():
-        logger.debug("No domains currently due for recheck")
-        return
-
-    domain_names = [d.domain for d in domains]
     try:
-        availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+        with cache.lock(lock_key, timeout=lock_timeout):
+            now = timezone.now()
+            dynadot_api = DynadotAPI()
+
+            domains = Name.objects.filter(
+                domain_list='deleted',
+                status__in=['available', 'unverified'],
+            ).annotate(
+                # Dynamic check intervals based on extension
+                min_check_hours=Greatest(
+                    Value(12),
+                    Value(EXTENSION_CHECK_DELAYS.get(F('extension'), 12)),
+                    output_field=IntegerField()
+                ),
+                next_check_time=F('last_checked') + timedelta(
+                    hours=F('min_check_hours')
+                )
+            ).filter(
+                next_check_time__lte=now
+            )
+
+            if not domains.exists():
+                logger.debug("No domains currently due for recheck")
+                return
+
+            domain_names = [d.domain for d in domains]
+            try:
+                availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+            except Exception as e:
+                logger.error(f"Recheck API failed: {str(e)}")
+                raise self.retry(exc=e)
+
+            updates = []
+            for domain in domains:
+                availability = availability_map.get(domain.domain, 'unknown')
+                new_status = 'taken' if availability == 'taken' else domain.status
+                updates.append((domain.id, new_status, now))
+
+            Name.objects.bulk_update(
+                [Name(id=id, status=status, last_checked=last_checked)
+                 for id, status, last_checked in updates],
+                fields=['status', 'last_checked']
+            )
+
+            # Detailed status reporting
+            status_counts = {
+                'previously_available': domains.filter(status='available').count(),
+                'previously_unverified': domains.filter(status='unverified').count(),
+                'now_taken': sum(1 for _, status, _ in updates if status == 'taken'),
+                'still_available': sum(1 for _, status, _ in updates if status == 'available'),
+                'still_unverified': sum(1 for _, status, _ in updates if status == 'unverified')
+            }
+
+            logger.info(
+                "Recheck completed. Previous: A:%(previously_available)d/U:%(previously_unverified)d. "
+                "Now: T:%(now_taken)d/A:%(still_available)d/U:%(still_unverified)d",
+                status_counts
+            )
     except Exception as e:
-        logger.error(f"Recheck API failed: {str(e)}")
-        raise self.retry(exc=e)
-
-    updates = []
-    for domain in domains:
-        availability = availability_map.get(domain.domain, 'unknown')
-        new_status = 'taken' if availability == 'taken' else domain.status
-        updates.append((domain.id, new_status, now))
-
-    Name.objects.bulk_update(
-        [Name(id=id, status=status, last_checked=last_checked) 
-         for id, status, last_checked in updates],
-        fields=['status', 'last_checked']
-    )
-
-    # Detailed status reporting
-    status_counts = {
-        'previously_available': domains.filter(status='available').count(),
-        'previously_unverified': domains.filter(status='unverified').count(),
-        'now_taken': sum(1 for _, status, _ in updates if status == 'taken'),
-        'still_available': sum(1 for _, status, _ in updates 
-                          if status == 'available'),
-        'still_unverified': sum(1 for _, status, _ in updates 
-                             if status == 'unverified')
-    }
-
-    logger.info(
-        "Recheck completed. Previous: A:%(previously_available)d/U:%(previously_unverified)d. "
-        "Now: T:%(now_taken)d/A:%(still_available)d/U:%(still_unverified)d",
-        status_counts
-    )
+        logger.error(f"Failed to acquire lock or execute second check task: {str(e)}")
+        raise self.retry(exc=e, countdown=300)
 
 
 
 
 
-@shared_task
-def full_domain_availability_task():
-    """
-    Master workflow now with improved scheduling and error handling.
-    """
-    from celery import chain, group
+@shared_task(bind=True)
+def daily_maintenance_task(self):
+    lock_id = "daily_maintenance_lock"
+    try:
+        with cache.lock(lock_id, timeout=3600):
+            chain(
+                archive_old_domains_task.si(),
+                # other future tasks
+            ).apply_async()
+    except Exception as e:
+        logger.error(f"Daily maintenance failed: {str(e)}")
+        raise self.retry(exc=e, countdown=300)
 
-    # Main sequential workflow
-    workflow = chain(
-        archive_old_domains_task.si(),
-        transition_pending_to_deleted_task.si(),
-        trigger_bulk_availability_check_task.si()
-    )
+# Old master task
+# @shared_task
+# def full_domain_availability_task():
+#     """
+#     Master workflow now with improved scheduling and error handling.
+#     """
+#     from celery import chain, group
 
-    # Parallelize the periodic checks
-    periodic_checks = group(
-        second_check_task.si(),
-        # Could add other maintenance tasks here
-    )
+#     # Main sequential workflow
+#     workflow = chain(
+#         archive_old_domains_task.si(),
+#         transition_pending_to_deleted_task.si(),
+#         trigger_bulk_availability_check_task.si()
+#     )
 
-    # Execute workflow then periodic checks
-    (workflow | periodic_checks).apply_async()
+#     # Parallelize the periodic checks
+#     periodic_checks = group(
+#         second_check_task.si(),
+#         # Could add other maintenance tasks here
+#     )
 
-    logger.info("Initiated full domain availability pipeline")
+#     # Execute workflow then periodic checks
+#     (workflow | periodic_checks).apply_async()
+
+#     logger.info("Initiated full domain availability pipeline")
 
 
 
 # Auto-Loader Task
-@shared_task
-def process_pending_files():
+@shared_task(bind=True, ignore_result=True, time_limit=300)
+def process_pending_files(self):
     """Automated periodic processing"""
     from .utils import process_file
     for record in UploadedFile.objects.filter(processed=False):

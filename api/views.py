@@ -39,7 +39,10 @@ from django.db import transaction
 # from dj_rest_auth.registration.views import SocialLoginView
 # # For csrf view
 # from django.views.decorators.csrf import ensure_csrf_cookie
-# from django.http import JsonResponse
+
+from django.http import JsonResponse
+from django.utils import timezone
+from celery import current_app
 
 import logging
 
@@ -111,6 +114,83 @@ def upload_file(request):
         return HttpResponse("File uploaded successfully - awaiting processing", status=202)
 
     return render(request, "upload.html")
+
+
+
+
+
+#=================================== 
+# Health check 
+#====================================
+def health_check(request):
+    # Default values
+    django_status = "ok"
+    celery_status = "inactive"
+    redis_status = "down"
+    worker_count = 0
+
+    # Django DB check
+    try:
+        from django.db import connection
+        with connection.cursor() as cursor:
+            cursor.execute("SELECT 1")
+    except Exception:
+        django_status = "unhealthy"
+
+    # Redis check
+    try:
+        from django.core.cache import caches
+        caches['default'].get("test_key", version=1)
+        redis_status = "up"
+    except Exception:
+        redis_status = "down"
+
+    # Celery check
+    try:
+        workers = current_app.control.inspect(timeout=1.0).active()
+        if workers:
+            celery_status = "active"
+            worker_count = len(workers)
+    except Exception:
+        pass
+
+    status_code = 200 if all([
+        django_status == "ok",
+        celery_status == "active",
+        redis_status == "up"
+    ]) else 503
+
+    return JsonResponse({
+        "django": django_status,
+        "celery": celery_status,
+        "redis": redis_status,
+        "workers": worker_count,
+        "timestamp": timezone.now().isoformat()
+    }, status=status_code)
+    
+# def health_check(request):
+#     # Default values
+#     django_status = "ok"
+#     celery_status = "inactive"
+#     worker_count = 0
+
+#     try:
+#         # Try to inspect Celery workers
+#         workers = current_app.control.inspect(timeout=1.0).active()
+#         if workers:
+#             celery_status = "active"
+#             worker_count = len(workers)
+#     except Exception:
+#         # Celery is not running or unreachable
+#         celery_status = "inactive"
+
+#     return JsonResponse({
+#         "django": django_status,
+#         "celery": celery_status,
+#         "workers": worker_count,
+#         "timestamp": timezone.now().isoformat()
+#     })
+
 
 
 

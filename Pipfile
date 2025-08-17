@@ -13,7 +13,6 @@ pillow = "*"
 django-validators = "*"
 dj-database-url = "*"
 python-dotenv = "*"
-celery = "*"
 redis = "*"
 django-celery-beat = "*"
 postmarker = "*"
@@ -24,6 +23,9 @@ requests = "*"
 whitenoise = "*"
 django-redis = "*"
 tenacity = "*"
+sentry-sdk = "*"
+celery = "*"
+flower = "*"
 
 [dev-packages]
 

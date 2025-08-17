@@ -23,6 +23,14 @@ from corsheaders.defaults import default_headers
 #location for json uploads
 from pathlib import Path
 
+# For celery
+from celery.schedules import crontab
+
+# For Sentry
+import sentry_sdk
+from sentry_sdk.integrations.celery import CeleryIntegration
+
+
 # Load environment variables from .env file
 load_dotenv()
 
@@ -51,8 +59,7 @@ SECRET_KEY = os.getenv('SECRET_KEY')
 # Dynadot API credentials
 DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
 DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
-
-
+DYNADOT_BASE_URL = os.getenv('DYNADOT_BASE_URL')
 
 
 # CSRF settings 
@@ -311,29 +318,108 @@ CACHES = {
 
 
 # CELERY SETTINGS
-CELERY_BROKER_URL = REDIS_URL
-CELERY_RESULT_BACKEND = REDIS_URL
+# Enhanced Celery Settings
+CELERY_BROKER_URL = f"{REDIS_URL}/0"  # DB 0 for broker
+CELERY_RESULT_BACKEND = f"{REDIS_URL}/1"  # DB 1 for results
 
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
+# Connection settings
+CELERY_BROKER_POOL_LIMIT = 20
+CELERY_BROKER_CONNECTION_TIMEOUT = 30
+CELERY_RESULT_BACKEND_MAX_RETRIES = 3
 
-CELERY_TIMEZONE = TIME_ZONE  # Critical for beat scheduling
-CELERY_TASK_TRACK_STARTED = True  # Enables task state tracking
-CELERY_TASK_ALWAYS_EAGER = False  # Explicitly disable eager mode (safety check)
-CELERY_TASK_IGNORE_RESULT = False  # Store results
-CELERY_TASK_TIME_LIMIT = 60 * 60  # 60 minute timeout
-CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
+# Worker settings
+CELERY_WORKER_CONCURRENCY = 6 # 8vCPU - 2 for overhead
+CELERY_WORKER_PREFETCH_MULTIPLIER = 1  # Fair task distribution
+CELERY_WORKER_MAX_TASKS_PER_CHILD = 100 # Prevent memory leaks
+CELERY_WORKER_DISABLE_RATE_LIMITS = True
+
+# Task settings
+CELERY_TASK_TIME_LIMIT = 30 * 60  # 30 minutes global
+CELERY_TASK_SOFT_TIME_LIMIT = 25 * 60 # 25 minutes soft
+CELERY_TASK_DEFAULT_RETRY_DELAY = 60 # 1 minute
+CELERY_TASK_MAX_RETRIES = 3
+CELERY_TASK_REJECT_ON_WORKER_LOST = True  # Prevents half-processed tasks
+CELERY_TASK_IGNORE_RESULT = True  # Default to False, override per task
+CELERY_TASK_STORE_ERRORS_EVEN_IF_IGNORED = True
 
 
-# CELERY BEAT SETTINGS
-# CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-CELERY_BEAT_SCHEDULE = {
-    'initialize_schedules': {
-        'task': 'celery_schedules.initialize_schedules',
-        'schedule': 5.0,  # Runs 5 seconds after startup
-        'options': {'expires': 10}
-    },
-}
+# Beat settings
+CELERY_BEAT_SCHEDULE = {}  # Empty dict to prevent conflicts
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_MAX_LOOP_INTERVAL = 300  # Check for new tasks every 5 mins
+
+
+# CELERY_BROKER_URL = REDIS_URL
+# CELERY_RESULT_BACKEND = REDIS_URL
+
+# CELERY_ACCEPT_CONTENT = ['json']
+# CELERY_TASK_SERIALIZER = 'json'
+
+# CELERY_TIMEZONE = TIME_ZONE  # Critical for beat scheduling
+# CELERY_TASK_TRACK_STARTED = True  # Enables task state tracking
+# CELERY_TASK_ALWAYS_EAGER = False  # Explicitly disable eager mode (safety check)
+# CELERY_TASK_IGNORE_RESULT = False  # Store results
+# CELERY_TASK_TIME_LIMIT = 60 * 60  # 60 minute timeout
+# CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
+
+
+# # CELERY BEAT SETTINGS
+# # CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+# CELERY_BEAT_SCHEDULE = {
+    # # Time-sensitive independent tasks
+    # 'pending_transitions': {
+    #     'task': 'api.tasks.transition_pending_to_deleted_task',
+    #     'schedule': crontab(minute=0, hour='*'),  # Hourly
+    #     'options': {
+    #         'expires': 1800,
+    #         'enabled': True
+    #     }
+    # },
+    # 'availability_checks': {
+    #     'task': 'api.tasks.trigger_bulk_availability_check_task',
+    #     'schedule': crontab(minute=0, hour='*/4'),  # Every 4 hours
+    #     'options': {
+    #         'expires': 1800,
+    #         'enabled': True
+    #     }
+    # },
+    # 'domain_rechecks': {
+    #     'task': 'api.tasks.second_check_task',
+    #     'schedule': crontab(minute=30, hour='*/12'),  # Every 12 hours at :30
+    #     'options': {
+    #         'expires': 3600,
+    #         'enabled': True
+    #     }
+    # },
+    
+    # # Daily maintenance bundle
+    # 'daily_maintenance': {
+    #     'task': 'api.tasks.daily_maintenance_task',
+    #     'schedule': crontab(hour=2, minute=0),  # 2 AM UTC
+    #     'options': {
+    #         'expires': 3600,
+    #         'enabled': True
+    #     }
+    # },
+    
+    # # File processing
+    # 'file_processing': {
+    #     'task': 'api.tasks.process_pending_files',
+    #     'schedule': crontab(hour=3, minute=0),  # 3 AM UTC
+    #     'options': {
+    #         'expires': 1800,
+    #         'enabled': True
+    #     }
+    # }
+# }
+
+
+# Sentry
+sentry_sdk.init(
+    dsn=os.getenv("dsn") ,
+    integrations=[CeleryIntegration()],
+    traces_sample_rate=0.2  # Adjustable for performance monitoring
+)
 
 
 # Clerk 
