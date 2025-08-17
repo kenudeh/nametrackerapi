@@ -344,6 +344,7 @@ CELERY_TASK_STORE_ERRORS_EVEN_IF_IGNORED = True
 
 
 # Beat settings
+CELERY_BEAT_SCHEDULE = {}  # Empty dict to prevent conflicts
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BEAT_MAX_LOOP_INTERVAL = 300  # Check for new tasks every 5 mins
 

@@ -13000,3 +13000,12 @@ WARNING 2025-08-15 09:10:55,226 basehttp "GET /api/domains/acquired?limit=10&ord
 WARNING 2025-08-15 09:14:05,855 log Forbidden: /api/names/AptChat.ai
 WARNING 2025-08-15 09:14:05,888 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 58
 WARNING 2025-08-15 13:47:47,016 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-15 13:47:47,024 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-15 15:53:11,752 log Forbidden: /api/domains/acquired
+WARNING 2025-08-15 15:53:11,755 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-15 15:53:11,758 log Forbidden: /api/domains/saved
+WARNING 2025-08-15 15:53:11,771 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-15 22:19:54,991 log Forbidden: /api/domains/saved
+WARNING 2025-08-15 22:19:55,000 log Forbidden: /api/domains/acquired
+WARNING 2025-08-15 22:19:55,005 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-15 22:19:55,005 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
