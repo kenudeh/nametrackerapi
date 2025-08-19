@@ -438,7 +438,7 @@ os.makedirs(UPLOAD_DIR, exist_ok=True)  # Ensure directory exists
 
 
 # Validator for json uploads
-MAX_UPLOAD_SIZE = 5 * 1024 * 1024  # 5MB in bytes
+MAX_UPLOAD_SIZE = 2 * 1024 * 1024  # 2MB in bytes
 
 
 MEDIA_URL = '/media/'
