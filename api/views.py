@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.throttling import UserRateThrottle
 from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
-from .management.commands.validators import validate_domain_data
+from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile
 from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
@@ -42,6 +42,7 @@ from django.db import transaction
 # from django.views.decorators.csrf import ensure_csrf_cookie
 
 from django.http import JsonResponse
+import json
 from django.utils import timezone
 from celery import current_app
 
