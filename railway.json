@@ -1,0 +1,42 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "NIXPACKS",
+    "buildCommand": "python manage.py collectstatic --noinput --clear"
+  },
+  "deploy": {
+    "preDeployCommand": "python manage.py migrate"
+  },
+  "services": [
+    {
+      "name": "web",
+      "command": "gunicorn nametrackerapi.wsgi:application --workers 2 --timeout 30",
+      "ports": ["8000"],
+      "restartPolicyType": "ON_FAILURE"
+    },
+    {
+      "name": "worker",
+      "command": "celery -A api worker -l INFO -Q celery --without-gossip --without-mingle --concurrency=1",
+      "autoscaling": {
+        "min": 1,
+        "max": 1,
+        "restartPolicyType": "ON_FAILURE"
+      }
+    },
+    {
+      "name": "beat",
+      "command": "celery -A api beat -l INFO --scheduler django_celery_beat.schedulers:DatabaseScheduler"
+    },
+    {
+      "name": "flower",
+      "command": "celery -A api flower --port=5555 --basic_auth=${FLOWER_USERNAME}:${FLOWER_PASSWORD} --url_prefix=/flower --persistent --max_tasks=1000",
+      "proxy": {
+        "port": "5555",
+        "path": "/flower"
+      }
+    }
+  ],
+  "variables": {
+    "DJANGO_SETTINGS_MODULE": "nametrackerapi.settings.production"
+  }
+}

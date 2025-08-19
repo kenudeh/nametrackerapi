@@ -1,10 +1,15 @@
 from django.core.cache import cache
 from django.contrib.auth.models import User
 
-from django.db.models.signals import post_save, post_delete
+from django.db.models.signals import post_save, post_delete, pre_delete
 from django.dispatch import receiver
-from .models import Name, UseCase 
+from .models import Name, UseCase, UploadedFile 
 
+from django.conf import settings
+import os
+import logging
+
+logger = logging.getLogger(__name__)
 
 # Creating a UserProfile instance automatically when a new user is registered(Overriden by switching to CLerk for authentication)
 # @receiver(post_save, sender=User)
@@ -20,20 +25,47 @@ from .models import Name, UseCase
 #     cache.delete_many(['all_categories', 'category_names'])
 
 
-
 @receiver(post_save, sender=UseCase)
-def update_name_fields(sender, instance, **kwargs):
+def assign_suggested_usecase(sender, instance, **kwargs):
     """
-    Post-save signal for UseCase.
-    Updates competition, difficulty, and suggested_usecase fields in Name model
-    based on the first UseCase (order=1).
+    When a UseCase is created or updated, ensure that the Name model's
+    suggested_usecase field points to the one with order=1.
     """
     name = instance.domain_name
-    first_usecase = name.use_cases_domain.order_by('order').first()
+    first_usecase = name.use_cases.order_by('order').first()
 
-    if first_usecase:
-        # Update Name fields based on the first UseCase
-        name.competition = first_usecase.competition
-        name.difficulty = first_usecase.difficulty
+    if first_usecase and name.suggested_usecase_id != first_usecase.id:
         name.suggested_usecase = first_usecase
-        name.save()
+        name.save(update_fields=["suggested_usecase"])
+
+
+
+
+@receiver(post_delete, sender=UseCase)
+def clean_up_suggested_usecase(sender, instance, **kwargs):
+    """
+    If the deleted use case was the suggested one, reassign or nullify.
+    """
+    try:
+        name = instance.domain_name
+        if name.suggested_usecase_id == instance.id:
+            next_best = name.use_cases.order_by('order').first()
+            name.suggested_usecase = next_best  # May be None
+            name.save(update_fields=["suggested_usecase"])
+    except Name.DoesNotExist:
+        pass  # Safe fail if related name is already gone
+
+
+
+@receiver(pre_delete, sender=UploadedFile)
+def delete_uploaded_file(sender, instance, **kwargs):
+    """
+    Deletes physical files when their UploadedFile records are deleted.
+    """
+    try:
+        file_path = os.path.join(settings.UPLOAD_DIR, instance.filename)
+        if os.path.exists(file_path):
+            os.remove(file_path)
+            logger.info(f"Deleted file: {file_path}")
+    except Exception as e:
+        logger.error(f"Failed to delete file {instance.filename}: {str(e)}")

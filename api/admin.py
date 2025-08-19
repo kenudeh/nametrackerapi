@@ -1,6 +1,64 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, AppUser, NameCategory, NameTag, UseCase, ArchivedName
+from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile
+from .tasks import process_pending_files
+
+from django_celery_beat.admin import PeriodicTaskAdmin, CrontabScheduleAdmin
+from django_celery_beat.models import PeriodicTask, CrontabSchedule
+from django.utils.html import format_html
+
+
+# 1. First, unregister the auto-registered models
+# This must happen BEFORE our custom registration
+admin.site.unregister(PeriodicTask)
+admin.site.unregister(CrontabSchedule)
+
+
+# Celery beat setup
+PROTECTED_TASKS = [ # Core tasks that should never be modified in production
+    'full_domain_processing',
+    'daily_archival',
+    'pending_transitions'
+]
+
+
+# Custom admin classes that INHERIT from defaults
+@admin.register(PeriodicTask)
+class CustomPeriodicTaskAdmin(PeriodicTaskAdmin):  # Inherit from default admin
+    list_display = PeriodicTaskAdmin.list_display + ('schedule_info',)
+    readonly_fields = PeriodicTaskAdmin.readonly_fields + ('last_run_at',)
+    
+    def schedule_info(self, obj):
+        if obj.crontab:
+            return f"{obj.crontab.hour}:{obj.crontab.minute} (UTC)"
+        return "-"
+    schedule_info.short_description = "Schedule"
+
+    def get_readonly_fields(self, request, obj=None):
+        fields = super().get_readonly_fields(request, obj)
+        if obj and obj.name in PROTECTED_TASKS:
+            return list(fields) + [f.name for f in self.model._meta.fields]
+        return fields
+
+    def has_delete_permission(self, request, obj=None):
+        if obj and obj.name in PROTECTED_TASKS:
+            return False
+        return super().has_delete_permission(request, obj)
+
+@admin.register(CrontabSchedule)
+class CustomCrontabScheduleAdmin(CrontabScheduleAdmin):  # Inherit from default
+    list_display = CrontabScheduleAdmin.list_display + ('human_readable',)
+    
+    def human_readable(self, obj):
+        return format_html(
+            '<span style="color: #007BFF;">{}</span>',
+            obj.human_readable
+        )
+    human_readable.short_description = "Schedule"
+
+
+    
+
 
 # Inline for UseCase - allows adding up to 3 UseCases directly in the Name admin page.
 class UseCaseInline(admin.StackedInline):
@@ -13,9 +71,11 @@ class UseCaseInline(admin.StackedInline):
 # Since 'category' is now ForeignKey, no inline needed.
 
 # Inline for ManyToMany Tag relation (optional, as filter_horizontal can also be used)
-class NameTagInline(admin.TabularInline):
-    model = Name.tag.through  # Through table for ManyToMany relationship
-    extra = 1
+# class UseCaseTagInline(admin.TabularInline):
+#     model = UseCase.tag.through  # This is the intermediary model between UseCase and NameTag
+#     extra = 1
+
+
 
 #Bulk Action to Archive Manually - to be used in NameAdmin
 @admin.action(description='Archive selected names')
@@ -34,70 +94,111 @@ def archive_selected_names(modeladmin, request, queryset):
 @admin.register(Name)
 class NameAdmin(admin.ModelAdmin):
     readonly_fields = ('length', 'syllables', 'status') 
-    list_display = (
+    list_display = ( #removed 'competition' and 'difficulty'
         'domain_name',  
         'extension',
         'domain_list',
         'status',
         'length',
         'syllables',
-        'competition',
-        'difficulty',
+        'score',
+        'is_idea_of_the_day',
         'is_top_rated',
         'is_favorite',
         'drop_date',
+        'created_at',
     )
     list_display_links = ('domain_name',) 
-    list_filter = (
+    list_filter = (  #removed 'category'
         'extension',
         'domain_list',
         'status',
+        'score',
+        'is_idea_of_the_day',
         'is_top_rated',
         'is_favorite',
-        'category', 
     )
     search_fields = ('domain_name',)  
     date_hierarchy = 'drop_date'
-    inlines = [UseCaseInline, NameTagInline]  # Inlines for UseCase and Tags
-    filter_horizontal = ('tag',)  # Easier multi-select for tags
+    inlines = [UseCaseInline]  #Removed UseCaseTagInline ||| Inlines for UseCase and Tags
+    # filter_horizontal = ('tag',)  # Easier multi-select for tags
     actions = [archive_selected_names]
 
     fieldsets = (
-        (None, {
-            'fields': ('domain_name', 'extension', 'domain_list', 'status')
+        (None, { 
+            'fields': ('domain_name', 'domain_list', 'status')
         }),
         ('Metrics', {
-            'fields': ('competition', 'difficulty', 'is_top_rated', 'is_favorite')
+            'fields': ('is_idea_of_the_day', 'is_top_rated', 'is_favorite')  #removed 'competition' and 'difficulty'
         }),
         ('Relations', {
-            'fields': ('category', 'suggested_usecase')  # Category is FK, suggested_usecase auto-set
+            'fields': ('suggested_usecase',) #removed 'category'  # Category is FK, suggested_usecase auto-set
         }),
         ('Timing', {
-            'fields': ('drop_date', 'drop_time')
+            'fields': ('drop_date',)
         }),
     )
 
 
 @admin.register(AppUser)
 class AppUser(admin.ModelAdmin):
-    list_display = ('full_name',)
+    list_display = ('first_name', 'last_name', 'email')
    
 
-@admin.register(NameCategory)
-class NameCategoryAdmin(admin.ModelAdmin):
-    list_display = ('name',)
+@admin.register(UseCaseCategory)
+class UseCaseCategoryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'id')
     search_fields = ('name',)
 
-@admin.register(NameTag)
-class NameTagAdmin(admin.ModelAdmin):
+@admin.register(UseCaseTag)
+class UseCaseTagAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
 @admin.register(UseCase)
 class UseCaseAdmin(admin.ModelAdmin):
-    list_display = ('case_title', 'domain_name', 'order', 'difficulty', 'competition', 'revenue_potential')
+    list_display = ('case_title', 'domain_name', 'category', 'order', 'difficulty', 'competition', 'revenue_potential')
     list_filter = ('difficulty', 'competition', 'revenue_potential')
     search_fields = ('case_title', 'target_market')
+
+
+@admin.register(IdeaOfTheDay)
+class IdeaOfTheDayAdmin(admin.ModelAdmin):
+    list_display = ('use_case', 'drop_date', 'domain_list')
+   
+
+@admin.register(Subscription)
+class SubscriptionAdmin(admin.ModelAdmin):
+    list_display = ('user', 'plan', 'subscription_expiry', 'isPaid')
+    list_filter = ('plan', 'isPaid')
+    
+
+
+@admin.register(PlanModel)
+class PlanModelAdmin(admin.ModelAdmin):
+    list_display = ('plan_type', 'monthly_price')
+    
+
+
+
+@admin.register(AcquiredName)
+class AcquiredNameAdmin(admin.ModelAdmin):
+    list_display = ('user', 'name')
+    
+
+
+
+@admin.register(SavedName)
+class SavedNameAdmin(admin.ModelAdmin):
+    list_display = ('user', 'name')
+    
+
+@admin.register(ExtensionDropInfo)
+class ExtensionDropInfoAdmin(admin.ModelAdmin):
+    list_display = ('extension', 'first_check_delay_hours', 'second_check_delay_hours')
+    
+
+
 
 
 
@@ -114,3 +215,40 @@ class ArchivedNameAdmin(admin.ModelAdmin):
             'fields': ('domain_name', 'extension', 'original_drop_date', 'archived_on')
         }),
     )
+
+
+
+@admin.register(NewsLetter)
+class NewsLetterAdmin(admin.ModelAdmin):
+    list_display = ('email', 'created_at')
+    readonly_fields = ('created_at', 'updated_at', 'updated_at')
+
+
+@admin.register(PublicInquiry)
+class PublicInquiryAdmin(admin.ModelAdmin):
+    list_display = ('name', 'email', 'message', 'ip_address', 'created_at')
+    readonly_fields = ('ip_address', 'created_at', 'updated_at')
+
+
+
+@admin.action(description="Process selected files NOW")
+def process_files_immediately(modeladmin, request, queryset):
+    from .utils import process_file
+    for obj in queryset.filter(processed=False):
+        try:
+            process_file(obj)
+            obj.processing_method = 'manual'
+            obj.save()
+            modeladmin.message_user(request, f"Processed {obj.filename}")
+        except Exception as e:
+            modeladmin.message_user(request, f"Failed {obj.filename}: {str(e)}", level='error')
+
+
+class UploadedFileAdmin(admin.ModelAdmin):
+    list_display = ('filename', 'processed', 'uploaded_at')
+    actions = [process_files_immediately]   # This adds the action to the admin dropdown
+    readonly_fields = ('processed_at',)
+
+admin.site.register(UploadedFile, UploadedFileAdmin)
+
+

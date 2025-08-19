@@ -1,4 +1,5 @@
-from django.db import models
+from django.db import models, transaction
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 from .utils import *
 from django.utils import timezone
@@ -13,7 +14,11 @@ import textstat
 # For drop times for different extensions
 from .data.helpers import DROP_TIMES
 
-
+# For auto file deletion
+from django.db.models.signals import pre_delete
+from django.dispatch import receiver
+from django.conf import settings
+import os
 
 
 
@@ -61,6 +66,14 @@ class AppUser(models.Model):
             self.save(update_fields=["first_name", "last_name"])
 
 
+    @property
+    def is_authenticated(self):
+        """
+        Required by DRF's IsAuthenticated permission class.
+        """
+        return True
+
+
 
 # ============================================
 # Name model
@@ -99,7 +112,7 @@ class DomainListOptions(models.TextChoices):
 
 #NAME MODEL
 class Name(models.Model):
-    domain_name = models.CharField(max_length=20)
+    domain_name = models.CharField(max_length=20, unique=True)
     extension = models.CharField(
         max_length=20,
         choices=ExtensionOptions.choices,
@@ -108,12 +121,14 @@ class Name(models.Model):
     domain_list = models.CharField(
         max_length=50,
         choices = DomainListOptions.choices,
-        default = DomainListOptions.PENDING_DELETE
+        default = DomainListOptions.PENDING_DELETE,
+        db_index=True
     )
     status = models.CharField(
         max_length = 20,
         choices = RegStatusOptions.choices,
         default = RegStatusOptions.PENDING,
+        db_index=True
     )
     length = models.PositiveIntegerField(
         editable=False,
@@ -125,15 +140,11 @@ class Name(models.Model):
         null=True,
         blank=True
     )
-    competition = models.CharField(  # To be filled by post-save signal
-        max_length=20,
-        null=True,
-        blank=True
-    )
-    difficulty = models.CharField(   # To be filled by post-save signal
-        max_length=20,
-        null=True,
-        blank=True
+    score = models.PositiveSmallIntegerField(
+        null=True,  # Allow nulls for now
+        blank=True, # Allow blank forms in admin if needed
+        validators=[MinValueValidator(1), MaxValueValidator(10)],
+        help_text="SaaS viability score (1–10), determined by the LLM"
     )
     suggested_usecase = models.ForeignKey(  # To be filled by post-save signal
         'UseCase',
@@ -142,24 +153,17 @@ class Name(models.Model):
         blank=True,
         related_name='suggested_for'
     )
+    is_idea_of_the_day = models.BooleanField(default=False)
     is_top_rated = models.BooleanField(default=False)
     top_rated_date = models.DateField(null=True, blank=True)  # Used to isolate daily top-rated names
     is_favorite = models.BooleanField(default=False)
-    category = models.ForeignKey(  # To be handled in loader
-        'NameCategory',
-        on_delete=models.SET_NULL,
-        null=True,
-        related_name='names'
-    )
-    tag = models.ManyToManyField(
-        'NameTag',
-        related_name='names'
-    )
     drop_date = models.DateField(
+        db_index=True,
         help_text="Set manually in loader per batch"
     )
     drop_time = models.DateTimeField(
         editable=False,
+        db_index=True,
         help_text="Auto-computed in save() based on extension"
     )
     created_at = models.DateTimeField(auto_now_add=True)
@@ -167,8 +171,16 @@ class Name(models.Model):
     last_checked = models.DateTimeField(null=True, blank=True)
 
 
+    # A computed property (method) that generates a slug from the domain_name field
+    @property
+    def slug(self):
+        return self.domain_name 
 
+    def get_absolute_url(self):
+        return reverse('name-detail', kwargs={'slug': self.slug})
     
+
+
     def save(self, *args, **kwargs):
         """
         Override save method to compute:
@@ -187,47 +199,46 @@ class Name(models.Model):
         # Compute drop_time from extension lookup table (DROP_TIMES)
         drop_time_value = DROP_TIMES.get(self.extension)
         if drop_time_value:
-            # Combine drop_date with the corresponding drop time
-            self.drop_time = timezone.make_aware(
-                timezone.datetime.combine(self.drop_date, drop_time_value)
-            )
+            # Combine date + time then mark it as UTC so comparisons against timezone.now() (UTC) are correct.
+            naive_dt = datetime.combine(self.drop_date, drop_time_value)
+            self.drop_time = timezone.make_aware(naive_dt, timezone=timezone.utc)
         else:
-            # Default to timezone.now() if extension not found
             self.drop_time = timezone.now()
+
+        # One-way logic to update is_top_rated when is_idea_of_the_day is True:
+        if self.is_idea_of_the_day:
+            self.is_top_rated = True  # Force consistency
+
 
         super().save(*args, **kwargs)
 
+
+
     def __str__(self):
-        return self.domain_name
+        return f"{self.domain_name} | List: {self.domain_list} | Status: {self.status}"
+
 
 
 
 # ============================================
 # CATEGORY MODEL
 # ============================================
+class UseCaseCategory(models.Model):
+    name = models.CharField(max_length=50, unique=True)
+    slug = models.SlugField(max_length=50, unique=True)
 
-class CategoryType(models.TextChoices):
-    HEALTH = 'health_and_wellness', 'Health_And_Wellness'
-    TECH = 'tech', 'Tech'
- 
-class NameCategory(models.Model):
-    name = models.CharField(
-        max_length=20, 
-        unique=True,
-        choices=CategoryType.choices,
-    )
-    
     def __str__(self):
         return self.name
+
 
 
 
 # ============================================
 #TAG MODEL
 # ============================================
-class NameTag(models.Model):
+class UseCaseTag(models.Model):
     name = models.CharField(
-        max_length=20,
+        max_length=100,
         unique=True
     )
 
@@ -245,36 +256,103 @@ class RevenueOptions(models.TextChoices):
     MEDIUM = 'medium', 'Medium'
     HIGH = 'high', 'High'
 
+
+
 class UseCase(models.Model):
     domain_name = models.ForeignKey(
-        Name,
+        Name, 
         on_delete=models.CASCADE,
-        related_name='use_cases_domain'
+        related_name='use_cases'
     )
-    case_title = models.CharField(max_length=50)
+    case_title = models.CharField(max_length=100)
+    slug = models.SlugField(
+        max_length=100,
+        blank=True,         # Let model validation pass if slug isn't provided yet
+        editable=False       # Hide from forms and admin
+    )
     description = models.CharField(max_length=200)
     difficulty = models.CharField(
-        max_length=20,
+        max_length=100,
         choices=DifficultyType.choices
     )
     competition = models.CharField(
-        max_length=20,
-        choices=DifficultyType.choices
+        max_length=100,
+        choices=CompetitionType.choices
     )
-    target_market = models.CharField(max_length=20)
+    target_market = models.CharField(max_length=100)
     revenue_potential = models.CharField(
-        max_length=20,
+        max_length=100,
         choices=RevenueOptions.choices
     )
     order = models.PositiveSmallIntegerField(
         validators=[MinValueValidator(1), MaxValueValidator(3)]
     )
+    # is_idea_of_the_day = models.BooleanField(default=False)
+    category = models.ForeignKey(
+        'UseCaseCategory',
+        on_delete=models.CASCADE,
+        null=False,
+        blank=False
+    ) 
+    tag = models.ManyToManyField(
+        'UseCaseTag',
+        blank=False
+    )
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
 
     class Meta:
-        unique_together = ('domain_name', 'order')  # Enforce unique order per Name
+        ordering = ['order'] # adds an ordering rule, which controls queryset results (UseCase.objects.all() will return them sorted by order).
+        unique_together = (
+            ('domain_name', 'order'),   # Prevent two use cases with same order for a domain
+            ('domain_name', 'slug')     # Prevent duplicate slugs per domain
+        )
+
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            base_slug = slugify(self.case_title)[:90]  # Leave space for suffix
+            slug = base_slug
+
+            with transaction.atomic():
+                i = 1
+                while UseCase.objects.filter(domain_name=self.domain_name, slug=slug).exists():
+                    slug = f"{base_slug}-{i}"
+                    i += 1
+                self.slug = slug
+
+        super().save(*args, **kwargs)
+
+
 
     def __str__(self):
-        return f"{self.case_title} for {self.domain}"
+        return f"{self.case_title} for {self.domain_name}"
+
+
+
+
+# ============================================
+# Model to define The Idea of The Day
+# ============================================
+class IdeaOfTheDay(models.Model):
+    use_case = models.ForeignKey(UseCase, on_delete=models.CASCADE)
+    drop_date = models.DateField()  # Non-nullable
+    domain_list = models.CharField(  # Non-nullable
+        max_length=50,
+        choices=DomainListOptions.choices,
+        default=DomainListOptions.PENDING_DELETE,
+    )
+
+    class Meta:
+        unique_together = ('drop_date', 'domain_list')
+
+
+    def __str__(self):
+        return f"{self.domain_list} idea of the day for {self.drop_date}: {self.use_case.domain_name.domain_name}"
+
+
+
 
 
 
@@ -318,27 +396,36 @@ class ArchivedName(models.Model):
 # ============================================
 # Saved Names
 # ============================================
-class SavedNames(models.Model):
+class SavedName(models.Model):
     user = models.ForeignKey(AppUser, related_name='saved_names', on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    name = models.ForeignKey(Name, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
 
-
+    class Meta:
+            unique_together = ('user', 'name')
+   
     def __str__(self):
-        return self.user
+        return f"User: {self.user} | Name: {self.name} | Created at: {self.created_at} "
+
+        
+
 
 
 # ============================================
 # Acquired Names
 # ============================================
-class AcquiredNames(models.Model):
+class AcquiredName(models.Model):
     user = models.ForeignKey(AppUser, related_name='acquired_names', on_delete=models.CASCADE)
-    name = models.CharField(max_length=255)
+    name = models.ForeignKey(Name, on_delete=models.CASCADE)
     acquired_at = models.DateTimeField(auto_now_add=True)
 
+    class Meta:
+            unique_together = ('user', 'name')
 
+            
     def __str__(self):
-        return self.user
+        return f"User: {self.user} | Name: {self.name} | Created at: {self.created_at} "
+
 
 
 
@@ -398,34 +485,54 @@ class Subscription(models.Model):
 
      
 
+# ============================================
+# Newsletter model
+# ============================================
+class NewsLetter(models.Model):
+    email = models.CharField(unique=True, max_length=255) 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
+    def __str__(self):
+        return self.email
+
+
+
+  
+# ============================================
+# Public inquiry model
+# ============================================
+class PublicInquiry(models.Model):
+    name = models.CharField(max_length=50)
+    email = models.EmailField()
+    message = models.TextField()
+    ip_address = models.GenericIPAddressField(null=True, blank=True) 
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        first_words = ' '.join(self.message.split()[:10])
+        return f"{self.name} ({self.email}): {first_words}..."
     
     
-# class NewsLetter(models.Model):
-#     email = models.CharField(unique=True, max_length=255) #Added max_length
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-
-#     def __str__(self):
-#         return self.email
-
-    
-# class Support(models.Model):
-#     subject = models.CharField(max_length=50)
-#     message = models.TextField()
-#     email = models.EmailField()
-#     created_at = models.DateTimeField(auto_now_add=True)
-#     updated_at = models.DateTimeField(auto_now=True)
-
-#     def __str__(self):
-#         return self.subject
-    
-    
 
 
 
+# ============================================
+# Uploaded files model
+# ============================================
+class UploadedFile(models.Model):
+    filename = models.CharField(max_length=50, unique=True)
+    uploaded_at = models.DateTimeField(auto_now_add=True)
+    processed = models.BooleanField(default=False)
+    processed_at = models.DateTimeField(null=True, blank=True)  # New field
+    processing_method = models.CharField(  # Track how file was processed
+        max_length=20,
+        choices=[('manual', 'Manual'), ('celery', 'Auto')],
+        default='manual'
+    )
 
-
-
-
-
+    class Meta:
+        indexes = [
+            models.Index(fields=['processed']),  # Faster lookups
+        ]

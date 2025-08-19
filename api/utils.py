@@ -1,34 +1,24 @@
-from enum import Enum
+from pathlib import Path
+from django.core.management import call_command
+from django.db import transaction
+from django.conf import settings
+from datetime import date
+from django.utils import timezone
 
 
-# Enum for Tools type
-class CategoryTypeChoices(Enum):
-    CODE_GENERATORS = ('code_generators', 'Code_generators')
-    IDES = ('ides', 'IDEs')
-    DOCUMENTATION = ('documentation', 'Documentation')
-    
-    @classmethod
-    def choices(cls):
-        return [(choice.value[0], choice.value[1]) for choice in cls]
-    
 
 
-# Enum for ToolSuggestion
-class ToolStatusChoices(Enum):
-    PENDING = 'pending'
-    APPROVED = 'approved'
-    REJECTED = 'rejected'
-    
-    @classmethod
-    def choices(cls):
-        return [(key.value, key.name.capitalize()) for key in cls ]
-    
-    
-class SubscriptionTypeChoices(Enum):
-    BASIC = 'basic'
-    PREMIUM = 'premium'
-    GOLD = 'gold'
-    
-    @classmethod
-    def choices(cls):
-        return [(key.value, key.name.capitalize()) for key in cls ]
+
+def process_file(file_record):
+    """Shared processing logic"""
+    file_path = Path(settings.UPLOAD_DIR) / file_record.filename
+    with transaction.atomic():
+        call_command(
+            "load_json",
+            str(file_path),
+            "--drop_date", date.today().isoformat(),
+            "--domain_list", "pending_delete"
+        )
+        file_record.processed = True
+        file_record.processed_at = timezone.now()
+        file_record.save()

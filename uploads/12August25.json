@@ -1,0 +1,388 @@
+[
+    {
+      "domain_name": "HealthTime.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Telehealth Appointment Scheduling",
+          "description": "A HIPAA-compliant platform that allows clinics and private practitioners to manage patient appointments, reminders, and virtual consultations.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {"name": "telemedicine"},
+            {"name": "scheduling"},
+            {"name": "compliance"}
+          ],
+          "target_market": "clinics, private practitioners, wellness coaches",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Corporate Wellness Tracking",
+          "description": "A SaaS tool for companies to track employee wellness goals, provide resources, and analyze health trends for workforce improvement.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "employee-wellness"},
+            {"name": "analytics"}
+          ],
+          "target_market": "HR teams, corporate wellness providers, SMBs",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "Patient Time Management for Hospitals",
+          "description": "A hospital-facing system that optimizes patient flow, bed allocation, and wait-time reduction.",
+          "difficulty": "hard",
+          "competition": "high",
+          "category": {
+            "name": "Medical"
+          },
+          "tag": [
+            {"name": "workflow"},
+            {"name": "optimization"}
+          ],
+          "target_market": "hospitals, medical administrators",
+          "revenue_potential": "high",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "domain_name": "ProLift.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Workplace Safety & Equipment Inspection SaaS",
+          "description": "A platform for tracking inspections, certifications, and maintenance of lifting equipment in warehouses and construction sites.",
+          "difficulty": "moderate",
+          "competition": "low",
+          "category": {
+            "name": "Construction & Architecture"
+          },
+          "tag": [
+            {"name": "inspection"},
+            {"name": "safety"}
+          ],
+          "target_market": "construction firms, warehouses, safety inspectors",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Gym Equipment Management",
+          "description": "A SaaS for gyms to track usage, maintenance schedules, and repairs of lifting and training equipment.",
+          "difficulty": "easy",
+          "competition": "low",
+          "category": {
+            "name": "Fitness & Gym"
+          },
+          "tag": [
+            {"name": "equipment-tracking"}
+          ],
+          "target_market": "gyms, personal training facilities, sports centers",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "Physical Therapy Progress Tracking",
+          "description": "A patient-facing app that helps therapists monitor client recovery and lifting performance improvements over time.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {"name": "rehab"},
+            {"name": "progress-tracking"}
+          ],
+          "target_market": "physiotherapists, rehabilitation clinics",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "domain_name": "Nutriment.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Nutrition Tracking & Meal Planning",
+          "description": "A SaaS that provides AI-based personalized meal planning based on dietary needs, allergies, and fitness goals.",
+          "difficulty": "moderate",
+          "competition": "high",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {"name": "meal-planning"},
+            {"name": "ai-nutrition"}
+          ],
+          "target_market": "health-conscious individuals, fitness enthusiasts, nutritionists",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Corporate Nutrition Program",
+          "description": "A wellness program platform for businesses to offer employees curated healthy meal suggestions and challenges.",
+          "difficulty": "easy",
+          "competition": "medium",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "corporate-wellness"}
+          ],
+          "target_market": "corporate HR teams, wellness providers",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "Dietitian Practice Management",
+          "description": "A CRM and appointment scheduling tool designed specifically for nutrition professionals.",
+          "difficulty": "easy",
+          "competition": "low",
+          "category": {
+            "name": "Medical"
+          },
+          "tag": [
+            {"name": "dietitian-tools"}
+          ],
+          "target_market": "dietitians, nutritionists",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "domain_name": "StakeSafe.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Crypto Staking Security Dashboard",
+          "description": "A platform for securely managing and monitoring cryptocurrency staking assets with alerts for suspicious activity.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "staking"},
+            {"name": "security"}
+          ],
+          "target_market": "crypto investors, staking pools, blockchain startups",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Validator Node Management Tool",
+          "description": "A SaaS for crypto validators to monitor performance, uptime, and rewards while automating backups and updates.",
+          "difficulty": "hard",
+          "competition": "medium",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "node-management"},
+            {"name": "automation"}
+          ],
+          "target_market": "blockchain validators, staking operators",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "Portfolio Insurance for Stakers",
+          "description": "A subscription-based platform that offers risk scoring and optional insurance coverage for staked assets.",
+          "difficulty": "moderate",
+          "competition": "low",
+          "category": {
+            "name": "Insurance"
+          },
+          "tag": [
+            {"name": "crypto-insurance"}
+          ],
+          "target_market": "crypto investors, staking services",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+        {
+      "domain_name": "DropChecker.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "E-commerce Price Drop Alert Platform",
+          "description": "A SaaS tool for tracking product price changes across multiple e-commerce sites and alerting users in real-time.",
+          "difficulty": "easy (scraping + alerts)",
+          "competition": "medium (vs. CamelCamelCamel)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "price-tracking"},
+            {"name": "alerts"}
+          ],
+          "target_market": "online shoppers, e-commerce marketers",
+          "revenue_potential": "medium ($5–$15/month)",
+          "order": 1
+        },
+        {
+          "case_title": "Stock Market Price Drop Monitor",
+          "description": "A financial alert platform that monitors stocks, crypto, and ETFs for specific price drop triggers.",
+          "difficulty": "moderate (API data feeds)",
+          "competition": "high (vs. TradingView, Yahoo Finance alerts)",
+          "category": {
+            "name": "Finance"
+          },
+          "tag": [
+            {"name": "market-alerts"}
+          ],
+          "target_market": "traders, investors, fintech startups",
+          "revenue_potential": "high ($20–$50/month)",
+          "order": 2
+        },
+        {
+          "case_title": "Inventory Price Change Tracker for Retailers",
+          "description": "A B2B platform helping retailers monitor competitor prices and adjust automatically.",
+          "difficulty": "moderate (needs integrations with POS systems)",
+          "competition": "medium (vs. Price2Spy)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "competitor-analysis"}
+          ],
+          "target_market": "retailers, e-commerce brands",
+          "revenue_potential": "medium ($50–$150/month)",
+          "order": 3
+        }
+      ]
+    },
+        {
+      "domain_name": "ProChem.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Chemical Inventory & Compliance Management",
+          "description": "A SaaS for laboratories and manufacturers to track chemical usage, storage, and meet safety compliance requirements.",
+          "difficulty": "moderate (regulatory modules required)",
+          "competition": "low (vs. spreadsheets/manual logs)",
+          "category": {
+            "name": "Science & Engineering"
+          },
+          "tag": [
+            {"name": "inventory"},
+            {"name": "compliance"}
+          ],
+          "target_market": "labs, chemical manufacturers, research institutions",
+          "revenue_potential": "high ($100–$500/month)",
+          "order": 1
+        },
+        {
+          "case_title": "Chemical Process Simulation Tool",
+          "description": "A cloud-based simulator for chemical engineering processes, enabling R&D teams to test formulations virtually.",
+          "difficulty": "hard (requires advanced simulation engine)",
+          "competition": "medium (vs. Aspen Plus)",
+          "category": {
+            "name": "Science & Engineering"
+          },
+          "tag": [
+            {"name": "simulation"},
+            {"name": "r&d"}
+          ],
+          "target_market": "chemical engineers, research labs",
+          "revenue_potential": "medium ($200+/license/month)",
+          "order": 2
+        },
+        {
+          "case_title": "Chemical Supplier B2B Marketplace",
+          "description": "A procurement platform connecting chemical buyers and suppliers with order tracking and secure payments.",
+          "difficulty": "moderate (B2B transaction logic)",
+          "competition": "medium (vs. Alibaba niche verticals)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "b2b-marketplace"}
+          ],
+          "target_market": "manufacturers, chemical distributors",
+          "revenue_potential": "high (transaction fees + SaaS)",
+          "order": 3
+        }
+      ]
+    },
+    {
+  "domain_name": "AudioClone.ai",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "Brand Voice Generator for Content Creators",
+      "description": "Creates consistent AI voice clones for YouTubers/podcasters to generate content in their voice without re-recording.",
+      "difficulty": "moderate",
+      "competition": "medium (vs. ElevenLabs)",
+      "category": {"name": "Content & CMS"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "creators"}
+      ],
+      "target_market": "YouTubers, podcasters, agencies",
+      "revenue_potential": "high ($30/month + usage fees)",
+      "order": 1
+    },
+    {
+      "case_title": "Localized Voiceover Automation",
+      "description": "Generates multilingual versions of videos/presentations using the original speaker's cloned voice.",
+      "difficulty": "hard",
+      "competition": "low",
+      "category": {"name": "Marketing & Advertising"},
+      "tag": [
+        {"name": "localization"},
+        {"name": "video"}
+      ],
+      "target_market": "e-learning platforms, global brands",
+      "revenue_potential": "medium ($0.10/word)",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "NextPaper.ai",
+  "score": 8,
+  "use_cases": [
+    {
+      "case_title": "Academic Paper Digest for Professionals",
+      "description": "Generates one-page summaries of peer-reviewed papers with key insights, methodologies, and practical applications for non-academics.",
+      "difficulty": "moderate",
+      "competition": "low (vs. manual services like Kolabtree)",
+      "category": {"name": "Education & Learning"},
+      "tag": [
+        {"name": "AI"},
+        {"name": "research"}
+      ],
+      "target_market": "consultants, policymakers, investors",
+      "revenue_potential": "high ($49/month for 20 summaries)",
+      "order": 1
+    },
+    {
+      "case_title": "Grant Proposal Optimizer",
+      "description": "AI suggests edits to grant proposals by comparing them to successful historical applications in the same field.",
+      "difficulty": "hard",
+      "competition": "none (untapped niche)",
+      "category": {"name": "Education & Learning"},
+      "tag": [
+        {"name": "academia"},
+        {"name": "grants"}
+      ],
+      "target_market": "university researchers, nonprofits",
+      "revenue_potential": "medium ($299/proposal)",
+      "order": 2
+    }
+  ]
+}
+  ]

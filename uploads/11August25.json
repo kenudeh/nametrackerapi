@@ -1,0 +1,147 @@
+[
+  {
+    "domain_name": "ApexTrader.io",
+    "score": 7,
+    "use_cases": [
+      {
+        "case_title": "No-Code Strategy Builder & Backtesting",
+        "description": "Drag-and-drop rules, historical backtests, and paper trading with alerts and versioned strategies.",
+        "difficulty": "moderate–hard (market data + engines)",
+        "competition": "high (vs. TradingView/QuantConnect)",
+        "category": {"name": "Fintech"},
+        "tag": [
+          {"name": "backtesting"},
+          {"name": "alerts"},
+          {"name": "no-code"}
+        ],
+        "target_market": "retail traders, prop firm candidates, quant hobbyists",
+        "revenue_potential": "high ($29–$199/month)",
+        "order": 1
+      },
+      {
+        "case_title": "Copy Trading with Risk Controls",
+        "description": "Leader–follower execution with drawdown guards, position caps, and brokerage API routing.",
+        "difficulty": "hard (execution + compliance nuances)",
+        "competition": "medium–high (vs. eToro-type tools)",
+        "category": {"name": "Fintech"},
+        "tag": [
+          {"name": "copy-trading"},
+          {"name": "risk"}
+        ],
+        "target_market": "prop firms, trading communities, advanced retail",
+        "revenue_potential": "high ($49–$249/month)",
+        "order": 2
+      },
+      {
+        "case_title": "Trading Automation API & Webhooks",
+        "description": "Unified API and webhooks to trigger trades from signals across brokers and exchanges.",
+        "difficulty": "moderate (multi-broker integrations)",
+        "competition": "medium (fragmented tooling)",
+        "category": {"name": "Developer Tools & Experience (DX)"},
+        "tag": [
+          {"name": "API"},
+          {"name": "webhooks"}
+        ],
+        "target_market": "algo developers, fintech startups, quant teams",
+        "revenue_potential": "medium–high ($99/month + usage)",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "CreditFix.io",
+    "score": 7,
+    "use_cases": [
+      {
+        "case_title": "Credit Dispute Automation",
+        "description": "Generates dispute letters, tracks responses, and manages evidence with deadline reminders.",
+        "difficulty": "moderate (document workflows)",
+        "competition": "medium (vs. credit repair CRMs)",
+        "category": {"name": "Document & Workflow Automation"},
+        "tag": [
+          {"name": "letters"},
+          {"name": "deadlines"}
+        ],
+        "target_market": "credit repair agencies, financial coaches, consumers",
+        "revenue_potential": "medium–high ($39–$129/account/month)",
+        "order": 1
+      },
+      {
+        "case_title": "Credit Monitoring & Alerts Hub",
+        "description": "Aggregates bureau data and account events with anomaly alerts and action checklists.",
+        "difficulty": "moderate (data vendor integrations)",
+        "competition": "high (vs. Credit Karma-type tools)",
+        "category": {"name": "Finance"},
+        "tag": [
+          {"name": "monitoring"},
+          {"name": "alerts"}
+        ],
+        "target_market": "consumers, advisors, BNPL lenders",
+        "revenue_potential": "medium ($9–$19/user/month)",
+        "order": 2
+      },
+      {
+        "case_title": "Pre-Qualification Screening API",
+        "description": "Soft-pull scoring and rule-based eligibility checks for lenders and fintech apps.",
+        "difficulty": "moderate (compliance + APIs)",
+        "competition": "medium (vs. in-house scoring)",
+        "category": {"name": "Fintech"},
+        "tag": [
+          {"name": "eligibility"},
+          {"name": "soft-pull"}
+        ],
+        "target_market": "alt lenders, credit unions, fintech apps",
+        "revenue_potential": "medium–high ($0.05–$0.25/check + platform fee)",
+        "order": 3
+      }
+    ]
+  },
+  {
+    "domain_name": "EasyPod.io",
+    "score": 7,
+    "use_cases": [
+      {
+        "case_title": "One-Click Podcast Publishing & Hosting",
+        "description": "Record, edit basics, and publish to major directories with auto-RSS, CDN audio, and basic site.",
+        "difficulty": "easy–moderate (media pipeline)",
+        "competition": "medium (vs. generic podcast hosts)",
+        "category": {"name": "Music & Audio"},
+        "tag": [
+          {"name": "hosting"},
+          {"name": "distribution"}
+        ],
+        "target_market": "indie podcasters, creators, agencies",
+        "revenue_potential": "medium ($9–$29/show/month)",
+        "order": 1
+      },
+      {
+        "case_title": "AI Show Notes, Chapters & Transcripts",
+        "description": "Auto-generate summaries, chapters, keywords, and transcripts with export to CMS.",
+        "difficulty": "moderate (speech-to-text + LLM)",
+        "competition": "medium (point tools exist, fragmented)",
+        "category": {"name": "AI, ML & Data Intelligence"},
+        "tag": [
+          {"name": "transcription"},
+          {"name": "summarization"}
+        ],
+        "target_market": "podcasters, editors, agencies",
+        "revenue_potential": "medium ($10–$49/month + usage)",
+        "order": 2
+      },
+      {
+        "case_title": "Sponsorship Marketplace & Analytics",
+        "description": "Match hosts with sponsors, track reads and conversions, and automate invoicing.",
+        "difficulty": "moderate (marketplace + attribution)",
+        "competition": "medium–high (vs. ad networks)",
+        "category": {"name": "Marketing & Advertising"},
+        "tag": [
+          {"name": "marketplace"},
+          {"name": "attribution"}
+        ],
+        "target_market": "creators, agencies, DTC brands",
+        "revenue_potential": "medium–high (10–20% take + SaaS)",
+        "order": 3
+      }
+    ]
+  }
+]

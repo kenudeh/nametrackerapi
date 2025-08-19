@@ -18,10 +18,27 @@ import json
 from dotenv import load_dotenv
 import logging
 from logging.handlers import RotatingFileHandler
+from corsheaders.defaults import default_headers
+
+#location for json uploads
+from pathlib import Path
+
+# For celery
+from celery.schedules import crontab
+
+# For Sentry
+import sentry_sdk
+from sentry_sdk.integrations.celery import CeleryIntegration
 
 
 # Load environment variables from .env file
 load_dotenv()
+
+# Base directory definition
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+# Ensuirng all DateTimeFields in the database will store values in UTC. Can be converted to local time when displaying them to users.
+USE_TZ = True
 
 # Helper function to parse environment variables that contain multiple comma-separated values (like allowed_hosts, csrf_trusted_origins, etc)
 def get_list_env(key, default=""):
@@ -36,85 +53,41 @@ DEBUG = not IS_PRODUCTION
 SECURE_SSL_REDIRECT = IS_PRODUCTION  # This should only be True in production (Force HTTPS)
 
 
-# Base directory (Build paths inside the project like this: BASE_DIR / 'subdir'.)
-BASE_DIR = Path(__file__).resolve().parent.parent
-
 # ===== Shared Settings ===== 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # Dynadot API credentials
 DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
 DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
-
-
-# Clerk 
-CLERK_JWKS_URL = os.getenv("CLERK_JWKS_URL")  
-CLERK_ISSUER = os.getenv("CLERK_ISSUER")      
-CLERK_AUDIENCE = os.getenv("CLERK_AUDIENCE")  
-
-
-
-# CUSTOM SERIALIZERS ACTIVATION
-# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
-REST_AUTH_REGISTER_SERIALIZERS = {
-    'REGISTER_SERIALIZER': 'api.serializers.CustomRegisterSerializer',
-}
-# For dj-rest-auth to use our CustomRegisterSerializer to validate and reject duplicate emails before the User object is created.
-REST_AUTH_SERIALIZERS = {
-    'LOGIN_SERIALIZER': 'api.serializers.CustomLoginSerializer',
-}
-
-
-
-
-
-# SimpleJWT settings
-# SIMPLE_JWT = {
-#     'AUTH_HEADER_TYPES': ('Bearer',), # Fallback for non-cookie clients
-#     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
-#     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
-#     'ROTATE_REFRESH_TOKENS': True,
-#     'BLACKLIST_AFTER_ROTATION': True,
-
-#     # These are crucial for cookie-based auth
-#     'AUTH_COOKIE': 'access_token',
-#     'AUTH_COOKIE_REFRESH': 'refresh_token',
-#     'AUTH_COOKIE_HTTP_ONLY': True,
-#     'AUTH_COOKIE_SECURE': True,
-#     'AUTH_COOKIE_SAMESITE': 'None',
-#     'AUTH_COOKIE_PATH': '/',
-# }
-
-
-# Rest-auth settings
-REST_AUTH = { #used to be named 'DJ_REST_AUTH'
-    'USE_JWT': True,  # enables JWT usage
-    'JWT_AUTH_COOKIE': 'access_cookie',
-    'JWT_AUTH_REFRESH_COOKIE': 'refresh_cookie',
-    'JWT_AUTH_HTTPONLY': True, # Block JS access to JWT cookies
-    # 'JWT_AUTH_SECURE': True, #HTTPS-only JWT cookies (True in production)
-    'JWT_AUTH_SAMESITE': 'None',
-    'JWT_AUTH_COOKIE_USE_CSRF': True,  # True in production
-    'TOKEN_MODEL': None,  # disables DRF token model
-    'JWT_AUTH_RETURN_EXPIRATION': False,  # Stop sending tokens in JSON
-    
-}
+DYNADOT_BASE_URL = os.getenv('DYNADOT_BASE_URL')
 
 
 # CSRF settings 
 # CSRF_COOKIE_SECURE = True  # True in production
-CSRF_COOKIE_SAMESITE = 'None'  
+CSRF_COOKIE_PATH = '/'
+CSRF_COOKIE_SAMESITE = 'Lax'  
 # CSRF_TRUSTED_ORIGINS = [ #Add 'http://localhost:3000' for dev
 #     'https://www.aitracker.io', 
 #     'https://aitracker.io', 
 #     'https://api.aitracker.io' 
 # ] 
 CSRF_COOKIE_HTTPONLY = False  # Allow JS to read CSRF token (needed for APIs)
+CSRF_USE_SESSIONS = False
 
+
+ 
 #CORS settings
 CORS_ALLOW_CREDENTIALS = True # Required for cookies
-CORS_EXPOSE_HEADERS = ['X-CSRFToken'] # Let frontend read CSRF header
 CORS_ALLOWED_ORIGINS = get_list_env("DJANGO_CORS_ALLOWED_ORIGINS")
+CORS_ALLOW_HEADERS = [
+    *default_headers,  # This unpacks the default headers
+    'authorization',
+    'content-type',
+    'x-csrftoken',
+]
+CORS_EXPOSE_HEADERS = ['X-CSRFToken'] # Let frontend read CSRF header
+
+
 
 
 # Sessions (Required for Admin)
@@ -138,7 +111,6 @@ if IS_PRODUCTION:
     # Production-only settings
     CSRF_COOKIE_SECURE = True
     SESSION_COOKIE_SECURE = True
-    REST_AUTH['JWT_AUTH_SECURE'] = True
     CSRF_TRUSTED_ORIGINS = get_list_env("DJANGO_CSRF_TRUSTED_ORIGINS")
     SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
     USE_X_FORWARDED_HOST = True
@@ -146,13 +118,7 @@ else:
     # Development-only settings
     CSRF_COOKIE_SECURE = False
     SESSION_COOKIE_SECURE = False
-    REST_AUTH['JWT_AUTH_SECURE'] = False
     CSRF_TRUSTED_ORIGINS = get_list_env("DJANGO_CSRF_TRUSTED_ORIGINS")
-
-
-
-
-
 
 
 
@@ -163,23 +129,13 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
- 
-
     # Third-party apps
     'rest_framework',
     'rest_framework_simplejwt',
-    #'rest_framework.authtoken', #Not in use. 
     'corsheaders',
-    'allauth',
-    'allauth.account',
-    'allauth.socialaccount',
-    'allauth.socialaccount.providers.google',
-    'dj_rest_auth',
     'django.contrib.sites',  # Required for allauth
-    'dj_rest_auth.registration',
     'django_filters',
     'django_celery_beat',
-
     #My app
     'api.apps.ApiConfig',
 ]
@@ -191,54 +147,43 @@ REST_FRAMEWORK = {
         'api.authentication.ClerkJWTAuthentication', #my custom auth class defined in authentication.py 
     ),
     "DEFAULT_PERMISSION_CLASSES": (
-        "rest_framework.permissions.IsAuthenticated",  # Change to `AllowAny` for open access
+        "rest_framework.permissions.IsAuthenticated", 
     ),
+    'DEFAULT_THROTTLE_CLASSES': [],
     'DEFAULT_THROTTLE_RATES': {
-        'post_request': '2/day',  # Allow 2 POST requests per day
+        'post_request': '5/day',  # Allow 5 POST requests per day for public submissions
+        # 'anon': '10000/day',  # basically unlimited
     },
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.LimitOffsetPagination",
+    "PAGE_SIZE": 10,
     'EXCEPTION_HANDLER': 'rest_framework.views.exception_handler',
 }
-
+ 
 
 
 AUTHENTICATION_BACKENDS = (
-    'allauth.account.auth_backends.AuthenticationBackend',  # Required by django-allauth
     'django.contrib.auth.backends.ModelBackend',            # Default
 )
 
 
-#Allauth (deprecated fields are commented out)
-# ACCOUNT_EMAIL_REQUIRED = True
-# ACCOUNT_AUTHENTICATION_METHOD = 'username_email'
-# ACCOUNT_USERNAME_REQUIRED = False
-ACCOUNT_LOGIN_METHODS = {'email', 'username'}
-ACCOUNT_SIGNUP_FIELDS = [
-    'username*', 
-    'email*',        # Required email
-    'password1*',    # Required password
-    'password2*'     # Required password confirmation
-]
-ACCOUNT_UNIQUE_EMAIL = True  # Crucial for email-as-username functionality
-ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
-ACCOUNT_EMAIL_CONFIRMATION_EXPIRE_DAYS = 1
+APPEND_SLASH = False
 
+# For is_top_rated flag on the Name model
+TOP_RATED_THRESHOLD = 8
 
-ACCOUNT_EMAIL_CONFIRMATION_TEMPLATE = "account/email/email_confirmation_message.html"
-ACCOUNT_EMAIL_SUBJECT_TEMPLATE = "account/email/email_confirmation_subject.txt"
-ACCOUNT_EMAIL_CONTENT_SUBTYPE = "html"
 
 
 #Site ID
 SITE_ID = 1
+
 # Ensures email use HTTPS
 ACCOUNT_DEFAULT_HTTP_PROTOCOL = "https"
 
 
 #Email Backend for Postmark
-# Use custom Postmark API backend for sending emails:
-EMAIL_BACKEND = 'api.postmark_backend.EmailBackend'
+EMAIL_BACKEND = 'api.postmark_backend.EmailBackend' # Use custom Postmark API backend for sending emails:
 
-# Where the Postmark API token is stored (already in your .env):
+# Where the Postmark API token is stored (already in .env):
 POSTMARK_API_TOKEN = os.getenv('POSTMARK_API_TOKEN')
 
 # Default "From" email address (also from .env):
@@ -247,47 +192,18 @@ DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 DEFAULT_FROM_EMAIL = os.getenv('POSTMARK_DEFAULT_FROM_EMAIL')
 
 
-# Redirect for confirmation page (NOT IN USE ANYMORE BECAUSE WE OVERRODE ALLAUTH DEFUALT CONFIRMATION VIEW DUE TO A TEMPLATE RENDERING ERROR)
-# ACCOUNT_CONFIRM_EMAIL_ON_GET = True
-# ACCOUNT_EMAIL_CONFIRMATION_ANONYMOUS_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
-# ACCOUNT_EMAIL_CONFIRMATION_AUTHENTICATED_REDIRECT_URL = 'http://127.0.0.1:3000/email-confirmed'
 
-
-#Google Login (Allauth)
-SOCIALACCOUNT_PROVIDERS = {
-    'google': {
-        'APP': {
-            'client_id': os.getenv('GOOGLE_CLOUD_CLIENT_ID'),
-            'secret': os.getenv('GOOGLE_CLOUD_SECRET'),
-            'key': ''
-        },
-        'SCOPE': ['profile', 'email'],
-        'AUTH_PARAMS': {'access_type': 'online'},
-        # Needed to customize usernames:
-        'USER_FIELDS': ['email', 'username'],
-    }
-}
-
-# Required for social login
-SOCIALACCOUNT_EMAIL_VERIFICATION = 'none'
-SOCIALACCOUNT_EMAIL_REQUIRED = False
-SOCIALACCOUNT_QUERY_EMAIL = True
-
-# A custom pipeline to handle usernames during Google authentication
-SOCIALACCOUNT_ADAPTER = 'api.adapters.CustomSocialAccountAdapter'
-
-
-
-#Pointing Allauth to use the custom adapter for activating a user's account on email confirmation
-ACCOUNT_ADAPTER = 'api.adapters.MyAccountAdapter'
-
+#Additional Security 
+SECURE_HSTS_SECONDS = 3600  # Tells browsers to only use HTTPS for your domain for the specified duration (e.g., 3600 = 1 hour starting small for testing).
+SECURE_HSTS_INCLUDE_SUBDOMAINS = True #Applies that rule to all subdomains too (like api.example.com).
+SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Firefox, etc.) to always enforce HTTPS.
 
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware', 
     'django.contrib.sessions.middleware.SessionMiddleware', # Required for admin
-    'allauth.account.middleware.AccountMiddleware', #Required by allauth
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -318,14 +234,25 @@ WSGI_APPLICATION = 'nametrackerapi.wsgi.application'
 
 
 # Database
-# https://docs.djangoproject.com/en/5.2/ref/settings/#databases
-
-DATABASES = {
-    "default": dj_database_url.config(
-        default=os.getenv("DATABASE_URL"),
-        conn_max_age=600,
-        ssl_require=True
-    )
+if os.getenv("DATABASE_URL"):
+    DATABASES = {
+        "default": dj_database_url.config(
+            default=os.getenv("DATABASE_URL"),
+            conn_max_age=600,
+            ssl_require=True
+        )
+    }
+else:
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "NAME": os.getenv("LOCAL_DB_NAME"),
+            "USER": os.getenv("LOCAL_DB_USER"),
+            "PASSWORD": os.getenv("LOCAL_DB_PASSWORD"),
+            "HOST": os.getenv("LOCAL_DB_HOST"),
+            "PORT": os.getenv("LOCAL_DB_PORT"),
+            "CONN_MAX_AGE": 600,
+        }
 }
 
 
@@ -355,7 +282,7 @@ LANGUAGE_CODE = 'en-us'
 
 TIME_ZONE = 'UTC'
 
-USE_I18N = True
+USE_I18N = False
 
 USE_TZ = True
 
@@ -363,9 +290,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
-STATIC_URL = 'static/'
-#
+
+STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage' #for WhiteNoise compression
 
 
 # Default primary key field type
@@ -374,27 +302,149 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
-#
+REDIS_URL = os.getenv("REDIS_URL")
+
+#Cache settings
 CACHES = {
-    'default' : {
-        'BACKEND': 'django.core.cache.backends.locmem.LocMemCache',
-        'LOCATION': 'unique-snowflake',
+    "default": {
+        "BACKEND": "django_redis.cache.RedisCache",
+        "LOCATION": REDIS_URL,
+        "OPTIONS": {
+            "CLIENT_CLASS": "django_redis.client.DefaultClient",
+        }
     }
 }
+
+
+
+# CELERY SETTINGS
+# Enhanced Celery Settings
+CELERY_BROKER_URL = f"{REDIS_URL}/0"  # DB 0 for broker
+CELERY_RESULT_BACKEND = f"{REDIS_URL}/1"  # DB 1 for results
+
+# Connection settings
+CELERY_BROKER_POOL_LIMIT = 20
+CELERY_BROKER_CONNECTION_TIMEOUT = 30
+CELERY_RESULT_BACKEND_MAX_RETRIES = 3
+
+
+# Worker settings
+CELERY_WORKER_CONCURRENCY = 1 # 8vCPU - 2 for overhead
+CELERY_WORKER_PREFETCH_MULTIPLIER = 1  # Fair task distribution
+CELERY_WORKER_MAX_TASKS_PER_CHILD = 100 # Prevent memory leaks
+CELERY_WORKER_DISABLE_RATE_LIMITS = True
+
+# Task settings
+CELERY_TASK_TIME_LIMIT = 30 * 60  # 30 minutes global
+CELERY_TASK_SOFT_TIME_LIMIT = 25 * 60 # 25 minutes soft
+CELERY_TASK_DEFAULT_RETRY_DELAY = 60 # 1 minute
+CELERY_TASK_MAX_RETRIES = 3
+CELERY_TASK_REJECT_ON_WORKER_LOST = True  # Prevents half-processed tasks
+CELERY_TASK_IGNORE_RESULT = True  # Default to False, override per task
+CELERY_TASK_STORE_ERRORS_EVEN_IF_IGNORED = True
+
+
+# Beat settings
+CELERY_BEAT_SCHEDULE = {}  # Empty dict to prevent conflicts
+CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+CELERY_BEAT_MAX_LOOP_INTERVAL = 300  # Check for new tasks every 5 mins
+
+
+# CELERY_BROKER_URL = REDIS_URL
+# CELERY_RESULT_BACKEND = REDIS_URL
+
+# CELERY_ACCEPT_CONTENT = ['json']
+# CELERY_TASK_SERIALIZER = 'json'
+
+# CELERY_TIMEZONE = TIME_ZONE  # Critical for beat scheduling
+# CELERY_TASK_TRACK_STARTED = True  # Enables task state tracking
+# CELERY_TASK_ALWAYS_EAGER = False  # Explicitly disable eager mode (safety check)
+# CELERY_TASK_IGNORE_RESULT = False  # Store results
+# CELERY_TASK_TIME_LIMIT = 60 * 60  # 60 minute timeout
+# CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
+
+
+# # CELERY BEAT SETTINGS
+# # CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
+# CELERY_BEAT_SCHEDULE = {
+    # # Time-sensitive independent tasks
+    # 'pending_transitions': {
+    #     'task': 'api.tasks.transition_pending_to_deleted_task',
+    #     'schedule': crontab(minute=0, hour='*'),  # Hourly
+    #     'options': {
+    #         'expires': 1800,
+    #         'enabled': True
+    #     }
+    # },
+    # 'availability_checks': {
+    #     'task': 'api.tasks.trigger_bulk_availability_check_task',
+    #     'schedule': crontab(minute=0, hour='*/4'),  # Every 4 hours
+    #     'options': {
+    #         'expires': 1800,
+    #         'enabled': True
+    #     }
+    # },
+    # 'domain_rechecks': {
+    #     'task': 'api.tasks.second_check_task',
+    #     'schedule': crontab(minute=30, hour='*/12'),  # Every 12 hours at :30
+    #     'options': {
+    #         'expires': 3600,
+    #         'enabled': True
+    #     }
+    # },
+    
+    # # Daily maintenance bundle
+    # 'daily_maintenance': {
+    #     'task': 'api.tasks.daily_maintenance_task',
+    #     'schedule': crontab(hour=2, minute=0),  # 2 AM UTC
+    #     'options': {
+    #         'expires': 3600,
+    #         'enabled': True
+    #     }
+    # },
+    
+    # # File processing
+    # 'file_processing': {
+    #     'task': 'api.tasks.process_pending_files',
+    #     'schedule': crontab(hour=3, minute=0),  # 3 AM UTC
+    #     'options': {
+    #         'expires': 1800,
+    #         'enabled': True
+    #     }
+    # }
+# }
+
+
+# Sentry
+sentry_sdk.init(
+    dsn=os.getenv("dsn") ,
+    integrations=[CeleryIntegration()],
+    traces_sample_rate=0.2  # Adjustable for performance monitoring
+)
+
+
+# Clerk 
+CLERK_JWKS_URL=os.getenv("CLERK_JWKS_URL") 
+CLERK_ISSUER=os.getenv("CLERK_ISSUER")      
+CLERK_AUDIENCE=os.getenv("CLERK_AUDIENCE") or None
+CLERK_API_BASE_URL = os.getenv("CLERK_API_BASE_URL")
+CLERK_SECRET_KEY = os.getenv("CLERK_SECRET_KEY")
+
+
+
+# Upload directory
+UPLOAD_DIR = BASE_DIR / 'uploads' if DEBUG else Path('/mnt/data/uploads')
+os.makedirs(UPLOAD_DIR, exist_ok=True)  # Ensure directory exists
+
+
+# Validator for json uploads
+MAX_UPLOAD_SIZE = 2 * 1024 * 1024  # 2MB in bytes
 
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
-# CELERY SETTINGS
-CELERY_BROKER_URL = 'redis://localhost:6379/0'  # Points to Redis running in Docker
-CELERY_ACCEPT_CONTENT = ['json']
-CELERY_TASK_SERIALIZER = 'json'
-
-# CELERY BEAT SETTINGS
-CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 
 # Logging Setup
 LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
@@ -444,10 +494,22 @@ LOGGING = {
             'formatter': 'verbose',
             'encoding': 'utf8',
         },
+        'celery': {
+            'level': 'INFO',
+            'class': 'logging.FileHandler',
+            'filename': '/var/log/celery_tasks.log',
+            'filename': os.path.join(LOGGING_DIR, 'celery_tasks.log'),
+        },
         'console': {
             'class': 'logging.StreamHandler',
             'formatter': 'simple',
+            'level': 'DEBUG',  # <- change from WARNING to DEBUG (Remove later as it's for seeing debug errors in the console during dev)
         },
+    },
+
+    'root': {
+        'handlers': ['console'],
+        'level': 'DEBUG',  # <- important (Remove block entirely later as it's for seeing debug errors in the console during dev))
     },
 
     'loggers': {
@@ -459,10 +521,69 @@ LOGGING = {
         },
         # ✅ Your app-specific task logs
         'api.domain_tasks': {
-            'handlers': ['domain_file', 'console'],
+            'handlers': ['domain_file', 'console', 'celery'],
             'level': 'INFO',
             'propagate': False,
         },
     },
 }
+
+
+# LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
+# if not os.path.exists(LOGGING_DIR):
+#     os.makedirs(LOGGING_DIR)
+
+# LOG_LEVEL = 'DEBUG' if DEBUG else 'WARNING'
+# SENSITIVE_VARIABLES = ['password', 'token', 'secret']
+
+
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+
+#     'formatters': {
+#         'verbose': {
+#             'format': '{levelname} {asctime} {module} {message}',
+#             'style': '{',
+#         },
+#     },
+
+#     'handlers': {
+#         # Domain task logs (rotated)
+#         'domain_file': {
+#             'level': 'INFO',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
+#             'maxBytes': 3 * 1024 * 1024,
+#             'backupCount': 3,
+#             'formatter': 'verbose',
+#         },
+#         # General system logs (warnings and above)
+#         'system_file': {
+#             'level': 'WARNING',
+#             'class': 'logging.handlers.RotatingFileHandler',
+#             'filename': os.path.join(LOGGING_DIR, 'aitracker.log'),
+#             'maxBytes': 5 * 1024 * 1024,
+#             'backupCount': 5,
+#             'formatter': 'verbose',
+#         },
+#     },
+
+
+
+#     'loggers': {
+#         # For Django system errors (500s, etc.)
+#         'django': {
+#             'handlers': ['system_file'],
+#             'level': LOG_LEVEL,
+#             'propagate': True,
+#         },
+#         # my app-specific task logs
+#         'api.domain_tasks': {
+#             'handlers': ['domain_file'],
+#             'level': 'INFO',
+#             'propagate': False,
+#         },
+#     },
+# }
 

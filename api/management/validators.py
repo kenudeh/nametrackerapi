@@ -10,67 +10,86 @@ Usage:
 
 def validate_domain_data(data):
     """
-    Validates a list of domain items for required fields, types, and business rules.
+    Validates a list of domain name entries with associated use cases.
 
     Args:
-        data (list): List of domain dicts loaded from JSON.
+        data (list): List of dictionaries, each representing a domain entry.
 
     Raises:
-        ValueError: If validation fails due to missing fields, wrong types, or invalid structure.
-
-    Returns:
-        True if validation passes.
+        ValueError: If required fields are missing or invalid.
     """
-    if not isinstance(data, list):
-        raise ValueError("Top-level JSON data must be a list of domain records.")
 
-    # These are the *only* fields required directly from JSON per domain
-    required_name_fields = ['domain_name', 'category', 'tags', 'use_cases']
-
-    # Required fields inside each use_case entry
-    required_use_case_fields = [
-        'case_title', 'description', 'difficulty', 'competition',
-        'target_market', 'revenue_potential', 'order'
+    required_name_fields = ['domain_name', 'use_cases']
+    required_usecase_fields = [
+        'case_title',
+        'description',
+        'difficulty',
+        'competition',
+        'category',
+        'tag',
+        'target_market',
+        'revenue_potential',
+        'order'
     ]
 
     for index, item in enumerate(data):
-        if not isinstance(item, dict):
-            raise ValueError(f"Domain item at index {index} must be a dictionary.")
-
-        # Check that all required fields are present in each domain
+        # Check required top-level fields in Name
         for field in required_name_fields:
             if field not in item:
                 raise ValueError(f"Missing field '{field}' in domain item at index {index}.")
 
-        # Field type checks
-        if not isinstance(item['domain_name'], str):
-            raise ValueError(f"'domain_name' must be a string at index {index}.")
+        use_cases = item['use_cases']
 
-        if not isinstance(item['tags'], list):
-            raise ValueError(f"'tags' must be a list at index {index}.")
+        if not isinstance(use_cases, list) or len(use_cases) == 0:
+            raise ValueError(f"'use_cases' must be a non-empty list in domain item at index {index}.")
 
-        if not isinstance(item['use_cases'], list):
-            raise ValueError(f"'use_cases' must be a list at index {index}.")
+        # Track seen orders to enforce uniqueness
+        seen_orders = set()
 
-        if len(item['use_cases']) > 3:
-            raise ValueError(f"'use_cases' cannot contain more than 3 items (found {len(item['use_cases'])}) at index {index}.")
+        for uc_index, use_case in enumerate(use_cases):
+            for field in required_usecase_fields:
+                if field not in use_case:
+                    raise ValueError(
+                        f"Missing field '{field}' in use_case[{uc_index}] of domain item at index {index}."
+                    )
 
-        # Validate 'category' field structure
-        category = item['category']
-        if not isinstance(category, dict) or 'name' not in category:
-            raise ValueError(f"'category' must be a dict containing a 'name' key at index {index}.")
+            # Check category structure
+            if not isinstance(use_case['category'], dict) or 'name' not in use_case['category']:
+                raise ValueError(
+                    f"Invalid or missing 'category.name' in use_case[{uc_index}] of domain item at index {index}."
+                )
 
-        # Validate each UseCase entry
-        for uc_index, uc in enumerate(item['use_cases']):
-            if not isinstance(uc, dict):
-                raise ValueError(f"Use case at index {uc_index} in domain {index} must be a dictionary.")
+            # Check tag structure
+            if not isinstance(use_case['tag'], list) or len(use_case['tag']) == 0:
+                raise ValueError(
+                    f"'tag' must be a non-empty list in use_case[{uc_index}] of domain item at index {index}."
+                )
 
-            for uc_field in required_use_case_fields:
-                if uc_field not in uc:
-                    raise ValueError(f"Missing field '{uc_field}' in use_case {uc_index} at domain index {index}.")
+            for tag_item in use_case['tag']:
+                if not isinstance(tag_item, dict) or 'name' not in tag_item:
+                    raise ValueError(
+                        f"Each tag in 'tag' must be a dict with a 'name' key in use_case[{uc_index}] of domain item at index {index}."
+                    )
 
-            # Example type check for 'order'
-            if not isinstance(uc['order'], int):
-                raise ValueError(f"'order' in use_case {uc_index} at domain index {index} must be an integer.")
+            # Check order is int and unique within this domain item
+            order = use_case['order']
+            if not isinstance(order, int):
+                raise ValueError(
+                    f"'order' must be an integer in use_case[{uc_index}] of domain item at index {index}."
+                )
 
-    return True  # All records passed validation
+            if order in seen_orders:
+                raise ValueError(
+                    f"Duplicate 'order' value {order} in use_case[{uc_index}] of domain item at index {index}."
+                )
+
+            seen_orders.add(order)
+
+        # Enforce that order numbers are sequential starting from 1
+        expected_orders = set(range(1, len(use_cases) + 1))
+        if seen_orders != expected_orders:
+            raise ValueError(
+                f"'order' values in domain item at index {index} must be unique and sequential starting from 1. Found: {sorted(seen_orders)}"
+            )
+
+
