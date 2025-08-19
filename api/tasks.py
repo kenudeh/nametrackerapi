@@ -4,7 +4,7 @@ from celery.exceptions import Retry
 from django.utils import timezone
 from datetime import timedelta
 from django.db.models import Q
-from django.db import transaction
+from django.db import transaction, models
 
 from .models import Name, ArchivedName, IdeaOfTheDay, UseCase, UploadedFile
 from .handlers.services import DynadotAPI
@@ -19,16 +19,11 @@ from django.db import transaction
 from django.db.models import F
 from django.utils import timezone
 from itertools import islice
-
 from django.core.cache import cache
 
 
 
-logger = logging.getLogger('api.domain_tasks')
-
 logger = logging.getLogger(__name__)
-
-
 # Constants for availability checking time per extension (in hours)
 EXTENSION_CHECK_DELAYS = {
     '.com': 2,
@@ -42,7 +37,7 @@ BULK_CHUNK = 50
 
 
 # --- Archive old domains with lock ---
-@shared_task(bind=True, time_limit=3600, ignore_result=True)
+@shared_task(bind=True, name="archive_old_domains", time_limit=3600, ignore_result=True)
 def archive_old_domains_task(self):
     """
     Bulk archives domains older than 90 days with improved:
@@ -81,184 +76,145 @@ def archive_old_domains_task(self):
         logger.error(f"Failed to acquire lock for archive_old_domains_task: {str(e)}")
         raise self.retry(exc=e, countdown=300)
 
-        
-# @shared_task
-# def archive_old_domains_task(ignore_result=True, time_limit=1800):
-#     """
-#     Bulk archives domains older than 90 days with improved:
-#     - Memory efficiency via chunking
-#     - Transaction safety
-#     - Batch operations
-#     - Error handling
-#     """
-#     ARCHIVAL_AGE_DAYS = 90
-#     ARCHIVE_BATCH_SIZE = 500  # Optimal for most DBs
-
-#     now = timezone.now()
-#     cutoff_date = (now - timedelta(days=ARCHIVAL_AGE_DAYS)).date()
-
-#     try:
-#         with transaction.atomic():
-#             # Get queryset iterator for memory efficiency
-#             old_domains = Name.objects.filter(
-#                 drop_date__lt=cutoff_date
-#             ).iterator(chunk_size=ARCHIVE_BATCH_SIZE)
-
-#             archived_count = 0
-#             current_batch = []
-
-#             for domain in old_domains:
-#                 current_batch.append(
-#                     ArchivedName(
-#                         domain=domain.domain,
-#                         extension=domain.extension,
-#                         drop_date=domain.drop_date,
-#                         drop_time=domain.drop_time,
-#                         domain_list=domain.domain_list,
-#                         status=domain.status,
-#                         last_checked=domain.last_checked,
-#                         created_at=domain.created_at
-#                     )
-#                 )
-#                 archived_count += 1
-
-#                 # Process in batches
-#                 if len(current_batch) >= ARCHIVE_BATCH_SIZE:
-#                     ArchivedName.objects.bulk_create(current_batch)
-#                     Name.objects.filter(
-#                         id__in=[d.id for d in current_batch]
-#                     ).delete()
-#                     current_batch = []
-
-#             # Process final partial batch
-#             if current_batch:
-#                 ArchivedName.objects.bulk_create(current_batch)
-#                 Name.objects.filter(
-#                     id__in=[d.id for d in current_batch]
-#                 ).delete()
-
-#             logger.info(
-#                 "Successfully archived %d domains older than %s",
-#                 archived_count,
-#                 cutoff_date
-#             )
-#             return archived_count
-
-#     except Exception as e:
-#         logger.error(
-#             "Archival failed for domains older than %s: %s",
-#             cutoff_date,
-#             str(e)
-#         )
-#         raise self.retry(exc=e)
-
-
 
 
 # --- Pending to deleted transition (daily lock) ---
-@shared_task(bind=True, time_limit=1200, ignore_result=True)
-def transition_pending_to_deleted_task(self):
+@shared_task(bind=True, name="transition_pending_by_tld", time_limit=1200, soft_time_limit=1100, ignore_result=True)
+def transition_pending_to_deleted_task(self, **kwargs):
     """
+    COMPLETE TLD-AWARE VERSION
     Transition domains from pending_delete to deleted status when their drop_time has passed.
+    Now supports TLD-specific processing when 'tld' parameter is provided.
     
-    Processing Rules:
-    1. Only move Names where domain_list='pending_delete' and drop_time <= now
-    2. Set status='unverified' for all moved names
-    3. For moved names with is_top_rated=True, set top_rated_date = drop_date
-    4. Update IdeaOfTheDay with:
-       - deleted_idea: Highest scoring domain from the entire batch being moved
-       - pending_delete_idea: Highest scoring remaining pending_delete domain for today
+    Key Changes:
+    1. Added TLD filtering throughout all queries
+    2. Improved lock key naming with TLD context
+    3. Ensured consistent TLD handling in all sub-functions
+    4. Maintained all original functionality
     
-    Implementation Notes:
-    - Uses nested functions for task-specific helpers to avoid namespace pollution
-    - Maintains chunked updates for memory efficiency
-    - Single atomic transaction ensures data consistency
+    Processing Flow:
+    1. Acquire TLD-specific lock
+    2. Filter domains by TLD (if specified)
+    3. Process eligible domains in bulk chunks
+    4. Update IdeaOfTheDay records
+    5. Release lock
     """
-    lock_key = f"pending_transition_lock_{timezone.now().date()}"
-
+    
+    # 1. PARAMETER HANDLING ===================================================
+    tld = kwargs.get('tld')  # Get TLD from task parameters (None if not specified)
+    current_date = timezone.now().date()
+    
+    # 2. LOCKING MECHANISM ===================================================
+    lock_key = f"pending_transition_lock_{current_date}_{tld or 'all'}"
+    
+    # Prevent concurrent execution for same TLD/date combination
     if not cache.add(lock_key, "locked", timeout=3600):
-        logger.warning("Task already running for today")
+        logger.warning(f"Task already running for {'all TLDs' if not tld else tld}")
         return
 
     try:
+        # 3. INITIALIZATION ==================================================
         now = timezone.now()
-        today = now.date()
-        logger.info("Starting pending->deleted transition at %s", now)
+        logger.info(f"Starting pending->deleted transition for {'all TLDs' if not tld else tld} at {now}")
+        
+        # 4. QUERY BUILDING ==================================================
+        def get_base_queryset():
+            """Returns base queryset with TLD filtering if specified"""
+            qs = Name.objects.filter(
+                domain_list='pending_delete',
+                drop_time__lte=now
+            )
+            if tld:
+                qs = qs.filter(domain__iendswith=f'.{tld}')
+                logger.debug(f"Applying TLD filter for .{tld}")
+            return qs
+        
+        # Main queryset for processing
+        ready_qs = get_base_queryset().order_by('-score').only(
+            'id', 'score', 'domain', 'is_top_rated', 'drop_date'
+        )
 
+        # 5. PROCESSING FUNCTIONS ============================================
         def process_bulk_transitions(ready_ids_iter):
-            """Handle the bulk updates in memory-efficient chunks."""
+            """
+            Process domains in memory-efficient chunks
+            Args:
+                ready_ids_iter: Iterator of domain IDs to process
+            """
             chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
             while chunk:
+                # Update domain_list and status
                 Name.objects.filter(id__in=chunk).update(
                     domain_list='deleted',
                     status='unverified'
                 )
+                # Special handling for top-rated domains
                 Name.objects.filter(id__in=chunk, is_top_rated=True).update(
                     top_rated_date=F('drop_date')
                 )
                 chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
 
         def get_top_pending_idea():
-            """Get the highest-scoring pending idea for the day."""
-            return (
-                Name.objects
-                .filter(domain_list='pending_delete', drop_date=today)
-                .exclude(score__isnull=True)
-                .order_by('-score')
-                .first()
-            )
+            """Get highest-scoring pending idea (with TLD filtering if specified)"""
+            qs = Name.objects.filter(
+                domain_list='pending_delete',
+                drop_date=current_date
+            ).exclude(score__isnull=True)
+            
+            if tld:
+                qs = qs.filter(domain__iendswith=f'.{tld}')
+                
+            return qs.order_by('-score').first()
 
         def update_ideas(top_deleted, top_pending):
-            """Authoritative update of both idea fields."""
-            idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
+            """Update IdeaOfTheDay records atomically"""
+            idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=current_date)
             update_needed = False
 
             if top_deleted and idea_obj.deleted_idea != top_deleted:
                 idea_obj.deleted_idea = top_deleted
                 update_needed = True
-                logger.debug("Set deleted_idea for %s to %s", today, top_deleted.domain)
+                logger.debug(f"Set deleted_idea to {top_deleted.domain}")
 
             if top_pending and idea_obj.pending_delete_idea != top_pending:
                 idea_obj.pending_delete_idea = top_pending
                 update_needed = True
-                logger.debug("Set pending_idea for %s to %s", today, top_pending.domain)
+                logger.debug(f"Set pending_idea to {top_pending.domain}")
 
             if update_needed:
                 idea_obj.save()
 
-        ready_qs = (
-            Name.objects
-            .filter(domain_list='pending_delete', drop_time__lte=now)
-            .order_by('-score')
-            .only('id', 'score', 'domain', 'is_top_rated', 'drop_date')
-        )
-
+        # 6. MAIN PROCESSING LOGIC ===========================================
         ready_count = ready_qs.count()
+        
+        # Early return if no domains to process
         if ready_count == 0:
             if top_pending := get_top_pending_idea():
-                idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=today)
+                idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=current_date)
                 idea_obj.pending_delete_idea = top_pending
                 idea_obj.save()
-                logger.info("Updated pending idea for %s: %s", today, top_pending.domain)
+                logger.info(f"Updated pending idea for {current_date}: {top_pending.domain}")
             return
 
+        # Prepare data for processing
         all_ready_ids = ready_qs.values_list('id', flat=True)
         top_deleted = ready_qs.first()
         top_pending = get_top_pending_idea()
 
+        # Execute updates in single transaction
         with transaction.atomic():
             process_bulk_transitions(all_ready_ids)
             update_ideas(top_deleted, top_pending)
 
+        # 7. FINAL LOGGING ===================================================
         logger.info(
-            "Transitioned %d domains (top: %s) at %s",
-            ready_count,
-            top_deleted.domain if top_deleted else "none",
-            now
+            f"Transitioned {ready_count} domains (top: {top_deleted.domain if top_deleted else 'none'}) at {now}"
         )
+        
     finally:
-        cache.delete(lock_key) # Release lock
-
+        # 8. CLEANUP ========================================================
+        cache.delete(lock_key)  # Release lock regardless of success/failure
+        logger.debug(f"Released lock {lock_key}")
 
 
 
@@ -478,7 +434,7 @@ def second_check_task(self):
 
 
 
-@shared_task(bind=True)
+@shared_task(bind=True, time_limit=2000, )
 def daily_maintenance_task(self):
     lock_id = "daily_maintenance_lock"
     try:
@@ -490,32 +446,6 @@ def daily_maintenance_task(self):
     except Exception as e:
         logger.error(f"Daily maintenance failed: {str(e)}")
         raise self.retry(exc=e, countdown=300)
-
-# Old master task
-# @shared_task
-# def full_domain_availability_task():
-#     """
-#     Master workflow now with improved scheduling and error handling.
-#     """
-#     from celery import chain, group
-
-#     # Main sequential workflow
-#     workflow = chain(
-#         archive_old_domains_task.si(),
-#         transition_pending_to_deleted_task.si(),
-#         trigger_bulk_availability_check_task.si()
-#     )
-
-#     # Parallelize the periodic checks
-#     periodic_checks = group(
-#         second_check_task.si(),
-#         # Could add other maintenance tasks here
-#     )
-
-#     # Execute workflow then periodic checks
-#     (workflow | periodic_checks).apply_async()
-
-#     logger.info("Initiated full domain availability pipeline")
 
 
 
@@ -531,6 +461,8 @@ def process_pending_files(self):
             record.save()
         except Exception as e:
             logger.error(f"Auto-process failed {record.filename}: {str(e)}")
+
+
 
 # @shared_task
 # def process_pending_files():
@@ -588,3 +520,103 @@ def process_pending_files(self):
 #                 defaults={'processed': True}
 #             )
 #             logger.info(f"Marked {file.name} as processed.")
+
+
+
+
+# @shared_task
+# def archive_old_domains_task(ignore_result=True, time_limit=1800):
+#     """
+#     Bulk archives domains older than 90 days with improved:
+#     - Memory efficiency via chunking
+#     - Transaction safety
+#     - Batch operations
+#     - Error handling
+#     """
+#     ARCHIVAL_AGE_DAYS = 90
+#     ARCHIVE_BATCH_SIZE = 500  # Optimal for most DBs
+
+#     now = timezone.now()
+#     cutoff_date = (now - timedelta(days=ARCHIVAL_AGE_DAYS)).date()
+
+#     try:
+#         with transaction.atomic():
+#             # Get queryset iterator for memory efficiency
+#             old_domains = Name.objects.filter(
+#                 drop_date__lt=cutoff_date
+#             ).iterator(chunk_size=ARCHIVE_BATCH_SIZE)
+
+#             archived_count = 0
+#             current_batch = []
+
+#             for domain in old_domains:
+#                 current_batch.append(
+#                     ArchivedName(
+#                         domain=domain.domain,
+#                         extension=domain.extension,
+#                         drop_date=domain.drop_date,
+#                         drop_time=domain.drop_time,
+#                         domain_list=domain.domain_list,
+#                         status=domain.status,
+#                         last_checked=domain.last_checked,
+#                         created_at=domain.created_at
+#                     )
+#                 )
+#                 archived_count += 1
+
+#                 # Process in batches
+#                 if len(current_batch) >= ARCHIVE_BATCH_SIZE:
+#                     ArchivedName.objects.bulk_create(current_batch)
+#                     Name.objects.filter(
+#                         id__in=[d.id for d in current_batch]
+#                     ).delete()
+#                     current_batch = []
+
+#             # Process final partial batch
+#             if current_batch:
+#                 ArchivedName.objects.bulk_create(current_batch)
+#                 Name.objects.filter(
+#                     id__in=[d.id for d in current_batch]
+#                 ).delete()
+
+#             logger.info(
+#                 "Successfully archived %d domains older than %s",
+#                 archived_count,
+#                 cutoff_date
+#             )
+#             return archived_count
+
+#     except Exception as e:
+#         logger.error(
+#             "Archival failed for domains older than %s: %s",
+#             cutoff_date,
+#             str(e)
+#         )
+#         raise self.retry(exc=e)
+
+
+# Old master task
+# @shared_task
+# def full_domain_availability_task():
+#     """
+#     Master workflow now with improved scheduling and error handling.
+#     """
+#     from celery import chain, group
+
+#     # Main sequential workflow
+#     workflow = chain(
+#         archive_old_domains_task.si(),
+#         transition_pending_to_deleted_task.si(),
+#         trigger_bulk_availability_check_task.si()
+#     )
+
+#     # Parallelize the periodic checks
+#     periodic_checks = group(
+#         second_check_task.si(),
+#         # Could add other maintenance tasks here
+#     )
+
+#     # Execute workflow then periodic checks
+#     (workflow | periodic_checks).apply_async()
+
+#     logger.info("Initiated full domain availability pipeline")
