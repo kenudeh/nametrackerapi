@@ -5,7 +5,7 @@
     "buildCommand": "python manage.py collectstatic --noinput --clear"
   },
   "deploy": {
-    "preDeployCommand": "python manage.py migrate && python manage.py compilemessages"
+    "preDeployCommand": "python manage.py migrate && python manage.py"
   },
   "services": [
     {
