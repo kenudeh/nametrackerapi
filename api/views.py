@@ -4,6 +4,7 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.throttling import UserRateThrottle
 from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
+from .management.commands.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile
 from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
@@ -55,42 +56,138 @@ logger = logging.getLogger(__name__)
 #=================================== 
 # Admin file loader page view
 #====================================
-@staff_member_required
+
+@staff_member_required  # Restrict access to staff users
 def upload_file(request):
+    """
+    Handle file uploads:
+    - Enforces JSON-only uploads via extension and MIME type checks.
+    - Parses JSON and validates with validate_domain_data() BEFORE saving.
+    - Persists the file and a DB record if validation passes.
+    - Returns 202 to indicate the file is queued/awaiting processing (processing currently disabled).
+    """
+
+    # Only proceed if it's a POST and a file under the key "file" is present.
+    # The walrus operator assigns the file to 'uploaded_file' while checking existence.
     if request.method == "POST" and (uploaded_file := request.FILES.get("file")):
+
+        # Extract additional params sent with the form.
+        # 'drop_date' is required for my downstream logic; 'domain_list' is optional with a default.
         drop_date = request.POST.get("drop_date")
         domain_list = request.POST.get("domain_list", "pending_delete")
 
-        # Validate inputs
+        # ----------------------------
+        # Basic request-level validation
+        # ----------------------------
+
+        # 'drop_date' must be provided (format validation can be added in the future).
         if not drop_date:
             return HttpResponse("Drop date is required", status=400)
-        if uploaded_file.size > settings.MAX_UPLOAD_SIZE:
-            return HttpResponse(f"File exceeds maximum size of {settings.MAX_UPLOAD_SIZE} bytes", 
-                              status=413)
 
-        # Prepare file
+        # Enforce a maximum upload size using my settings.
+        # 'uploaded_file.size' is the size of the uploaded content in bytes.
+        if uploaded_file.size > settings.MAX_UPLOAD_SIZE:
+            return HttpResponse(
+                f"File exceeds maximum size of {settings.MAX_UPLOAD_SIZE}Mb",
+                status=413
+            )
+
+        # ---------------------------------------
+        # Enforce JSON-only uploads (extension + MIME)
+        # ---------------------------------------
+
+        # Normalize filename to lowercase and ensure it ends with '.json'.
+        # This blocks obviously-wrong extensions early (e.g., .csv, .zip).
+        if not uploaded_file.name.lower().endswith(".json"):
+            return HttpResponse("Only JSON files (.json) are allowed.", status=415)
+
+        # Checking MIME type when provided by the client.
+        # Some clients may omit or misreport it; we still parse JSON below to be certain.
+        allowed_mime_types = {
+            "application/json",
+            "text/json",
+            "application/x-json",
+        }
+        # If a content_type exists and isn't one of the allowed types, reject as unsupported.
+        if uploaded_file.content_type and uploaded_file.content_type not in allowed_mime_types:
+            return HttpResponse(
+                "Unsupported file type; expected application/json.",
+                status=415
+            )
+
+        # ---------------------------------------
+        # Parse JSON and validate BEFORE persisting
+        # ---------------------------------------
+
+        try:
+            # IMPORTANT: Reading the file pointer consumes the stream.
+            # We'll rewind the pointer before saving (executed in uploaded_file.seek(0) below).
+            data = json.load(uploaded_file)
+        except json.JSONDecodeError as e:
+            # Malformed JSON -> client error
+            return HttpResponse(f"Invalid JSON format: {str(e)}", status=400)
+
+        # Optional: Assert the top-level structure is a list, matching my validator's expectations.
+        # (My validator iterates with enumerate(data), but this makes the error clearer.)
+        if not isinstance(data, list):
+            return HttpResponse(
+                "Top-level JSON must be a list of domain items.",
+                status=400
+            )
+
+        try:
+            # Reusing existing centralized validation logic
+            # This enforces structure for domain_name/use_cases and all nested fields.
+            validate_domain_data(data)
+        except ValueError as e:
+            # Validation failure -> client error with specific message from the validator
+            return HttpResponse(f"Invalid domain data: {str(e)}", status=400)
+
+        # ---------------------------------------
+        # Prepare to persist the (now-validated) file
+        # ---------------------------------------
+
+        # Sanitize the filename to remove unsafe characters for filesystem storage.
         filename = get_valid_filename(uploaded_file.name)
+
+        # Construct the final file path inside the configured upload directory.
         file_path = Path(settings.UPLOAD_DIR) / filename
 
-        # Atomic transaction block
+        # After reading JSON, the file pointer is at EOF; resetting to the beginning so storage can read it again.
+        uploaded_file.seek(0)
+
+        # ---------------------------------------
+        # Atomic DB transaction for metadata writes
+        # ---------------------------------------
+        # Filesystem operations are not part of the DB transaction and won't roll back automatically.
+        # This block ensures:
+        #   - We check for duplicates before saving.
+        #   - We create the DB metadata only if the save succeeds.
         try:
             with transaction.atomic():
-                # Check for existing records
+                # Defensive duplicate checks:
+                # 1) Does a file with this name already exist on disk?
+                # 2) Does a DB record already exist with this filename?
                 if file_path.exists() or UploadedFile.objects.filter(filename=filename).exists():
                     return HttpResponse("File already exists", status=409)
-                
-                # Save file and create record
+
+                # Save the uploaded file to disk inside UPLOAD_DIR.
                 fs = FileSystemStorage(location=str(settings.UPLOAD_DIR))
                 fs.save(filename, uploaded_file)
+
+                # Creating a DB record marking this file as not yet processed.
                 UploadedFile.objects.create(
                     filename=filename,
-                    processed=False  # Explicitly mark as unprocessed
+                    processed=False
                 )
 
         except Exception as e:
+            # Any unexpected issues while saving the file or writing the DB record -> server error.
             return HttpResponse(f"File save failed: {str(e)}", status=500)
 
-        # # Process file with cleanup on failure
+        # ------------------------------------------------------------
+        # Optional: Immediate processing (INTENTIONALLY DISABLED)
+        # ------------------------------------------------------------
         # try:
         #     call_command(
         #         "load_json",
@@ -99,20 +196,25 @@ def upload_file(request):
         #         domain_list=domain_list
         #     )
         #     return HttpResponse("File processed successfully")
-        
+        #
         # except Exception as e:
-        #     # Cleanup if processing fails
+        #     # Cleanup if processing fails:
+        #     # 1) Remove the file from disk (ignore errors).
         #     if file_path.exists():
         #         try:
         #             os.unlink(file_path)
         #         except OSError:
         #             pass
+        #     # 2) Remove the DB record to avoid dangling metadata.
         #     UploadedFile.objects.filter(filename=filename).delete()
         #     return HttpResponse(f"Processing failed: {str(e)}", status=500)
 
-        # DON'T process immediately - just return success
+        # ------------------------------------------------------------
+        # Current behavior: don't process immediately; just acknowledge.
+        # ------------------------------------------------------------
         return HttpResponse("File uploaded successfully - awaiting processing", status=202)
 
+    # If it's not a POST or no file was included, render the upload form template.
     return render(request, "upload.html")
 
 
@@ -547,4 +649,71 @@ class PublicInquiryView(APIView):
 # @ensure_csrf_cookie
 # def get_csrf_token(request):
 #     return JsonResponse({"message": "CSRF cookie set"})
+
+
+
+
+
+
+
+
+# @staff_member_required
+# def upload_file(request):
+#     if request.method == "POST" and (uploaded_file := request.FILES.get("file")):
+#         drop_date = request.POST.get("drop_date")
+#         domain_list = request.POST.get("domain_list", "pending_delete")
+
+#         # Validate inputs
+#         if not drop_date:
+#             return HttpResponse("Drop date is required", status=400)
+#         if uploaded_file.size > settings.MAX_UPLOAD_SIZE:
+#             return HttpResponse(f"File exceeds maximum size of {settings.MAX_UPLOAD_SIZE} bytes", 
+#                               status=413)
+
+#         # Prepare file
+#         filename = get_valid_filename(uploaded_file.name)
+#         file_path = Path(settings.UPLOAD_DIR) / filename
+
+#         # Atomic transaction block
+#         try:
+#             with transaction.atomic():
+#                 # Check for existing records
+#                 if file_path.exists() or UploadedFile.objects.filter(filename=filename).exists():
+#                     return HttpResponse("File already exists", status=409)
+                
+#                 # Save file and create record
+#                 fs = FileSystemStorage(location=str(settings.UPLOAD_DIR))
+#                 fs.save(filename, uploaded_file)
+#                 UploadedFile.objects.create(
+#                     filename=filename,
+#                     processed=False  # Explicitly mark as unprocessed
+#                 )
+
+#         except Exception as e:
+#             return HttpResponse(f"File save failed: {str(e)}", status=500)
+
+#         # # Process file with cleanup on failure
+#         # try:
+#         #     call_command(
+#         #         "load_json",
+#         #         str(file_path),
+#         #         drop_date=drop_date,
+#         #         domain_list=domain_list
+#         #     )
+#         #     return HttpResponse("File processed successfully")
+        
+#         # except Exception as e:
+#         #     # Cleanup if processing fails
+#         #     if file_path.exists():
+#         #         try:
+#         #             os.unlink(file_path)
+#         #         except OSError:
+#         #             pass
+#         #     UploadedFile.objects.filter(filename=filename).delete()
+#         #     return HttpResponse(f"Processing failed: {str(e)}", status=500)
+
+#         # DON'T process immediately - just return success
+#         return HttpResponse("File uploaded successfully - awaiting processing", status=202)
+
+#     return render(request, "upload.html")
 
