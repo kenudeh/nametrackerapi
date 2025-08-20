@@ -56,10 +56,10 @@ SECURE_SSL_REDIRECT = IS_PRODUCTION  # This should only be True in production (F
 # ===== Shared Settings ===== 
 SECRET_KEY = os.getenv('SECRET_KEY')
 
-# Dynadot API credentials
-DYNADOT_API_KEY = os.getenv('DYNADOT_API_KEY')
-DYNADOT_API_SECRET = os.getenv('DYNADOT_API_SECRET')
-DYNADOT_BASE_URL = os.getenv('DYNADOT_BASE_URL')
+# Domain Availability Check API credentials
+RAPIDAPI_URL= os.getenv('RAPIDAPI_URL')
+RAPIDAPI_HOST = os.getenv('RAPIDAPI_HOST')
+RAPIDAPI_KEY = os.getenv('RAPIDAPI_KEY')
 
 
 # CSRF settings 
