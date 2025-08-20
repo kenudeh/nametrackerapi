@@ -13009,3 +13009,42 @@ WARNING 2025-08-15 22:19:54,991 log Forbidden: /api/domains/saved
 WARNING 2025-08-15 22:19:55,000 log Forbidden: /api/domains/acquired
 WARNING 2025-08-15 22:19:55,005 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
 WARNING 2025-08-15 22:19:55,005 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-19 12:55:17,290 log Forbidden: /api/domains/saved
+WARNING 2025-08-19 12:55:17,291 log Forbidden: /api/domains/acquired
+WARNING 2025-08-19 12:55:17,299 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-19 12:55:17,301 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-19 12:56:29,464 log Not Found: /admin/
+WARNING 2025-08-19 12:56:29,471 basehttp "GET /admin/ HTTP/1.1" 404 2540
+ERROR 2025-08-19 12:58:47,902 log Internal Server Error: /admin/upload-data/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 125, in upload_file
+    data = json.load(uploaded_file)
+           ^^^^
+NameError: name 'json' is not defined
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 126, in upload_file
+    except json.JSONDecodeError as e:
+           ^^^^
+NameError: name 'json' is not defined
+ERROR 2025-08-19 12:58:47,923 basehttp "POST /admin/upload-data/ HTTP/1.1" 500 97527
+WARNING 2025-08-19 13:00:50,997 log Bad Request: /admin/upload-data/
+WARNING 2025-08-19 13:00:50,997 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 68
+WARNING 2025-08-19 13:01:29,226 log Bad Request: /admin/upload-data/
+WARNING 2025-08-19 13:01:29,234 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 88
+WARNING 2025-08-19 13:02:16,520 log Conflict: /admin/upload-data/
+WARNING 2025-08-19 13:02:16,527 basehttp "POST /admin/upload-data/ HTTP/1.1" 409 19
