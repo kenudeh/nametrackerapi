@@ -9,6 +9,7 @@ from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay
 from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, NewsletterSerializer, PublicInquirySerializer
 from .permissions import IsManagerOrReadOnly
+from .pagination import StandardResultsSetPagination
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
@@ -583,8 +584,8 @@ class IdeaOfTheDayListView(generics.ListAPIView):
     queryset = IdeaOfTheDay.objects.select_related("use_case").order_by("-drop_date")
     serializer_class = IdeaOfTheDayListSerializer
     pagination_class = StandardResultsSetPagination
-    filter_backends = [DjangoFilterBackend, OrderingFilter]
-    filterset_fields = ["drop_date", "domain_list"]  # extend with category, etc.
+    filter_backends = [DjangoFilterBackend, filters.OrderingFilter]
+    filterset_fields = ["drop_date", "domain_list"]  # will be extended with category, etc.
     ordering_fields = ["drop_date"]
 
 

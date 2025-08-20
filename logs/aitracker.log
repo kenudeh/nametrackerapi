@@ -13048,3 +13048,27 @@ WARNING 2025-08-19 13:01:29,226 log Bad Request: /admin/upload-data/
 WARNING 2025-08-19 13:01:29,234 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 88
 WARNING 2025-08-19 13:02:16,520 log Conflict: /admin/upload-data/
 WARNING 2025-08-19 13:02:16,527 basehttp "POST /admin/upload-data/ HTTP/1.1" 409 19
+WARNING 2025-08-20 04:19:20,718 log Forbidden: /api/domains/saved
+WARNING 2025-08-20 04:19:20,719 log Forbidden: /api/domains/acquired
+WARNING 2025-08-20 04:19:20,721 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:20,736 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:23,153 log Forbidden: /api/domains/acquired
+WARNING 2025-08-20 04:19:23,158 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:23,244 log Forbidden: /api/domains/saved
+WARNING 2025-08-20 04:19:23,249 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:25,697 log Forbidden: /api/domains/saved
+WARNING 2025-08-20 04:19:25,704 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:25,767 log Forbidden: /api/domains/acquired
+WARNING 2025-08-20 04:19:25,776 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:30,001 log Forbidden: /api/domains/saved
+WARNING 2025-08-20 04:19:30,008 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:30,107 log Forbidden: /api/domains/acquired
+WARNING 2025-08-20 04:19:30,163 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-20 04:19:48,793 log Forbidden: /api/domains/saved
+WARNING 2025-08-20 04:19:48,799 log Forbidden: /api/domains/acquired
+WARNING 2025-08-20 04:19:48,811 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-20 04:19:48,813 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-20 04:21:06,290 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-20 04:21:06,314 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-20 04:22:47,444 log Forbidden: /api/idea-of-the-day/list
+WARNING 2025-08-20 04:22:47,456 basehttp "GET /api/idea-of-the-day/list HTTP/1.1" 403 26

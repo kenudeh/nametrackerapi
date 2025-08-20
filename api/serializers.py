@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Importing dj-rest default login serializer
 # from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import AppUser, Name, UseCase, UseCaseTag, UseCaseCategory, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
+from .models import AppUser, Name, UseCase, UseCaseTag, UseCaseCategory, IdeaOfTheDay, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
 import re
 
 
