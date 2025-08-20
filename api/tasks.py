@@ -21,6 +21,7 @@ from django.utils import timezone
 from itertools import islice
 from django.core.cache import cache
 
+from itertools import islice
 
 
 logger = logging.getLogger(__name__)
@@ -35,6 +36,16 @@ EXTENSION_CHECK_DELAYS = {
 BATCH_SIZE = 50  # Upper limit per batch
 BULK_CHUNK = 50
 
+
+# --- Helper for batching ---
+def batch(iterable, size):
+    it = iter(iterable)
+    while True:
+        chunk = list(islice(it, size))
+        if not chunk:
+            break
+        yield chunk
+        
 
 # --- Archive old domains with lock ---
 @shared_task(bind=True, name="archive_old_domains", time_limit=3600, ignore_result=True)
