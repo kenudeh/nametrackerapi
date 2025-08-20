@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 # Importing dj-rest default login serializer
 # from dj_rest_auth.serializers import LoginSerializer
 from rest_framework import serializers
-from .models import AppUser, Name, UseCase, UseCaseTag, UseCaseCategory, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
+from .models import AppUser, Name, UseCase, UseCaseTag, UseCaseCategory, IdeaOfTheDay, PlanModel, Subscription, NewsLetter, PublicInquiry, AcquiredName, SavedName
 import re
 
 
@@ -284,6 +284,22 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
 
     def get_saved(self, obj):
         return True  # Always True because it's from the saved names list
+
+
+
+
+
+# ============================================
+# Ideaoftheday List View Serializer
+# ============================================
+class IdeaOfTheDayListSerializer(serializers.ModelSerializer):
+    use_case = UseCaseSerializer(read_only=True)
+
+    class Meta:
+        model = IdeaOfTheDay
+        fields = ["id", "drop_date", "domain_list", "use_case"]
+
+
 
 
 
