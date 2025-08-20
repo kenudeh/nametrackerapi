@@ -6,8 +6,8 @@ from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
 from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
-from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile
-from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, NewsletterSerializer, PublicInquirySerializer
+from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, NewsletterSerializer, PublicInquirySerializer
 from .permissions import IsManagerOrReadOnly
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
@@ -524,6 +524,76 @@ class AcquiredNameView(APIView, DateRangePaginationMixin):
 
 
 
+#===================================
+# Idea of the day
+#====================================
+
+class IdeaOfTheDayView(APIView):
+    """
+    Return the two idea-of-the-day entries for a given date
+    (pending_delete and deleted).
+    Always returns predictable keys, with `null` if missing.
+    """
+
+    def get(self, request):
+        # Parse ?date=YYYY-MM-DD if provided, else use today
+        date_str = request.query_params.get("date")
+        if date_str:
+            try:
+                drop_date = timezone.datetime.strptime(date_str, "%Y-%m-%d").date()
+            except ValueError:
+                return Response({"error": "Invalid date format. Use YYYY-MM-DD"}, status=400)
+        else:
+            drop_date = timezone.now().date()
+
+        # Fetch ideas for this date
+        ideas_qs = IdeaOfTheDay.objects.filter(drop_date=drop_date).select_related("use_case")
+        ideas_by_type = {obj.domain_list: obj.use_case for obj in ideas_qs}
+
+        # Serialize only the use_case objects (lighter structure)
+        pending_delete_data = (
+            UseCaseSerializer(ideas_by_type.get("pending_delete")).data
+            if ideas_by_type.get("pending_delete")
+            else None
+        )
+        deleted_data = (
+            UseCaseSerializer(ideas_by_type.get("deleted")).data
+            if ideas_by_type.get("deleted")
+            else None
+        )
+
+        return Response({
+            "date": drop_date,
+            "pending_delete": pending_delete_data,
+            "deleted": deleted_data,
+        })
+
+
+
+
+
+#===================================
+# IdeaOfTheDay List View
+#====================================
+class IdeaOfTheDayListView(generics.ListAPIView):
+    """
+    Paginated, filterable list of all IdeaOfTheDay entries.
+    Useful for history, analytics, browsing.
+    """
+    queryset = IdeaOfTheDay.objects.select_related("use_case").order_by("-drop_date")
+    serializer_class = IdeaOfTheDayListSerializer
+    pagination_class = StandardResultsSetPagination
+    filter_backends = [DjangoFilterBackend, OrderingFilter]
+    filterset_fields = ["drop_date", "domain_list"]  # extend with category, etc.
+    ordering_fields = ["drop_date"]
+
+
+    
+
+
+#===================================
+# Idea Center
+#====================================
 
 
 #===================================

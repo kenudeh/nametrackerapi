@@ -19,6 +19,12 @@ urlpatterns = [
     path('domains/saved', views.SavedNameListView.as_view(), name='saved-names'),
     path('domains/acquired', views.AcquiredNameView.as_view(), name='saved-names'),
 
+    #Idea of the day
+    path('idea-of-the-day', views..as_view(), name='saved-names'),
+    path('idea-of-the-day/list', views..as_view(), name='saved-names'),
+
+    #Idea center
+
     #Public paths
     path('newsletter', views.NewsletterView.as_view(), name='newsletter'),
     path('public/support', views.PublicInquiryView.as_view(), name='public_support'),

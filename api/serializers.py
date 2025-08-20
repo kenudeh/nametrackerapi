@@ -287,6 +287,22 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
 
 
 
+
+
+# ============================================
+# Ideaoftheday List View Serializer
+# ============================================
+class IdeaOfTheDayListSerializer(serializers.ModelSerializer):
+    use_case = UseCaseSerializer(read_only=True)
+
+    class Meta:
+        model = IdeaOfTheDay
+        fields = ["id", "drop_date", "domain_list", "use_case"]
+
+
+
+
+
 # ============================================
 # Newsletter Serializer
 # ============================================
