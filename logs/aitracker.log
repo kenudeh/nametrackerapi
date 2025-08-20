@@ -13072,3 +13072,9 @@ WARNING 2025-08-20 04:21:06,290 log Forbidden: /api/idea-of-the-day
 WARNING 2025-08-20 04:21:06,314 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
 WARNING 2025-08-20 04:22:47,444 log Forbidden: /api/idea-of-the-day/list
 WARNING 2025-08-20 04:22:47,456 basehttp "GET /api/idea-of-the-day/list HTTP/1.1" 403 26
+WARNING 2025-08-20 04:49:15,712 log Forbidden: /api/domains/acquired
+WARNING 2025-08-20 04:49:15,720 log Forbidden: /api/domains/saved
+WARNING 2025-08-20 04:49:15,753 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-20 04:49:15,795 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-20 13:11:58,444 log Not Found: /admin/
+WARNING 2025-08-20 13:11:58,475 basehttp "GET /admin/ HTTP/1.1" 404 2540
