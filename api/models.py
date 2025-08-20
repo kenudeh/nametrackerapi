@@ -3,6 +3,7 @@ from django.utils.text import slugify
 from django.contrib.auth.models import User
 from .utils import *
 from django.utils import timezone
+from datetime import datetime, timezone as dt_timezone
 
 from django.contrib.postgres.fields import ArrayField
 from django.conf import settings
@@ -201,7 +202,7 @@ class Name(models.Model):
         if drop_time_value:
             # Combine date + time then mark it as UTC so comparisons against timezone.now() (UTC) are correct.
             naive_dt = datetime.combine(self.drop_date, drop_time_value)
-            self.drop_time = timezone.make_aware(naive_dt, timezone=timezone.utc)
+            self.drop_time = timezone.make_aware(naive_dt, timezone=dt_timezone.utc)
         else:
             self.drop_time = timezone.now()
 
