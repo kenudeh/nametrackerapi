@@ -7,7 +7,7 @@ from django.db.models import Q
 from django.db import transaction, models
 
 from .models import Name, ArchivedName, IdeaOfTheDay, UseCase, UploadedFile
-from .handlers.services import DynadotAPI
+from .handlers.services import RapidAPIBulkDomainAPI
 
 from pathlib import Path
 # from django.conf import settings
@@ -32,7 +32,7 @@ EXTENSION_CHECK_DELAYS = {
     '.ai': 12,
 }
 
-BATCH_SIZE = 50  # Upper limit per Dynadot batch
+BATCH_SIZE = 50  # Upper limit per batch
 BULK_CHUNK = 50
 
 
@@ -252,7 +252,7 @@ def check_domain_availability_subtask(self, domain_ids):
     - Handles API failures gracefully
     """
     now = timezone.now()
-    dynadot_api = DynadotAPI()
+    status_api = RapidAPIBulkDomainAPI()
     
     # Double-check eligibility (defensive programming)
     domains = get_eligible_check_domains().filter(id__in=domain_ids)
@@ -262,7 +262,7 @@ def check_domain_availability_subtask(self, domain_ids):
 
     domain_names = [d.domain for d in domains]
     try:
-        availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
+        availability_map = status_api.check_bulk_domain_availability(domain_names)
     except Exception as e:
         logger.error(f"API failed for batch {domain_ids}: {str(e)}")
         raise self.retry(exc=e)
@@ -309,16 +309,20 @@ def trigger_bulk_availability_check_task(self):
        - In 'deleted' list
        - With 'unverified' status
        - Past their extension-specific check time (drop_time + EXTENSION_CHECK_DELAYS)
-    2. Splits them into batches (respecting Dynadot's API limits)
-    3. Creates a chain of subtasks for processing
+    2. Splits them into batches (respecting API limits)
+    3. Dispatches subtasks for each batch with a staggered delay
+       -> Prevents overwhelming the provider API
+       -> Uses a 10s spacing (based on common API rate limit guidelines)
     """
-    lock_key = "dynadot_api_lock"
-    lock_timeout = 1800
+
+
+    lock_key = "status_api_lock"
+    lock_timeout = 1800  # Prevents concurrent runs of this task
 
     try:
-        # Attempt to acquire lock
+        # Attempt to acquire lock (only one instance of this task runs at a time)
         with cache.lock(lock_key, timeout=lock_timeout):
-            # Main task logic 
+            # Step 1: Identify domains eligible for availability checking
             eligible_domains = get_eligible_check_domains()
             eligible_count = eligible_domains.count()
 
@@ -326,34 +330,43 @@ def trigger_bulk_availability_check_task(self):
                 logger.info("No domains currently eligible for availability checks")
                 return
 
-            # Get just IDs for efficient batching
-            domain_ids = eligible_domains.values_list('id', flat=True)
+            # For efficiency, fetch only IDs instead of full objects
+            domain_ids = list(eligible_domains.values_list('id', flat=True))
+
             logger.info(
                 "Preparing %d domains for checking (extensions: %s)",
                 eligible_count,
-                ", ".join(eligible_domains.values_list('extension', flat=True).distinct())
+                ", ".join(
+                    eligible_domains.values_list('extension', flat=True).distinct()
+                )
             )
 
-            # Create batches respecting BATCH_SIZE constant
-            batches = [list(islice(domain_ids, i, i + BATCH_SIZE))
-                for i in range(0, eligible_count, BATCH_SIZE)]
+            # Step 2: Split into batches of BATCH_SIZE (50)
+            batches = [
+                domain_ids[i:i + BATCH_SIZE]
+                for i in range(0, eligible_count, BATCH_SIZE)
+            ]
 
-            # Build subtask chain
-            chain(
-                check_domain_availability_subtask.s(batch)
-                for batch in batches
-            ).apply_async()
+            # Step 3: Dispatch each batch as a subtask
+            # -> Space them out with countdown to avoid rate-limit violations
+            # -> 10s per batch means 6 requests per minute max
+            for i, batch in enumerate(batches):
+                check_domain_availability_subtask.apply_async(
+                    args=[batch],
+                    countdown=i * 10  # staggered dispatch
+                )
 
             logger.info(
-                "Dispatched %d batches (%d domains total) for availability checking",
+                "Dispatched %d batches (%d domains total) for availability checking "
+                "with 10s spacing between each batch",
                 len(batches),
                 eligible_count
             )
- 
+
     except Exception as e:
         logger.error(f"Failed to acquire lock or execute task: {str(e)}")
+        # Retry after 5 minutes if lock acquisition or main logic fails
         raise self.retry(exc=e, countdown=300)
-
 
 
 
@@ -363,15 +376,21 @@ def second_check_task(self):
     """
     Periodic recheck of domains in 'available' or 'unverified' status.
     Applies extension-specific check intervals and handles all states properly.
+    
+    Enhancements:
+    - Adds batching of domains (BATCH_SIZE = 50) to respect API request size limits.
+    - Adds 10s spacing between each batch request to prevent rate-limit violations.
     """
-    lock_key = "dynadot_second_check_lock"
-    lock_timeout = 1800
+
+    lock_key = "status_api_second_check_lock"
+    lock_timeout = 1800  # Prevents concurrent runs of this task
 
     try:
         with cache.lock(lock_key, timeout=lock_timeout):
             now = timezone.now()
-            dynadot_api = DynadotAPI()
+            status_api = RapidAPIBulkDomainAPI()
 
+            # Step 1: Select domains due for recheck
             domains = Name.objects.filter(
                 domain_list='deleted',
                 status__in=['available', 'unverified'],
@@ -393,26 +412,44 @@ def second_check_task(self):
                 logger.debug("No domains currently due for recheck")
                 return
 
+            # Step 2: Collect domains into batches
             domain_names = [d.domain for d in domains]
-            try:
-                availability_map = dynadot_api.check_bulk_domain_availability(domain_names)
-            except Exception as e:
-                logger.error(f"Recheck API failed: {str(e)}")
-                raise self.retry(exc=e)
+            domain_batches = [
+                domain_names[i:i + BATCH_SIZE]
+                for i in range(0, len(domain_names), BATCH_SIZE)
+            ]
 
+            availability_map = {}
+
+            # Step 3: Query API for each batch with 10s spacing
+            for i, batch in enumerate(domain_batches):
+                try:
+                    if i > 0:
+                        time.sleep(10)  # prevent burst requests, 10s spacing
+
+                    batch_result = status_api.check_bulk_domain_availability(batch)
+                    availability_map.update(batch_result)
+
+                except Exception as e:
+                    logger.error(f"Recheck API failed for batch {i}: {str(e)}")
+                    raise self.retry(exc=e)
+
+            # Step 4: Process availability results into DB updates
             updates = []
             for domain in domains:
                 availability = availability_map.get(domain.domain, 'unknown')
+                # Keep status unless explicitly marked as taken
                 new_status = 'taken' if availability == 'taken' else domain.status
                 updates.append((domain.id, new_status, now))
 
+            # Step 5: Bulk update DB in one go
             Name.objects.bulk_update(
                 [Name(id=id, status=status, last_checked=last_checked)
                  for id, status, last_checked in updates],
                 fields=['status', 'last_checked']
             )
 
-            # Detailed status reporting
+            # Step 6: Detailed logging/reporting
             status_counts = {
                 'previously_available': domains.filter(status='available').count(),
                 'previously_unverified': domains.filter(status='unverified').count(),
@@ -426,9 +463,12 @@ def second_check_task(self):
                 "Now: T:%(now_taken)d/A:%(still_available)d/U:%(still_unverified)d",
                 status_counts
             )
+
     except Exception as e:
         logger.error(f"Failed to acquire lock or execute second check task: {str(e)}")
+        # Retry after 5 minutes if lock acquisition or main logic fails
         raise self.retry(exc=e, countdown=300)
+
 
 
 
