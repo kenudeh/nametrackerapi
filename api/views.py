@@ -45,6 +45,8 @@ from django.db import transaction
 from django.http import JsonResponse
 import json
 from django.utils import timezone
+from datetime import datetime
+
 from celery import current_app
 
 import logging
@@ -58,7 +60,6 @@ logger = logging.getLogger(__name__)
 #=================================== 
 # Admin file loader page view
 #====================================
-
 @staff_member_required  # Restrict access to staff users
 def upload_file(request):
     """
@@ -75,16 +76,22 @@ def upload_file(request):
 
         # Extract additional params sent with the form.
         # 'drop_date' is required for my downstream logic; 'domain_list' is optional with a default.
-        drop_date = request.POST.get("drop_date")
+        raw_drop_date = request.POST.get("drop_date")
         domain_list = request.POST.get("domain_list", "pending_delete")
 
         # ----------------------------
         # Basic request-level validation
         # ----------------------------
 
-        # 'drop_date' must be provided (format validation can be added in the future).
-        if not drop_date:
+        # 'drop_date' must be provided and parsable into a valid date.
+        if not raw_drop_date:
             return HttpResponse("Drop date is required", status=400)
+
+        try:
+            # Normalize into a date object; enforce YYYY-MM-DD for consistency.
+            drop_date = datetime.strptime(raw_drop_date, "%Y-%m-%d").date()
+        except ValueError:
+            return HttpResponse("Drop date must be in YYYY-MM-DD format", status=400)
 
         # Enforce a maximum upload size using my settings.
         # 'uploaded_file.size' is the size of the uploaded content in bytes.
@@ -178,9 +185,12 @@ def upload_file(request):
                 fs.save(filename, uploaded_file)
 
                 # Creating a DB record marking this file as not yet processed.
+                # Add new fields: processed_at (null initially) and processing_method (manual for uploads).
                 UploadedFile.objects.create(
                     filename=filename,
-                    processed=False
+                    processed=False,
+                    drop_date=drop_date,
+                    domain_list=domain_list
                 )
 
         except Exception as e:
@@ -218,8 +228,6 @@ def upload_file(request):
 
     # If it's not a POST or no file was included, render the upload form template.
     return render(request, "upload.html")
-
-
 
 
 

@@ -526,14 +526,28 @@ class UploadedFile(models.Model):
     filename = models.CharField(max_length=50, unique=True)
     uploaded_at = models.DateTimeField(auto_now_add=True)
     processed = models.BooleanField(default=False)
-    processed_at = models.DateTimeField(null=True, blank=True)  # New field
-    processing_method = models.CharField(  # Track how file was processed
+    processed_at = models.DateTimeField(null=True, blank=True)
+    processing_method = models.CharField(
         max_length=20,
         choices=[('manual', 'Manual'), ('celery', 'Auto')],
         default='manual'
+    )
+    drop_date = models.DateField(default=timezone.now) 
+    domain_list = models.CharField(
+        max_length=50,
+        choices=[
+            ('pending_delete', 'Pending Delete'),
+            ('deleted', 'Deleted'),
+            ('marketplace', 'Marketplace'),
+            ('all_list', 'All List'),
+        ],
+        default='pending_delete'
     )
 
     class Meta:
         indexes = [
             models.Index(fields=['processed']),  # Faster lookups
         ]
+
+    def __str__(self):
+        return self.filename
