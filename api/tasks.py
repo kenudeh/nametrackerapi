@@ -90,7 +90,7 @@ def archive_old_domains_task(self):
 
 
 # --- Pending to deleted transition (daily lock, TLD-aware) ---
-@shared_task(bind=True, name="transition_pending_by_tld", time_limit=1200, soft_time_limit=1100, ignore_result=True)
+@shared_task(bind=True, time_limit=1200, soft_time_limit=1100, ignore_result=True)
 def transition_pending_to_deleted_task(self, **kwargs):
     """
     COMPLETE TLD-AWARE

@@ -13131,3 +13131,23 @@ Traceback (most recent call last):
                 ^^^^^^^^
 NameError: name 'datetime' is not defined
 ERROR 2025-08-21 06:47:34,322 basehttp "POST /admin/upload-data/ HTTP/1.1" 500 92555
+WARNING 2025-08-21 13:59:54,196 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 13:59:54,198 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 13:59:54,205 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 13:59:54,410 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:26,698 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:00:26,721 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:00:26,723 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:26,767 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:27,869 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:00:27,883 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:00:27,884 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:27,901 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:32:25,648 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:32:25,653 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:32:25,724 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 14:32:25,759 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 14:32:30,836 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:32:30,842 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:32:30,858 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:32:30,858 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
