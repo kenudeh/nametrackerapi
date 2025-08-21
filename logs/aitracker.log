@@ -13078,3 +13078,35 @@ WARNING 2025-08-20 04:49:15,753 basehttp "GET /api/domains/acquired?limit=10&ord
 WARNING 2025-08-20 04:49:15,795 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
 WARNING 2025-08-20 13:11:58,444 log Not Found: /admin/
 WARNING 2025-08-20 13:11:58,475 basehttp "GET /admin/ HTTP/1.1" 404 2540
+WARNING 2025-08-21 03:04:44,930 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:44,931 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:44,937 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:44,940 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:45,996 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:45,996 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:46,012 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:46,030 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:48,080 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:48,080 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:48,080 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:48,080 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:52,159 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:52,176 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:52,176 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:52,176 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:35,607 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:05:35,616 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:05:35,619 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:35,632 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:36,793 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:05:36,808 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:05:36,808 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:36,808 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:01,855 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:08:01,866 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:08:01,873 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:01,907 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:05,916 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:08:05,916 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:05,950 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:08:05,952 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26

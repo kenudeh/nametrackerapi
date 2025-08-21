@@ -89,26 +89,25 @@ def archive_old_domains_task(self):
 
 
 
-# --- Pending to deleted transition (daily lock) ---
+# --- Pending to deleted transition (daily lock, TLD-aware) ---
 @shared_task(bind=True, name="transition_pending_by_tld", time_limit=1200, soft_time_limit=1100, ignore_result=True)
 def transition_pending_to_deleted_task(self, **kwargs):
     """
-    COMPLETE TLD-AWARE VERSION
+    COMPLETE TLD-AWARE
     Transition domains from pending_delete to deleted status when their drop_time has passed.
     Now supports TLD-specific processing when 'tld' parameter is provided.
     
-    Key Changes:
+    Key Features:
     1. Added TLD filtering throughout all queries
     2. Improved lock key naming with TLD context
     3. Ensured consistent TLD handling in all sub-functions
-    4. Maintained all original functionality
+    4. Maintained all original functionality (without daily idea updates)
     
     Processing Flow:
     1. Acquire TLD-specific lock
     2. Filter domains by TLD (if specified)
     3. Process eligible domains in bulk chunks
-    4. Update IdeaOfTheDay records
-    5. Release lock
+    4. Release lock
     """
     
     # 1. PARAMETER HANDLING ===================================================
@@ -165,67 +164,92 @@ def transition_pending_to_deleted_task(self, **kwargs):
                 )
                 chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
 
-        def get_top_pending_idea():
-            """Get highest-scoring pending idea (with TLD filtering if specified)"""
-            qs = Name.objects.filter(
-                domain_list='pending_delete',
-                drop_date=current_date
-            ).exclude(score__isnull=True)
-            
-            if tld:
-                qs = qs.filter(domain__iendswith=f'.{tld}')
-                
-            return qs.order_by('-score').first()
-
-        def update_ideas(top_deleted, top_pending):
-            """Update IdeaOfTheDay records atomically"""
-            idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=current_date)
-            update_needed = False
-
-            if top_deleted and idea_obj.deleted_idea != top_deleted:
-                idea_obj.deleted_idea = top_deleted
-                update_needed = True
-                logger.debug(f"Set deleted_idea to {top_deleted.domain}")
-
-            if top_pending and idea_obj.pending_delete_idea != top_pending:
-                idea_obj.pending_delete_idea = top_pending
-                update_needed = True
-                logger.debug(f"Set pending_idea to {top_pending.domain}")
-
-            if update_needed:
-                idea_obj.save()
-
         # 6. MAIN PROCESSING LOGIC ===========================================
         ready_count = ready_qs.count()
         
         # Early return if no domains to process
         if ready_count == 0:
-            if top_pending := get_top_pending_idea():
-                idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=current_date)
-                idea_obj.pending_delete_idea = top_pending
-                idea_obj.save()
-                logger.info(f"Updated pending idea for {current_date}: {top_pending.domain}")
+            logger.info(f"No pending->deleted transitions for {'all TLDs' if not tld else tld} at {now}")
             return
 
         # Prepare data for processing
         all_ready_ids = ready_qs.values_list('id', flat=True)
-        top_deleted = ready_qs.first()
-        top_pending = get_top_pending_idea()
 
         # Execute updates in single transaction
         with transaction.atomic():
             process_bulk_transitions(all_ready_ids)
-            update_ideas(top_deleted, top_pending)
 
         # 7. FINAL LOGGING ===================================================
         logger.info(
-            f"Transitioned {ready_count} domains (top: {top_deleted.domain if top_deleted else 'none'}) at {now}"
+            f"Transitioned {ready_count} domains at {now}"
         )
         
     finally:
         # 8. CLEANUP ========================================================
         cache.delete(lock_key)  # Release lock regardless of success/failure
         logger.debug(f"Released lock {lock_key}")
+
+
+
+
+# --- Daily IdeaOfTheDay update task (with edge case handling) ---
+@shared_task(bind=True, name="update_idea_of_the_day", time_limit=600, soft_time_limit=550, ignore_result=True)
+def update_idea_of_the_day(self):
+    """
+    Updates the IdeaOfTheDay record once per day (scheduled at 00:00 UTC).
+    - deleted_idea = yesterday's top pending_delete (preferred) or deleted fallback
+    - pending_delete_idea = today's top pending_delete
+    """
+    current_date = timezone.now().date()
+    yesterday = current_date - timedelta(days=1)
+
+    # Step 1: Try yesterday's pending_delete (primary source)
+    top_deleted = (
+        Name.objects.filter(domain_list='pending_delete', drop_date=yesterday)
+        .exclude(score__isnull=True)
+        .order_by('-score')
+        .first()
+    )
+
+    # Step 2: Fallback to yesterday's deleted (in case transitions already ran)
+    if not top_deleted:
+        top_deleted = (
+            Name.objects.filter(domain_list='deleted', drop_date=yesterday)
+            .exclude(score__isnull=True)
+            .order_by('-score')
+            .first()
+        )
+
+    # Step 3: Today's top pending_delete
+    top_pending = (
+        Name.objects.filter(domain_list='pending_delete', drop_date=current_date)
+        .exclude(score__isnull=True)
+        .order_by('-score')
+        .first()
+    )
+
+    idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=current_date)
+    update_needed = False
+
+    if top_deleted and idea_obj.deleted_idea != top_deleted:
+        idea_obj.deleted_idea = top_deleted
+        update_needed = True
+        logger.debug(f"Set deleted_idea to {top_deleted.domain}")
+    elif not top_deleted:
+        logger.warning(f"No deleted_idea candidate found for {yesterday}")
+
+    if top_pending and idea_obj.pending_delete_idea != top_pending:
+        idea_obj.pending_delete_idea = top_pending
+        update_needed = True
+        logger.debug(f"Set pending_idea to {top_pending.domain}")
+    elif not top_pending:
+        logger.warning(f"No pending_idea candidate found for {current_date}")
+
+    if update_needed:
+        idea_obj.save()
+        logger.info(f"IdeaOfTheDay updated for {current_date}")
+    else:
+        logger.info(f"IdeaOfTheDay already up to date for {current_date}")
 
 
 
