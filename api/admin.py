@@ -245,7 +245,7 @@ def process_files_immediately(modeladmin, request, queryset):
 
 
 class UploadedFileAdmin(admin.ModelAdmin):
-    list_display = ('filename', 'processed', 'uploaded_at')
+    list_display = ('filename', 'processed', 'drop_date', 'domain_list', 'uploaded_at')
     actions = [process_files_immediately]   # This adds the action to the admin dropdown
     readonly_fields = ('processed_at',)
 

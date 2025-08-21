@@ -1,0 +1,266 @@
+[
+  {
+  "domain_name": "TravelDiary.io",
+  "score": 7,
+  "use_cases": [
+    {
+      "case_title": "Remote Team Retreat Organizer",
+      "description": "End-to-end platform for planning/documenting company retreats with budget tracking, itinerary sharing, and post-event memory books.",
+      "difficulty": "moderate",
+      "competition": "low",
+      "category": {
+        "name": "Travel & Hospitality"
+      },
+      "tag": [
+        {"name": "HR tools"},
+        {"name": "team-building"},
+        {"name": "event-planning"}
+      ],
+      "target_market": "remote companies, HR teams",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "Premium Travel Journal SaaS",
+      "description": "AI-assisted travel logging with automated route mapping, expense tracking, and photobook generation for luxury travelers.",
+      "difficulty": "hard",
+      "competition": "medium",
+      "category": {
+        "name": "Travel & Hospitality"
+      },
+      "tag": [
+        {"name": "luxury-travel"},
+        {"name": "AI-assistant"},
+        {"name": "memory-keeping"}
+      ],
+      "target_market": "affluent solo travelers, honeymooners",
+      "revenue_potential": "medium",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "DealDeck.io",
+  "score": 8,
+  "use_cases": [
+    {
+      "case_title": "Enterprise Sales Deal Hub",
+      "description": "All-in-one workspace for complex B2B deals with built-in redlining, approval workflows, and compliance tracking.",
+      "difficulty": "hard",
+      "competition": "medium",
+      "category": {
+        "name": "Business Intelligence"
+      },
+      "tag": [
+        {"name": "enterprise-sales"},
+        {"name": "contract-management"},
+        {"name": "document-automation"}
+      ],
+      "target_market": "enterprise sales teams, legal ops",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "VC Pitch Deck Automator",
+      "description": "Generates data-driven investor materials by pulling live metrics from accounting/CRM tools.",
+      "difficulty": "moderate",
+      "competition": "low",
+      "category": {
+        "name": "Finance"
+      },
+      "tag": [
+        {"name": "startup-tools"},
+        {"name": "fundraising"},
+        {"name": "data-visualization"}
+      ],
+      "target_market": "VC-backed startups",
+      "revenue_potential": "medium",
+      "order": 2
+    }
+  ]
+},
+
+{
+  "domain_name": "QuickRamp.io",
+  "score": 7,  
+  "use_cases": [
+    {
+      "case_title": "Enterprise Client Onboarding Automator",
+      "description": "End-to-end platform for complex B2B implementations with approval workflows, compliance tracking, and client-facing dashboards.",
+      "difficulty": "hard",
+      "competition": "medium",
+      "category": {
+        "name": "Customer Engagement & Support"
+      },
+      "tag": [
+        {"name": "implementation"},
+        {"name": "enterprise"},
+        {"name": "workflow-automation"}
+      ],
+      "target_market": "SaaS companies with high ARR",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "Employee Onboarding Compliance Tracker",
+      "description": "Automates documentation collection, training verification, and policy sign-offs for regulated industries.",
+      "difficulty": "moderate",
+      "competition": "low",
+      "category": {
+        "name": "HR & Workforce"
+      },
+      "tag": [
+        {"name": "compliance"},
+        {"name": "audit-trails"},
+        {"name": "L&D"}
+      ],
+      "target_market": "Healthcare/Fintech HR teams",
+      "revenue_potential": "medium",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "FundMate.io",
+  "score": 7,  
+  "use_cases": [
+    {
+      "case_title": "VC-Backed Startup Fundraising OS",
+      "description": "All-in-one platform for seed-stage startups to manage cap tables, investor updates, and SAFE note generation with audit trails.",
+      "difficulty": "hard",
+      "competition": "medium",
+      "category": {
+        "name": "Fintech"
+      },
+      "tag": [
+        {"name": "startup-tools"},
+        {"name": "compliance"},
+        {"name": "cap-table-management"}
+      ],
+      "target_market": "YC/Techstars startups, solo GPs",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "Angel Syndicate Fund Administrator",
+      "description": "Automates carry calculations, SPV formation, and investor reporting for micro-VCs and syndicate leads.",
+      "difficulty": "hard",
+      "competition": "low",
+      "category": {
+        "name": "Venture Capital & Investment"
+      },
+      "tag": [
+        {"name": "syndicates"},
+        {"name": "fund-admin"},
+        {"name": "SEC-compliance"}
+      ],
+      "target_market": "AngelList competitors, solo GPs",
+      "revenue_potential": "high",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "GrowthFeed.io",
+  "score": 8,  
+  "use_cases": [
+    {
+      "case_title": "Marketing & Advertising",
+      "description": "Predictive platform that identifies untapped growth channels by analyzing cross-company performance data and market shifts.",
+      "difficulty": "hard",
+      "competition": "low",
+      "category": {
+        "name": "AI, ML & Data Intelligence"
+      },
+      "tag": [
+        {"name": "predictive-analytics"},
+        {"name": "market-gaps"},
+        {"name": "first-party-data"}
+      ],
+      "target_market": "CROs at $50M+ ARR SaaS companies",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "PLG (Product-Led Growth) Optimization Suite",
+      "description": "Automatically surfaces friction points in product funnels and recommends high-impact fixes based on benchmarked data.",
+      "difficulty": "hard",
+      "competition": "medium",
+      "category": {
+        "name": "Analytics"
+      },
+      "tag": [
+        {"name": "product-analytics"},
+        {"name": "conversion-ops"},
+        {"name": "SaaS"}
+      ],
+      "target_market": "VP Product at PLG companies",
+      "revenue_potential": "high",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "PostKit.io",
+  "score": 6, 
+  "use_cases": [
+    {
+      "case_title": "Enterprise Social Media Workflow Engine",
+      "description": "Approval workflows, brand compliance checks, and multi-platform publishing for regulated industries (finance, healthcare).",
+      "difficulty": "moderate",
+      "competition": "medium",
+      "category": {
+        "name": "Marketing & Advertising"
+      },
+      "tag": [
+        {"name": "compliance"},
+        {"name": "enterprise"},
+        {"name": "workflow-automation"}
+      ],
+      "target_market": "regulated enterprise marketing teams",
+      "revenue_potential": "high",
+      "order": 1
+    },
+    {
+      "case_title": "Performance-Optimized Scheduler",
+      "description": "Algorithmically schedules posts based on historical engagement data and real-time platform throttling detection.",
+      "difficulty": "hard",
+      "competition": "low",
+      "category": {
+        "name": "Analytics"
+      },
+      "tag": [
+        {"name": "algorithmic-posting"},
+        {"name": "platform-APIs"},
+        {"name": "performance-tracking"}
+      ],
+      "target_market": "performance marketing agencies",
+      "revenue_potential": "medium",
+      "order": 2
+    }
+  ]
+},
+{
+  "domain_name": "StudyPad.io",
+  "score": 5,
+  "use_cases": [
+    {
+      "case_title": "Institutional Test Prep Platform",
+      "description": "White-labeled exam preparation system for universities and certification programs with analytics dashboards.",
+      "difficulty": "moderate",
+      "competition": "medium",
+      "category": {
+        "name": "Education & Learning"
+      },
+      "tag": [
+        {"name": "white-label"},
+        {"name": "institutional-sales"},
+        {"name": "certification-prep"}
+      ],
+      "target_market": "universities, professional certification bodies",
+      "revenue_potential": "medium",
+      "order": 1
+    }
+  ]
+}  
+  ]

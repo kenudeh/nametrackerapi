@@ -268,4 +268,3 @@ class Command(BaseCommand):
         except Exception as e:
             logger.exception(f"Error loading JSON file: {e}")
             raise CommandError(f"Error loading JSON file: {e}")
-
