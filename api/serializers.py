@@ -290,6 +290,58 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
 
 
 # ============================================
+# Ideas Serializer
+# ============================================
+
+class UseCaseListSerializer(serializers.ModelSerializer):
+    category = serializers.CharField(source="category.name", read_only=True)
+    domain_name = serializers.CharField(source="domain_name.name", read_only=True)
+    # You asked for no nesting; the only external lookup needed is Name.status:
+    domain_status = serializers.CharField(source="domain_name.status", read_only=True)
+
+    class Meta:
+        model = UseCase
+        fields = (
+            "case_title",
+            "slug",
+            "category",
+            "competition",
+            "difficulty",
+            "target_market",
+        )
+
+
+class UseCaseDetailSerializer(serializers.ModelSerializer):
+    category = serializers.CharField(source="category.name", read_only=True)
+    domain_name = serializers.CharField(source="domain_name.name", read_only=True)
+    domain_status = serializers.CharField(source="domain_name.status", read_only=True)
+    tags = serializers.SerializerMethodField()
+
+    def get_tags(self, obj):
+        # flat list of tag names (no nesting)
+        return list(obj.tag.values_list("name", flat=True))
+
+    class Meta:
+        model = UseCase
+        fields = (
+            "case_title",
+            "slug",
+            "description",
+            "category",
+            "competition",
+            "difficulty",
+            "target_market",
+            "revenue_potential",
+            "order",
+            "domain_name",
+            "domain_status",
+            "tags",
+            "created_at",
+            "updated_at",
+        )
+
+
+# ============================================
 # Ideaoftheday List View Serializer
 # ============================================
 class IdeaOfTheDayListSerializer(serializers.ModelSerializer):

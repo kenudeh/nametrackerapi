@@ -6,10 +6,12 @@ from .throttles import PostRequestThrottle
 from .authentication import ClerkJWTAuthentication
 from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
-from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay
-from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, NewsletterSerializer, PublicInquirySerializer
+from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay, UseCase
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer
 from .permissions import IsManagerOrReadOnly
-from .pagination import StandardResultsSetPagination
+from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
+from .filters import UseCaseFilter
+
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
@@ -53,8 +55,6 @@ import logging
 
 
 logger = logging.getLogger(__name__)
-
-
 
 
 #=================================== 
@@ -530,6 +530,102 @@ class AcquiredNameView(APIView, DateRangePaginationMixin):
         acquired_qs = self.filter_by_date_range(acquired_qs, request)
         return self.paginate(acquired_qs, request, AcquiredNameSerializer)
 
+
+
+
+#===================================
+# Ideas
+#====================================
+
+FEATURED_COUNT = 8
+FEATURED_CACHE_KEY = "ideas:featured:v1"   # bump suffix when logic changes
+FEATURED_TTL = 60 * 60 * 24               # 24 hours
+
+
+
+class UseCaseListView(generics.ListAPIView):
+    serializer_class = UseCaseListSerializer
+    pagination_class = IdeaPageNumberPagination
+
+    filter_backends = [
+        DjangoFilterBackend,
+        drf_filters.SearchFilter,
+        drf_filters.OrderingFilter,
+    ]
+    filterset_class = UseCaseFilter
+    search_fields = ["case_title", "category__name", "tag__name"]
+    ordering_fields = ["created_at", "case_title", "order"]
+    ordering = ["-created_at", "order"]  # default order: newest first, then your Meta.order
+
+    def get_queryset(self):
+        qs = (
+            UseCase.objects
+            .select_related("domain_name", "category")
+            .prefetch_related("tag")
+            .all()
+            .distinct()  # important when searching across M2M tags
+        )
+        return qs
+
+    def list(self, request: Request, *args, **kwargs):
+        """
+        Supports:
+          - Filtering via UseCaseFilter
+          - Search on case_title/category/tag
+          - Ordering via ?ordering=created_at or -created_at, case_title, order
+          - Pagination (PageNumber)
+          - last_n shortcut: ?last_n=10 to fetch the last 10 by created_at
+          - Featured: ?featured=true returns 8 random ideas (cached 24h)
+        """
+        featured = request.query_params.get("featured")
+        if featured and featured.lower() in ("1", "true", "yes"):
+            payload = cache.get(FEATURED_CACHE_KEY)
+            if payload is None:
+                # Build the base queryset (ignore other filters for a stable “featured” set)
+                base_qs = self.get_queryset()
+                # Random sample (simple approach). For very large tables, consider a better sampling strategy.
+                featured_qs = base_qs.order_by("?")[:FEATURED_COUNT]
+                serializer = self.get_serializer(featured_qs, many=True)
+                payload = serializer.data
+                cache.set(FEATURED_CACHE_KEY, payload, FEATURED_TTL)
+            return Response(payload)
+
+        # Regular filtered/searched/ordered list
+        queryset = self.filter_queryset(self.get_queryset())
+
+        # last_n (e.g., ?last_n=10) — “the last 10 ideas” by created_at
+        last_n = request.query_params.get("last_n")
+        if last_n:
+            try:
+                n = max(0, int(last_n))
+            except ValueError:
+                n = 0
+            if n > 0:
+                queryset = queryset.order_by("-created_at")[:n]
+                # When slicing, we should skip pagination to return exactly n
+                serializer = self.get_serializer(queryset, many=True)
+                return Response(serializer.data)
+
+        page = self.paginate_queryset(queryset)
+        if page is not None:
+            serializer = self.get_serializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+
+        serializer = self.get_serializer(queryset, many=True)
+        return Response(serializer.data)
+
+
+class UseCaseDetailView(generics.RetrieveAPIView):
+    queryset = (
+        UseCase.objects
+        .select_related("domain_name", "category")
+        .prefetch_related("tag")
+        .all()
+    )
+    serializer_class = UseCaseDetailSerializer
+    lookup_field = "slug"
+
+    
 
 
 
