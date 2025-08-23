@@ -12,6 +12,9 @@ from .permissions import IsManagerOrReadOnly
 from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
 from .filters import UseCaseFilter
 
+# Cache import
+from django.core.cache import cache
+
 from django.views.decorators.csrf import csrf_exempt
 from django.utils.decorators import method_decorator
 
@@ -544,9 +547,8 @@ class AcquiredNameView(APIView, DateRangePaginationMixin):
 #====================================
 
 FEATURED_COUNT = 8
-FEATURED_CACHE_KEY = "ideas:featured:v1"   # bump suffix when logic changes
+FEATURED_CACHE_KEY = "featured_usecases"
 FEATURED_TTL = 60 * 60 * 24               # 24 hours
-
 
 
 class UseCaseListView(generics.ListAPIView):
@@ -561,45 +563,41 @@ class UseCaseListView(generics.ListAPIView):
     filterset_class = UseCaseFilter
     search_fields = ["case_title", "category__name", "tag__name"]
     ordering_fields = ["created_at", "case_title", "order"]
-    ordering = ["-created_at", "order"]  # default order: newest first, then your Meta.order
+    ordering = ["-created_at", "order"]
 
     def get_queryset(self):
-        qs = (
+        return (
             UseCase.objects
             .select_related("domain_name", "category")
             .prefetch_related("tag")
             .all()
-            .distinct()  # important when searching across M2M tags
+            .distinct()
         )
-        return qs
 
     def list(self, request: Request, *args, **kwargs):
         """
         Supports:
           - Filtering via UseCaseFilter
           - Search on case_title/category/tag
-          - Ordering via ?ordering=created_at or -created_at, case_title, order
-          - Pagination (PageNumber)
-          - last_n shortcut: ?last_n=10 to fetch the last 10 by created_at
-          - Featured: ?featured=true returns 8 random ideas (cached 24h)
+          - Ordering (?ordering=created_at, -created_at, case_title, order)
+          - Pagination
+          - last_n (?last_n=10 → last 10 by created_at)
+          - Featured (?featured=true → 8 random cached items)
         """
         featured = request.query_params.get("featured")
         if featured and featured.lower() in ("1", "true", "yes"):
             payload = cache.get(FEATURED_CACHE_KEY)
             if payload is None:
-                # Build the base queryset (ignore other filters for a stable “featured” set)
                 base_qs = self.get_queryset()
-                # Random sample (simple approach). For very large tables, consider a better sampling strategy.
                 featured_qs = base_qs.order_by("?")[:FEATURED_COUNT]
                 serializer = self.get_serializer(featured_qs, many=True)
                 payload = serializer.data
                 cache.set(FEATURED_CACHE_KEY, payload, FEATURED_TTL)
             return Response(payload)
 
-        # Regular filtered/searched/ordered list
         queryset = self.filter_queryset(self.get_queryset())
 
-        # last_n (e.g., ?last_n=10) — “the last 10 ideas” by created_at
+        # last_n shortcut (still handled here instead of FilterSet)
         last_n = request.query_params.get("last_n")
         if last_n:
             try:
@@ -608,7 +606,6 @@ class UseCaseListView(generics.ListAPIView):
                 n = 0
             if n > 0:
                 queryset = queryset.order_by("-created_at")[:n]
-                # When slicing, we should skip pagination to return exactly n
                 serializer = self.get_serializer(queryset, many=True)
                 return Response(serializer.data)
 
@@ -621,6 +618,11 @@ class UseCaseListView(generics.ListAPIView):
         return Response(serializer.data)
 
 
+
+
+#===================================
+# Use case detail view
+#====================================
 class UseCaseDetailView(generics.RetrieveAPIView):
     queryset = (
         UseCase.objects
