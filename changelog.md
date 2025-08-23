@@ -23,6 +23,7 @@ All notable changes to this project will be documented in this file.
 
 ### Changed
 - Refactored transition_pending_delete_to_delted task to remove ideaOfTheDay logic
+- Removed the explicit name="transition_pending_by_tld" flag in the transition task. It causes a naming conflict between beat and worker
 
 ### Added
 - Created a new update_idea_of_the_day task to independently handle ideaoftheday assignment deterministically at midnight daily

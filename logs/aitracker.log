@@ -13151,3 +13151,53 @@ WARNING 2025-08-21 14:32:30,836 log Forbidden: /api/domains/saved
 WARNING 2025-08-21 14:32:30,842 log Forbidden: /api/domains/acquired
 WARNING 2025-08-21 14:32:30,858 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
 WARNING 2025-08-21 14:32:30,858 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+ERROR 2025-08-22 00:49:48,386 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+ERROR 2025-08-22 00:50:15,844 basehttp You're accessing the development server over HTTPS, but it only supports HTTP.
+WARNING 2025-08-22 00:50:59,605 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-22 00:50:59,609 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-22 06:42:52,732 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:42:52,738 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:42:53,775 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:42:53,779 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:42:55,819 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:42:55,825 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:42:59,857 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:42:59,860 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:50:05,008 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-22 06:50:05,016 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-22 06:50:06,293 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-22 06:50:06,303 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-22 06:50:08,649 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-22 06:50:08,655 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-22 06:50:13,359 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-22 06:50:13,372 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-22 06:50:19,986 log Forbidden: /api/domains/saved
+WARNING 2025-08-22 06:50:19,992 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-22 06:50:20,004 log Forbidden: /api/domains/acquired
+WARNING 2025-08-22 06:50:20,025 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-22 06:50:20,034 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-22 06:50:20,045 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-22 06:53:34,525 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:53:34,547 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:53:35,632 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:53:35,637 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:53:37,677 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:53:37,686 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:53:41,722 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:53:41,732 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:54:07,438 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:54:07,449 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:54:08,509 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:54:08,511 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:54:10,570 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:54:10,576 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:54:14,661 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:54:14,666 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:54:57,958 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:54:57,965 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:54:59,006 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:54:59,008 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:55:01,038 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:55:01,041 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346
+WARNING 2025-08-22 06:55:05,085 log Not Found: /api/ideas/uptime-performance-monitoring
+WARNING 2025-08-22 06:55:05,094 basehttp "GET /api/ideas/uptime-performance-monitoring HTTP/1.1" 404 6346

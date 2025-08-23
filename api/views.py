@@ -22,6 +22,12 @@ from django.db.models import Q
 from rest_framework import filters, generics, status # Filters import can be more explicitly done and avoid using filters. prefix by switching to "from rest_framework.filters import OrderingFilter, SearchFilter"
 from django_filters.rest_framework import DjangoFilterBackend
 
+# Alias import for filters
+from rest_framework import filters as drf_filters
+ 
+from rest_framework.request import Request
+
+
 # Admin-file loader view imports
 from django.contrib.admin.views.decorators import staff_member_required
 from django.core.files.storage import FileSystemStorage

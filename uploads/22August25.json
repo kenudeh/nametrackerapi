@@ -1,0 +1,482 @@
+[
+    {
+      "domain_name": "VitalCheck.ai",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Uptime & Performance Monitoring",
+          "description": "A SaaS that uses AI to monitor websites, APIs, and servers. It predicts potential failures before they happen and provides intelligent root cause analysis, moving beyond simple 'up/down' checks.",
+          "difficulty": "moderate",
+          "competition": "high",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "Monitoring"},
+            {"name": "AIOps"},
+            {"name": "Site Reliability"}
+          ],
+          "target_market": "SaaS companies, e-commerce stores, engineering teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Automated Health & Safety Compliance Checker",
+          "description": "An AI tool for businesses in regulated industries (e.g., construction, manufacturing) to continuously check and document compliance with health and safety protocols, reducing manual audits.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "Privacy, Compliance & Identity"
+          },
+          "tag": [
+            {"name": "RegTech"},
+            {"name": "Compliance"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Construction firms, manufacturers, compliance officers",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+            "case_title": "Telehealth Patient Vitals Monitoring",
+            "description": "A platform for healthcare providers to remotely monitor patient vital signs from IoT devices. The AI analyzes trends, flags anomalies, and alerts medical staff to potential health issues.",
+            "difficulty": "hard",
+            "competition": "medium",
+            "category": {
+              "name": "Health & Wellness"
+            },
+            "tag": [
+              {"name": "Health Tech"},
+              {"name": "IoT"},
+              {"name": "RPM"}
+            ],
+            "target_market": "Hospitals, clinics, home healthcare agencies",
+            "revenue_potential": "high",
+            "order": 3
+          }
+      ]
+    },
+    {
+      "domain_name": "UnlockSales.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Lead Scoring & Prioritization Tool",
+          "description": "A tool that integrates with a company's CRM and analyzes customer data to identify and score leads that are most likely to convert, allowing sales teams to focus their efforts effectively.",
+          "difficulty": "moderate",
+          "competition": "high",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "Sales Tech"},
+            {"name": "Lead Generation"},
+            {"name": "CRM"}
+          ],
+          "target_market": "SMBs, sales teams, marketing agencies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Sales Content Enablement Platform",
+          "description": "A centralized hub for sales teams to find the most effective content (case studies, presentations, proposals) for any stage of the sales cycle, with analytics on what content closes deals.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "Content & CMS"
+          },
+          "tag": [
+            {"name": "Sales Enablement"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "B2B companies, enterprise sales teams, marketing departments",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "VitalVision.ai",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI Quality Assurance for Manufacturing",
+          "description": "A platform that uses computer vision to monitor assembly lines. It visually inspects products in real-time to detect manufacturing defects, reducing waste and improving quality control.",
+          "difficulty": "moderate",
+          "competition": "medium",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Computer Vision"},
+            {"name": "Manufacturing"},
+            {"name": "QA"}
+          ],
+          "target_market": "Manufacturers, factory floor managers, quality assurance teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Predictive Business Intelligence Dashboard",
+          "description": "A BI tool that goes beyond historical data, using AI to forecast key metrics like sales, customer churn, and inventory needs. It provides actionable insights to help leadership make better decisions.",
+          "difficulty": "moderate",
+          "competition": "high",
+          "category": {
+            "name": "Business Intelligence"
+          },
+          "tag": [
+            {"name": "Forecasting"},
+            {"name": "Analytics"},
+            {"name": "Data Visualization"}
+          ],
+          "target_market": "Executives, data analysts, operations managers",
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "Construction Site Safety Monitoring",
+          "description": "An AI service that analyzes live video feeds from construction sites to automatically detect safety violations (e.g., lack of hard hats, entry into restricted zones) and alert site managers instantly.",
+          "difficulty": "hard",
+          "competition": "low",
+          "category": {
+            "name": "Construction & Architecture"
+          },
+          "tag": [
+            {"name": "Safety"},
+            {"name": "Computer Vision"},
+            {"name": "Compliance"}
+          ],
+          "target_market": "Large construction companies, site safety officers, insurance providers",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+    {
+        "domain_name": "SelfQuiz.co",
+        "score": 8,
+        "use_cases": [
+          {
+            "case_title": "Spaced Repetition Study Tool for Students",
+            "description": "A SaaS where students can create, import, and share digital flashcards and quizzes. The platform uses a spaced repetition algorithm to optimize study schedules for long-term retention.",
+            "difficulty": "moderate",
+            "competition": "medium",
+            "category": {
+              "name": "Education & Learning"
+            },
+            "tag": [
+              {"name": "EdTech"},
+              {"name": "Productivity"},
+              {"name": "AI"}
+            ],
+            "target_market": "University students, high school students, certification candidates",
+            "revenue_potential": "medium",
+            "order": 1
+          },
+          {
+            "case_title": "Employee Onboarding & Compliance Quizzing",
+            "description": "A platform for HR departments to build and automate the delivery of quizzes for new hire training, security protocols, and annual compliance certifications, with dashboards to track completion.",
+            "difficulty": "easy",
+            "competition": "medium",
+            "category": {
+              "name": "HR & Workforce"
+            },
+            "tag": [
+              {"name": "Compliance"},
+              {"name": "Corporate Training"},
+              {"name": "Automation"}
+            ],
+            "target_market": "HR teams, compliance officers, SMBs",
+            "revenue_potential": "medium",
+            "order": 2
+          },
+          {
+            "case_title": "Interactive Lead Generation Quizzes",
+            "description": "A tool for marketers to create and embed engaging quizzes on their websites. It captures lead information before showing the results and syncs directly with email marketing platforms.",
+            "difficulty": "easy",
+            "competition": "high",
+            "category": {
+              "name": "Marketing & Advertising"
+            },
+            "tag": [
+              {"name": "Lead Generation"},
+              {"name": "MarTech"}
+            ],
+            "target_market": "Marketing agencies, content creators, SaaS companies",
+            "revenue_potential": "low",
+            "order": 3
+          }
+        ]
+      },
+      {
+        "domain_name": "GreenTouch.io",
+        "score": 7,
+        "use_cases": [
+          {
+            "case_title": "Carbon Footprint Tracking for SMBs",
+            "description": "A simple subscription service that helps small-to-medium businesses track and manage their carbon footprint by connecting to utility bills and accounting software to automate data entry.",
+            "difficulty": "moderate",
+            "competition": "medium",
+            "category": {
+              "name": "Solar & Clean Energy"
+            },
+            "tag": [
+              {"name": "Sustainability"},
+              {"name": "Climate Tech"},
+              {"name": "ESG"}
+            ],
+            "target_market": "SMBs, eco-conscious brands, B-Corps",
+            "revenue_potential": "medium",
+            "order": 1
+          },
+          {
+            "case_title": "ESG Reporting Automation",
+            "description": "A compliance SaaS for enterprises that automates the collection of environmental, social, and governance data from various departments to streamline the creation of mandatory disclosure reports.",
+            "difficulty": "hard",
+            "competition": "medium",
+            "category": {
+              "name": "Privacy, Compliance & Identity"
+            },
+            "tag": [
+              {"name": "ESG"},
+              {"name": "RegTech"},
+              {"name": "Fintech"}
+            ],
+            "target_market": "Public companies, enterprise compliance officers, investment funds",
+            "revenue_potential": "high",
+            "order": 2
+          }
+        ]
+      },
+      
+    {
+        "domain_name": "ateca.co",
+        "score": 9,
+        "use_cases": [
+          {
+            "case_title": "Headless CMS for Enterprise",
+            "description": "A secure, API-first content management system for developers building scalable corporate websites and applications.",
+            "difficulty": "hard",
+            "competition": "high",
+            "category": {
+              "name": "Content & CMS"
+            },
+            "tag": [
+              {"name": "Developer Tools"},
+              {"name": "API-first"},
+              {"name": "Enterprise"}
+            ],
+            "target_market": "Mid-to-large enterprises, development agencies, tech companies",
+            "revenue_potential": "high",
+            "order": 1
+          },
+          {
+            "case_title": "Cybersecurity & Compliance Dashboard",
+            "description": "An integrated platform for businesses to monitor security threats, manage compliance frameworks (like SOC 2), and automate reporting.",
+            "difficulty": "moderate",
+            "competition": "medium",
+            "category": {
+              "name": "Security"
+            },
+            "tag": [
+              {"name": "Compliance"},
+              {"name": "Cybersecurity"},
+              {"name": "RegTech"}
+            ],
+            "target_market": "SaaS companies, fintech, healthcare tech",
+            "revenue_potential": "high",
+            "order": 2
+          }
+        ]
+      },
+      {
+        "domain_name": "NameLink.io",
+        "score": 8,
+        "use_cases": [
+          {
+            "case_title": "Professional 'Link-in-Bio' Service",
+            "description": "A premium link-in-bio tool focused on personal branding, offering custom domains, analytics, and CRM integrations.",
+            "difficulty": "easy",
+            "competition": "high",
+            "category": {
+              "name": "Social & Networking"
+            },
+            "tag": [
+              {"name": "Creator Economy"},
+              {"name": "Personal Branding"},
+              {"name": "Microsite"}
+            ],
+            "target_market": "Freelancers, consultants, content creators",
+            "revenue_potential": "medium",
+            "order": 1
+          },
+          {
+            "case_title": "Branded URL Shortener & Analytics",
+            "description": "A service for marketing teams to create, share, and track custom short links, providing deep analytics on engagement.",
+            "difficulty": "moderate",
+            "competition": "medium",
+            "category": {
+              "name": "Marketing & Advertising"
+            },
+            "tag": [
+              {"name": "MarTech"},
+              {"name": "Analytics"}
+            ],
+            "target_market": "Marketing teams, SaaS companies, digital agencies",
+            "revenue_potential": "medium",
+            "order": 2
+          }
+        ]
+      },
+      {
+        "domain_name": "MovingPro.io",
+        "score": 9,
+        "use_cases": [
+          {
+            "case_title": "All-in-One Software for Moving Companies",
+            "description": "A vertical SaaS platform for moving companies to manage their entire workflow: lead intake, quoting, scheduling, dispatch, and payment.",
+            "difficulty": "moderate",
+            "competition": "medium",
+            "category": {
+              "name": "Logistics & Supply Chain"
+            },
+            "tag": [
+              {"name": "Vertical SaaS"},
+              {"name": "CRM"},
+              {"name": "Field Service"}
+            ],
+            "target_market": "Moving companies, logistics providers, junk removal services",
+            "revenue_potential": "high",
+            "order": 1
+          }
+        ]
+      },
+      {
+        "domain_name": "AiTeammate.io",
+        "score": 9,
+        "use_cases": [
+          {
+            "case_title": "AI Meeting Assistant",
+            "description": "An AI agent that joins virtual meetings to transcribe, summarize, identify action items, and sync notes to the team's project tools.",
+            "difficulty": "moderate",
+            "competition": "high",
+            "category": {
+              "name": "AI, ML & Data Intelligence"
+            },
+            "tag": [
+              {"name": "Productivity"},
+              {"name": "Automation"},
+              {"name": "Remote Work"}
+            ],
+            "target_market": "Remote teams, project managers, consultants",
+            "revenue_potential": "high",
+            "order": 1
+          },
+          {
+            "case_title": "Autonomous AI Agent for Workflows",
+            "description": "A platform to build and deploy AI agents that handle recurring tasks like generating reports, triaging support tickets, or conducting research.",
+            "difficulty": "hard",
+            "competition": "medium",
+            "category": {
+              "name": "Developer Tools & Experience (DX)"
+            },
+            "tag": [
+              {"name": "AI Agent"},
+              {"name": "Automation"},
+              {"name": "Workflow"}
+            ],
+            "target_market": "Tech companies, operations teams, developers",
+            "revenue_potential": "high",
+            "order": 2
+          }
+        ]
+      },
+      {
+        "domain_name": "NanoBox.co",
+        "score": 7,
+        "use_cases": [
+          {
+            "case_title": "Environment Variable Management",
+            "description": "A secure vault or 'box' for development teams to store, sync, and manage their API keys and environment variables across projects.",
+            "difficulty": "moderate",
+            "competition": "medium (vs. Doppler, Vault)",
+            "category": {
+              "name": "Developer Tools & Experience (DX)"
+            },
+            "tag": [
+              {"name": "Security"},
+              {"name": "DevOps"},
+              {"name": "API"}
+            ],
+            "target_market": "Software developers, DevOps engineers, tech startups",
+            "revenue_potential": "high",
+            "order": 1
+          },
+          {
+            "case_title": "Lightweight Container Management",
+            "description": "A simplified dashboard for developers to manage and deploy containerized applications on a small scale without the complexity of Kubernetes.",
+            "difficulty": "hard",
+            "competition": "medium (vs. Docker Desktop, Portainer)",
+            "category": {
+              "name": "DevOps & Infrastructure"
+            },
+            "tag": [
+              {"name": "Containers"},
+              {"name": "Developer Tools"},
+              {"name": "Cloud"}
+            ],
+            "target_market": "Indie developers, small development teams, startups",
+            "revenue_potential": "medium",
+            "order": 2
+          }
+        ]
+      },
+      {
+        "domain_name": "SmartAuthor.co",
+        "score": 7,
+        "use_cases": [
+          {
+            "case_title": "AI Writing Assistant for Authors",
+            "description": "A tool like Grammarly but specifically trained for authors, focusing on narrative pacing, character voice consistency, and thematic analysis.",
+            "difficulty": "moderate",
+            "competition": "high (vs. ProWritingAid, Scrivener)",
+            "category": {
+              "name": "AI, ML & Data Intelligence"
+            },
+            "tag": [
+              {"name": "Creator Economy"},
+              {"name": "Vertical SaaS"},
+              {"name": "AI"}
+            ],
+            "target_market": "Fiction authors, non-fiction writers, professional editors",
+            "revenue_potential": "medium",
+            "order": 1
+          },
+          {
+            "case_title": "Author Platform & Sales Funnel Builder",
+            "description": "A no-code tool for authors to build their brand website, manage an email list, and sell books and courses directly to their readers.",
+            "difficulty": "easy",
+            "competition": "medium (vs. Gumroad, Kajabi)",
+            "category": {
+              "name": "Website & Graphic Design"
+            },
+            "tag": [
+              {"name": "No-Code"},
+              {"name": "Creator Economy"}
+            ],
+            "target_market": "Self-published authors, content creators, writing coaches",
+            "revenue_potential": "medium",
+            "order": 2
+          }
+        ]
+      }
+  ]
+
+
+
+
+
+
+
+  
+  
