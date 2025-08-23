@@ -7,8 +7,6 @@ from django.utils import timezone
 
 
 
-
-
 def process_file(file_record):
     """Shared processing logic"""
     file_path = Path(settings.UPLOAD_DIR) / file_record.filename
@@ -16,8 +14,8 @@ def process_file(file_record):
         call_command(
             "load_json",
             str(file_path),
-            "--drop_date", date.today().isoformat(),
-            "--domain_list", "pending_delete"
+            "--drop_date", str(file_record.drop_date),
+            "--domain_list", file_record.domain_list
         )
         file_record.processed = True
         file_record.processed_at = timezone.now()

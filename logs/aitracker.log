@@ -13078,3 +13078,76 @@ WARNING 2025-08-20 04:49:15,753 basehttp "GET /api/domains/acquired?limit=10&ord
 WARNING 2025-08-20 04:49:15,795 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
 WARNING 2025-08-20 13:11:58,444 log Not Found: /admin/
 WARNING 2025-08-20 13:11:58,475 basehttp "GET /admin/ HTTP/1.1" 404 2540
+WARNING 2025-08-21 03:04:44,930 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:44,931 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:44,937 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:44,940 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:45,996 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:45,996 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:46,012 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:46,030 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:48,080 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:48,080 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:48,080 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:48,080 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:52,159 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:04:52,176 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:04:52,176 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:04:52,176 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:35,607 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:05:35,616 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:05:35,619 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:35,632 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:36,793 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:05:36,808 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:05:36,808 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:05:36,808 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:01,855 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:08:01,866 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:08:01,873 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:01,907 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:05,916 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 03:08:05,916 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 03:08:05,950 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 03:08:05,952 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 06:39:51,334 log Not Found: /favicon.ico
+WARNING 2025-08-21 06:39:51,340 basehttp "GET /favicon.ico HTTP/1.1" 404 2555
+ERROR 2025-08-21 06:47:34,281 log Internal Server Error: /admin/upload-data/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 90, in upload_file
+    drop_date = datetime.strptime(raw_drop_date, "%Y-%m-%d").date()
+                ^^^^^^^^
+NameError: name 'datetime' is not defined
+ERROR 2025-08-21 06:47:34,322 basehttp "POST /admin/upload-data/ HTTP/1.1" 500 92555
+WARNING 2025-08-21 13:59:54,196 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 13:59:54,198 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 13:59:54,205 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 13:59:54,410 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:26,698 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:00:26,721 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:00:26,723 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:26,767 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:27,869 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:00:27,883 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:00:27,884 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:00:27,901 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:32:25,648 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:32:25,653 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:32:25,724 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 14:32:25,759 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-21 14:32:30,836 log Forbidden: /api/domains/saved
+WARNING 2025-08-21 14:32:30,842 log Forbidden: /api/domains/acquired
+WARNING 2025-08-21 14:32:30,858 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-21 14:32:30,858 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
