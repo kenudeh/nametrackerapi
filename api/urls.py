@@ -12,8 +12,7 @@ urlpatterns = [
     path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
     path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
     path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
-    # User profile
-    path('user/profile', views.UserProfileView.as_view(), name='user-profile'),
+
     # Toggling saved status
     path('names/<str:slug>/toggle-save', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),    # Full saved name list
     path('domains/saved', views.SavedNameListView.as_view(), name='saved-names'),
@@ -24,6 +23,11 @@ urlpatterns = [
     path('idea-of-the-day/list', views.IdeaOfTheDayListView.as_view(), name='idea-of-the-day-list'),
 
     #Idea center
+    path("ideas/list", views.UseCaseListView.as_view(), name="ideas-list"),
+    path("ideas/detail/<slug:slug>", views.UseCaseDetailView.as_view(), name="ideas-detail"),
+
+    # User profile
+    path('user/profile', views.UserProfileView.as_view(), name='user-profile'),
 
     #Public paths
     path('newsletter', views.NewsletterView.as_view(), name='newsletter'),

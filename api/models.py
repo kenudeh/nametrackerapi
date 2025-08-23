@@ -21,6 +21,8 @@ from django.dispatch import receiver
 from django.conf import settings
 import os
 
+# For postgre-specific check
+from django.contrib.postgres.indexes import GinIndex
 
 
 
@@ -309,6 +311,15 @@ class UseCase(models.Model):
             ('domain_name', 'order'),   # Prevent two use cases with same order for a domain
             ('domain_name', 'slug')     # Prevent duplicate slugs per domain
         )
+        indexes = [
+            models.Index(fields=['slug']),  # fast lookup in detail view
+            models.Index(fields=['created_at']),
+            models.Index(fields=['competition']),
+            models.Index(fields=['difficulty']),
+            models.Index(fields=['category']),
+            models.Index(fields=['target_market']),
+            GinIndex(fields=['target_market'], name='target_market_gin'),  # exclusive to Postgres
+        ]
 
 
     def save(self, *args, **kwargs):
