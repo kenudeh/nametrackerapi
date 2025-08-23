@@ -295,9 +295,8 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
 
 class UseCaseListSerializer(serializers.ModelSerializer):
     category = serializers.CharField(source="category.name", read_only=True)
-    domain_name = serializers.CharField(source="domain_name.name", read_only=True)
-    # You asked for no nesting; the only external lookup needed is Name.status:
-    domain_status = serializers.CharField(source="domain_name.status", read_only=True)
+    # domain_name = serializers.CharField(source="domain_name.name", read_only=True)
+    # domain_status = serializers.CharField(source="domain_name.status", read_only=True)
 
     class Meta:
         model = UseCase

@@ -1,7 +1,7 @@
 from django_filters import rest_framework as filters
 from .models import Name, UseCase
 from django.utils.dateparse import parse_date
-
+import django_filters.rest_framework as filters
 from rest_framework.filters import BaseFilterBackend
 from django.db.models import Q
 
@@ -33,55 +33,41 @@ class NameFilter(filters.FilterSet):
 
 
 
-class UseCaseFilter(BaseFilterBackend):
-    """
-    Custom filter backend that mimics the old django_filters.FilterSet functionality.
-    """
+class UseCaseFilter(filters.FilterSet):
+    # exact matches
+    competition = filters.CharFilter(field_name="competition", lookup_expr="iexact")
+    difficulty  = filters.CharFilter(field_name="difficulty", lookup_expr="iexact")
+    target_market = filters.CharFilter(field_name="target_market", lookup_expr="icontains")
 
-    def filter_queryset(self, request, queryset, view):
-        params = request.query_params
+    # category by id or name
+    category = filters.NumberFilter(field_name="category_id")
+    category_name = filters.CharFilter(field_name="category__name", lookup_expr="iexact")
 
-        # exact matches
-        competition = params.get("competition")
-        if competition:
-            queryset = queryset.filter(competition__iexact=competition)
+    # created_at range
+    created_at_after = filters.IsoDateTimeFilter(field_name="created_at", lookup_expr="gte")
+    created_at_before = filters.IsoDateTimeFilter(field_name="created_at", lookup_expr="lte")
 
-        difficulty = params.get("difficulty")
-        if difficulty:
-            queryset = queryset.filter(difficulty__iexact=difficulty)
+    class Meta:
+        model = UseCase
+        fields = [
+            "competition",
+            "difficulty",
+            "category",
+            "category_name",
+            "target_market",
+            "created_at_after",
+            "created_at_before",
+        ]
 
-        target_market = params.get("target_market")
-        if target_market:
-            queryset = queryset.filter(target_market__icontains=target_market)
-
-        # category by id or name
-        category = params.get("category")
-        if category:
-            queryset = queryset.filter(category_id=category)
-
-        category_name = params.get("category_name")
-        if category_name:
-            queryset = queryset.filter(category__name__iexact=category_name)
-
-        # created_at range
-        created_at_after = params.get("created_at_after")
-        if created_at_after:
-            queryset = queryset.filter(created_at__gte=created_at_after)
-
-        created_at_before = params.get("created_at_before")
-        if created_at_before:
-            queryset = queryset.filter(created_at__lte=created_at_before)
-
-        # last_n shortcut
-        last_n = params.get("last_n")
-        if last_n:
-            try:
-                n = int(last_n)
-                if n > 0:
-                    queryset = queryset.order_by("-created_at")[:n]
-            except (TypeError, ValueError):
-                pass
-
+    @staticmethod
+    def last_n(queryset, value):
+        try:
+            n = int(value)
+            if n > 0:
+                # “last N by created_at” (newest first)
+                return queryset.order_by("-created_at")[:n]
+        except (TypeError, ValueError):
+            pass
         return queryset
 
 #We’ll wire last_n in the view since it’s a convenience shortcut.
