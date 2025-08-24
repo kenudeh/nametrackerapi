@@ -1,0 +1,447 @@
+[
+    {
+      "domain_name": "TradeMiner.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI Trading Signal & Pattern Recognition",
+          "description": "An AI platform that 'mines' market data to identify profitable trading patterns and provides actionable signals to active investors.",
+          "difficulty": "moderate",
+          "competition": "high (vs. TrendSpider, Trade Ideas)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Trading"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Retail traders, investment analysts, financial firms",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Crypto On-Chain Data Miner",
+          "description": "A tool that 'mines' public blockchain data to uncover insights about whale movements, token accumulation, and market sentiment.",
+          "difficulty": "hard",
+          "competition": "high (vs. Nansen, Glassnode)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Crypto"},
+            {"name": "Data Infrastructure"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Crypto analysts, DeFi users, investment funds",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "TrustPurse.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Shared Budgeting App for Partners & Families",
+          "description": "A digital 'purse' that helps partners or families manage shared expenses, set savings goals, and budget collaboratively in a trusted environment.",
+          "difficulty": "easy",
+          "competition": "high (vs. YNAB, Monarch Money)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Personal Finance"},
+            {"name": "Budgeting"},
+            {"name": "Mobile App"}
+          ],
+          "target_market": "Couples, families, individuals",
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "MarketSurge.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "E-commerce Trend Spotting Platform",
+          "description": "A SaaS that analyzes social media and online retail data to identify 'surging' product trends for e-commerce sellers.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Jungle Scout, Helium 10)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "Trend Analysis"},
+            {"name": "Analytics"},
+            {"name": "Market Research"}
+          ],
+          "target_market": "E-commerce store owners, Amazon sellers, D2C brands",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Financial Market Anomaly Detection",
+          "description": "A tool that monitors financial markets and news feeds to detect unusual activity or 'surges,' alerting traders to potential opportunities.",
+          "difficulty": "hard",
+          "competition": "high (vs. Bloomberg Terminal, Refinitiv Eikon)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Trading"},
+            {"name": "Analytics"},
+            {"name": "Alerts"}
+          ],
+          "target_market": "Retail traders, hedge funds, financial analysts",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "FirstBid.io",
+      "score": 6,
+      "use_cases": [
+        {
+          "case_title": "Silent Auction Software for Non-Profits",
+          "description": "A simple platform for charities and non-profits to manage and run silent auctions during fundraising events online or in-person.",
+          "difficulty": "easy",
+          "competition": "medium (vs. 32auctions, Accelevents)",
+          "category": {
+            "name": "Non-Profit & Community"
+          },
+          "tag": [
+            {"name": "Events"},
+            {"name": "Fundraising"},
+            {"name": "Vertical SaaS"}
+          ],
+          "target_market": "Non-profits, charities, schools",
+          "revenue_potential": "low",
+          "order": 1
+        },
+        {
+          "case_title": "Bidding & Proposal Tool for Contractors",
+          "description": "A tool for small contractors to find opportunities, manage the bidding process, and create professional proposals for projects.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Procore, AccuBuild)",
+          "category": {
+            "name": "Construction & Architecture"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Proposal Software"}
+          ],
+          "target_market": "Small contractors, tradespeople, construction firms",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "ProfitRoom.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "E-commerce Profit Analytics Dashboard",
+          "description": "A dashboard that goes beyond revenue, helping e-commerce owners track and optimize for true profitability by analyzing COGS, ad spend, and fees.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Lifetimely, BeProfit, Triple Whale)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "Analytics"},
+            {"name": "BI"},
+            {"name": "Fintech"}
+          ],
+          "target_market": "E-commerce store owners, D2C brands, marketing agencies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Trading & Investment Community Platform",
+          "description": "A subscription-based 'room' where active traders can access exclusive analytics, share insights, and use proprietary data tools.",
+          "difficulty": "hard",
+          "competition": "high (vs. TradingView, StockTwits)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Community"},
+            {"name": "Trading"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Retail traders, investment groups, financial analysts",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "IncidentBot.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "DevOps Incident Response Automation",
+          "description": "A 'bot' that automates incident response by creating Slack channels, pulling in relevant logs, and paging on-call engineers when an issue is detected.",
+          "difficulty": "moderate",
+          "competition": "high (vs. PagerDuty, Opsgenie, Blameless)",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "Automation"},
+            {"name": "Site Reliability"},
+            {"name": "ChatOps"}
+          ],
+          "target_market": "DevOps teams, site reliability engineers, SaaS companies",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+        {
+      "domain_name": "FairToken.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Fair Launch Platform for Crypto Tokens",
+          "description": "A platform helping Web3 projects conduct initial token sales in a way that is transparent and bot-resistant, ensuring a 'fair launch' for the community.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Coinfactory, Unicrypt)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Web3"},
+            {"name": "Launchpad"},
+            {"name": "DeFi"}
+          ],
+          "target_market": "Web3 founders, crypto projects, DAOs",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Tokenomics & Distribution Analyzer",
+          "description": "A tool that analyzes a cryptocurrency's model and wallet distribution to generate a 'fairness score' for investors and researchers.",
+          "difficulty": "moderate",
+          "competition": "medium (emerging market)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Analytics"},
+            {"name": "Crypto"},
+            {"name": "Tokenomics"}
+          ],
+          "target_market": "Crypto analysts, retail investors, VCs",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "TrueShift.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Employee Scheduling & Shift Management",
+          "description": "A platform for businesses with hourly workers to accurately manage schedules, handle shift swaps, and ensure proper coverage.",
+          "difficulty": "moderate",
+          "competition": "high (vs. When I Work, Homebase, 7shifts)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "Scheduling"},
+            {"name": "Vertical SaaS"},
+            {"name": "HR Tech"}
+          ],
+          "target_market": "Restaurants, retail stores, healthcare clinics",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Data Migration & Transformation Service",
+          "description": "A SaaS that helps companies reliably ('True') 'shift' their data from legacy systems to modern cloud platforms with validation and accuracy checks.",
+          "difficulty": "hard",
+          "competition": "medium (vs. enterprise ETL tools)",
+          "category": {
+            "name": "Data Infrastructure"
+          },
+          "tag": [
+            {"name": "ETL"},
+            {"name": "Data Migration"},
+            {"name": "Developer Tools"}
+          ],
+          "target_market": "Enterprise IT departments, data engineers, consultants",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "BrainSync.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Team Knowledge & Alignment Hub",
+          "description": "A platform combining a wiki, documents, and project updates to keep teams 'in sync' on goals and knowledge, reducing meetings.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Notion, Slite, Coda)",
+          "category": {
+            "name": "Communication & Collaboration"
+          },
+          "tag": [
+            {"name": "Knowledge Management"},
+            {"name": "Remote Work"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "Remote teams, startups, product teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Collaborative Research & Note-Taking App",
+          "description": "A tool for teams to capture research, share notes, and 'sync' their findings into a connected 'second brain' for projects.",
+          "difficulty": "easy",
+          "competition": "medium (vs. Obsidian, Roam Research for individuals)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Note-taking"},
+            {"name": "Collaboration"},
+            {"name": "Research"}
+          ],
+          "target_market": "Research teams, students, consulting firms",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "BitKit.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Developer Toolkit for API Integrations",
+          "description": "A 'kit' of pre-built components, SDKs, and tools for developers to rapidly integrate various third-party APIs into their applications.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. specific SDKs, Postman features)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "API"},
+            {"name": "SDK"},
+            {"name": "Developer Tools"}
+          ],
+          "target_market": "Software developers, SaaS companies, tech startups",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "CLI (Command-Line Interface) Toolchain",
+          "description": "A subscription-based 'kit' of essential, premium command-line tools designed to improve developer productivity and workflow automation.",
+          "difficulty": "easy",
+          "competition": "low (vs. free open-source tools)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "CLI"},
+            {"name": "Automation"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "DevOps engineers, backend developers",
+          "revenue_potential": "low",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "naha.io",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "API-First Headless CMS",
+          "description": "A fast, flexible, and developer-centric headless Content Management System for building modern websites and applications.",
+          "difficulty": "hard",
+          "competition": "high (vs. Contentful, Strapi, Sanity)",
+          "category": {
+            "name": "Content & CMS"
+          },
+          "tag": [
+            {"name": "API-first"},
+            {"name": "Developer Tools"},
+            {"name": "Headless CMS"}
+          ],
+          "target_market": "Developers, digital agencies, tech companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Minimalist Team Communication Platform",
+          "description": "An elegant and minimalist real-time communication tool for teams, focused on reducing noise and promoting focused conversation.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Slack, Microsoft Teams, Twist)",
+          "category": {
+            "name": "Communication & Collaboration"
+          },
+          "tag": [
+            {"name": "Team Chat"},
+            {"name": "Remote Work"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "Startups, remote teams, design agencies",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "resol.co",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Incident Management & Resolution Platform",
+          "description": "A modern platform for DevOps and SRE teams to track, manage, and 'resolve' production incidents with speed and efficiency.",
+          "difficulty": "moderate",
+          "competition": "high (vs. PagerDuty, Opsgenie, Blameless)",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "Incident Management"},
+            {"name": "Site Reliability"},
+            {"name": "Automation"}
+          ],
+          "target_market": "SRE teams, DevOps engineers, SaaS companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Customer Support Ticket Resolution",
+          "description": "A streamlined helpdesk software for support teams that is hyper-focused on rapidly 'resolving' customer tickets and improving key metrics.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Zendesk, Intercom, Help Scout)",
+          "category": {
+            "name": "Customer Engagement & Support"
+          },
+          "tag": [
+            {"name": "Helpdesk"},
+            {"name": "Customer Support"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "Customer support teams, SMBs, SaaS companies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    }
+  ]

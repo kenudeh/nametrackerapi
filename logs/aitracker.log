@@ -15207,3 +15207,99 @@ WARNING 2025-08-23 14:03:04,397 basehttp "GET /api/ideas/list?featured=true HTTP
 WARNING 2025-08-23 14:04:18,003 log Forbidden: /api/ideas/list
 WARNING 2025-08-23 14:04:18,010 log Forbidden: /api/ideas/list
 WARNING 2025-08-23 14:04:18,013 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-08-23 14:04:18,034 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-08-24 13:37:26,174 log Forbidden: /api/domains/saved
+WARNING 2025-08-24 13:37:26,193 log Forbidden: /api/domains/acquired
+WARNING 2025-08-24 13:37:26,204 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:26,224 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-24 13:37:26,239 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:26,259 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:27,305 log Forbidden: /api/domains/saved
+WARNING 2025-08-24 13:37:27,351 log Forbidden: /api/domains/acquired
+WARNING 2025-08-24 13:37:27,358 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:27,385 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-24 13:37:27,406 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:27,422 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:29,462 log Forbidden: /api/domains/saved
+WARNING 2025-08-24 13:37:29,505 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-24 13:37:29,509 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:29,532 log Forbidden: /api/domains/acquired
+WARNING 2025-08-24 13:37:29,552 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:29,570 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:34,795 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-24 13:37:34,817 log Forbidden: /api/domains/acquired
+WARNING 2025-08-24 13:37:34,826 log Forbidden: /api/domains/saved
+WARNING 2025-08-24 13:37:34,833 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:34,868 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:37:34,907 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-24 13:38:12,422 log Forbidden: /api/domains/saved
+WARNING 2025-08-24 13:38:12,560 log Forbidden: /api/domains/acquired
+WARNING 2025-08-24 13:38:12,659 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-24 13:38:12,664 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-24 13:38:12,681 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-24 13:38:12,700 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-24 13:39:44,345 log Not Found: /api/ideas/ai-sales-pitch-generator
+WARNING 2025-08-24 13:39:44,348 basehttp "GET /api/ideas/ai-sales-pitch-generator HTTP/1.1" 404 6885
+WARNING 2025-08-24 13:39:45,425 log Not Found: /api/ideas/ai-sales-pitch-generator
+WARNING 2025-08-24 13:39:45,440 basehttp "GET /api/ideas/ai-sales-pitch-generator HTTP/1.1" 404 6885
+WARNING 2025-08-24 13:39:47,526 log Not Found: /api/ideas/ai-sales-pitch-generator
+WARNING 2025-08-24 13:39:47,528 basehttp "GET /api/ideas/ai-sales-pitch-generator HTTP/1.1" 404 6885
+WARNING 2025-08-24 13:39:51,581 log Not Found: /api/ideas/ai-sales-pitch-generator
+WARNING 2025-08-24 13:39:51,584 basehttp "GET /api/ideas/ai-sales-pitch-generator HTTP/1.1" 404 6885
+WARNING 2025-08-24 13:41:31,543 log Not Found: /api/ideas/ai-sales-pitch-generator
+WARNING 2025-08-24 13:41:31,582 basehttp "GET /api/ideas/ai-sales-pitch-generator HTTP/1.1" 404 6885
+WARNING 2025-08-24 13:41:33,525 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:41:33,543 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 13:41:39,252 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:41:39,256 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 13:41:44,114 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:41:44,158 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 13:45:21,967 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:45:22,043 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-24 13:45:43,157 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:45:43,219 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-24 13:51:06,286 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:51:06,291 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-24 13:58:28,427 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:58:30,999 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 13:58:31,284 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-24 14:00:03,072 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:03,082 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:03,088 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:03,094 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:07,190 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:07,206 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:07,218 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:07,225 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:11,895 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:11,906 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:11,914 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:11,928 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:18,921 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:18,929 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:18,932 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:18,938 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-24 14:00:26,881 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:26,885 log Forbidden: /api/ideas/list
+WARNING 2025-08-24 14:00:26,888 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-08-24 14:00:26,896 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-08-24 14:29:39,877 log Forbidden: /api/ideas/detail/medical-documentation-clinical-note-automation
+WARNING 2025-08-24 14:29:39,888 basehttp "GET /api/ideas/detail/medical-documentation-clinical-note-automation HTTP/1.1" 403 26
+WARNING 2025-08-24 14:29:41,731 log Forbidden: /api/ideas/detail/medical-documentation-clinical-note-automation
+WARNING 2025-08-24 14:29:41,733 basehttp "GET /api/ideas/detail/medical-documentation-clinical-note-automation HTTP/1.1" 403 26
+WARNING 2025-08-24 14:29:44,486 log Forbidden: /api/ideas/detail/medical-documentation-clinical-note-automation
+WARNING 2025-08-24 14:29:44,489 basehttp "GET /api/ideas/detail/medical-documentation-clinical-note-automation HTTP/1.1" 403 26
+WARNING 2025-08-24 14:29:49,488 log Forbidden: /api/ideas/detail/medical-documentation-clinical-note-automation
+WARNING 2025-08-24 14:29:49,492 basehttp "GET /api/ideas/detail/medical-documentation-clinical-note-automation HTTP/1.1" 403 26
+WARNING 2025-08-24 14:29:58,135 log Forbidden: /api/ideas/detail/medical-documentation-clinical-note-automation
+WARNING 2025-08-24 14:29:58,144 basehttp "GET /api/ideas/detail/medical-documentation-clinical-note-automation HTTP/1.1" 403 58
+WARNING 2025-08-24 14:31:13,270 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 14:31:13,276 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 14:31:15,752 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 14:31:15,767 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 14:31:18,681 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 14:31:18,687 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 14:31:23,818 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 14:31:23,823 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
+WARNING 2025-08-24 14:34:41,030 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-24 14:34:41,042 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58

@@ -1,0 +1,225 @@
+[
+    {
+      "domain_name": "HeyTrip.io",
+      "score": 6,
+      "use_cases": [
+        {
+          "case_title": "Group Trip Planning & Collaboration",
+          "description": "A SaaS for friends or families to plan trips together: share itineraries, split expenses, vote on activities, and store travel documents in one interface.",
+          "difficulty": "easy",
+          "competition": "high (vs. Tripit, generic apps)",
+          "category": {
+            "name": "Travel & Hospitality"
+          },
+          "tag": [
+            {
+              "name": "collaboration"
+            },
+            {
+              "name": "personal"
+            }
+          ],
+          "target_market": "friends, families, small travel groups",
+          "revenue_potential": "low",
+          "order": 1
+        },
+        {
+          "case_title": "Bespoke Travel Agent CRM",
+          "description": "CRM for freelance travel agents to manage clients, track bookings, automate follow-ups, and create custom itineraries—streamlining workflows beyond generic CRMs.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. generic CRM adapted for travel agents)",
+          "category": {
+            "name": "Customer Engagement & Support"
+          },
+          "tag": [
+            {
+              "name": "travel"
+            },
+            {
+              "name": "automation"
+            }
+          ],
+          "target_market": "freelance travel agents, boutique travel agencies",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "SleepBuddy.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Sleep Coaching for Better Habits",
+          "description": "AI-powered sleep coach that integrates with wearables to analyze patterns, give personalized advice, and provide guided audio for better sleep hygiene.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Calm, Headspace)",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {
+              "name": "AI"
+            },
+            {
+              "name": "personal"
+            },
+            {
+              "name": "coaching"
+            }
+          ],
+          "target_market": "individuals with sleep issues, wellness-conscious consumers, athletes",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Smart Nursery Monitoring & Analytics",
+          "description": "SaaS for parents to monitor baby sleep. Tracks duration and wake-ups via hardware and software, sending insights and alerts to build consistent schedules.",
+          "difficulty": "hard",
+          "competition": "low (vs. disconnected hardware products)",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {
+              "name": "parenting"
+            },
+            {
+              "name": "data & analytics"
+            }
+          ],
+          "target_market": "new parents, caregivers",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "OmniScent.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Personalized Fragrance Recommendation Engine",
+          "description": "Web app using questionnaires and machine learning to recommend personalized fragrances or oil blends, with potential partnerships for affiliate revenue.",
+          "difficulty": "moderate",
+          "competition": "low (vs. developing niche)",
+          "category": {
+            "name": "E-commerce"
+          },
+          "tag": [
+            {
+              "name": "AI"
+            },
+            {
+              "name": "personal"
+            }
+          ],
+          "target_market": "fragrance enthusiasts, personal care brands",
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    },
+       {
+      "domain_name": "SentBird.co",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Email & SMS Marketing for Creators",
+          "description": "A Simple marketing automation tool for creators to manage newsletters and connect with their audience through email and SMS.",
+          "difficulty": "moderate",
+          "competition": "high (vs. ConvertKit, Mailchimp)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "Creator Economy"},
+            {"name": "Email Marketing"},
+            {"name": "MarTech"}
+          ],
+          "target_market": "Newsletter writers, YouTubers, course creators",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Transactional Email & SMS API Service",
+          "description": "Developer-friendly API for sending business-critical notifications like receipts, password resets, and shipping alerts.",
+          "difficulty": "hard",
+          "competition": "high (vs. SendGrid, Postmark, Twilio)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "API"},
+            {"name": "Transactional Email"}
+          ],
+          "target_market": "SaaS companies, developers, e-commerce stores",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "CartWise.ai",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Cart Abandonment Recovery",
+          "description": "E-commerce app using AI to predict cart abandonment and trigger personalized recovery campaigns via email or SMS.",
+          "difficulty": "easy",
+          "competition": "high (vs. Klaviyo, Privy)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "MarTech"},
+            {"name": "AI"},
+            {"name": "Automation"}
+          ],
+          "target_market": "E-commerce stores, marketing agencies, D2C brands",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Smart Upsell & Cross-sell Engine",
+          "description": "AI tool that analyzes carts to suggest the most relevant and profitable product recommendations at checkout",
+          "difficulty": "moderate",
+          "competition": "medium (vs. ReConvert, AfterSell)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "Personalization"},
+            {"name": "AI"},
+            {"name": "CRO"}
+          ],
+          "target_market": "Shopify store owners, e-commerce managers",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "QuickDeck.ai",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI Presentation Generator",
+          "description": "SaaS where users provide a topic, document, or prompt, and AI instantly generates a complete, well-designed slide deck.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Tome, Gamma.app, Pitch)",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Productivity"},
+            {"name": "Generative AI"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Consultants, sales teams, students, startup founders",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    }
+  ]

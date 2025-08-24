@@ -1,0 +1,415 @@
+[
+    {
+      "domain_name": "QuickPitch.ai",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI Sales Pitch Generator",
+          "description": "A Tool for sales teams that uses prospect data and product info to generate customized sales pitch decks and emails.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Tome, Pitch, Gamma.app)",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Sales Tech"},
+            {"name": "Generative AI"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Sales teams, business development reps, startup founders",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "AI-Powered Investor Pitch Builder",
+          "description": "AI platform that guides founders in building investor pitches by generating slides, narrative structure, and talking points.",
+          "difficulty": "moderate",
+          "competition": "medium (emerging market)",
+          "category": {
+            "name": "Venture Capital & Investment"
+          },
+          "tag": [
+            {"name": "Startup"},
+            {"name": "Fintech"},
+            {"name": "AI"}
+          ],
+          "target_market": "Startup founders, accelerators, angel investors",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "sprechen.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Conversational AI Language Tutor",
+          "description": "Language learning app where users practice speaking through realistic, open-ended conversations with an AI tutor.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Duolingo, Babbel)",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Language Learning"},
+            {"name": "EdTech"}
+          ],
+          "target_market": "Language learners, expatriates, students",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Hyper-Realistic Text-to-Speech (TTS) API",
+          "description": "API for developers to add emotionally nuanced, high-quality AI voices to apps, content creation, and accessibility tools.",
+          "difficulty": "hard",
+          "competition": "high (vs. ElevenLabs, Play.ht)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "API"},
+            {"name": "AI"},
+            {"name": "TTS"}
+          ],
+          "target_market": "Developers, content creators, media companies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "SkillTown.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Cohort-Based Course Platform",
+          "description": "A Platform for expert creators to host and manage cohort-based courses, fostering a close-knit, community feel among students.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Maven, Teachable, Kajabi)",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "Creator Economy"},
+            {"name": "EdTech"},
+            {"name": "Community"}
+          ],
+          "target_market": "Expert creators, coaches, online educators",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Internal Skill-Sharing Hub for Companies",
+          "description": "SaaS for businesses to build internal directories where employees find colleagues by skill and access shared knowledge.",
+          "difficulty": "easy",
+          "competition": "low (emerging market)",
+          "category": {
+            "name": "Internal Tools & Admin Panels"
+          },
+          "tag": [
+            {"name": "HR Tech"},
+            {"name": "Knowledge Management"}
+          ],
+          "target_market": "HR departments, large companies, remote teams",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "HotelDiary.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Hotel Operations Logbook & Shift Handover",
+          "description": "Digital diary for hotel staff to log events, maintenance, and guest incidents, ensuring smooth shift handovers.",
+          "difficulty": "easy",
+          "competition": "medium (vs. features in Hotelogix, Cloudbeds)",
+          "category": {
+            "name": "Travel & Hospitality"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Operations"},
+            {"name": "Collaboration"}
+          ],
+          "target_market": "Hotel managers, front desk staff, boutique hotels",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Simple Booking System for Small Hotels",
+          "description": "An Elegant Property Management System for small hotels and B&Bs to manage bookings, guest info, and operations.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Little Hotelier, Eviivo)",
+          "category": {
+            "name": "Travel & Hospitality"
+          },
+          "tag": [
+            {"name": "PMS"},
+            {"name": "Vertical SaaS"},
+            {"name": "Booking"}
+          ],
+          "target_market": "Boutique hotels, bed & breakfasts, small inns",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+      {
+      "domain_name": "alegra.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Team Morale & Recognition Platform",
+          "description": "Team morale tool (“alegria,” joy) that boosts positivity with peer recognition, rewards, and feedback loops.",
+          "difficulty": "easy",
+          "competition": "medium (vs. Bonusly, Kudos)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "Team Culture"},
+            {"name": "HR Tech"},
+            {"name": "Employee Engagement"}
+          ],
+          "target_market": "Remote companies, HR departments, growing startups",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Modern Event Management & Ticketing",
+          "description": "Event platform for creating pages and selling tickets, designed for a joyful, simple experience for organizers and guests.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Eventbrite, Luma)",
+          "category": {
+            "name": "Event Planning and Services"
+          },
+          "tag": [
+            {"name": "Events"},
+            {"name": "Ticketing"},
+            {"name": "Community"}
+          ],
+          "target_market": "Event organizers, community builders, corporate event planners",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+      {
+      "domain_name": "LabHouse.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Simplified LIMS for Research Labs",
+          "description": "A Lightweight Laboratory Information Management System for universities and labs to manage samples and track experiments.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. enterprise LIMS)",
+          "category": {
+            "name": "Science & Engineering"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Lab Management"},
+            {"name": "Biotech"}
+          ],
+          "target_market": "University labs, biotech startups, research scientists",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "A/B Testing & Experimentation Platform",
+          "description": "Central hub for a company’s marketing and product labs, helping teams run, track, and analyze experiments.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Optimizely, VWO)",
+          "category": {
+            "name": "Testing, QA & Automation"
+          },
+          "tag": [
+            {"name": "MarTech"},
+            {"name": "Analytics"},
+            {"name": "CRO"}
+          ],
+          "target_market": "Marketing teams, product managers, e-commerce stores",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "Tachometer.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Application Performance Monitoring (APM)",
+          "description": "Developer tool to monitor web app health, tracking metrics like response times, error rates, and performance.",
+          "difficulty": "hard",
+          "competition": "high (vs. New Relic, Datadog)",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "APM"},
+            {"name": "Developer Tools"},
+            {"name": "Monitoring"}
+          ],
+          "target_market": "Software developers, DevOps teams, SaaS companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Sales Team Performance Dashboard",
+          "description": "SaaS that connects to CRMs to visualize sales team activity, tracking calls, emails, deals closed, and speed.",
+          "difficulty": "easy",
+          "competition": "medium (vs. features in Salesforce, HubSpot)",
+          "category": {
+            "name": "Business Intelligence"
+          },
+          "tag": [
+            {"name": "Sales Tech"},
+            {"name": "Analytics"},
+            {"name": "Dashboard"}
+          ],
+          "target_market": "Sales managers, revenue operations, B2B companies",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "smartscribe.ai",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Meeting Transcription & Intelligence",
+          "description": "SaaS that provides real-time meeting transcription, speaker ID, summaries, and tasks, creating a searchable knowledge base.",
+          "difficulty": "moderate",
+          "competition": "high (established players like Otter.ai, Fireflies.ai, and Gong)",
+          "category": { "name": "AI, ML & Data Intelligence" },
+          "tag": [
+            {"name": "productivity"},
+            {"name": "automation"}
+          ],
+          "target_market": "enterprises, remote teams, consultants, legal firms",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Medical Documentation & Clinical Note Automation",
+          "description": "A Platform for healthcare providers that transcribes consultations, structures notes, and auto-populates EHRs, reducing admin work.",
+          "difficulty": "hard",
+          "competition": "medium (emerging specialized players like DeepScribe, Nuance DAX)",
+          "category": { "name": "Medical" },
+          "tag": [
+            {"name": "healthcare"},
+            {"name": "EHR"}
+          ],
+          "target_market": "doctors, clinics, healthcare systems",
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "Academic Research Interview Analysis Platform",
+          "description": "A Tool for researchers to transcribe, code, and analyze interviews, using AI to detect themes and patterns automatically.",
+          "difficulty": "moderate",
+          "competition": "low (fragmented market with no clear leader; NVivo are manual, Dedoose is basic)",
+          "category": { "name": "Education & Learning" },
+          "tag": [
+            {"name": "research"},
+            {"name": "academia"}
+          ],
+          "target_market": "academics, market researchers, UX researchers",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+       {
+      "domain_name": "Gogos.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Last-Mile Delivery Logistics for SMBs",
+          "description": "Platform for local businesses to manage delivery drivers, routes, and dispatch with speed and efficiency.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Onfleet, Bringg)",
+          "category": {
+            "name": "Logistics & Supply Chain"
+          },
+          "tag": [
+            {"name": "Delivery"},
+            {"name": "Logistics"},
+            {"name": "Vertical SaaS"}
+          ],
+          "target_market": "Local restaurants, florists, small retailers",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Asynchronous Task & Job Queue Management",
+          "description": "A Developer tool for managing background jobs and async tasks with a focus on speed and simplicity.",
+          "difficulty": "hard",
+          "competition": "high (vs. Celery, BullMQ, AWS SQS)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "Background Jobs"},
+            {"name": "DevOps"},
+            {"name": "API"}
+          ],
+          "target_market": "Software developers, DevOps engineers, tech startups",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "RemoteFox.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Security & Access Management for Remote Teams",
+          "description": "Security tool for remote teams, offering secure access to apps and simple device management.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Rippling, JumpCloud)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Remote Work"},
+            {"name": "IT Management"},
+            {"name": "Cybersecurity"}
+          ],
+          "target_market": "IT managers, remote companies, HR teams",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "SoundSweep.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Audio Cleanup for Creators",
+          "description": "A tool for podcasters and creators to remove background noise, clicks, and reverb from audio in one sweep.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Descript, Adobe Podcast, Audo.ai)",
+          "category": {
+            "name": "Music & Audio"
+          },
+          "tag": [
+            {"name": "Creator Economy"},
+            {"name": "AI"},
+            {"name": "Audio Editing"}
+          ],
+          "target_market": "Podcasters, video creators, audio engineers",
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    }
+  ]

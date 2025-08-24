@@ -312,8 +312,9 @@ class UseCaseListSerializer(serializers.ModelSerializer):
 
 class UseCaseDetailSerializer(serializers.ModelSerializer):
     category = serializers.CharField(source="category.name", read_only=True)
-    domain_name = serializers.CharField(source="domain_name.name", read_only=True)
+    domain_name = serializers.CharField(source="domain_name.domain_name", read_only=True)
     domain_status = serializers.CharField(source="domain_name.status", read_only=True)
+    drop_date = serializers.CharField(source="domain_name.drop_date", read_only=True)
     tags = serializers.SerializerMethodField()
 
     def get_tags(self, obj):
@@ -332,9 +333,10 @@ class UseCaseDetailSerializer(serializers.ModelSerializer):
             "target_market",
             "revenue_potential",
             "order",
+            "tags",
             "domain_name",
             "domain_status",
-            "tags",
+            "drop_date",
             "created_at",
             "updated_at",
         )
