@@ -193,64 +193,91 @@ def transition_pending_to_deleted_task(self, **kwargs):
 
 
 # --- Daily IdeaOfTheDay update task (with edge case handling) ---
-@shared_task(bind=True, name="update_idea_of_the_day", time_limit=600, soft_time_limit=550, ignore_result=True)
+@shared_task(
+    bind=True,
+    name="update_idea_of_the_day",
+    time_limit=600,
+    soft_time_limit=550,
+    ignore_result=True,
+)
 def update_idea_of_the_day(self):
     """
-    Updates the IdeaOfTheDay record once per day (scheduled at 00:00 UTC).
-    - deleted_idea = yesterday's top pending_delete (preferred) or deleted fallback
-    - pending_delete_idea = today's top pending_delete
+    Updates the IdeaOfTheDay records once per day (scheduled at 00:00 UTC).
+
+    Logic:
+    - Select the "deleted" idea for today:
+        → Prefer yesterday's top pending_delete (highest score).
+        → Fallback: yesterday's top deleted (highest score).
+    - Select the "pending_delete" idea for today:
+        → Take today's top pending_delete (highest score).
+
+    The function writes results into the IdeaOfTheDay table,
+    producing at most two rows for each day:
+        (drop_date=today, domain_list="deleted")
+        (drop_date=today, domain_list="pending_delete")
+
+    This ensures the frontend API can always retrieve both keys
+    without nulls, unless truly no candidate exists.
     """
+
     current_date = timezone.now().date()
     yesterday = current_date - timedelta(days=1)
 
-    # Step 1: Try yesterday's pending_delete (primary source)
+    # Step 1: Try yesterday's pending_delete (primary source for today's deleted)
     top_deleted = (
-        Name.objects.filter(domain_list='pending_delete', drop_date=yesterday)
+        Name.objects.filter(domain_list="pending_delete", drop_date=yesterday)
         .exclude(score__isnull=True)
-        .order_by('-score')
+        .order_by("-score")
         .first()
     )
 
     # Step 2: Fallback to yesterday's deleted (in case transitions already ran)
     if not top_deleted:
         top_deleted = (
-            Name.objects.filter(domain_list='deleted', drop_date=yesterday)
+            Name.objects.filter(domain_list="deleted", drop_date=yesterday)
             .exclude(score__isnull=True)
-            .order_by('-score')
+            .order_by("-score")
             .first()
         )
 
     # Step 3: Today's top pending_delete
     top_pending = (
-        Name.objects.filter(domain_list='pending_delete', drop_date=current_date)
+        Name.objects.filter(domain_list="pending_delete", drop_date=current_date)
         .exclude(score__isnull=True)
-        .order_by('-score')
+        .order_by("-score")
         .first()
     )
 
-    idea_obj, _ = IdeaOfTheDay.objects.get_or_create(date=current_date)
+    # Step 4: Write to IdeaOfTheDay model
     update_needed = False
 
-    if top_deleted and idea_obj.deleted_idea != top_deleted:
-        idea_obj.deleted_idea = top_deleted
-        update_needed = True
-        logger.debug(f"Set deleted_idea to {top_deleted.domain}")
-    elif not top_deleted:
-        logger.warning(f"No deleted_idea candidate found for {yesterday}")
+    if top_deleted:
+        _, created = IdeaOfTheDay.objects.update_or_create(
+            drop_date=current_date,
+            domain_list="deleted",
+            defaults={"use_case": top_deleted.use_case},
+        )
+        update_needed = update_needed or created
+        logger.debug(f"Set deleted idea to {top_deleted.domain}")
+    else:
+        logger.warning(f"No deleted idea candidate found for {yesterday}")
 
-    if top_pending and idea_obj.pending_delete_idea != top_pending:
-        idea_obj.pending_delete_idea = top_pending
-        update_needed = True
-        logger.debug(f"Set pending_idea to {top_pending.domain}")
-    elif not top_pending:
-        logger.warning(f"No pending_idea candidate found for {current_date}")
+    if top_pending:
+        _, created = IdeaOfTheDay.objects.update_or_create(
+            drop_date=current_date,
+            domain_list="pending_delete",
+            defaults={"use_case": top_pending.use_case},
+        )
+        update_needed = update_needed or created
+        logger.debug(f"Set pending_delete idea to {top_pending.domain}")
+    else:
+        logger.warning(f"No pending_delete idea candidate found for {current_date}")
 
+    # Step 5: Final log for monitoring
     if update_needed:
-        idea_obj.save()
         logger.info(f"IdeaOfTheDay updated for {current_date}")
     else:
         logger.info(f"IdeaOfTheDay already up to date for {current_date}")
-
 
 
 

@@ -343,6 +343,18 @@ class UseCaseDetailSerializer(serializers.ModelSerializer):
 
 
 # ============================================
+# Ideaoftheday Serializer
+# ============================================
+class IdeaOfTheDaySerializer(serializers.ModelSerializer):
+    use_case = UseCaseSerializer(read_only=True)
+
+    class Meta:
+        model = IdeaOfTheDay
+        fields = ["drop_date", "domain_list", "use_case"]
+
+
+
+# ============================================
 # Ideaoftheday List View Serializer
 # ============================================
 class IdeaOfTheDayListSerializer(serializers.ModelSerializer):
