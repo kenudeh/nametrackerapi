@@ -15303,3 +15303,594 @@ WARNING 2025-08-24 14:31:23,818 log Forbidden: /api/ideas/detail/ai-sales-pitch-
 WARNING 2025-08-24 14:31:23,823 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 26
 WARNING 2025-08-24 14:34:41,030 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
 WARNING 2025-08-24 14:34:41,042 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-25 21:53:58,920 log Not Found: /favicon.ico
+WARNING 2025-08-25 21:53:58,960 basehttp "GET /favicon.ico HTTP/1.1" 404 2555
+ERROR 2025-08-25 21:54:22,040 log Internal Server Error: /onyia/admin/udeh/api/uploadedfile/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 234, in inner
+    if not self.has_permission(request):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 207, in has_permission
+    return request.user.is_active and request.user.is_staff
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 304, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 95, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 46, in load
+    self._cache.set(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\commands\core.py", line 2305, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\redis\_sync_common.py", line 109, in sentry_patched_execute_command
+    value = old_execute_command(self, name, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-08-25 21:54:22,502 basehttp "GET /onyia/admin/udeh/api/uploadedfile/ HTTP/1.1" 500 216615
+ERROR 2025-08-25 21:54:36,871 log Internal Server Error: /onyia/admin/udeh/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 265, in wrapper
+    return self.admin_view(view, cacheable)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 234, in inner
+    if not self.has_permission(request):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 207, in has_permission
+    return request.user.is_active and request.user.is_staff
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 304, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 95, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 46, in load
+    self._cache.set(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\commands\core.py", line 2305, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\redis\_sync_common.py", line 109, in sentry_patched_execute_command
+    value = old_execute_command(self, name, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-08-25 21:54:39,464 log Internal Server Error: /admin/upload-data/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\decorators.py", line 56, in _view_wrapper
+    test_pass = test_func(request.user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\views\decorators.py", line 13, in <lambda>
+    lambda u: u.is_active and u.is_staff,
+              ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 304, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 95, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 46, in load
+    self._cache.set(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\commands\core.py", line 2305, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\redis\_sync_common.py", line 109, in sentry_patched_execute_command
+    value = old_execute_command(self, name, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-08-25 21:54:48,576 log Internal Server Error: /admin/upload-data/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\decorators.py", line 56, in _view_wrapper
+    test_pass = test_func(request.user)
+                ^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\views\decorators.py", line 13, in <lambda>
+    lambda u: u.is_active and u.is_staff,
+              ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 304, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 95, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 46, in load
+    self._cache.set(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\commands\core.py", line 2305, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\redis\_sync_common.py", line 109, in sentry_patched_execute_command
+    value = old_execute_command(self, name, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 391, in connect_check_health
+    raise ConnectionError(self._error_message(e))
+redis.exceptions.ConnectionError: Error 10061 connecting to 127.0.0.1:6379. No connection could be made because the target machine actively refused it.
+ERROR 2025-08-25 21:54:48,846 basehttp "GET /admin/upload-data/ HTTP/1.1" 500 196671
+WARNING 2025-08-26 18:24:24,734 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-26 18:24:24,737 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-26 18:24:47,557 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-26 18:24:47,589 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-26 18:24:53,299 log Forbidden: /api/ideas/detail/ai-sales-pitch-generator
+WARNING 2025-08-26 18:24:53,304 basehttp "GET /api/ideas/detail/ai-sales-pitch-generator HTTP/1.1" 403 58
+WARNING 2025-08-26 18:25:13,130 log Not Found: /favicon.ico
+WARNING 2025-08-26 18:25:13,138 basehttp "GET /favicon.ico HTTP/1.1" 404 2555
+WARNING 2025-08-26 18:25:48,549 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:25:48,550 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:25:48,560 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-08-26 18:25:48,566 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-08-26 18:27:18,977 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:27:18,977 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:27:18,981 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-26 18:27:18,983 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-26 18:27:20,140 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 18:27:20,148 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 18:27:20,179 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:27:20,212 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 18:27:20,219 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-26 18:27:20,229 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:27:39,841 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 18:27:39,848 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 18:27:39,856 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 18:27:39,858 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:27:39,862 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:27:39,875 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-26 18:32:53,042 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:32:53,063 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:32:53,138 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-26 18:32:53,146 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-26 18:34:07,709 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 18:34:07,718 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 18:34:07,725 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 18:34:07,725 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:34:07,730 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:34:07,744 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-26 18:37:46,694 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:37:46,714 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:37:46,730 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-26 18:37:46,746 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-26 18:38:08,409 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:38:08,411 log Forbidden: /api/ideas/list
+WARNING 2025-08-26 18:38:08,421 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-08-26 18:38:08,424 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-08-26 18:40:14,369 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 18:40:14,381 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 18:40:14,383 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:40:14,405 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 18:40:14,441 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 18:40:14,490 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-26 20:25:02,795 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:25:03,130 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:03,152 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:25:03,205 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:25:03,223 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:03,243 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:04,185 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:25:04,185 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:04,426 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:25:04,436 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:25:04,446 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:04,449 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:06,229 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:25:06,242 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:06,501 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:25:06,507 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:25:06,514 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:06,522 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:10,302 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:25:10,308 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:10,591 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:25:10,612 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:25:10,615 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:25:10,615 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:34,304 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:28:34,355 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:34,362 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:28:34,374 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:28:34,391 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:34,408 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:36,298 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:28:36,309 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:28:36,317 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:28:36,322 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:36,335 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:36,336 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-26 20:28:38,761 log Forbidden: /api/domains/saved
+WARNING 2025-08-26 20:28:38,767 log Forbidden: /api/domains/acquired
+WARNING 2025-08-26 20:28:38,771 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-26 20:28:38,775 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 20:28:38,776 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-26 20:28:38,786 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-27 01:40:27,718 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 01:40:27,738 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 01:40:27,746 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:27,763 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 01:40:27,763 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:27,769 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:28,797 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 01:40:28,854 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:28,863 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 01:40:28,863 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 01:40:28,871 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:28,877 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:30,945 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 01:40:30,962 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 01:40:30,963 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:30,971 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 01:40:30,975 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:30,979 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:35,022 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 01:40:35,041 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 01:40:35,048 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 01:40:35,050 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:35,050 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 01:40:35,055 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:43,102 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:17:43,102 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:17:43,102 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:17:43,114 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:43,118 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:43,132 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:44,164 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:17:44,185 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:17:44,185 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:17:44,185 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:44,203 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:44,207 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:46,307 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:17:46,336 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:17:46,336 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:17:46,366 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:46,390 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:17:46,394 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:50,287 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:50,294 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:50,303 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:50,305 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:51,423 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:51,434 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:51,437 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:51,443 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:53,478 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:53,481 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:53,485 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:53,487 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:57,532 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:57,532 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:22:57,547 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:22:57,554 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:23:42,301 log Forbidden: /api/ideas/detail/ai-resume-critique
+WARNING 2025-08-27 13:23:42,310 basehttp "GET /api/ideas/detail/ai-resume-critique HTTP/1.1" 403 26
+WARNING 2025-08-27 13:23:43,346 log Forbidden: /api/ideas/detail/ai-resume-critique
+WARNING 2025-08-27 13:23:43,346 basehttp "GET /api/ideas/detail/ai-resume-critique HTTP/1.1" 403 26
+WARNING 2025-08-27 13:23:45,372 log Forbidden: /api/ideas/detail/ai-resume-critique
+WARNING 2025-08-27 13:23:45,375 basehttp "GET /api/ideas/detail/ai-resume-critique HTTP/1.1" 403 26
+WARNING 2025-08-27 13:23:49,422 log Forbidden: /api/ideas/detail/ai-resume-critique
+WARNING 2025-08-27 13:23:49,422 basehttp "GET /api/ideas/detail/ai-resume-critique HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:00,377 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:00,380 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:00,382 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:00,394 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:01,444 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:01,444 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:01,457 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:01,460 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:03,496 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:03,496 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:03,504 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:03,506 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:07,530 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:07,530 log Forbidden: /api/ideas/list
+WARNING 2025-08-27 13:24:07,546 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:07,549 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:15,510 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:24:15,529 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:24:15,531 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:24:15,531 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:15,539 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:15,545 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:16,589 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:24:16,604 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:24:16,607 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:24:16,611 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:16,612 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:16,612 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:18,670 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:24:18,670 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:24:18,681 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:24:18,684 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:18,694 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:18,698 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:22,740 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:24:22,740 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:24:22,759 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:24:22,759 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:22,759 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:24:22,770 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:09,598 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:30:09,683 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:09,704 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:30:09,720 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:30:09,734 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:09,738 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:25,601 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:30:25,611 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:30:25,639 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:30:25,641 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:25,709 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:25,711 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 13:30:46,421 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:30:46,432 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:30:46,453 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:30:46,455 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 13:30:46,466 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 13:30:46,550 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-27 13:32:48,940 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-27 13:32:48,961 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-27 13:32:50,789 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-27 13:32:50,807 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-27 13:32:53,651 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-27 13:32:53,667 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-27 13:32:58,558 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-27 13:32:58,566 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-27 13:33:28,324 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 13:33:28,329 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 13:33:28,332 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 13:33:28,341 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 13:33:28,341 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58

@@ -597,7 +597,7 @@ class UseCaseListView(generics.ListAPIView):
 
         queryset = self.filter_queryset(self.get_queryset())
 
-        # last_n shortcut (still handled here instead of FilterSet)
+        # last_n shortcut (handled here instead of FilterSet)
         last_n = request.query_params.get("last_n")
         if last_n:
             try:

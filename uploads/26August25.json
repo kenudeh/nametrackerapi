@@ -1,0 +1,537 @@
+[
+    {
+      "domain_name": "SafeSuite.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Password & Secrets Management for Teams",
+          "description": "A secure, user-friendly 'suite' for small businesses to manage employee passwords, API keys, and other sensitive information.",
+          "difficulty": "moderate",
+          "competition": "high (vs. 1Password, Bitwarden, LastPass)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Password Manager"},
+            {"name": "Cybersecurity"},
+            {"name": "SMB"}
+          ],
+          "target_market": "Small businesses, startups, IT managers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "All-in-One Security Suite for SMBs",
+          "description": "A bundled 'suite' of security tools for small businesses, including phishing protection simulators and compliance checklists.",
+          "difficulty": "hard",
+          "competition": "medium (vs. individual point solutions)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Cybersecurity"},
+            {"name": "Compliance"}
+          ],
+          "target_market": "SMBs, managed service providers (MSPs)",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "BookFlow.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Bookkeeping Automation",
+          "description": "A SaaS that uses AI to automate bookkeeping 'flows' for small businesses, from expense categorization to financial reporting.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Bench, Pilot, Dext)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Bookkeeping"},
+            {"name": "AI"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Small business owners, freelancers, accountants",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Author & Publishing Project Management",
+          "description": "A work'flow' tool for authors and small publishers to manage the entire 'book' creation process, from manuscript to publication.",
+          "difficulty": "easy",
+          "competition": "low (vs. generic tools like Trello, Asana)",
+          "category": {
+            "name": "Content & CMS"
+          },
+          "tag": [
+            {"name": "Project Management"},
+            {"name": "Creator Economy"},
+            {"name": "Publishing"}
+          ],
+          "target_market": "Authors, self-publishers, small presses",
+          "revenue_potential": "low",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "CodeStitch.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Automated Code Refactoring & Modernization",
+          "description": "A SaaS that analyzes legacy codebases and uses AI to suggest or perform refactoring, 'stitching' the code into a modern, more efficient structure.",
+          "difficulty": "hard",
+          "competition": "low (emerging market vs. manual consulting)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "Code Refactoring"},
+            {"name": "AI"},
+            {"name": "Legacy Systems"}
+          ],
+          "target_market": "Enterprise companies, software architects, consulting firms",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "AI-Powered API Integration & Code Generation",
+          "description": "An AI tool that helps developers 'stitch' together different APIs by automatically generating boilerplate code and handling data transformations.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Postman features, Zapier for developers)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "API"},
+            {"name": "AI"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Software developers, engineering teams, tech startups",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "EntryBox.ai",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Data Entry Automation",
+          "description": "An AI tool that automatically extracts data from documents (invoices, forms) and places it into the correct software 'entry box'.",
+          "difficulty": "moderate",
+          "competition": "high (vs. DocuParser, Nanonets, Rossum)",
+          "category": {
+            "name": "Document & Workflow Automation"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Data Extraction"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Accounting firms, logistics companies, back-office teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Smart Lead Capture Forms",
+          "description": "A tool for creating intelligent lead capture forms ('boxes') that adapt their questions based on user input to improve conversion rates.",
+          "difficulty": "easy",
+          "competition": "medium (vs. Typeform, Jotform)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "Lead Generation"},
+            {"name": "CRO"},
+            {"name": "Forms"}
+          ],
+          "target_market": "Marketing teams, demand generation managers",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "TrustCore.ai",
+      "score": 9,
+      "use_cases": [
+                {
+          "case_title": "Identity Verification & Fraud Detection Engine",
+          "description": "An AI engine that serves as the 'core' of a company's anti-fraud efforts, verifying user identities and detecting suspicious activity.",
+          "difficulty": "hard",
+          "competition": "high (vs. Stripe Radar, Sift)",
+          "category": {
+            "name": "Privacy, Compliance & Identity"
+          },
+          "tag": [
+            {"name": "Fraud Detection"},
+            {"name": "Identity"},
+            {"name": "Fintech"}
+          ],
+          "target_market": "Fintech companies, e-commerce platforms, banks",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "AI-Powered Compliance & Trust Center",
+          "description": "A platform that helps businesses automate security compliance (SOC 2, ISO 27001) and create a public-facing 'Trust Core' for clients.",
+          "difficulty": "hard",
+          "competition": "high (vs. Vanta, Drata, Secureframe)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Compliance"},
+            {"name": "RegTech"},
+            {"name": "Automation"}
+          ],
+          "target_market": "SaaS companies, security officers, tech startups",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "TinyTale.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI Story Generator for Children",
+          "description": "An app where parents or children can enter prompts to generate unique, illustrated 'tiny tales' for bedtime or creative writing.",
+          "difficulty": "moderate",
+          "competition": "medium (emerging market of AI story apps)",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Generative AI"},
+            {"name": "Kids"},
+            {"name": "Creator Economy"}
+          ],
+          "target_market": "Parents, children, educators",
+          "revenue_potential": "low",
+          "order": 1
+        },
+        {
+          "case_title": "Short-Form Content & Ad Copy Generator",
+          "description": "An AI tool for marketers to create 'tiny tales' or short, narrative-driven copy for social media posts, ads, and product descriptions.",
+          "difficulty": "easy",
+          "competition": "high (vs. Jasper, Copy.ai)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "MarTech"},
+            {"name": "AI"},
+            {"name": "Copywriting"}
+          ],
+          "target_market": "Marketers, social media managers, D2C brands",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "ProperScale.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Cloud Cost & Infrastructure Planning",
+          "description": "A tool for DevOps that analyzes cloud usage and provides a 'proper' plan for scaling infrastructure efficiently without overspending.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. CloudZero, Harness, Cast AI)",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "FinOps"},
+            {"name": "Cloud"},
+            {"name": "Cost Management"}
+          ],
+          "target_market": "DevOps teams, CTOs, tech startups",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Financial Forecasting for Scaling Businesses",
+          "description": "A SaaS for startups to model their growth, ensuring they have a 'proper' financial plan to scale operations and manage cash flow sustainably.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Causal, Pry.co, Jirav)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "FP&A"},
+            {"name": "Forecasting"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Startup founders, finance managers, VCs",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "Straik.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Sales Outreach Automation Platform",
+          "description": "A tool for sales teams to launch targeted outreach 'strikes' or campaigns across multiple channels like email, social media, and cold calls.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Outreach, SalesLoft, Apollo.io)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "Sales Tech"},
+            {"name": "Automation"},
+            {"name": "Lead Generation"}
+          ],
+          "target_market": "Sales development representatives, account executives, sales teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Automated Penetration Testing as a Service",
+          "description": "A cybersecurity platform that allows businesses to schedule and run simulated cyber 'strikes' on their own infrastructure to find vulnerabilities.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Pentera, Intruder.io)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Cybersecurity"},
+            {"name": "Pentesting"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Security teams, compliance officers, CISOs",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "CourseLab.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Online Course Creation & Hosting Platform",
+          "description": "An all-in-one platform for expert creators and businesses to build, experiment with, and sell their online courses.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Teachable, Kajabi, Thinkific)",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "Creator Economy"},
+            {"name": "EdTech"},
+            {"name": "LMS"}
+          ],
+          "target_market": "Expert creators, coaches, corporate trainers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Corporate Training & Development Lab",
+          "description": "A tool for HR and L&D departments to create and manage internal training modules and skill development 'labs' for employees.",
+          "difficulty": "easy",
+          "competition": "medium (vs. TalentLMS, 360Learning)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "Corporate Training"},
+            {"name": "HR Tech"},
+            {"name": "Internal Tools"}
+          ],
+          "target_market": "HR departments, learning & development teams",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "galaxi.io",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Data Integration & Constellation Platform",
+          "description": "A tool that connects a 'galaxy' of different SaaS applications and data sources into a single, unified, and interactive view for businesses.",
+          "difficulty": "hard",
+          "competition": "high (vs. Zapier, Make, Segment)",
+          "category": {
+            "name": "Data Infrastructure"
+          },
+          "tag": [
+            {"name": "iPaaS"},
+            {"name": "ETL"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Operations teams, data analysts, tech companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Product Ecosystem Management",
+          "description": "A platform for companies with multiple products to manage and visualize their entire 'galaxy' of offerings, tracking user journeys between them.",
+          "difficulty": "moderate",
+          "competition": "low (emerging market)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Product Management"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Product managers, large tech companies",
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "Decentralized Identity Hub",
+          "description": "A Web3 platform that acts as a central 'galaxy' for managing a user's decentralized digital identity and credentials across different blockchains.",
+          "difficulty": "hard",
+          "competition": "medium (vs. BrightID, SpruceID)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Web3"},
+            {"name": "Identity"},
+            {"name": "Decentralization"}
+          ],
+          "target_market": "Web3 users, developers, DAOs",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+    {
+      "domain_name": "UrbanLens.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Real Estate Site Selection & Analysis",
+          "description": "A platform for real estate developers that uses a data 'lens' to analyze and score potential development sites in urban areas based on various factors.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. CoStar, ESRI)",
+          "category": {
+            "name": "Real Estate"
+          },
+          "tag": [
+            {"name": "PropTech"},
+            {"name": "Analytics"},
+            {"name": "Data Visualization"}
+          ],
+          "target_market": "Real estate developers, investment firms, city planners",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Urban Planning & Zoning Analysis",
+          "description": "A tool for city planners and governments to visualize zoning regulations, model the impact of new developments, and analyze demographic data.",
+          "difficulty": "moderate",
+          "competition": "low (vs. custom agency work, complex GIS software)",
+          "category": {
+            "name": "Politics, Government"
+          },
+          "tag": [
+            {"name": "GovTech"},
+            {"name": "Urban Planning"},
+            {"name": "GIS"}
+          ],
+          "target_market": "City planners, municipal governments, architects",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "SiteSense.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Website Analytics & User Behavior Analysis",
+          "description": "A tool that helps businesses make 'sense' of how users interact with their site, using features like heatmaps and session recordings.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Hotjar, FullStory, Microsoft Clarity)",
+          "category": {
+            "name": "Analytics"
+          },
+          "tag": [
+            {"name": "User Behavior"},
+            {"name": "CRO"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Marketing teams, product managers, UX designers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "SEO & Content Optimization Platform",
+          "description": "A platform that analyzes a website's content and technical setup to provide common-sense recommendations for improving search rankings.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Ahrefs, Semrush, Moz)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "SEO"},
+            {"name": "Content Marketing"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "SEO specialists, content marketers, SMB owners",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+      {
+      "domain_name": "UniLaw.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Practice Management for Solo Attorneys & Small Firms",
+          "description": "A unified platform for lawyers to manage cases, documents, billing, and client communication, designed for simplicity and efficiency.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Clio, MyCase, PracticePanther)",
+          "category": {
+            "name": "Law, Legal, Attorney"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Practice Management"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "Solo attorneys, small law firms, paralegals",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Legal Research & Study Platform for Law Students",
+          "description": "A tool for university ('Uni') law students to access case law, create collaborative study guides, and prepare for exams.",
+          "difficulty": "easy",
+          "competition": "medium (vs. LexisNexis, Westlaw for enterprise)",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "EdTech"},
+            {"name": "Legal Tech"},
+            {"name": "Research"}
+          ],
+          "target_market": "Law students, university law schools, paralegal programs",
+          "revenue_potential": "low",
+          "order": 2
+        }
+      ]
+    }
+  ]

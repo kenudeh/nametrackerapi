@@ -9,9 +9,9 @@ urlpatterns = [
     path('names', views.NameListAPIView.as_view(), name='name-list'),
     # Name detail
     path('names/<str:slug>', views.NameDetailAPIView.as_view(), name='name-detail'),
-    path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
-    path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
-    path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
+    # path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
+    # path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
+    # path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
 
     # Toggling saved status
     path('names/<str:slug>/toggle-save', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),    # Full saved name list
