@@ -7,7 +7,7 @@ from .authentication import ClerkJWTAuthentication
 from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay, UseCase
-from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, IdeaOfTheDaySerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer
 from .permissions import IsManagerOrReadOnly
 from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
 from .filters import UseCaseFilter
@@ -597,7 +597,7 @@ class UseCaseListView(generics.ListAPIView):
 
         queryset = self.filter_queryset(self.get_queryset())
 
-        # last_n shortcut (still handled here instead of FilterSet)
+        # last_n shortcut (handled here instead of FilterSet)
         last_n = request.query_params.get("last_n")
         if last_n:
             try:
@@ -640,12 +640,11 @@ class UseCaseDetailView(generics.RetrieveAPIView):
 #===================================
 # Idea of the day
 #====================================
-
 class IdeaOfTheDayView(APIView):
     """
-    Return the two idea-of-the-day entries for a given date
-    (pending_delete and deleted).
-    Always returns predictable keys, with `null` if missing.
+    Return today's idea-of-the-day entries:
+    - pending_delete = today's entry
+    - deleted = yesterday's entry (since that's when it was pending_delete)
     """
 
     def get(self, request):
@@ -659,28 +658,33 @@ class IdeaOfTheDayView(APIView):
         else:
             drop_date = timezone.now().date()
 
-        # Fetch ideas for this date
-        ideas_qs = IdeaOfTheDay.objects.filter(drop_date=drop_date).select_related("use_case")
-        ideas_by_type = {obj.domain_list: obj.use_case for obj in ideas_qs}
+        # Yesterday's date
+        yesterday = drop_date - timezone.timedelta(days=1)
 
-        # Serialize only the use_case objects (lighter structure)
-        pending_delete_data = (
-            UseCaseSerializer(ideas_by_type.get("pending_delete")).data
-            if ideas_by_type.get("pending_delete")
-            else None
+        # Fetch today's pending_delete
+        today_obj = (
+            IdeaOfTheDay.objects
+            .filter(drop_date=drop_date, domain_list="deleting_today") # Use deleting_today for prod
+            .select_related("use_case")
+            .first()
         )
-        deleted_data = (
-            UseCaseSerializer(ideas_by_type.get("deleted")).data
-            if ideas_by_type.get("deleted")
-            else None
+
+        # Fetch yesterday's deleted
+        yesterday_obj = (
+            IdeaOfTheDay.objects
+            .filter(drop_date=yesterday, domain_list="pending_delete") # Use deleted for prod
+            .select_related("use_case")
+            .first()
         )
+
+        pending_delete_data = IdeaOfTheDaySerializer(today_obj).data if today_obj else None
+        deleted_data = IdeaOfTheDaySerializer(yesterday_obj).data if yesterday_obj else None
 
         return Response({
             "date": drop_date,
             "pending_delete": pending_delete_data,
             "deleted": deleted_data,
         })
-
 
 
 

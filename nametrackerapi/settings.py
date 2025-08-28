@@ -52,6 +52,10 @@ DEBUG = not IS_PRODUCTION
 # ===== Core Security =====
 SECURE_SSL_REDIRECT = IS_PRODUCTION  # This should only be True in production (Force HTTPS)
 
+# Task constants
+DOMAIN_BATCH_SIZE = 50 # Upper limit per batch
+DOMAIN_BULK_CHUNK = 50 # Upper limit per batch
+
 
 # ===== Shared Settings ===== 
 SECRET_KEY = os.getenv('SECRET_KEY')

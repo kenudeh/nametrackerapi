@@ -108,6 +108,7 @@ class CompetitionType(models.TextChoices):
 class DomainListOptions(models.TextChoices):
     ALL_LIST = 'all_list', 'All List'
     PENDING_DELETE = 'pending_delete', 'Pending Delete'
+    DELETING_TODAY = 'deleting_today', 'Deleting Today'
     DELETED = 'deleted', 'Deleted'
     MARKETPLACE = 'marketplace', 'Marketplace'
 

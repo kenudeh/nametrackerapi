@@ -1,0 +1,613 @@
+ [
+    {
+      "domain_name": "BitGains.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Cryptocurrency Portfolio & Tax Reporting",
+          "description": "A platform for crypto investors to track their portfolio across multiple exchanges and wallets, and generate tax reports for capital 'gains'.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Koinly, CoinTracker, Cointelli)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Crypto"},
+            {"name": "Fintech"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Retail crypto investors, accountants, traders",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Performance Marketing Analytics",
+          "description": "A tool that helps marketers track the 'gains' from their digital ad spend, attributing revenue down to the last 'bit' of data.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Triple Whale, Wicked Reports)",
+          "category": {
+            "name": "Analytics"
+          },
+          "tag": [
+            {"name": "MarTech"},
+            {"name": "Analytics"},
+            {"name": "Attribution"}
+          ],
+          "target_market": "E-commerce brands, marketing agencies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "Redraw.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Collaborative Vector Graphics Editor",
+          "description": "A modern, browser-based tool for teams to create and 'redraw' vector illustrations, icons, and diagrams in real-time.",
+          "difficulty": "hard",
+          "competition": "high (vs. Figma, Canva, Adobe Illustrator)",
+          "category": {
+            "name": "Website & Graphic Design"
+          },
+          "tag": [
+            {"name": "Design Tool"},
+            {"name": "Collaboration"},
+            {"name": "Vector"}
+          ],
+          "target_market": "UI/UX designers, marketing teams, illustrators",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Financial Modeling & Scenario Planning",
+          "description": "A fintech SaaS that allows businesses to 'redraw' their financial forecasts and instantly see the impact of different strategic scenarios.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Causal, Pry.co, OnPlan)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "FP&A"},
+            {"name": "Forecasting"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Startup founders, finance teams, business analysts",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "SoftPanda.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Friendly HR Platform for Small Businesses",
+          "description": "An approachable and user-friendly 'soft'ware for small businesses to manage time off, employee records, and onboarding.",
+          "difficulty": "easy",
+          "competition": "high (vs. BambooHR, Gusto, Rippling)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "HR Tech"},
+            {"name": "SMB"},
+            {"name": "Vertical SaaS"}
+          ],
+          "target_market": "Small businesses, startups, HR managers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Simple CRM for Freelancers",
+          "description": "A non-intimidating, 'soft' CRM designed specifically for freelancers to manage their client pipeline and projects without complex features.",
+          "difficulty": "easy",
+          "competition": "medium (vs. HoneyBook, Dubsado, Bonsai)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "CRM"},
+            {"name": "Freelancer"},
+            {"name": "Solopreneur"}
+          ],
+          "target_market": "Freelancers, consultants, solopreneurs",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "MoneyFit.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Financial Management for Fitness Businesses",
+          "description": "A vertical SaaS for gyms and fitness studios to manage memberships, payroll, and financial reporting, ensuring the business is a good 'fit'.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Mindbody, Glofox, Zen Planner)",
+          "category": {
+            "name": "Fitness & Gym"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Fintech"},
+            {"name": "Practice Management"}
+          ],
+          "target_market": "Gym owners, fitness studios, personal trainers",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+       {
+      "domain_name": "TravelHawk.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Flight & Hotel Deal Finder",
+          "description": "A prosumer tool that uses AI to constantly 'hunt' for exceptional flight and hotel deals based on a user's specific criteria and provides instant alerts.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Going.com, Scott's Cheap Flights)",
+          "category": {
+            "name": "Travel & Hospitality"
+          },
+          "tag": [
+            {"name": "B2C"},
+            {"name": "AI"},
+            {"name": "Deal Finding"}
+          ],
+          "target_market": "Frequent travelers, digital nomads, bargain hunters",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Corporate Travel Expense Monitoring",
+          "description": "A B2B platform that provides 'hawk-eyed' monitoring of employee travel expenses in real-time to flag out-of-policy spending and find savings.",
+          "difficulty": "moderate",
+          "competition": "high (vs. features in SAP Concur, Navan, Emburse)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Expense Management"},
+            {"name": "Corporate Travel"},
+            {"name": "B2B"}
+          ],
+          "target_market": "Finance departments, corporate travel managers",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "HexGuard.io",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Software Supply Chain & Dependency Security",
+          "description": "A developer tool that 'guards' against malicious code in open-source dependencies by scanning packages at a deep, 'hex' level.",
+          "difficulty": "hard",
+          "competition": "high (vs. Snyk, Veracode, Checkmarx)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Cybersecurity"},
+            {"name": "Developer Tools"},
+            {"name": "DevSecOps"}
+          ],
+          "target_market": "DevOps teams, security engineers, software companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Smart Contract & Web3 Security Auditing",
+          "description": "A platform that 'guards' blockchain applications by automatically analyzing smart contract bytecode ('hex') for vulnerabilities before deployment.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Quantstamp, CertiK, OpenZeppelin)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Web3"},
+            {"name": "Security"},
+            {"name": "Auditing"}
+          ],
+          "target_market": "Web3 developers, DeFi projects, DAOs",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "BitLog.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Log Analysis & Anomaly Detection",
+          "description": "An AI tool that connects to existing log data sources (e.g., Datadog, AWS) to automatically surface critical errors and detect anomalies.",
+          "difficulty": "hard",
+          "competition": "high (vs. Datadog, Splunk, Logz.io)",
+          "category": {
+            "name": "DevOps & Infrastructure"
+          },
+          "tag": [
+            {"name": "Log Management"},
+            {"name": "AI"},
+            {"name": "Observability"}
+          ],
+          "target_market": "DevOps teams, site reliability engineers, software companies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Blockchain & Transaction Logging",
+          "description": "A specialized tool for Web3 developers to log, search, and analyze on-chain transactions and smart contract events.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Etherscan, The Graph for developers)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Web3"},
+            {"name": "Developer Tools"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Blockchain developers, DeFi projects, Web3 companies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "UnlockSales.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Sales Intelligence & Lead Scoring Platform",
+          "description": "A platform that analyzes data to 'unlock' insights and identify the highest potential sales leads for a team to focus on.",
+          "difficulty": "moderate",
+          "competition": "high (vs. ZoomInfo, Apollo.io, 6sense)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "Sales Tech"},
+            {"name": "Lead Scoring"},
+            {"name": "BI"}
+          ],
+          "target_market": "B2B sales teams, revenue operations, sales managers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Sales Enablement Content Hub",
+          "description": "A tool that provides sales teams with the right content (case studies, battlecards) at the right time to 'unlock' and close deals.",
+          "difficulty": "easy",
+          "competition": "high (vs. Highspot, Seismic, Showpad)",
+          "category": {
+            "name": "Content & CMS"
+          },
+          "tag": [
+            {"name": "Sales Enablement"},
+            {"name": "Content Management"}
+          ],
+          "target_market": "Sales teams, marketing departments",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "VeriCloud.ai",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Cloud Security & Compliance",
+          "description": "An AI platform that continuously scans a company's cloud environment to 'verify' compliance with standards like SOC 2, ISO 27001, and HIPAA.",
+          "difficulty": "hard",
+          "competition": "high (vs. Vanta, Drata, Wiz.io)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Cloud Security"},
+            {"name": "Compliance"},
+            {"name": "AI"}
+          ],
+          "target_market": "SaaS companies, security officers, DevOps teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Cloud Identity & Access Verification",
+          "description": "A tool that uses AI to 'verify' user identities and permissions in a cloud environment, ensuring a zero-trust security posture.",
+          "difficulty": "hard",
+          "competition": "medium (vs. features in Okta, Zscaler)",
+          "category": {
+            "name": "Privacy, Compliance & Identity"
+          },
+          "tag": [
+            {"name": "Identity"},
+            {"name": "Zero Trust"},
+            {"name": "Cybersecurity"}
+          ],
+          "target_market": "IT managers, security teams, enterprise companies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "GoDent.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Modern Dental Practice Management (Light)",
+          "description": "A modern, cloud-based practice management software for small dental offices, focused on appointments, billing, and patient records.",
+          "difficulty": "hard",
+          "competition": "high (vs. Dentrix, Eaglesoft, Open Dental)",
+          "category": {
+            "name": "Medical"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Practice Management"},
+            {"name": "Health Tech"}
+          ],
+          "target_market": "Small dental practices, dental startups, orthodontists",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Patient Communication & Recall System",
+          "description": "A tool that integrates with existing dental software to automate patient appointment reminders, recalls, and post-visit follow-ups.",
+          "difficulty": "easy",
+          "competition": "medium (vs. RevenueWell, Lighthouse 360)",
+          "category": {
+            "name": "Customer Engagement & Support"
+          },
+          "tag": [
+            {"name": "Automation"},
+            {"name": "Patient Engagement"},
+            {"name": "Health Tech"}
+          ],
+          "target_market": "Dental offices, hygienists",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "LowCap.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Low-Cap Crypto & Altcoin Screener",
+          "description": "An analytics platform for crypto traders to discover, analyze, and track promising low-market-cap cryptocurrencies and tokens.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. DEXTools, Dex Screener, CoinGecko)",
+          "category": {
+            "name": "Cryptocurrency, Blockchain"
+          },
+          "tag": [
+            {"name": "Crypto"},
+            {"name": "Analytics"},
+            {"name": "Trading"}
+          ],
+          "target_market": "Retail crypto traders, DeFi users, analysts",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Small-Cap Stock Analysis Platform",
+          "description": "A tool for retail investors providing data and analysis specifically for small-cap and micro-cap stocks, a typically underserved market.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. features in Seeking Alpha, Zacks)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Investing"},
+            {"name": "Stock Market"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Retail investors, financial analysts",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "NewRail.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Logistics & Supply Chain Routing",
+          "description": "An AI platform that provides a 'new rail' for logistics, optimizing shipping routes, carrier selection, and supply chain efficiency in real-time.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Descartes, WiseTech Global)",
+          "category": {
+            "name": "Logistics & Supply Chain"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Logistics"},
+            {"name": "Optimization"}
+          ],
+          "target_market": "Logistics companies, freight forwarders, manufacturers",
+          "revenue_potential": "high",
+          "order": 1
+        }
+        ]
+    },
+       {
+      "domain_name": "EventCrew.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Event Staffing & Management Platform",
+          "description": "An all-in-one vertical SaaS for event organizers to hire, schedule, brief, and pay their on-demand event staff and crew for gigs.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. LASSO, Caterease, manual spreadsheets)",
+          "category": {
+            "name": "Event Planning and Services"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "HR Tech"},
+            {"name": "Scheduling"}
+          ],
+          "target_market": "Event production companies, conference organizers, experiential agencies",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+        {
+      "domain_name": "Legalis.io",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Legal Document Management & Analysis",
+          "description": "A secure platform for law firms to manage case files, with AI features to analyze documents for key terms, precedents, and risk.",
+          "difficulty": "hard",
+          "competition": "high (vs. Clio, MyCase, Everlaw)",
+          "category": {
+            "name": "Law, Legal, Attorney"
+          },
+          "tag": [
+            {"name": "Legal Tech"},
+            {"name": "AI"},
+            {"name": "Document Automation"}
+          ],
+          "target_market": "Law firms, corporate legal teams, paralegals",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Automated Legal Workflow & E-Discovery",
+          "description": "A tool to help legal teams automate repetitive workflows like compliance checks, contract review, and e-discovery processes.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Logikcull, Relativity)",
+          "category": {
+            "name": "Law, Legal, Attorney"
+          },
+          "tag": [
+            {"name": "Legal Tech"},
+            {"name": "Automation"},
+            {"name": "Workflow"}
+          ],
+          "target_market": "Legal teams, paralegals, compliance officers",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "ForestWatch.co",
+      "score": 8,
+      "use_cases": [
+             {
+          "case_title": "Deforestation & Illegal Logging Monitoring",
+          "description": "A tool for conservation groups and governments to 'watch' protected forests using satellite data to detect and report illegal logging activities.",
+          "difficulty": "moderate",
+          "competition": "low (vs. Global Forest Watch - a non-profit)",
+          "category": {
+            "name": "Non-Profit & Community"
+          },
+          "tag": [
+            {"name": "Sustainability"},
+            {"name": "GIS"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Conservation NGOs, environmental agencies, governments",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Wildfire Detection & Monitoring Platform",
+          "description": "A platform that uses satellite imagery and sensor data to detect the early signs of wildfires and monitor their spread for emergency services.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Pano AI, government systems)",
+          "category": {
+            "name": "Science & Engineering"
+          },
+          "tag": [
+            {"name": "Climate Tech"},
+            {"name": "GIS"},
+            {"name": "AI"}
+          ],
+          "target_market": "Forestry services, fire departments, government agencies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "ChatDoc.co",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Document Q&A",
+          "description": "A SaaS where users upload documents (PDFs, Word, etc.) and can ask questions to an AI that has 'read' and understood the content.",
+          "difficulty": "easy",
+          "competition": "high (a very popular AI SaaS category)",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Generative AI"},
+            {"name": "Document Automation"},
+            {"name": "Productivity"}
+          ],
+          "target_market": "Students, researchers, legal professionals, consultants",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Internal Knowledge Base Chatbot for Teams",
+          "description": "A tool that connects to a company's internal wiki (e.g., Notion, Confluence) and allows employees to 'chat' with the knowledge base to get instant answers.",
+          "difficulty": "easy",
+          "competition": "high (vs. many emerging AI startups)",
+          "category": {
+            "name": "Internal Tools & Admin Panels"
+          },
+          "tag": [
+            {"name": "AI Chatbot"},
+            {"name": "Knowledge Management"},
+            {"name": "HR Tech"}
+          ],
+          "target_market": "Remote companies, HR teams, support teams",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "UniBind.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Single Sign-On (SSO) & Identity Management",
+          "description": "A service that 'binds' and unifies user identity, allowing employees to log in to all their corporate applications with one set of credentials.",
+          "difficulty": "hard",
+          "competition": "high (vs. Okta, Auth0, JumpCloud)",
+          "category": {
+            "name": "Privacy, Compliance & Identity"
+          },
+          "tag": [
+            {"name": "SSO"},
+            {"name": "Security"},
+            {"name": "Identity"}
+          ],
+          "target_market": "IT departments, security teams, tech companies",
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    }
+  ]
