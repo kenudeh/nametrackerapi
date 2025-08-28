@@ -15894,3 +15894,1056 @@ WARNING 2025-08-27 13:33:28,329 log Forbidden: /api/domains/acquired
 WARNING 2025-08-27 13:33:28,332 log Forbidden: /api/idea-of-the-day
 WARNING 2025-08-27 13:33:28,341 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
 WARNING 2025-08-27 13:33:28,341 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-27 13:33:28,345 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 15:19:56,883 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 15:19:56,904 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 15:19:56,905 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 15:19:56,914 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 15:19:56,926 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 15:19:56,940 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-27 15:29:07,571 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 15:29:07,586 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 15:29:07,602 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 15:29:07,627 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:07,631 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:07,656 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:20,821 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 15:29:20,831 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 15:29:20,869 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 15:29:20,871 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:20,878 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:20,892 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:35,088 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 15:29:35,110 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 15:29:35,143 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 15:29:35,181 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:35,186 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 15:29:35,191 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 16:46:50,566 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 16:46:50,595 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 16:46:50,644 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 16:46:50,660 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 16:46:50,957 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 16:46:51,131 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:13,102 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:01:13,104 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:01:13,104 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:01:13,126 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:13,136 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:13,148 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:14,942 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:01:14,971 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:01:15,006 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:01:15,013 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:15,016 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:15,023 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:17,825 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:01:17,825 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:01:17,839 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:01:17,851 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:17,857 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:17,861 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 17:01:19,914 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:01:19,920 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:01:19,924 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:01:19,931 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 17:01:19,938 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 17:01:19,940 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-27 17:35:22,167 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:35:22,167 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:35:22,168 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:35:22,172 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:35:22,204 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 17:35:22,210 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-27 17:35:23,862 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:35:23,911 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:35:23,926 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:35:27,739 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:35:27,858 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:35:27,942 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 17:35:27,955 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 17:35:27,989 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:35:28,040 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+ERROR 2025-08-27 17:35:30,849 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'IdeaOfTheDaySerializer' is not defined
+ERROR 2025-08-27 17:35:30,966 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 112468
+ERROR 2025-08-27 17:35:33,809 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'IdeaOfTheDaySerializer' is not defined
+ERROR 2025-08-27 17:35:33,853 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 112468
+ERROR 2025-08-27 17:35:38,944 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'IdeaOfTheDaySerializer' is not defined
+ERROR 2025-08-27 17:35:38,995 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 112468
+ERROR 2025-08-27 17:35:45,476 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^
+NameError: name 'IdeaOfTheDaySerializer' is not defined
+ERROR 2025-08-27 17:35:45,540 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 111546
+WARNING 2025-08-27 17:36:51,703 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:36:51,712 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-27 17:37:01,316 log Forbidden: /api/domains/saved
+WARNING 2025-08-27 17:37:01,324 log Forbidden: /api/domains/acquired
+WARNING 2025-08-27 17:37:01,332 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 17:37:01,350 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-27 17:37:01,360 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-27 17:37:01,368 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+ERROR 2025-08-27 17:37:03,941 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-27 17:37:03,995 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146667
+ERROR 2025-08-27 17:37:07,022 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-27 17:37:07,083 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146667
+ERROR 2025-08-27 17:37:11,967 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-27 17:37:12,041 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146667
+ERROR 2025-08-27 17:37:17,761 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-27 17:37:17,847 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 145745
+WARNING 2025-08-28 05:09:06,866 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:09:06,866 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:09:06,866 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:09:06,879 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-28 05:09:06,883 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-28 05:09:06,982 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-28 05:09:11,693 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:09:11,739 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:09:11,749 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:09:11,784 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:09:11,839 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:09:11,897 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+ERROR 2025-08-28 05:09:14,208 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:14,223 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+ERROR 2025-08-28 05:09:16,847 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:16,869 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+ERROR 2025-08-28 05:09:23,742 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:23,790 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+ERROR 2025-08-28 05:09:26,088 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:26,138 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 145979
+ERROR 2025-08-28 05:09:47,867 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:47,970 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+WARNING 2025-08-28 05:09:50,909 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:09:50,943 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:09:51,014 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:09:51,024 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:09:51,028 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:09:51,039 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+ERROR 2025-08-28 05:09:53,119 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:53,180 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+ERROR 2025-08-28 05:09:55,973 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:09:56,006 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+ERROR 2025-08-28 05:10:00,719 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:10:00,748 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 146901
+ERROR 2025-08-28 05:10:08,217 log Internal Server Error: /api/idea-of-the-day
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 437, in get_attribute
+    return get_attribute(instance, self.source_attrs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 104, in get_attribute
+    instance = getattr(instance, attr)
+               ^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'UseCase' object has no attribute 'drop_date'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 681, in get
+    deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 573, in data
+    ret = super().data
+          ^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 251, in data
+    self._data = self.to_representation(self.instance)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\serializers.py", line 527, in to_representation
+    attribute = field.get_attribute(instance)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\fields.py", line 470, in get_attribute
+    raise type(exc)(msg)
+AttributeError: Got AttributeError when attempting to get a value for field `drop_date` on serializer `IdeaOfTheDaySerializer`.
+The serializer field might be named incorrectly and not match any attribute or key on the `UseCase` instance.
+Original exception text was: 'UseCase' object has no attribute 'drop_date'.
+ERROR 2025-08-28 05:10:08,261 basehttp "GET /api/idea-of-the-day HTTP/1.1" 500 145979
+WARNING 2025-08-28 05:31:52,167 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:31:52,167 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:31:52,168 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:31:52,174 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:31:52,186 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 05:31:52,194 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:19,235 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:32:19,235 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:32:19,235 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:32:19,239 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:19,240 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:19,242 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:42,272 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:32:42,283 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:32:42,297 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:32:42,303 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:42,307 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:42,322 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 05:32:58,835 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:32:58,839 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:32:58,845 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:33:00,745 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 05:33:00,749 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 05:33:00,760 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:33:00,784 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 05:33:00,887 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 05:33:00,897 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:06:13,549 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:06:13,550 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:06:13,550 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:06:13,552 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:06:13,560 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:06:13,564 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:06:22,139 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:06:22,148 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:06:22,156 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:06:22,160 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:06:22,162 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:06:22,171 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:08:19,109 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:08:19,109 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:08:19,109 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:08:19,117 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:08:19,118 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:08:19,120 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:10:56,103 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:10:56,112 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:10:56,119 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:10:56,121 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:10:56,131 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:10:56,147 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:11:51,389 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:11:51,397 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:11:51,401 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:11:51,404 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:11:51,406 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:11:51,416 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:14:52,247 log Not Found: /api/ideas/detail/undefined
+WARNING 2025-08-28 06:14:52,251 basehttp "GET /api/ideas/detail/undefined HTTP/1.1" 404 48
+WARNING 2025-08-28 06:14:54,244 log Not Found: /api/ideas/detail/undefined
+WARNING 2025-08-28 06:14:54,248 basehttp "GET /api/ideas/detail/undefined HTTP/1.1" 404 48
+WARNING 2025-08-28 06:14:56,936 log Not Found: /api/ideas/detail/undefined
+WARNING 2025-08-28 06:14:56,947 basehttp "GET /api/ideas/detail/undefined HTTP/1.1" 404 48
+WARNING 2025-08-28 06:15:01,619 log Not Found: /api/ideas/detail/undefined
+WARNING 2025-08-28 06:15:01,622 basehttp "GET /api/ideas/detail/undefined HTTP/1.1" 404 48
+WARNING 2025-08-28 06:15:42,342 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:15:42,354 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-28 06:15:44,374 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:15:44,385 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-28 06:15:47,077 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:15:47,093 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-28 06:15:51,939 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:15:51,948 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 26
+WARNING 2025-08-28 06:16:05,807 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:16:05,812 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 58
+WARNING 2025-08-28 06:16:06,848 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:16:06,850 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 58
+WARNING 2025-08-28 06:16:08,859 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:16:08,866 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 58
+WARNING 2025-08-28 06:16:12,894 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:16:12,908 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 58
+WARNING 2025-08-28 06:16:33,292 log Forbidden: /api/ideas/detail/software-supply-chain-dependency-security
+WARNING 2025-08-28 06:16:33,308 basehttp "GET /api/ideas/detail/software-supply-chain-dependency-security HTTP/1.1" 403 58
+WARNING 2025-08-28 06:23:41,437 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:23:41,457 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-28 06:23:42,498 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:23:42,502 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-28 06:23:43,442 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:23:43,447 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-28 06:28:41,196 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:28:41,205 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:28:41,223 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:28:41,226 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:28:41,230 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:28:41,237 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:28:41,814 log Forbidden: /api/domains/saved
+WARNING 2025-08-28 06:28:41,818 log Forbidden: /api/domains/acquired
+WARNING 2025-08-28 06:28:41,823 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-28 06:28:41,829 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-28 06:28:41,834 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-28 06:28:41,836 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58

@@ -1,7 +1,6 @@
 # admin.py
 from django.contrib import admin
 from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile
-from .tasks import process_pending_files
 
 from django_celery_beat.admin import PeriodicTaskAdmin, CrontabScheduleAdmin
 from django_celery_beat.models import PeriodicTask, CrontabSchedule

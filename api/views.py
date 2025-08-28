@@ -7,7 +7,7 @@ from .authentication import ClerkJWTAuthentication
 from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay, UseCase
-from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, IdeaOfTheDaySerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer
 from .permissions import IsManagerOrReadOnly
 from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
 from .filters import UseCaseFilter
@@ -664,27 +664,28 @@ class IdeaOfTheDayView(APIView):
         # Fetch today's pending_delete
         today_obj = (
             IdeaOfTheDay.objects
-            .filter(drop_date=drop_date, domain_list="pending_delete")
+            .filter(drop_date=drop_date, domain_list="deleting_today") # Use deleting_today for prod
             .select_related("use_case")
             .first()
         )
 
-        # Fetch yesterday's pending_delete (as today's deleted)
+        # Fetch yesterday's deleted
         yesterday_obj = (
             IdeaOfTheDay.objects
-            .filter(drop_date=yesterday, domain_list="deleted")
+            .filter(drop_date=yesterday, domain_list="pending_delete") # Use deleted for prod
             .select_related("use_case")
             .first()
         )
 
-        pending_delete_data = IdeaOfTheDaySerializer(today_obj.use_case).data if today_obj else None
-        deleted_data = IdeaOfTheDaySerializer(yesterday_obj.use_case).data if yesterday_obj else None
+        pending_delete_data = IdeaOfTheDaySerializer(today_obj).data if today_obj else None
+        deleted_data = IdeaOfTheDaySerializer(yesterday_obj).data if yesterday_obj else None
 
         return Response({
             "date": drop_date,
             "pending_delete": pending_delete_data,
             "deleted": deleted_data,
         })
+
 
 
 

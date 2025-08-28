@@ -10,7 +10,7 @@ from .models import Name, ArchivedName, IdeaOfTheDay, UseCase, UploadedFile
 from .handlers.services import RapidAPIBulkDomainAPI
 
 from pathlib import Path
-# from django.conf import settings
+from django.conf import settings
 import subprocess
 # from datetime import date
 import logging
@@ -33,8 +33,8 @@ EXTENSION_CHECK_DELAYS = {
     '.ai': 12,
 }
 
-BATCH_SIZE = 50  # Upper limit per batch
-BULK_CHUNK = 50
+BATCH_SIZE = settings.DOMAIN_BATCH_SIZE 
+BULK_CHUNK = settings.DOMAIN_BULK_CHUNK
 
 
 # --- Helper for batching ---
@@ -48,7 +48,7 @@ def batch(iterable, size):
         
 
 # --- Archive old domains with lock ---
-@shared_task(bind=True, name="archive_old_domains", time_limit=3600, ignore_result=True)
+@shared_task(bind=True, time_limit=3600, ignore_result=True)
 def archive_old_domains_task(self):
     """
     Bulk archives domains older than 90 days with improved:
@@ -89,34 +89,73 @@ def archive_old_domains_task(self):
 
 
 
-# --- Pending to deleted transition (daily lock, TLD-aware) ---
-@shared_task(bind=True, time_limit=1200, soft_time_limit=1100, ignore_result=True)
-def transition_pending_to_deleted_task(self, **kwargs):
+
+# --- Midnight transition: pending_delete -> deleting_today ---
+@shared_task(bind=True, time_limit=600, soft_time_limit=500, ignore_result=True)
+def transition_pending_to_deleting_today_task(self, **kwargs):
     """
-    COMPLETE TLD-AWARE
-    Transition domains from pending_delete to deleted status when their drop_time has passed.
-    Now supports TLD-specific processing when 'tld' parameter is provided.
-    
-    Key Features:
-    1. Added TLD filtering throughout all queries
-    2. Improved lock key naming with TLD context
-    3. Ensured consistent TLD handling in all sub-functions
-    4. Maintained all original functionality (without daily idea updates)
-    
-    Processing Flow:
-    1. Acquire TLD-specific lock
-    2. Filter domains by TLD (if specified)
-    3. Process eligible domains in bulk chunks
-    4. Release lock
+    Daily midnight transition:
+    Move all domains scheduled to drop today from 'pending_delete' to 'deleting_today'.
+    Provides a stable set of domains for business logic (eg. nameoftheday).
     """
-    
-    # 1. PARAMETER HANDLING ===================================================
-    tld = kwargs.get('tld')  # Get TLD from task parameters (None if not specified)
+
     current_date = timezone.now().date()
-    
+    lock_key = f"midnight_transition_lock_{current_date}"
+
+    # Prevent concurrent execution
+    if not cache.add(lock_key, "locked", timeout=1800):
+        logger.warning(f"Midnight transition already running for {current_date}")
+        return
+
+    try:
+        # Base queryset: all names due for deletion today
+        qs = Name.objects.filter(
+            domain_list=DomainListOptions.PENDING_DELETE,
+            drop_date=current_date,
+        ).only("id")
+
+        ready_count = qs.count()
+        if ready_count == 0:
+            logger.info(f"No domains scheduled for deleting_today at {current_date}")
+            return
+
+        # Update in bulk
+        with transaction.atomic():
+            qs.update(domain_list=DomainListOptions.DELETING_TODAY)
+
+        logger.info(f"Moved {ready_count} domains to deleting_today at {current_date}")
+
+    finally:
+        cache.delete(lock_key)
+        logger.debug(f"Released lock {lock_key}")
+
+
+
+
+
+# --- Deleting_today -> Deleted transition (TLD-aware) ---
+@shared_task(bind=True, time_limit=1200, soft_time_limit=1100, ignore_result=True)
+def transition_deleting_today_to_deleted_task(self, **kwargs):
+    """
+    COMPLETE TLD-AWARE (REFINED)
+    Transition domains from deleting_today to deleted status when their drop_time has passed.
+    Built as a follow-up step to the midnight grouping task.
+
+    Key Features:
+    1. Processes only domains in 'deleting_today'
+    2. Preserves TLD-specific timing (drop_time cutoff)
+    3. Supports TLD parameter filtering for targeted runs
+    4. Uses chunked bulk updates for efficiency
+    5. Safe locking per (TLD, date) to prevent overlaps
+    """
+
+    # 1. PARAMETER HANDLING ===================================================
+    tld = kwargs.get('tld')  # Optional TLD filter
+    current_date = timezone.now().date()
+
     # 2. LOCKING MECHANISM ===================================================
-    lock_key = f"pending_transition_lock_{current_date}_{tld or 'all'}"
-    
+    lock_key = f"deleting_today_transition_lock_{current_date}_{tld or 'all'}"
+
     # Prevent concurrent execution for same TLD/date combination
     if not cache.add(lock_key, "locked", timeout=3600):
         logger.warning(f"Task already running for {'all TLDs' if not tld else tld}")
@@ -125,29 +164,31 @@ def transition_pending_to_deleted_task(self, **kwargs):
     try:
         # 3. INITIALIZATION ==================================================
         now = timezone.now()
-        logger.info(f"Starting pending->deleted transition for {'all TLDs' if not tld else tld} at {now}")
-        
+        logger.info(
+            f"Starting deleting_today -> deleted transition for {'all TLDs' if not tld else tld} at {now}"
+        )
+
         # 4. QUERY BUILDING ==================================================
         def get_base_queryset():
             """Returns base queryset with TLD filtering if specified"""
             qs = Name.objects.filter(
-                domain_list='pending_delete',
+                domain_list=DomainListOptions.DELETING_TODAY,
                 drop_time__lte=now
             )
             if tld:
-                qs = qs.filter(domain__iendswith=f'.{tld}')
+                qs = qs.filter(domain_name__iendswith=f'.{tld}')
                 logger.debug(f"Applying TLD filter for .{tld}")
             return qs
-        
+
         # Main queryset for processing
-        ready_qs = get_base_queryset().order_by('-score').only(
-            'id', 'score', 'domain', 'is_top_rated', 'drop_date'
+        ready_qs = get_base_queryset().order_by('-id').only(
+            'id', 'drop_date', 'is_top_rated'
         )
 
         # 5. PROCESSING FUNCTIONS ============================================
         def process_bulk_transitions(ready_ids_iter):
             """
-            Process domains in memory-efficient chunks
+            Process domains in memory-efficient chunks.
             Args:
                 ready_ids_iter: Iterator of domain IDs to process
             """
@@ -155,7 +196,7 @@ def transition_pending_to_deleted_task(self, **kwargs):
             while chunk:
                 # Update domain_list and status
                 Name.objects.filter(id__in=chunk).update(
-                    domain_list='deleted',
+                    domain_list=DomainListOptions.DELETED,
                     status='unverified'
                 )
                 # Special handling for top-rated domains
@@ -166,10 +207,12 @@ def transition_pending_to_deleted_task(self, **kwargs):
 
         # 6. MAIN PROCESSING LOGIC ===========================================
         ready_count = ready_qs.count()
-        
+
         # Early return if no domains to process
         if ready_count == 0:
-            logger.info(f"No pending->deleted transitions for {'all TLDs' if not tld else tld} at {now}")
+            logger.info(
+                f"No deleting_today -> deleted transitions for {'all TLDs' if not tld else tld} at {now}"
+            )
             return
 
         # Prepare data for processing
@@ -181,9 +224,9 @@ def transition_pending_to_deleted_task(self, **kwargs):
 
         # 7. FINAL LOGGING ===================================================
         logger.info(
-            f"Transitioned {ready_count} domains at {now}"
+            f"Transitioned {ready_count} domains from deleting_today -> deleted at {now}"
         )
-        
+
     finally:
         # 8. CLEANUP ========================================================
         cache.delete(lock_key)  # Release lock regardless of success/failure
@@ -204,12 +247,12 @@ def update_idea_of_the_day(self):
     """
     Updates the IdeaOfTheDay records once per day (scheduled at 00:00 UTC).
 
-    Logic:
+    Logic (new world with deleting_today):
     - Select the "deleted" idea for today:
-        → Prefer yesterday's top pending_delete (highest score).
+        → Prefer yesterday's top deleting_today (highest score).
         → Fallback: yesterday's top deleted (highest score).
     - Select the "pending_delete" idea for today:
-        → Take today's top pending_delete (highest score).
+        → Take today's top deleting_today (highest score).
 
     The function writes results into the IdeaOfTheDay table,
     producing at most two rows for each day:
@@ -223,26 +266,26 @@ def update_idea_of_the_day(self):
     current_date = timezone.now().date()
     yesterday = current_date - timedelta(days=1)
 
-    # Step 1: Try yesterday's pending_delete (primary source for today's deleted)
+    # Step 1: Prefer yesterday's deleted (expected final state)
     top_deleted = (
-        Name.objects.filter(domain_list="pending_delete", drop_date=yesterday)
+        Name.objects.filter(domain_list=DomainListOptions.DELETED, drop_date=yesterday)
         .exclude(score__isnull=True)
         .order_by("-score")
         .first()
     )
 
-    # Step 2: Fallback to yesterday's deleted (in case transitions already ran)
+    # Step 2: Fallback to yesterday's deleting_today (safety net if transition lagged)
     if not top_deleted:
         top_deleted = (
-            Name.objects.filter(domain_list="deleted", drop_date=yesterday)
+            Name.objects.filter(domain_list=DomainListOptions.DELETING_TODAY, drop_date=yesterday)
             .exclude(score__isnull=True)
             .order_by("-score")
             .first()
         )
 
-    # Step 3: Today's top pending_delete
+    # Step 3: Today's top deleting_today → becomes today's pending idea
     top_pending = (
-        Name.objects.filter(domain_list="pending_delete", drop_date=current_date)
+        Name.objects.filter(domain_list=DomainListOptions.DELETING_TODAY, drop_date=current_date)
         .exclude(score__isnull=True)
         .order_by("-score")
         .first()
@@ -258,7 +301,7 @@ def update_idea_of_the_day(self):
             defaults={"use_case": top_deleted.use_case},
         )
         update_needed = update_needed or created
-        logger.debug(f"Set deleted idea to {top_deleted.domain}")
+        logger.debug(f"Set deleted idea to {top_deleted.domain_name}")
     else:
         logger.warning(f"No deleted idea candidate found for {yesterday}")
 
@@ -269,7 +312,7 @@ def update_idea_of_the_day(self):
             defaults={"use_case": top_pending.use_case},
         )
         update_needed = update_needed or created
-        logger.debug(f"Set pending_delete idea to {top_pending.domain}")
+        logger.debug(f"Set pending_delete idea to {top_pending.domain_name}")
     else:
         logger.warning(f"No pending_delete idea candidate found for {current_date}")
 
@@ -322,16 +365,18 @@ def check_domain_availability_subtask(self, domain_ids):
         logger.debug(f"Skipping batch - no eligible domains in {domain_ids}")
         return
 
-    domain_names = [d.domain for d in domains]
+    # Use the correct model field name
+    domain_names = [d.domain_name for d in domains]
     try:
         availability_map = status_api.check_bulk_domain_availability(domain_names)
     except Exception as e:
         logger.error(f"API failed for batch {domain_ids}: {str(e)}")
         raise self.retry(exc=e)
 
+
     updates = []
     for domain in domains:
-        availability = availability_map.get(domain.domain, 'unknown')
+        availability = availability_map.get(domain.domain_name, 'unknown')
         new_status = (
             'available' if availability == 'available' else
             'taken' if availability == 'taken' else
@@ -395,13 +440,10 @@ def trigger_bulk_availability_check_task(self):
             # For efficiency, fetch only IDs instead of full objects
             domain_ids = list(eligible_domains.values_list('id', flat=True))
 
-            logger.info(
-                "Preparing %d domains for checking (extensions: %s)",
-                eligible_count,
-                ", ".join(
-                    eligible_domains.values_list('extension', flat=True).distinct()
-                )
-            )
+            # Casting to a list and logging
+            extensions = list(eligible_domains.values_list('extension', flat=True).distinct())
+            logger.info("Preparing %d domains for checking (extensions: %s)", eligible_count, ", ".join(extensions))
+
 
             # Step 2: Split into batches of BATCH_SIZE (50)
             batches = [
@@ -437,27 +479,23 @@ def trigger_bulk_availability_check_task(self):
 def second_check_task(self):
     """
     Periodic recheck of domains in 'available' or 'unverified' status.
-    Applies extension-specific check intervals and handles all states properly.
-    
-    Enhancements:
-    - Adds batching of domains (BATCH_SIZE = 50) to respect API request size limits.
-    - Adds 10s spacing between each batch request to prevent rate-limit violations.
+    - Selects domains due for recheck based on extension-specific intervals
+    - Splits into batches (BATCH_SIZE)
+    - Dispatches staggered subtasks to avoid API rate-limit issues
     """
 
     lock_key = "status_api_second_check_lock"
-    lock_timeout = 1800  # Prevents concurrent runs of this task
+    lock_timeout = 1800  # Prevents concurrent runs
 
     try:
         with cache.lock(lock_key, timeout=lock_timeout):
             now = timezone.now()
-            status_api = RapidAPIBulkDomainAPI()
 
             # Step 1: Select domains due for recheck
             domains = Name.objects.filter(
                 domain_list='deleted',
                 status__in=['available', 'unverified'],
             ).annotate(
-                # Dynamic check intervals based on extension
                 min_check_hours=Greatest(
                     Value(12),
                     Value(EXTENSION_CHECK_DELAYS.get(F('extension'), 12)),
@@ -466,71 +504,63 @@ def second_check_task(self):
                 next_check_time=F('last_checked') + timedelta(
                     hours=F('min_check_hours')
                 )
-            ).filter(
-                next_check_time__lte=now
-            )
+            ).filter(next_check_time__lte=now)
 
             if not domains.exists():
                 logger.debug("No domains currently due for recheck")
                 return
 
-            # Step 2: Collect domains into batches
             domain_names = [d.domain for d in domains]
-            domain_batches = [
+            batches = [
                 domain_names[i:i + BATCH_SIZE]
                 for i in range(0, len(domain_names), BATCH_SIZE)
             ]
 
-            availability_map = {}
-
-            # Step 3: Query API for each batch with 10s spacing
-            for i, batch in enumerate(domain_batches):
-                try:
-                    if i > 0:
-                        time.sleep(10)  # prevent burst requests, 10s spacing
-
-                    batch_result = status_api.check_bulk_domain_availability(batch)
-                    availability_map.update(batch_result)
-
-                except Exception as e:
-                    logger.error(f"Recheck API failed for batch {i}: {str(e)}")
-                    raise self.retry(exc=e)
-
-            # Step 4: Process availability results into DB updates
-            updates = []
-            for domain in domains:
-                availability = availability_map.get(domain.domain, 'unknown')
-                # Keep status unless explicitly marked as taken
-                new_status = 'taken' if availability == 'taken' else domain.status
-                updates.append((domain.id, new_status, now))
-
-            # Step 5: Bulk update DB in one go
-            Name.objects.bulk_update(
-                [Name(id=id, status=status, last_checked=last_checked)
-                 for id, status, last_checked in updates],
-                fields=['status', 'last_checked']
-            )
-
-            # Step 6: Detailed logging/reporting
-            status_counts = {
-                'previously_available': domains.filter(status='available').count(),
-                'previously_unverified': domains.filter(status='unverified').count(),
-                'now_taken': sum(1 for _, status, _ in updates if status == 'taken'),
-                'still_available': sum(1 for _, status, _ in updates if status == 'available'),
-                'still_unverified': sum(1 for _, status, _ in updates if status == 'unverified')
-            }
+            # Step 2: Dispatch subtasks staggered at 10s intervals
+            for i, batch in enumerate(batches):
+                second_check_subtask.apply_async(
+                    args=[batch],
+                    countdown=i * 10
+                )
 
             logger.info(
-                "Recheck completed. Previous: A:%(previously_available)d/U:%(previously_unverified)d. "
-                "Now: T:%(now_taken)d/A:%(still_available)d/U:%(still_unverified)d",
-                status_counts
+                "Dispatched %d batches (%d domains) for second-checking with 10s spacing",
+                len(batches),
+                len(domain_names)
             )
 
     except Exception as e:
-        logger.error(f"Failed to acquire lock or execute second check task: {str(e)}")
-        # Retry after 5 minutes if lock acquisition or main logic fails
+        logger.error(f"Failed to run second check task: {str(e)}")
         raise self.retry(exc=e, countdown=300)
 
+
+
+
+@shared_task(bind=True, ignore_result=True)
+def second_check_subtask(self, batch):
+    """
+    Subtask: Checks availability for a batch of domains and updates DB.
+    """
+
+    status_api = RapidAPIBulkDomainAPI()
+    now = timezone.now()
+    updates = []
+
+    try:
+        results = status_api.check_bulk_domain_availability(batch)
+        for domain in Name.objects.filter(domain__in=batch):
+            availability = results.get(domain.domain, 'unknown')
+            new_status = 'taken' if availability == 'taken' else domain.status
+            updates.append(Name(id=domain.id, status=new_status, last_checked=now))
+
+        if updates:
+            Name.objects.bulk_update(updates, fields=['status', 'last_checked'])
+
+        logger.debug("Batch of %d domains rechecked", len(batch))
+
+    except Exception as e:
+        logger.error(f"Second-check API failed for batch: {str(e)}")
+        raise self.retry(exc=e, countdown=120)
 
 
 
@@ -722,3 +752,107 @@ def process_pending_files(self):
 #     (workflow | periodic_checks).apply_async()
 
 #     logger.info("Initiated full domain availability pipeline")
+
+
+
+
+
+
+# @shared_task(bind=True, time_limit=1200, soft_time_limit=1100, ignore_result=True)
+# def transition_pending_to_deleted_task(self, **kwargs):
+#     """
+#     COMPLETE TLD-AWARE
+#     Transition domains from pending_delete to deleted status when their drop_time has passed.
+#     Now supports TLD-specific processing when 'tld' parameter is provided.
+    
+#     Key Features:
+#     1. Added TLD filtering throughout all queries
+#     2. Improved lock key naming with TLD context
+#     3. Ensured consistent TLD handling in all sub-functions
+#     4. Maintained all original functionality (without daily idea updates)
+    
+#     Processing Flow:
+#     1. Acquire TLD-specific lock
+#     2. Filter domains by TLD (if specified)
+#     3. Process eligible domains in bulk chunks
+#     4. Release lock
+#     """
+    
+#     # 1. PARAMETER HANDLING ===================================================
+#     tld = kwargs.get('tld')  # Get TLD from task parameters (None if not specified)
+#     current_date = timezone.now().date()
+    
+#     # 2. LOCKING MECHANISM ===================================================
+#     lock_key = f"pending_transition_lock_{current_date}_{tld or 'all'}"
+    
+#     # Prevent concurrent execution for same TLD/date combination
+#     if not cache.add(lock_key, "locked", timeout=3600):
+#         logger.warning(f"Task already running for {'all TLDs' if not tld else tld}")
+#         return
+
+#     try:
+#         # 3. INITIALIZATION ==================================================
+#         now = timezone.now()
+#         logger.info(f"Starting pending->deleted transition for {'all TLDs' if not tld else tld} at {now}")
+        
+#         # 4. QUERY BUILDING ==================================================
+#         def get_base_queryset():
+#             """Returns base queryset with TLD filtering if specified"""
+#             qs = Name.objects.filter(
+#                 domain_list='pending_delete',
+#                 drop_time__lte=now
+#             )
+#             if tld:
+#                 qs = qs.filter(domain__iendswith=f'.{tld}')
+#                 logger.debug(f"Applying TLD filter for .{tld}")
+#             return qs
+        
+#         # Main queryset for processing
+#         ready_qs = get_base_queryset().order_by('-score').only(
+#             'id', 'score', 'domain', 'is_top_rated', 'drop_date'
+#         )
+
+#         # 5. PROCESSING FUNCTIONS ============================================
+#         def process_bulk_transitions(ready_ids_iter):
+#             """
+#             Process domains in memory-efficient chunks
+#             Args:
+#                 ready_ids_iter: Iterator of domain IDs to process
+#             """
+#             chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
+#             while chunk:
+#                 # Update domain_list and status
+#                 Name.objects.filter(id__in=chunk).update(
+#                     domain_list='deleted',
+#                     status='unverified'
+#                 )
+#                 # Special handling for top-rated domains
+#                 Name.objects.filter(id__in=chunk, is_top_rated=True).update(
+#                     top_rated_date=F('drop_date')
+#                 )
+#                 chunk = list(islice(ready_ids_iter, 0, BULK_CHUNK))
+
+#         # 6. MAIN PROCESSING LOGIC ===========================================
+#         ready_count = ready_qs.count()
+        
+#         # Early return if no domains to process
+#         if ready_count == 0:
+#             logger.info(f"No pending->deleted transitions for {'all TLDs' if not tld else tld} at {now}")
+#             return
+
+#         # Prepare data for processing
+#         all_ready_ids = ready_qs.values_list('id', flat=True)
+
+#         # Execute updates in single transaction
+#         with transaction.atomic():
+#             process_bulk_transitions(all_ready_ids)
+
+#         # 7. FINAL LOGGING ===================================================
+#         logger.info(
+#             f"Transitioned {ready_count} domains at {now}"
+#         )
+        
+#     finally:
+#         # 8. CLEANUP ========================================================
+#         cache.delete(lock_key)  # Release lock regardless of success/failure
+#         logger.debug(f"Released lock {lock_key}")
