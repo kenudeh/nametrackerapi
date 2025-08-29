@@ -255,6 +255,21 @@ class NameSerializer(serializers.ModelSerializer):
 
 
 # ============================================
+# Top Rated Names Serializer
+# ============================================
+class DashboardNameSerializer(serializers.ModelSerializer):
+    """
+    Minimal serializer for the dashboard slice to keep payloads small.
+    Only fields the dashboard explicitly needs.
+    """
+    class Meta:
+        model = Name
+        fields = ['domain_list', 'domain_name', 'slug', 'is_top_rated', 'drop_date', 'score', 'length', 'status']
+
+
+
+
+# ============================================
 # Acquired Names Serializer
 # ============================================
 class AcquiredNameSerializer(serializers.ModelSerializer):
@@ -347,15 +362,17 @@ class UseCaseDetailSerializer(serializers.ModelSerializer):
 # ============================================
 class IdeaOfTheDaySerializer(serializers.ModelSerializer):
     use_case = UseCaseSerializer(read_only=True)
+    domain_status = serializers.CharField(source="use_case.domain_name.status", read_only=True)
+
 
     class Meta:
         model = IdeaOfTheDay
-        fields = ["drop_date", "domain_list", "use_case"]
+        fields = ["drop_date", "domain_list", "domain_status", "use_case"]
 
 
 
 # ============================================
-# Ideaoftheday List View Serializer
+# Ideaoftheday List Serializer
 # ============================================
 class IdeaOfTheDayListSerializer(serializers.ModelSerializer):
     use_case = UseCaseSerializer(read_only=True)

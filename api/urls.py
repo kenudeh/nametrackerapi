@@ -12,6 +12,8 @@ urlpatterns = [
     # path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
     # path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
     # path('names/<int:pk>/delete', views.NameDeleteAPIView.as_view(), name='name-delete'),
+    path('dashboard/top-rated-names', views.TopRatedNamesAPIView.as_view(), name='dashboard-top-rated-names'),
+    path('dashboard/daily-drop', views.DailyDropAPIView.as_view(), name='dashboard-daily-drop'),
 
     # Toggling saved status
     path('names/<str:slug>/toggle-save', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),    # Full saved name list

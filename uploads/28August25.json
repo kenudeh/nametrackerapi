@@ -1,0 +1,510 @@
+ [
+    {
+      "domain_name": "Voyance.co",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Predictive Analytics for E-commerce",
+          "description": "A platform that analyzes a store's data to 'see the future' of sales trends, predict customer churn, and forecast inventory needs.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. Glew.io, Peel Insights)",
+          "category": {
+            "name": "E-Commerce & Retail"
+          },
+          "tag": [
+            {"name": "Predictive Analytics"},
+            {"name": "AI"},
+            {"name": "E-Commerce"}
+          ],
+          "target_market": "E-commerce store owners, D2C brands, marketing agencies",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Lead Scoring & Sales Forecasting",
+          "description": "A SaaS that connects to a CRM to analyze the sales pipeline and provide a predictive forecast, highlighting deals that are likely to close.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Clari, Gong, People.ai)",
+          "category": {
+            "name": "Business Intelligence"
+          },
+          "tag": [
+            {"name": "Sales Tech"},
+            {"name": "AI"},
+            {"name": "Forecasting"}
+          ],
+          "target_market": "Sales teams, revenue operations, B2B companies",
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "Financial Market Forecasting",
+          "description": "An AI platform that analyzes market data and news sentiment to provide predictive insights and 'clairvoyant' forecasts for traders and investors.",
+          "difficulty": "hard",
+          "competition": "high (vs. specialized hedge fund tools)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Trading"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Retail traders, investment analysts, financial firms",
+          "revenue_potential": "high",
+          "order": 3
+        }
+      ]
+    },
+       {
+      "domain_name": "GreenPulse.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Market Intelligence Platform for Renewables",
+          "description": "A subscription service that provides a real-time 'pulse' of the green energy market, aggregating news, policy changes, and project data for investors and professionals.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. features in BloombergNEF, Wood Mackenzie)",
+          "category": {
+            "name": "Solar & Clean Energy"
+          },
+          "tag": [
+            {"name": "Market Intelligence"},
+            {"name": "Analytics"},
+            {"name": "B2B"}
+          ],
+          "target_market": "Renewable energy investors, analysts, project developers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "ESG Scoring & Analysis for Investors",
+          "description": "A fintech tool that monitors the 'pulse' of public companies' ESG (Environmental, Social, Governance) performance and provides a simple score for investors.",
+          "difficulty": "moderate",
+          "competition": "high (vs. MSCI, Sustainalytics, Refinitiv)",
+          "category": {
+            "name": "Venture Capital & Investment"
+          },
+          "tag": [
+            {"name": "ESG"},
+            {"name": "Fintech"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Retail investors, investment funds, financial analysts",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "cene.io",
+      "score": 9,
+      "use_cases": [
+        {
+          "case_title": "Virtual Event & Stage Management",
+          "description": "A platform for producers of online events and webinars to manage the scenes, speakers, and back-end production in one place.",
+          "difficulty": "moderate",
+          "competition": "high (vs. StreamYard, Restream, features in Hopin)",
+          "category": {
+            "name": "Event Planning and Services"
+          },
+          "tag": [
+            {"name": "Virtual Events"},
+            {"name": "Streaming"},
+            {"name": "Production"}
+          ],
+          "target_market": "Event producers, marketing teams, webinar hosts",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Collaborative Scene Editor for Game Developers",
+          "description": "A cloud-based tool for game development teams to collaboratively design, build, and edit game levels or scenes in real-time.",
+          "difficulty": "hard",
+          "competition": "medium (vs. features in Unity, Unreal Engine)",
+          "category": {
+            "name": "Gaming"
+          },
+          "tag": [
+            {"name": "Game Development"},
+            {"name": "Collaboration"},
+            {"name": "Developer Tools"}
+          ],
+          "target_market": "Indie game studios, game developers, level designers",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "Product & Brand Visualization Platform",
+          "description": "A tool for marketing teams to create and manage visual scenes for product marketing, such as 3D renders and virtual photoshoots.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Threekit, Zakeke)",
+          "category": {
+            "name": "Marketing & Advertising"
+          },
+          "tag": [
+            {"name": "3D Modeling"},
+            {"name": "MarTech"},
+            {"name": "Visualization"}
+          ],
+          "target_market": "E-commerce brands, marketing teams, CPG companies",
+          "revenue_potential": "high",
+          "order": 3
+        }
+      ]
+    },
+       {
+      "domain_name": "FlowFit.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Workflow Automation for Creative Teams",
+          "description": "A project management platform designed for the specific 'flow' of creative work, helping agencies and marketing teams manage their pipeline.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Asana, Monday.com, ClickUp)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Workflow"},
+            {"name": "Project Management"},
+            {"name": "Agency"}
+          ],
+          "target_market": "Creative agencies, marketing teams, design studios",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Fitness & Wellness Studio Management",
+          "description": "A tool for yoga, pilates, or fitness studios to manage class schedules ('flow') and memberships ('fit'), ensuring a smooth operation.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Mindbody, Glofox, Zen Planner)",
+          "category": {
+            "name": "Fitness & Gym"
+          },
+          "tag": [
+            {"name": "Vertical SaaS"},
+            {"name": "Practice Management"},
+            {"name": "Scheduling"}
+          ],
+          "target_market": "Fitness studios, gym owners, personal trainers",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "OmniBot.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Omnichannel Customer Support Chatbot",
+          "description": "A single AI chatbot that can be deployed across a company's 'omni'-channel presence (website, social DMs, etc.) with a unified backend.",
+          "difficulty": "hard",
+          "competition": "high (vs. Intercom, Drift, Ada)",
+          "category": {
+            "name": "Customer Engagement & Support"
+          },
+          "tag": [
+            {"name": "AI Chatbot"},
+            {"name": "Omnichannel"},
+            {"name": "Customer Support"}
+          ],
+          "target_market": "E-commerce brands, SaaS companies, support teams",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Internal Business Automation Bot",
+          "description": "An 'omni' bot that connects various internal tools (e.g., Slack, Jira, Salesforce) to automate complex, cross-platform business workflows.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Workato, Tray.io)",
+          "category": {
+            "name": "Internal Tools & Admin Panels"
+          },
+          "tag": [
+            {"name": "Automation"},
+            {"name": "iPaaS"},
+            {"name": "Workflow"}
+          ],
+          "target_market": "Operations teams, IT departments, growing startups",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+      {
+      "domain_name": "DraftPad.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Distraction-Free Writing Application",
+          "description": "A minimalist writing 'pad' for authors, bloggers, and students, designed to help them focus on producing their first 'draft' without distractions.",
+          "difficulty": "easy",
+          "competition": "high (vs. Ulysses, iA Writer, Scrivener)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Writing"},
+            {"name": "Content & CMS"},
+            {"name": "Minimalist"}
+          ],
+          "target_market": "Writers, bloggers, students, content creators",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Collaborative Document Drafting for Teams",
+          "description": "A tool for teams (e.g., legal, marketing, PR) to collaboratively work on sensitive 'drafts' of documents, with robust version control and commenting.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Google Docs, Microsoft 365, Notion)",
+          "category": {
+            "name": "Communication & Collaboration"
+          },
+          "tag": [
+            {"name": "Document Automation"},
+            {"name": "Collaboration"},
+            {"name": "Legal Tech"}
+          ],
+          "target_market": "Legal teams, marketing departments, agencies",
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "Trifold.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Business Dashboard & Reporting Tool",
+          "description": "A BI tool that organizes key business data into a simple, 'trifold' view: Past (historical data), Present (real-time metrics), and Future (forecasts).",
+          "difficulty": "moderate",
+          "competition": "high (vs. Looker Studio, Geckoboard, Databox)",
+          "category": {
+            "name": "Business Intelligence"
+          },
+          "tag": [
+            {"name": "Dashboard"},
+            {"name": "Analytics"},
+            {"name": "BI"}
+          ],
+          "target_market": "Business owners, executives, data analysts",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Digital Brochure & Proposal Builder",
+          "description": "A design tool for sales and marketing teams to quickly create professional 'trifold'-style digital brochures, proposals, and one-pagers.",
+          "difficulty": "easy",
+          "competition": "high (vs. Canva, PandaDoc, Proposify)",
+          "category": {
+            "name": "Content & CMS"
+          },
+          "tag": [
+            {"name": "Design Tool"},
+            {"name": "Sales Tech"},
+            {"name": "MarTech"}
+          ],
+          "target_market": "Sales teams, marketing agencies, freelancers",
+          "revenue_potential": "medium",
+          "order": 2
+        },
+        {
+          "case_title": "Simple Project Management (To-Do, Doing, Done)",
+          "description": "A lightweight project management tool that strips complexity down to the classic three-column Kanban ('trifold') layout for focused task tracking.",
+          "difficulty": "easy",
+          "competition": "high (vs. Trello, Asana, Linear)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Project Management"},
+            {"name": "Kanban"},
+            {"name": "Task Management"}
+          ],
+          "target_market": "Small teams, startups, freelancers",
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+      {
+      "domain_name": "LiveMood.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Real-time Team Morale & Feedback Tool",
+          "description": "An anonymous tool for companies to track the 'live mood' of their team through quick daily polls and gather continuous feedback to improve culture.",
+          "difficulty": "easy",
+          "competition": "medium (vs. Officevibe, Culture Amp, Friday Pulse)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "Employee Engagement"},
+            {"name": "HR Tech"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "HR departments, remote companies, team managers",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Live Audience Engagement & Polling",
+          "description": "A platform for speakers, streamers, and event hosts to gauge their audience's 'mood' and collect real-time feedback during a live session.",
+          "difficulty": "easy",
+          "competition": "high (vs. Slido, Mentimeter)",
+          "category": {
+            "name": "Event Planning and Services"
+          },
+          "tag": [
+            {"name": "Audience Engagement"},
+            {"name": "Events"},
+            {"name": "Polling"}
+          ],
+          "target_market": "Public speakers, streamers, event organizers",
+          "revenue_potential": "low",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "SelfQuiz.co",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Spaced Repetition Study Tool for Professionals",
+          "description": "A platform for professionals to create and practice with quizzes for certifications and continuous learning, using spaced repetition to maximize retention.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Anki, Quizlet, Brainscape)",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "EdTech"},
+            {"name": "Professional Development"},
+            {"name": "Spaced Repetition"}
+          ],
+          "target_market": "Certification candidates, lifelong learners, professionals",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Employee Onboarding & Compliance Quizzing",
+          "description": "A tool for HR teams to build and automate the delivery of quizzes for new hire training, security protocols, and annual compliance certifications.",
+          "difficulty": "easy",
+          "competition": "medium (vs. features in larger LMS platforms)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "Compliance"},
+            {"name": "Corporate Training"},
+            {"name": "Automation"}
+          ],
+          "target_market": "HR teams, compliance officers, SMBs",
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "LetterLab.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Newsletter Writing Assistant",
+          "description": "An AI tool specifically for creators and marketers to brainstorm, write, and edit engaging newsletters in a collaborative 'lab' environment.",
+          "difficulty": "easy",
+          "competition": "high (vs. Jasper, Copy.ai, features in Beehiiv)",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Newsletter"},
+            {"name": "Creator Economy"},
+            {"name": "Copywriting"}
+          ],
+          "target_market": "Newsletter writers, marketers, content creators",
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Business & Formal Letter Generator",
+          "description": "An AI tool that helps users compose effective and professionally toned 'letters' for various business situations (e.g., cover letters, sales outreach, formal requests).",
+          "difficulty": "easy",
+          "competition": "medium (vs. general AI writers)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Writing"},
+            {"name": "Automation"}
+          ],
+          "target_market": "Job seekers, sales professionals, small business owners",
+          "revenue_potential": "low",
+          "order": 2
+        }
+      ]
+    },
+        {
+      "domain_name": "VisionAero.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "Drone & Satellite Imagery Analysis Platform",
+          "description": "A platform that analyzes aerial ('Aero') imagery using computer 'Vision' for industries like agriculture, construction, or defense.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Planet Labs, SkyWatch, Esri)",
+          "category": {
+            "name": "AI, ML & Data Intelligence"
+          },
+          "tag": [
+            {"name": "Computer Vision"},
+            {"name": "GIS"},
+            {"name": "Drone"}
+          ],
+          "target_market": "Agriculture companies, construction firms, defense contractors",
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Predictive Maintenance for Aviation",
+          "description": "A SaaS that analyzes aircraft maintenance data and sensor logs to provide a forward-looking 'vision' for predicting component failures.",
+          "difficulty": "hard",
+          "competition": "high (vs. specialized enterprise software)",
+          "category": {
+            "name": "Science & Engineering"
+          },
+          "tag": [
+            {"name": "Predictive Maintenance"},
+            {"name": "Aviation"},
+            {"name": "Analytics"}
+          ],
+          "target_market": "Airlines, maintenance repair organizations (MROs)",
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "AI Inspection for Aerospace Manufacturing",
+          "description": "A tool that uses computer 'Vision' to inspect aircraft parts for defects on the assembly line, improving quality control in the 'Aero' industry.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Cognex, Keyence for general manufacturing)",
+          "category": {
+            "name": "Testing, QA & Automation"
+          },
+          "tag": [
+            {"name": "Computer Vision"},
+            {"name": "Manufacturing"},
+            {"name": "QA"}
+          ],
+          "target_market": "Aerospace manufacturers, defense contractors",
+          "revenue_potential": "high",
+          "order": 3
+        }
+      ]
+    }
+  ]
