@@ -7,7 +7,7 @@ from .authentication import ClerkJWTAuthentication
 from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay, UseCase
-from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, IdeaOfTheDaySerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, IdeaOfTheDaySerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer, DashboardNameSerializer
 from .permissions import IsManagerOrReadOnly
 from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
 from .filters import UseCaseFilter
@@ -30,6 +30,8 @@ from rest_framework import filters as drf_filters
  
 from rest_framework.request import Request
 
+from datetime import timedelta
+from django.utils.timezone import now
 
 # Admin-file loader view imports
 from django.contrib.admin.views.decorators import staff_member_required
@@ -373,26 +375,50 @@ class UserProfileView(APIView):
 
 
 #===================================
-# Name views
+# Name list view
 #====================================
 class NameListAPIView(generics.ListAPIView):
-    queryset = Name.objects.all().select_related('suggested_usecase').prefetch_related(
-        'use_cases__tag', 
-        'use_cases__category',
-        'suggested_usecase__tag',
-        'suggested_usecase__category',
+    """
+    Full tabular endpoint for names with extensive filters, search, and ordering.
+    - Pagination: StandardResultsSetPagination (10 per page by default)
+    - Filters: extension, is_top_rated, is_idea_of_the_day, drop_date, domain_list, status, score, length
+    - Ordering: score, length, created_at (use '?ordering=-score' etc.)
+    - Search: by 'domain_name' (use '?search=foo')
+    """
+    queryset = (
+        Name.objects.all()
+        .select_related('suggested_usecase')
+        .prefetch_related(
+            'use_cases__tag',
+            'use_cases__category',
+            'suggested_usecase__tag',
+            'suggested_usecase__category',
+        )
     )
     serializer_class = NameSerializer
     permission_classes = [IsAuthenticated]
+    pagination_class = StandardResultsSetPagination
     filter_backends = [DjangoFilterBackend, filters.OrderingFilter, filters.SearchFilter]
-    filterset_fields = ['extension', 'is_top_rated', 'is_idea_of_the_day'] #removed 'category__name', 
+    filterset_fields = [
+        'extension',
+        'is_top_rated',
+        'is_idea_of_the_day',
+        'drop_date',
+        'domain_list',
+        'status',
+        'score',
+        'length',
+    ]    
     ordering_fields = ['score', 'length', 'created_at']
     search_fields = ['domain_name',] #removed 'tag__name', 'category__name'
 
     def get_serializer_context(self):
+        # Keeping request in context
         context = super().get_serializer_context()
         context['request'] = self.request  # Needed to compute saved status
         return context
+
+
 
 
 
@@ -455,6 +481,176 @@ class ToggleSavedNameView(APIView):
             SavedName.objects.create(user=user, name=name)
             return Response({'saved': True}, status=status.HTTP_201_CREATED)
 
+
+
+
+            
+#===============================================================================
+# TopRatedNames View
+#===============================================================================
+class TopRatedNamesAPIView(generics.GenericAPIView):
+    """
+    Dashboard endpoint that returns two groups: 'today' and 'yesterday' top-rated names.
+    Features:
+      - ?last_n=<int> : limit per day (defaults to 12; hard cap applied to prevent abuse)
+      - ?domain_list=<value> : optional filter by list type (e.g., 'gold', 'silver' etc.)
+    Behavior:
+      - Uses timezone-aware "today" per server TZ. If you want request/user-TZ based,
+        we can adjust once you specify the TZ source.
+      - Deterministic ordering by: score DESC, created_at DESC, domain_name ASC
+    Response shape:
+    {
+      "today": [... TopRatedNamesAPIView ...],
+      "yesterday": [... TopRatedNamesAPIView ...]
+    }
+    """
+    permission_classes = [IsAuthenticated]
+    serializer_class = DashboardNameSerializer
+
+    # Sensible defaults/caps to guard the DB
+    DEFAULT_LAST_N = 12
+    MAX_LAST_N = 100
+
+    def get(self, request, *args, **kwargs):
+        # 1) Parse & validate query params
+        last_n_raw = request.query_params.get('last_n', None)
+        domain_list = request.query_params.get('domain_list', None)
+
+        if last_n_raw is None:
+            last_n = self.DEFAULT_LAST_N
+        else:
+            try:
+                last_n = int(last_n_raw)
+            except (TypeError, ValueError):
+                return Response(
+                    {"detail": "Invalid 'last_n' — must be an integer."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            if last_n <= 0:
+                return Response(
+                    {"detail": "'last_n' must be a positive integer."},
+                    status=status.HTTP_400_BAD_REQUEST
+                )
+            if last_n > self.MAX_LAST_N:
+                last_n = self.MAX_LAST_N  # clamp instead of erroring
+
+        # 2) Resolve dates (timezone-aware, date part only)
+        today = now().date()
+        yesterday = today - timedelta(days=1)
+
+        # 3) Base queryset: top-rated only, with deterministic ordering
+        base_qs = (
+            Name.objects
+            .filter(is_top_rated=True)
+            .order_by('-score', '-created_at', 'domain_name')
+            .select_related('suggested_usecase')  # cheap join; harmless for dashboard payload
+        )
+
+        # Optional filter by domain_list if provided
+        if domain_list:
+            base_qs = base_qs.filter(domain_list=domain_list)
+
+        # 4) Split per date and limit to last_n items each
+        today_qs = base_qs.filter(drop_date=today)[:last_n]
+        yesterday_qs = base_qs.filter(drop_date=yesterday)[:last_n]
+
+        # 5) Serialize with the lean dashboard serializer
+        today_data = DashboardNameSerializer(today_qs, many=True).data
+        yesterday_data = DashboardNameSerializer(yesterday_qs, many=True).data
+
+        return Response({"today": today_data, "yesterday": yesterday_data}, status=status.HTTP_200_OK)
+
+
+
+
+            
+#===============================================================================
+# Daily Drop Names View
+#===============================================================================
+
+class DailyDropAPIView(generics.GenericAPIView):
+    """
+    Dashboard endpoint for 'daily drop list', returning both 'today' and 'yesterday'.
+    - By default EXCLUDES top-rated names to avoid duplication with Top Rated tile.
+    - Query params:
+        - ?last_n=<int>           -> number of items to return per day (default 50; clamped)
+        - ?domain_list=<value>    -> optional domain_list filter
+        - ?include_top_rated=true -> include top-rated names (defaults to False)
+        - ?include_counts=true    -> include counts (useful for debugging empty responses)
+    - Ordering: score DESC, created_at DESC, domain_name ASC (deterministic).
+    """
+    permission_classes = [IsAuthenticated]
+    serializer_class = DashboardNameSerializer
+
+    DEFAULT_LAST_N = 50
+    MAX_LAST_N = 500
+
+    def _parse_bool(self, raw, default=False):
+        """Normalize common truthy strings to True; else False."""
+        if raw is None:
+            return default
+        return str(raw).lower() in ("1", "true", "yes", "y", "t")
+
+    def get(self, request, *args, **kwargs):
+        # ----------------------------
+        # 1) Parse and validate params
+        # ----------------------------
+        # last_n (limit per day)
+        last_n_raw = request.query_params.get('last_n')
+        if last_n_raw is None:
+            last_n = self.DEFAULT_LAST_N
+        else:
+            try:
+                last_n = int(last_n_raw)
+            except (TypeError, ValueError):
+                return Response({"detail": "Invalid 'last_n' — must be an integer."},
+                                status=status.HTTP_400_BAD_REQUEST)
+            if last_n <= 0:
+                return Response({"detail": "'last_n' must be a positive integer."},
+                                status=status.HTTP_400_BAD_REQUEST)
+            if last_n > self.MAX_LAST_N:
+                last_n = self.MAX_LAST_N  # clamp
+
+        domain_list = request.query_params.get('domain_list')
+        include_top_rated = self._parse_bool(request.query_params.get('include_top_rated'), default=False)
+        include_counts = self._parse_bool(request.query_params.get('include_counts'), default=False)
+
+        # ----------------------------
+        # 2) Resolve UTC dates (matches frontend T00:00:00Z approach)
+        # ----------------------------
+        today = now().date()
+        yesterday = today - timedelta(days=1)
+
+        # Helper that builds the per-day queryset (applies domain_list and top-rated toggle)
+        def build_queryset_for_date(target_date):
+            qs = Name.objects.filter(drop_date=target_date)
+            # Apply optional domain_list filter
+            if domain_list:
+                qs = qs.filter(domain_list=domain_list)
+            # By default exclude top-rated to avoid duplication across dashboard sections
+            if not include_top_rated:
+                qs = qs.exclude(is_top_rated=True)
+            # Deterministic ordering & select_related for small payloads
+            qs = qs.order_by('-score', '-created_at', 'domain_name').select_related('suggested_usecase')
+            return qs
+
+        # ----------------------------
+        # 3) Fetch & slice (apply last_n)
+        # ----------------------------
+        today_qs = build_queryset_for_date(today)[:last_n]
+        yesterday_qs = build_queryset_for_date(yesterday)[:last_n]
+
+        # 4) Serialize
+        today_data = DashboardNameSerializer(today_qs, many=True).data
+        yesterday_data = DashboardNameSerializer(yesterday_qs, many=True).data
+
+        # 5) Build response
+        response_payload = {
+            "today": today_data,
+            "yesterday": yesterday_data,
+        }
+
+        return Response(response_payload, status=status.HTTP_200_OK)
             
 #===============================================================================
 # Shared Mixin for views needing Pagination and Optonal filtering by date range
