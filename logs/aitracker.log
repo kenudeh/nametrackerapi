@@ -17613,3 +17613,259 @@ WARNING 2025-08-29 13:34:57,192 log Forbidden: /api/idea-of-the-day
 WARNING 2025-08-29 13:34:57,204 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
 WARNING 2025-08-29 13:34:57,537 log Forbidden: /api/domains/acquired
 WARNING 2025-08-29 13:34:57,546 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-29 13:46:08,888 log Forbidden: /api/domains/acquired
+WARNING 2025-08-29 13:46:08,888 log Forbidden: /api/domains/saved
+WARNING 2025-08-29 13:46:08,889 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-29 13:46:08,906 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-29 13:46:08,909 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-29 13:46:08,936 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-30 22:08:08,990 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 22:08:08,990 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 22:08:08,990 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 22:08:09,001 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-30 22:08:09,002 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-30 22:08:09,008 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-30 22:58:55,591 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 22:58:55,591 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 22:58:55,595 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 22:58:55,603 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:55,603 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:55,619 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:56,680 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 22:58:56,680 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 22:58:56,688 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 22:58:56,688 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:56,688 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:56,696 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:58,756 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 22:58:58,761 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 22:58:58,766 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 22:58:58,768 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:58,781 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-30 22:58:58,787 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:59:02,829 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 22:59:02,829 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 22:59:02,837 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 22:59:02,839 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 22:59:02,844 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-30 22:59:02,852 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:05:51,816 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 23:05:51,826 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 23:05:51,887 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:05:51,899 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 23:05:51,914 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:05:51,917 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-30 23:05:52,775 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 23:05:52,793 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 23:05:52,811 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 23:05:52,961 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:05:53,026 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:05:53,124 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-30 23:27:48,472 log Forbidden: /api/domains/acquired
+WARNING 2025-08-30 23:27:48,479 log Forbidden: /api/domains/saved
+WARNING 2025-08-30 23:27:48,492 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:27:48,506 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-30 23:27:48,506 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-30 23:27:48,516 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 07:39:51,472 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 07:39:51,472 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 07:39:51,472 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 07:39:51,489 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 07:39:51,495 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 07:39:51,609 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 07:39:57,229 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 07:39:57,235 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 07:39:57,237 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 07:39:57,237 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:39:57,287 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 07:39:57,311 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:40:52,522 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 07:40:52,522 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 07:40:52,530 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 07:40:52,554 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 07:40:52,570 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:40:52,573 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:43:27,585 log Not Found: /api/search/names/
+WARNING 2025-08-31 07:43:27,591 basehttp "GET /api/search/names/?q=ai HTTP/1.1" 404 7127
+WARNING 2025-08-31 07:44:14,944 log Not Found: /api/search/names/
+WARNING 2025-08-31 07:44:14,953 basehttp "GET /api/search/names/?q=ai HTTP/1.1" 404 7127
+WARNING 2025-08-31 07:44:39,686 log Forbidden: /api/search/names
+WARNING 2025-08-31 07:44:39,694 basehttp "GET /api/search/names?q=ai HTTP/1.1" 403 26
+WARNING 2025-08-31 07:44:54,902 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 07:44:54,910 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:44:54,922 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 07:44:55,078 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 07:44:55,084 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:44:55,180 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 07:46:09,131 log Forbidden: /api/search/names
+WARNING 2025-08-31 07:46:09,148 basehttp "GET /api/search/names?q=flow HTTP/1.1" 403 26
+WARNING 2025-08-31 07:46:26,934 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 07:46:26,934 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 07:46:26,942 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 07:46:26,954 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:46:26,964 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:46:27,015 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 07:48:07,920 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 07:48:07,924 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:48:07,928 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 07:48:07,958 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 07:48:08,030 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 07:48:08,088 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 11:09:05,474 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:09:05,489 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:09:05,496 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:09:05,513 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:09:05,524 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 11:09:05,527 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:13:55,821 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:13:55,823 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:13:55,831 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 11:13:55,844 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 11:13:55,846 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:13:55,858 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 11:16:48,785 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:16:48,795 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 11:16:48,840 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:16:48,855 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:16:48,856 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 11:16:48,874 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+ERROR 2025-08-31 11:17:03,456 log Internal Server Error: /api/search/usecases
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\Desktop\Projects\nametrackerapi\api\views.py", line 726, in get
+    UseCase.objects.annotate(rank=SearchRank(search_vector, search_query))
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\manager.py", line 87, in manager_method
+    return getattr(self.get_queryset(), name)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1649, in annotate
+    return self._annotate(args, kwargs, select=True)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\query.py", line 1701, in _annotate
+    clone.query.add_annotation(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1218, in add_annotation
+    annotation = annotation.resolve_expression(self, allow_joins=True, reuse=None)
+                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 298, in resolve_expression
+    source_expressions = [
+                         ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 775, in resolve_expression
+    resolved = super().resolve_expression(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 298, in resolve_expression
+    source_expressions = [
+                         ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\postgres\search.py", line 105, in resolve_expression
+    resolved = super().resolve_expression(
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 298, in resolve_expression
+    source_expressions = [
+                         ^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 300, in <listcomp>
+    expr.resolve_expression(query, allow_joins, reuse, summarize, for_save)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\expressions.py", line 902, in resolve_expression
+    return query.resolve_ref(self.name, allow_joins, reuse, summarize)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 2049, in resolve_ref
+    join_info = self.setup_joins(
+                ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1900, in setup_joins
+    path, final_field, targets, rest = self.names_to_path(
+                                       ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\db\models\sql\query.py", line 1805, in names_to_path
+    raise FieldError(
+django.core.exceptions.FieldError: Cannot resolve keyword 'tags' into field. Choices are: case_title, category, category_id, competition, created_at, description, difficulty, domain_name, domain_name_id, id, ideaoftheday, order, revenue_potential, slug, suggested_for, tag, target_market, updated_at
+ERROR 2025-08-31 11:17:03,529 basehttp "GET /api/search/usecases?q=marketing HTTP/1.1" 500 27550
+WARNING 2025-08-31 11:57:16,287 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:57:16,287 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:57:16,287 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:57:16,304 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:16,335 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:16,356 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:17,984 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:57:17,984 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:18,025 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:57:18,033 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:18,199 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:57:18,204 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:20,606 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:57:20,606 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:20,664 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:57:20,664 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:20,765 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:57:20,765 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:25,212 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 11:57:25,223 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 11:57:25,223 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:25,226 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 11:57:25,336 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 11:57:25,336 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 12:45:48,160 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 12:45:48,160 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 12:45:48,168 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 12:45:48,176 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:45:48,269 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:45:48,269 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 12:46:11,293 log Not Found: /api/search/name
+WARNING 2025-08-31 12:46:11,299 basehttp "GET /api/search/name?q=marketing HTTP/1.1" 404 7128
+WARNING 2025-08-31 12:47:21,530 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 12:47:21,542 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 12:47:21,551 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 12:47:21,551 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:47:21,568 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:47:21,703 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 12:47:25,214 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 12:47:25,237 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 12:47:25,247 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:47:25,385 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 12:47:25,452 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:47:25,490 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 12:50:22,883 log Forbidden: /api/names/AptChat.ai
+WARNING 2025-08-31 12:50:22,888 basehttp "GET /api/names/AptChat.ai HTTP/1.1" 403 26
+WARNING 2025-08-31 12:54:54,550 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 12:54:54,542 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 12:54:54,556 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 12:54:54,584 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 12:54:54,587 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 12:54:54,591 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 12:54:56,444 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 12:54:56,487 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 12:54:56,562 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 12:54:56,734 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 12:54:56,746 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 12:54:56,755 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 12:55:01,975 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 12:55:01,975 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 12:55:01,977 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 12:55:01,992 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 12:55:01,999 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:55:02,150 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 12:55:23,551 log Not Found: /api/search/usecase
+WARNING 2025-08-31 12:55:23,551 basehttp "GET /api/search/usecase?q=bit HTTP/1.1" 404 7131

@@ -242,8 +242,6 @@ class NameSerializer(serializers.ModelSerializer):
         return instance
 
 
-
-
     def validate_use_cases(self, value):
         """
         Validates that no more than 3 use cases are provided.
@@ -251,6 +249,34 @@ class NameSerializer(serializers.ModelSerializer):
         if len(value) > 3:
             raise serializers.ValidationError("A maximum of 3 use cases are allowed.")
         return value
+
+
+
+
+
+# ============================================
+# Name Search Serializer
+# ============================================
+class NameSearchSerializer(serializers.ModelSerializer):
+    rank = serializers.FloatField(read_only=True)
+
+    class Meta:
+        model = Name
+        fields = ["id", "domain_name", "slug", "rank"]
+
+
+
+# ============================================
+# Use Case Search Serializer
+# ============================================
+class UseCaseSearchSerializer(serializers.ModelSerializer):
+    category = serializers.CharField(source="category.name", read_only=True)
+    rank = serializers.FloatField(read_only=True)
+
+    class Meta:
+        model = UseCase
+        fields = ["id", "case_title", "slug", "category", "rank"]
+
 
 
 

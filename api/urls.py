@@ -15,6 +15,10 @@ urlpatterns = [
     path('dashboard/top-rated-names', views.TopRatedNamesAPIView.as_view(), name='dashboard-top-rated-names'),
     path('dashboard/daily-drop', views.DailyDropAPIView.as_view(), name='dashboard-daily-drop'),
 
+    # Search endpoints
+    path("search/names", views.NameSearchView.as_view(), name="name-search"),
+    path("search/usecases", views.UseCaseSearchView.as_view(), name="usecase-search"),
+
     # Toggling saved status
     path('names/<str:slug>/toggle-save', views.ToggleSavedNameView.as_view(), name='toggle-saved-name'),    # Full saved name list
     path('domains/saved', views.SavedNameListView.as_view(), name='saved-names'),
