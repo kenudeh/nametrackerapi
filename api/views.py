@@ -7,10 +7,12 @@ from .authentication import ClerkJWTAuthentication
 from .management.validators import validate_domain_data
 from django.shortcuts import get_object_or_404
 from .models import Name, NewsLetter, PublicInquiry, SavedName, AcquiredName, UploadedFile, IdeaOfTheDay, UseCase
-from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, IdeaOfTheDaySerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer, DashboardNameSerializer
+from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerializer, AcquiredNameSerializer, UseCaseSerializer, IdeaOfTheDayListSerializer, IdeaOfTheDaySerializer, NewsletterSerializer, PublicInquirySerializer, UseCaseListSerializer, UseCaseDetailSerializer, DashboardNameSerializer, NameSearchSerializer, UseCaseSearchSerializer
 from .permissions import IsManagerOrReadOnly
 from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
 from .filters import UseCaseFilter
+from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+
 
 # Cache import
 from django.core.cache import cache
@@ -564,9 +566,9 @@ class TopRatedNamesAPIView(generics.GenericAPIView):
 
 
             
-#===============================================================================
+#======================================================
 # Daily Drop Names View
-#===============================================================================
+#=======================================================
 
 class DailyDropAPIView(generics.GenericAPIView):
     """
@@ -651,10 +653,93 @@ class DailyDropAPIView(generics.GenericAPIView):
         }
 
         return Response(response_payload, status=status.HTTP_200_OK)
-            
-#===============================================================================
+
+
+
+
+#===================================
+# Name Search View
+#====================================
+
+class NameSearchView(APIView):
+    """
+    Search for domain names using case-insensitive containment search.
+    - Uses icontains with B-tree index for efficient pattern matching
+    - Returns an empty result set if no search term is provided
+    - Ensures exact substring matches only
+    """
+
+    def get(self, request):
+        query = request.GET.get("q", "").strip()
+
+        # If no query is provided, return empty results immediately
+        if not query:
+            return Response({"results": []})
+
+        # Use icontains for case-insensitive substring matching
+        qs = (
+            Name.objects
+            .filter(domain_name__icontains=query)
+            .order_by('domain_name')  # Order alphabetically, you can adjust this
+        )
+
+        # Apply pagination
+        paginator = StandardResultsSetPagination()
+        page = paginator.paginate_queryset(qs, request, view=self)
+
+        # Serialize and return results
+        return paginator.get_paginated_response(NameSearchSerializer(page, many=True).data)
+
+        
+
+#===================================
+# Use Case Search View
+#====================================
+class UseCaseSearchView(APIView):
+    """
+    Search across use cases using PostgreSQL full-text search.
+    - Fields: case_title (high weight), description (medium weight),
+              category name (lower weight), tags (lower weight).
+    - Uses SearchRank to sort results by relevance.
+    - Returns an empty result set if no search term is provided.
+    """
+
+    def get(self, request):
+        query = request.GET.get("q", "").strip()
+
+        # If no query is provided, return empty results immediately
+        if not query:
+            return Response({"results": []})
+
+        # Weighted search vector for relevance ranking
+        search_vector = (
+            SearchVector("case_title", weight="A") +
+            SearchVector("description", weight="B") +
+            SearchVector("category__name", weight="C") +
+            SearchVector("tag__name", weight="C")
+        )
+        search_query = SearchQuery(query)
+
+        # Annotate queryset with rank and filter relevant matches
+        qs = (
+            UseCase.objects.annotate(rank=SearchRank(search_vector, search_query))
+                           .filter(rank__gt=0)        # Exclude non-matching rows
+                           .order_by("-rank")         # Highest rank first
+                           .distinct()                # Prevent duplicates (joins on category/tags)
+        )
+
+        # Apply pagination
+        paginator = StandardResultsSetPagination()
+        page = paginator.paginate_queryset(qs, request, view=self)
+
+        # Serialize and return results
+        return paginator.get_paginated_response(UseCaseSearchSerializer(page, many=True).data)
+
+
+
+#=======================================================
 # Shared Mixin for views needing Pagination and Optonal filtering by date range
-#===============================================================================
+#=======================================================
 class DateRangePaginationMixin:
     """
     Reusable mixin for views that need:
