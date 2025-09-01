@@ -39,17 +39,15 @@ class ClerkJWTAuthentication(BaseAuthentication):
         Extracts and verifies the JWT from the Authorization header.
         Returns (user, None) on success, raises AuthenticationFailed otherwise.
         """
-        auth_header = request.headers.get("Authorization", "")
-        if not auth_header.startswith("Bearer "):
-            return None  # Let other authentication classes try
-
-        token = auth_header.split(" ")[1].strip()
 
         try:
-            # if settings.debug:
-            #     # Decode without verification for debugging purposes
-            #     unverified = jwt.decode(token, options={"verify_signature": False})
-            #     logger.debug(f"Token claims (unverified): {unverified}")
+            auth_header = request.headers.get("Authorization", "")
+            if not auth_header or not auth_header.startswith("Bearer "):  # Check for empty header too
+                return None 
+
+            token = auth_header.split(" ")[1].strip()
+            if not token:  # Additional check for empty token
+                return None
 
             # Get the signing key from Clerk
             signing_key = self.jwks_client.get_signing_key_from_jwt(token).key
@@ -64,7 +62,7 @@ class ClerkJWTAuthentication(BaseAuthentication):
                     "verify_iss": True,
                     "verify_aud": False,  # Default to False
                 },
-                "leeway": 10 
+                "leeway": 5 
             }
 
             # Only verify audience if explicitly configured
@@ -79,9 +77,18 @@ class ClerkJWTAuthentication(BaseAuthentication):
             user = self.get_user(payload)
             return (user, None)
 
-        except Exception as e:
-            logger.error(f"Auth failed: {str(e)}")
+        except jwt.ExpiredSignatureError:
+            logger.warning("Token has expired")
+            raise AuthenticationFailed("Token has expired")
+        except jwt.InvalidIssuerError:
+            logger.warning("Invalid token issuer")
+            raise AuthenticationFailed("Invalid token issuer")
+        except jwt.InvalidTokenError as e:
+            logger.error(f"Invalid token: {str(e)}")
             raise AuthenticationFailed("Invalid token")
+        except Exception as e:  # Catch any unexpected errors
+            logger.error(f"Authentication error: {str(e)}")
+            raise AuthenticationFailed("Authentication failed")
 
 
 
