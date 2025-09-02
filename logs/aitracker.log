@@ -17869,3 +17869,494 @@ WARNING 2025-08-31 12:55:01,999 basehttp "GET /api/domains/saved?limit=10&orderi
 WARNING 2025-08-31 12:55:02,150 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
 WARNING 2025-08-31 12:55:23,551 log Not Found: /api/search/usecase
 WARNING 2025-08-31 12:55:23,551 basehttp "GET /api/search/usecase?q=bit HTTP/1.1" 404 7131
+WARNING 2025-08-31 23:46:33,943 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:46:33,950 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:46:34,052 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:46:34,090 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:46:34,165 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 23:46:34,206 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:46:59,460 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:46:59,460 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:46:59,477 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:47:06,017 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:47:06,033 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 39
+WARNING 2025-08-31 23:47:06,121 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:47:06,138 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:47:06,143 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 39
+WARNING 2025-08-31 23:47:06,144 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 39
+WARNING 2025-08-31 23:47:39,006 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:47:39,012 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:47:39,027 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:47:42,132 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:47:42,191 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:47:42,204 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:47:42,205 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:47:42,236 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:47:42,251 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 23:48:14,317 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:48:14,357 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:48:14,381 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:48:14,386 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 39
+WARNING 2025-08-31 23:48:14,396 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 39
+WARNING 2025-08-31 23:48:14,403 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 39
+WARNING 2025-08-31 23:48:44,467 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:48:44,471 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:48:44,471 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:48:44,559 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:48:44,559 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:48:44,562 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 23:49:10,616 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:49:10,636 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:49:10,637 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:49:16,518 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:49:16,528 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:49:16,562 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:49:16,562 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:49:16,585 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:49:16,595 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:49:49,745 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:49:49,753 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:49:49,763 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:49:49,766 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:49:49,779 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:49:49,788 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:50:24,760 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:50:24,798 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:50:24,820 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:50:25,447 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:50:25,462 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:50:25,486 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:50:25,506 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:50:25,508 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-08-31 23:50:25,519 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-08-31 23:50:57,338 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:50:57,350 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:50:57,370 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:50:57,392 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:50:57,406 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:50:57,416 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:51:30,456 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:51:30,469 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:51:30,472 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:51:30,497 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:51:30,651 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:51:30,665 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:51:35,802 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:51:35,843 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:51:35,861 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:51:35,867 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:51:35,876 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:51:35,881 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:27,832 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:53:27,841 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:53:27,846 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:53:27,860 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:27,864 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:27,981 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:29,567 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:53:29,645 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:53:29,672 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:53:29,673 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:29,675 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:29,677 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:32,473 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:53:32,496 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:32,554 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:53:32,571 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:53:32,578 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:32,578 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:37,374 log Forbidden: /api/domains/saved
+WARNING 2025-08-31 23:53:37,390 log Forbidden: /api/idea-of-the-day
+WARNING 2025-08-31 23:53:37,394 log Forbidden: /api/domains/acquired
+WARNING 2025-08-31 23:53:37,400 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:37,403 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 26
+WARNING 2025-08-31 23:53:37,404 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 26
+WARNING 2025-09-01 01:24:59,815 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:24:59,815 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:24:59,815 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:24:59,815 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 01:24:59,847 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 01:24:59,857 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 01:25:01,439 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:25:01,452 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:25:01,454 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 01:25:01,455 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 01:25:01,485 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:25:01,488 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 01:25:05,298 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:25:05,376 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:25:05,384 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 01:25:05,455 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:25:05,468 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 01:25:05,474 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 01:25:37,685 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:25:37,738 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:25:37,752 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:25:37,797 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 01:25:37,815 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 01:25:37,853 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 01:26:11,519 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:26:11,568 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:26:11,598 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:26:11,601 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 01:26:11,604 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 01:26:11,624 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 01:26:33,175 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:26:33,182 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:26:33,188 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 01:26:33,196 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:26:33,200 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 01:26:33,204 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 01:26:39,970 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:26:39,988 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:26:39,993 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:26:43,294 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:26:43,310 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:26:43,318 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:27:04,832 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:27:04,842 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 01:27:04,900 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:27:04,922 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:27:04,930 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 01:27:04,932 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 01:27:40,050 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 01:27:40,062 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 01:27:40,085 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 01:27:40,085 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 01:27:40,212 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 01:27:40,214 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 02:43:00,208 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 02:43:00,217 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 02:43:00,355 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 02:43:00,369 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 02:43:00,373 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 02:43:00,378 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+ERROR 2025-09-01 02:43:18,995 log Internal Server Error: /onyia/admin/udeh/api/name/
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 29, in _decorator
+    return method(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 81, in set
+    return self.client.set(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 224, in set
+    raise ConnectionInterrupted(connection=client) from e
+django_redis.exceptions.ConnectionInterrupted: Redis ConnectionError: Error while reading from 127.0.0.1:6379 : (10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\django\views.py", line 94, in sentry_wrapped_callback
+    return callback(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\options.py", line 719, in wrapper
+    return self.admin_site.admin_view(view)(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 192, in _view_wrapper
+    result = _process_exception(request, e)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\decorators.py", line 190, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\views\decorators\cache.py", line 80, in _view_wrapper
+    response = view_func(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 234, in inner
+    if not self.has_permission(request):
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\admin\sites.py", line 207, in has_permission
+    return request.user.is_active and request.user.is_staff
+           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 251, in inner
+    self._setup()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\utils\functional.py", line 404, in _setup
+    self._wrapped = self._setupfunc()
+                    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 40, in <lambda>
+    request.user = SimpleLazyObject(lambda: get_user(request))
+                                            ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\middleware.py", line 20, in get_user
+    request._cached_user = auth.get_user(request)
+                           ^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 304, in get_user
+    user_id = _get_user_session_key(request)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\auth\__init__.py", line 95, in _get_user_session_key
+    return get_user_model()._meta.pk.to_python(request.session[SESSION_KEY])
+                                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 55, in __getitem__
+    return self._session[key]
+           ^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\base.py", line 249, in _get_session
+    self._session_cache = self.load()
+                          ^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django\contrib\sessions\backends\cached_db.py", line 46, in load
+    self._cache.set(
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\cache.py", line 36, in _decorator
+    raise e.__cause__  # noqa: B904
+    ^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\django_redis\client\default.py", line 214, in set
+    return bool(client.set(nkey, nvalue, nx=nx, px=timeout, xx=xx))
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\commands\core.py", line 2305, in set
+    return self.execute_command("SET", *pieces, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\sentry_sdk\integrations\redis\_sync_common.py", line 109, in sentry_patched_execute_command
+    value = old_execute_command(self, name, *args, **kwargs)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 623, in execute_command
+    return self._execute_command(*args, **options)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\client.py", line 629, in _execute_command
+    conn = self.connection or pool.get_connection()
+                              ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\utils.py", line 191, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 1530, in get_connection
+    connection.connect()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 379, in connect
+    self.connect_check_health(check_health=True)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 397, in connect_check_health
+    self.on_connect_check_health(check_health=check_health)
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 517, in on_connect_check_health
+    self.read_response()
+  File "C:\Users\ken_u\.virtualenvs\nametrackerapi--9UYBsfM\Lib\site-packages\redis\connection.py", line 652, in read_response
+    raise ConnectionError(f"Error while reading from {host_error} : {e.args}")
+redis.exceptions.ConnectionError: Error while reading from 127.0.0.1:6379 : (10054, 'An existing connection was forcibly closed by the remote host', None, 10054, None)
+ERROR 2025-09-01 02:43:19,108 basehttp "GET /onyia/admin/udeh/api/name/ HTTP/1.1" 500 225727
+WARNING 2025-09-01 11:36:53,049 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 11:36:53,049 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 11:36:53,050 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 11:36:53,196 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 11:36:53,196 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 11:36:53,200 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 11:40:36,595 log Forbidden: /api/ideas/detail/digital-brochure-proposal-builder
+WARNING 2025-09-01 11:40:36,600 basehttp "GET /api/ideas/detail/digital-brochure-proposal-builder HTTP/1.1" 403 34
+WARNING 2025-09-01 11:40:38,382 log Forbidden: /api/ideas/detail/digital-brochure-proposal-builder
+WARNING 2025-09-01 11:40:38,412 basehttp "GET /api/ideas/detail/digital-brochure-proposal-builder HTTP/1.1" 403 30
+WARNING 2025-09-01 11:40:41,064 log Forbidden: /api/ideas/detail/digital-brochure-proposal-builder
+WARNING 2025-09-01 11:40:41,089 basehttp "GET /api/ideas/detail/digital-brochure-proposal-builder HTTP/1.1" 403 30
+WARNING 2025-09-01 11:40:45,689 log Forbidden: /api/ideas/detail/digital-brochure-proposal-builder
+WARNING 2025-09-01 11:40:45,690 basehttp "GET /api/ideas/detail/digital-brochure-proposal-builder HTTP/1.1" 403 30
+WARNING 2025-09-01 11:41:16,143 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:41:16,148 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 30
+WARNING 2025-09-01 11:41:17,841 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:41:17,841 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 30
+WARNING 2025-09-01 11:41:20,845 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:41:20,863 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 30
+WARNING 2025-09-01 11:41:25,520 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:41:25,527 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 30
+WARNING 2025-09-01 11:57:42,551 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:57:42,632 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:43,773 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:57:43,773 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:45,801 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:57:45,801 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:49,844 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-01 11:57:49,858 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:56,554 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:57:56,598 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:56,614 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:57:56,622 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:57,698 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:57:57,706 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:57:57,719 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:57,721 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:59,774 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:57:59,774 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:57:59,774 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 11:57:59,800 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 11:58:03,830 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:58:03,830 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 11:58:03,840 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 11:58:03,856 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:45,527 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:45,551 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:45,616 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:45,647 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:46,747 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:46,765 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:46,846 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:46,854 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:48,831 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:48,913 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:48,963 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:49,020 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:53,035 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:53,044 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 34
+WARNING 2025-09-01 22:10:53,260 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:10:53,266 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 34
+WARNING 2025-09-01 22:12:44,334 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:12:44,347 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 22:12:44,349 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 22:12:44,352 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 22:25:41,143 log Not Found: /favicon.ico
+WARNING 2025-09-01 22:25:41,143 basehttp "GET /favicon.ico HTTP/1.1" 404 2555
+WARNING 2025-09-01 22:37:00,789 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:37:00,792 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:00,816 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:37:00,818 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:37:00,848 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:00,849 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:02,615 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:37:02,620 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:37:02,629 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:02,646 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:02,815 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:37:02,819 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:05,643 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:37:05,656 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:37:05,665 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:37:05,693 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:05,747 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:05,750 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:37:10,680 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:37:10,714 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:37:10,795 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:37:14,134 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:37:14,137 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:37:14,142 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:37:14,149 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 22:37:14,153 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 22:37:14,171 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 22:43:00,743 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:43:00,800 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:43:00,800 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:00,809 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:43:00,818 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:00,818 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:01,878 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:43:01,878 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:43:01,878 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:43:01,878 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:01,878 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:01,901 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:03,953 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:43:03,953 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:43:03,953 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:43:03,953 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:03,968 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:03,980 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:08,128 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:43:08,143 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:43:08,178 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:43:08,182 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:08,185 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:43:08,223 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-01 22:46:43,333 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:46:43,339 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:46:43,355 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:43,372 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:43,378 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:46:43,393 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:45,237 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:46:45,245 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:46:45,252 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:46:45,260 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:45,267 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:45,278 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:48,453 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:46:48,467 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:46:48,473 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:46:48,482 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:48,552 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:48,553 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:53,642 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:46:53,653 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:46:53,671 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:53,680 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:53,911 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:46:53,921 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 22:46:59,558 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 22:46:59,560 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 22:46:59,560 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 22:46:59,563 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 22:46:59,570 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 22:46:59,577 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 23:22:38,689 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 23:22:38,695 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 23:22:38,699 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 23:22:38,703 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 23:22:38,708 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 23:22:38,710 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 23:38:17,795 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 23:38:17,800 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 23:38:17,810 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 23:38:17,812 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 30
+WARNING 2025-09-01 23:38:17,995 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 23:38:17,996 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 30
+WARNING 2025-09-01 23:38:23,180 log Forbidden: /api/domains/saved
+WARNING 2025-09-01 23:38:23,189 log Forbidden: /api/domains/acquired
+WARNING 2025-09-01 23:38:23,189 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 23:38:23,197 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-01 23:38:23,208 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-01 23:38:23,228 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:21,417 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:21,428 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:21,434 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:21,435 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:22,488 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:22,488 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:22,497 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:22,500 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:24,543 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:24,550 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:24,555 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:24,560 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:28,628 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:28,628 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:43:28,638 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:43:28,640 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:50:45,300 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:50:45,306 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:50:45,309 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:50:45,312 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:53:15,460 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:53:15,467 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:53:15,473 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:53:15,578 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:53:20,408 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:53:20,408 log Forbidden: /api/ideas/list
+WARNING 2025-09-01 23:53:20,414 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-01 23:53:20,415 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-01 23:54:05,201 log Forbidden: /api/ideas/detail/last-mile-delivery-logistics-for-smbs
+WARNING 2025-09-01 23:54:05,209 basehttp "GET /api/ideas/detail/last-mile-delivery-logistics-for-smbs HTTP/1.1" 403 58
+WARNING 2025-09-01 23:58:45,881 log Forbidden: /api/ideas/detail/email-sms-marketing-for-creators
+WARNING 2025-09-01 23:58:45,960 basehttp "GET /api/ideas/detail/email-sms-marketing-for-creators HTTP/1.1" 403 58
+WARNING 2025-09-01 23:59:00,775 log Forbidden: /api/ideas/detail/real-time-team-morale-feedback-tool
+WARNING 2025-09-01 23:59:00,835 basehttp "GET /api/ideas/detail/real-time-team-morale-feedback-tool HTTP/1.1" 403 58
+WARNING 2025-09-02 00:01:08,594 log Forbidden: /api/ideas/detail/drone-satellite-imagery-analysis-platform
+WARNING 2025-09-02 00:01:08,608 basehttp "GET /api/ideas/detail/drone-satellite-imagery-analysis-platform HTTP/1.1" 403 58
+WARNING 2025-09-02 00:01:19,417 log Forbidden: /api/ideas/detail/live-audience-engagement-polling
+WARNING 2025-09-02 00:01:19,423 basehttp "GET /api/ideas/detail/live-audience-engagement-polling HTTP/1.1" 403 58
+WARNING 2025-09-02 00:01:25,741 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 00:01:25,750 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:01:25,759 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 00:01:25,775 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 00:01:25,788 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-02 00:01:25,807 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:10:29,406 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 00:10:29,411 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 00:10:29,421 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:10:29,430 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 00:10:29,431 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:10:29,440 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-02 00:23:15,499 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 00:23:15,509 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 00:23:15,513 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 00:23:15,517 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:23:15,525 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-02 00:23:15,533 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 01:21:15,295 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 01:21:15,296 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 01:21:15,296 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 01:21:15,341 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 01:21:15,342 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 01:21:15,348 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58

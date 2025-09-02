@@ -55,6 +55,8 @@ class AppUser(models.Model):
     first_name = models.CharField(max_length=100, blank=True, null=True)
     last_name = models.CharField(max_length=100, blank=True, null=True)
     created_at = models.DateTimeField(auto_now_add=True)
+    # last_login = models.DateTimeField(null=True, blank=True)
+    # is_active = models.BooleanField(default=True)
 
 
     def __str__(self):
@@ -75,6 +77,7 @@ class AppUser(models.Model):
         Required by DRF's IsAuthenticated permission class.
         """
         return True
+        # return True and self.is_active 
 
 
 
