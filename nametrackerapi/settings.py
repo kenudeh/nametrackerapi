@@ -203,6 +203,12 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True #Applies that rule to all subdomains too (
 SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Firefox, etc.) to always enforce HTTPS.
 
 
+# Session settings
+SESSION_COOKIE_AGE = 1800  # 30 minutes in seconds
+SESSION_SAVE_EVERY_REQUEST = True
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -213,6 +219,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'nametrackerapi.middleware.SessionTimeoutMiddleware',
 ]
 
 
@@ -355,71 +362,6 @@ CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BEAT_MAX_LOOP_INTERVAL = 300  # Check for new tasks every 5 mins
 
 
-# CELERY_BROKER_URL = REDIS_URL
-# CELERY_RESULT_BACKEND = REDIS_URL
-
-# CELERY_ACCEPT_CONTENT = ['json']
-# CELERY_TASK_SERIALIZER = 'json'
-
-# CELERY_TIMEZONE = TIME_ZONE  # Critical for beat scheduling
-# CELERY_TASK_TRACK_STARTED = True  # Enables task state tracking
-# CELERY_TASK_ALWAYS_EAGER = False  # Explicitly disable eager mode (safety check)
-# CELERY_TASK_IGNORE_RESULT = False  # Store results
-# CELERY_TASK_TIME_LIMIT = 60 * 60  # 60 minute timeout
-# CELERY_RESULT_EXPIRES = 24 * 3600  # Keep results for 24 hours
-
-
-# # CELERY BEAT SETTINGS
-# # CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
-# CELERY_BEAT_SCHEDULE = {
-    # # Time-sensitive independent tasks
-    # 'pending_transitions': {
-    #     'task': 'api.tasks.transition_pending_to_deleted_task',
-    #     'schedule': crontab(minute=0, hour='*'),  # Hourly
-    #     'options': {
-    #         'expires': 1800,
-    #         'enabled': True
-    #     }
-    # },
-    # 'availability_checks': {
-    #     'task': 'api.tasks.trigger_bulk_availability_check_task',
-    #     'schedule': crontab(minute=0, hour='*/4'),  # Every 4 hours
-    #     'options': {
-    #         'expires': 1800,
-    #         'enabled': True
-    #     }
-    # },
-    # 'domain_rechecks': {
-    #     'task': 'api.tasks.second_check_task',
-    #     'schedule': crontab(minute=30, hour='*/12'),  # Every 12 hours at :30
-    #     'options': {
-    #         'expires': 3600,
-    #         'enabled': True
-    #     }
-    # },
-    
-    # # Daily maintenance bundle
-    # 'daily_maintenance': {
-    #     'task': 'api.tasks.daily_maintenance_task',
-    #     'schedule': crontab(hour=2, minute=0),  # 2 AM UTC
-    #     'options': {
-    #         'expires': 3600,
-    #         'enabled': True
-    #     }
-    # },
-    
-    # # File processing
-    # 'file_processing': {
-    #     'task': 'api.tasks.process_pending_files',
-    #     'schedule': crontab(hour=3, minute=0),  # 3 AM UTC
-    #     'options': {
-    #         'expires': 1800,
-    #         'enabled': True
-    #     }
-    # }
-# }
-
-
 # Sentry
 sentry_sdk.init(
     dsn=os.getenv("dsn") ,
@@ -532,63 +474,3 @@ LOGGING = {
         },
     },
 }
-
-
-# LOGGING_DIR = os.path.join(BASE_DIR, 'logs')
-# if not os.path.exists(LOGGING_DIR):
-#     os.makedirs(LOGGING_DIR)
-
-# LOG_LEVEL = 'DEBUG' if DEBUG else 'WARNING'
-# SENSITIVE_VARIABLES = ['password', 'token', 'secret']
-
-
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-
-#     'formatters': {
-#         'verbose': {
-#             'format': '{levelname} {asctime} {module} {message}',
-#             'style': '{',
-#         },
-#     },
-
-#     'handlers': {
-#         # Domain task logs (rotated)
-#         'domain_file': {
-#             'level': 'INFO',
-#             'class': 'logging.handlers.RotatingFileHandler',
-#             'filename': os.path.join(LOGGING_DIR, 'domain_tasks.log'),
-#             'maxBytes': 3 * 1024 * 1024,
-#             'backupCount': 3,
-#             'formatter': 'verbose',
-#         },
-#         # General system logs (warnings and above)
-#         'system_file': {
-#             'level': 'WARNING',
-#             'class': 'logging.handlers.RotatingFileHandler',
-#             'filename': os.path.join(LOGGING_DIR, 'aitracker.log'),
-#             'maxBytes': 5 * 1024 * 1024,
-#             'backupCount': 5,
-#             'formatter': 'verbose',
-#         },
-#     },
-
-
-
-#     'loggers': {
-#         # For Django system errors (500s, etc.)
-#         'django': {
-#             'handlers': ['system_file'],
-#             'level': LOG_LEVEL,
-#             'propagate': True,
-#         },
-#         # my app-specific task logs
-#         'api.domain_tasks': {
-#             'handlers': ['domain_file'],
-#             'level': 'INFO',
-#             'propagate': False,
-#         },
-#     },
-# }
-

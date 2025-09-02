@@ -18342,3 +18342,21 @@ WARNING 2025-09-02 00:01:25,759 log Forbidden: /api/domains/acquired
 WARNING 2025-09-02 00:01:25,775 log Forbidden: /api/idea-of-the-day
 WARNING 2025-09-02 00:01:25,788 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
 WARNING 2025-09-02 00:01:25,807 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:10:29,406 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 00:10:29,411 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 00:10:29,421 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:10:29,430 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 00:10:29,431 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:10:29,440 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-02 00:23:15,499 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 00:23:15,509 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 00:23:15,513 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 00:23:15,517 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 00:23:15,525 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
+WARNING 2025-09-02 00:23:15,533 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 01:21:15,295 log Forbidden: /api/domains/saved
+WARNING 2025-09-02 01:21:15,296 log Forbidden: /api/domains/acquired
+WARNING 2025-09-02 01:21:15,296 log Forbidden: /api/idea-of-the-day
+WARNING 2025-09-02 01:21:15,341 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 01:21:15,342 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 58
+WARNING 2025-09-02 01:21:15,348 basehttp "GET /api/idea-of-the-day HTTP/1.1" 403 58
