@@ -203,11 +203,6 @@ SECURE_HSTS_INCLUDE_SUBDOMAINS = True #Applies that rule to all subdomains too (
 SECURE_HSTS_PRELOAD = True #Lets you opt-in to browser preload lists (Chrome, Firefox, etc.) to always enforce HTTPS.
 
 
-# Session settings
-SESSION_COOKIE_AGE = 1800  # 30 minutes in seconds
-SESSION_SAVE_EVERY_REQUEST = True
-SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-
 
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
@@ -219,7 +214,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'nametrackerapi.middleware.SessionTimeoutMiddleware',
 ]
 
 
@@ -360,6 +354,7 @@ CELERY_TASK_STORE_ERRORS_EVEN_IF_IGNORED = True
 CELERY_BEAT_SCHEDULE = {}  # Empty dict to prevent conflicts
 CELERY_BEAT_SCHEDULER = 'django_celery_beat.schedulers:DatabaseScheduler'
 CELERY_BEAT_MAX_LOOP_INTERVAL = 300  # Check for new tasks every 5 mins
+
 
 
 # Sentry

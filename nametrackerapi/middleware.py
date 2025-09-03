@@ -1,3 +1,6 @@
+# CURRENTLY NOT IN USE. FRONTEND AND CLERK CONTROL USER"S SESSION LIFETIME
+
+
 from django.conf import settings
 from django.utils import timezone
 from django.contrib.auth import logout
