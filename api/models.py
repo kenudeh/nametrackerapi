@@ -1,7 +1,7 @@
 from django.db import models, transaction
 from django.utils.text import slugify
 from django.contrib.auth.models import User
-from .utils import *
+from .utils import process_file, count_syllables_hybrid
 from django.utils import timezone
 from datetime import datetime, timezone as dt_timezone
 
@@ -199,9 +199,14 @@ class Name(models.Model):
         self.extension = self.domain_name.split('.')[-1]
 
         # Compute length and syllables from domain_name (excluding extension)
-        name_part = self.domain_name.split('.')[0]
+        if '.' in self.domain_name:
+            name_part = self.domain_name.split('.')[0]
+        else:
+            name_part = self.domain_name
+
         self.length = len(name_part)
-        self.syllables = textstat.syllable_count(name_part)
+        # using the hybrid function in utils.py to calculate syllables
+        self.syllables = count_syllables_hybrid(name_part)
 
         # Compute drop_time from extension lookup table (DROP_TIMES)
         drop_time_value = DROP_TIMES.get(self.extension)

@@ -10,3 +10,4 @@ staticfiles/
 *.sql
 *.log
 *.sqlite3
+nltk_data/

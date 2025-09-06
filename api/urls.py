@@ -5,9 +5,8 @@ from . import views
 
 
 urlpatterns = [
-    # Full name list
+    # Name endpoints
     path('names', views.NameListAPIView.as_view(), name='name-list'),
-    # Name detail
     path('names/<str:slug>', views.NameDetailAPIView.as_view(), name='name-detail'),
     # path('names/create/', views.NameCreateAPIView.as_view(), name='name-create'),
     # path('names/<int:pk>/update', views.NameUpdateAPIView.as_view(), name='name-update'),
@@ -39,7 +38,7 @@ urlpatterns = [
     path('newsletter', views.NewsletterView.as_view(), name='newsletter'),
     path('public/support', views.PublicInquiryView.as_view(), name='public_support'),
 
-    #Healt check
+    #Health check
     path('health/', views.health_check, name='health_check'),
 ] 
    
