@@ -11,7 +11,11 @@ from .serializers import NameSerializer, AppUserSerializer, SavedNameLightSerial
 from .permissions import IsManagerOrReadOnly
 from .pagination import StandardResultsSetPagination, IdeaPageNumberPagination
 from .filters import UseCaseFilter
+
 from django.contrib.postgres.search import SearchVector, SearchQuery, SearchRank
+# For search functionality
+from django.db.models import F, Case, When, Value, FloatField, IntegerField, OuterRef, Subquery, Max
+from django.db.models.functions import Least
 
 
 # Cache import
@@ -661,35 +665,50 @@ class DailyDropAPIView(generics.GenericAPIView):
 # Name Search View
 #====================================
 
+# At the top of your views.py, add these imports
+from django.db.models import Case, When, Value, IntegerField
+from django.db.models.functions import Length
+
+# ... your other imports ...
+
 class NameSearchView(APIView):
     """
-    Search for domain names using case-insensitive containment search.
-    - Uses icontains with B-tree index for efficient pattern matching
-    - Returns an empty result set if no search term is provided
-    - Ensures exact substring matches only
+    Search for domain names using a ranked, case-insensitive containment search.
+    - Ranks results based on match type (exact, starts with, contains)
+    - Uses domain name length as a tie-breaker
     """
 
     def get(self, request):
         query = request.GET.get("q", "").strip()
 
-        # If no query is provided, return empty results immediately
         if not query:
             return Response({"results": []})
 
-        # Use icontains for case-insensitive substring matching
         qs = (
             Name.objects
             .filter(domain_name__icontains=query)
-            .order_by('domain_name')  # Order alphabetically, you can adjust this
+            # 1. Annotate each object with a 'rank' and 'domain_length'
+        .annotate(
+            rank=Case(
+                # Exact match = 1.0 (will become 100%)
+                When(domain_name__iexact=query, then=Value(1.0)),      
+                # Starts with match = 0.75 (will become 75%)
+                When(domain_name__istartswith=query, then=Value(0.75)), 
+                # Contains match = 0.5 (will become 50%)
+                default=Value(0.5),                                   
+                output_field=FloatField(), # Use FloatField for decimal values
+            ),
+            domain_length=Length('domain_name')
+        )
+            # 2. Order by the new rank (highest first), then by length (shortest first)
+            .order_by('-rank', 'domain_length')
         )
 
-        # Apply pagination
         paginator = StandardResultsSetPagination()
         page = paginator.paginate_queryset(qs, request, view=self)
-
-        # Serialize and return results
+        
+        # Your existing serializer will now find the 'rank' attribute and include it
         return paginator.get_paginated_response(NameSearchSerializer(page, many=True).data)
-
         
 
 #===================================
@@ -698,42 +717,67 @@ class NameSearchView(APIView):
 class UseCaseSearchView(APIView):
     """
     Search across use cases using PostgreSQL full-text search.
-    - Fields: case_title (high weight), description (medium weight),
-              category name (lower weight), tags (lower weight).
-    - Uses SearchRank to sort results by relevance.
-    - Returns an empty result set if no search term is provided.
     """
 
     def get(self, request):
         query = request.GET.get("q", "").strip()
 
-        # If no query is provided, return empty results immediately
         if not query:
             return Response({"results": []})
 
-        # Weighted search vector for relevance ranking
-        search_vector = (
+        # Check if the search has multiple words
+        is_multi_word = len(query.split()) > 1
+
+        search_vector_obj = (
             SearchVector("case_title", weight="A") +
             SearchVector("description", weight="B") +
             SearchVector("category__name", weight="C") +
             SearchVector("tag__name", weight="C")
         )
-        search_query = SearchQuery(query)
 
-        # Annotate queryset with rank and filter relevant matches
-        qs = (
-            UseCase.objects.annotate(rank=SearchRank(search_vector, search_query))
-                           .filter(rank__gt=0)        # Exclude non-matching rows
-                           .order_by("-rank")         # Highest rank first
-                           .distinct()                # Prevent duplicates (joins on category/tags)
+        query_websearch = SearchQuery(query, search_type="websearch")
+        query_plain = SearchQuery(query, search_type="plain")
+
+        base_qs = (
+            UseCase.objects
+            .annotate(search_vector=search_vector_obj)
+            .annotate(
+                # The true relevance score from the database
+                rank=SearchRank(F('search_vector'), query_websearch),
+                # A flag to prioritize full matches on multi-word searches
+                is_full_match=Case(
+                    When(search_vector=query_plain, then=Value(1 if is_multi_word else 0)),
+                    default=Value(0),
+                    output_field=IntegerField()
+                )
+            )
+            .filter(rank__gt=0.1)
         )
 
-        # Apply pagination
-        paginator = StandardResultsSetPagination()
-        page = paginator.paginate_queryset(qs, request, view=self)
+        # De-duplicate at the DB level, ordering by pk to satisfy the DISTINCT ON rule
+        # We include our real sorting criteria to help the DB pick the best row.
+        final_deduplicated_qs = (
+            base_qs
+            .order_by('pk', '-is_full_match', '-rank')
+            .distinct('pk')
+        )
 
-        # Serialize and return results
-        return paginator.get_paginated_response(UseCaseSearchSerializer(page, many=True).data)
+        # Execute the query
+        results_list = list(final_deduplicated_qs[:2000])
+        
+        # Sort in Python by our desired criteria: full matches first, then by rank.
+        sorted_results = sorted(results_list, key=lambda item: (item.is_full_match, item.rank), reverse=True)
+
+        paginator = StandardResultsSetPagination()
+        page = paginator.paginate_queryset(sorted_results, request, view=self)
+
+        if page is None:
+             return Response({"results": []})
+
+        # The serializer will now receive the true 'rank' value
+        return paginator.get_paginated_response(
+            UseCaseSearchSerializer(page, many=True).data
+        )
 
 
 

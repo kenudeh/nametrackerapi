@@ -26,6 +26,8 @@ tenacity = "*"
 sentry-sdk = "*"
 celery = "*"
 flower = "*"
+nltk = "*"
+pyphen = "*"
 
 [dev-packages]
 

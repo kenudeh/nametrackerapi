@@ -262,7 +262,7 @@ class NameSearchSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Name
-        fields = ["id", "domain_name", "slug", "rank"]
+        fields = ["id", "domain_name", "slug", "rank", "status", "domain_list"]
 
 
 
@@ -271,17 +271,16 @@ class NameSearchSerializer(serializers.ModelSerializer):
 # ============================================
 class UseCaseSearchSerializer(serializers.ModelSerializer):
     category = serializers.CharField(source="category.name", read_only=True)
-    rank = serializers.FloatField(read_only=True)
+    domain = serializers.CharField(source="domain_name", read_only=True)
+    rank = serializers.FloatField(read_only=True) # it reads from an attribute with the same name, so no 'source' is needed.
 
     class Meta:
         model = UseCase
-        fields = ["id", "case_title", "slug", "category", "rank"]
-
-
+        fields = ["id", "case_title", "slug", "category", "domain", "rank"]
 
 
 # ============================================
-# Top Rated Names Serializer
+# Dashboard Names Serializer
 # ============================================
 class DashboardNameSerializer(serializers.ModelSerializer):
     """
