@@ -20717,3 +20717,16 @@ WARNING 2025-09-06 15:50:38,135 log Forbidden: /api/ideas/list
 WARNING 2025-09-06 15:50:38,142 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
 WARNING 2025-09-06 15:50:38,153 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
 WARNING 2025-09-06 16:21:37,947 log Not Found: /api/search/usecases
+WARNING 2025-09-06 16:21:37,968 basehttp "GET /api/search/usecases?q=tool%20for%20freelancers&page=10 HTTP/1.1" 404 26
+WARNING 2025-09-06 22:52:27,020 log Forbidden: /api/ideas/list
+WARNING 2025-09-06 22:52:27,037 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-06 22:52:27,043 log Forbidden: /api/ideas/list
+WARNING 2025-09-06 22:52:27,053 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-06 23:08:51,355 log Not Found: /api/ideas/search
+WARNING 2025-09-06 23:08:51,391 basehttp "GET /api/ideas/search?q=market+place HTTP/1.1" 404 7134
+WARNING 2025-09-06 23:09:39,260 log Forbidden: /api/search/names
+WARNING 2025-09-06 23:09:39,295 basehttp "GET /api/search/names?q=market+place HTTP/1.1" 403 30
+WARNING 2025-09-06 23:10:16,238 log Forbidden: /api/search/names
+WARNING 2025-09-06 23:10:16,245 basehttp "GET /api/search/names?q=market+place HTTP/1.1" 403 34
+WARNING 2025-09-07 03:13:14,127 log Not Found: /favicon.ico
+WARNING 2025-09-07 03:13:14,131 basehttp "GET /favicon.ico HTTP/1.1" 404 2555
