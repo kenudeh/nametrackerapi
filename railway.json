@@ -2,7 +2,8 @@
   "$schema": "https://railway.app/railway.schema.json",
   "build": {
     "builder": "NIXPACKS",
-    "buildCommand": "python download_nltk_data.py && python manage.py collectstatic --noinput --clear"
+    "buildCommand": "python -c \"import nltk; nltk.download('cmudict')\" && python manage.py collectstatic --noinput --clear"
+
   },
   "deploy": {
     "preDeployCommand": "python manage.py migrate"
