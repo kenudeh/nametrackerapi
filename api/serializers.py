@@ -82,7 +82,7 @@ class UseCaseSerializer(serializers.ModelSerializer):
             'case_title', 'slug', 'description', 
             "category", "tag",
             'difficulty', 'competition', 
-            'target_market', 'revenue_potential', 
+            'target_markets', 'revenue_potential', 
             'order'
         ]
 
@@ -145,7 +145,7 @@ class SuggestedUseCaseSerializer(serializers.ModelSerializer):
             'case_title', 'slug', 'description', 
             "category", "tag",
             'difficulty', 'competition', 
-            'target_market', 'revenue_potential', 
+            'target_markets', 'revenue_potential', 
             'order'
         ]
 
@@ -346,7 +346,7 @@ class UseCaseListSerializer(serializers.ModelSerializer):
             "category",
             "competition",
             "difficulty",
-            "target_market",
+            "target_markets",
         )
 
 
@@ -370,7 +370,7 @@ class UseCaseDetailSerializer(serializers.ModelSerializer):
             "category",
             "competition",
             "difficulty",
-            "target_market",
+            "target_markets",
             "revenue_potential",
             "order",
             "tags",
