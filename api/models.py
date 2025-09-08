@@ -290,6 +290,10 @@ class RevenueOptions(models.TextChoices):
     MEDIUM = 'medium', 'Medium'
     HIGH = 'high', 'High'
 
+class BusinessModelChoices(models.TextChoices):
+    B2B = 'B2B', 'Business-to-Business'
+    B2C = 'B2C', 'Business-to-Consumer'
+    PROSUMER = 'Prosumer', 'Prosumer'
 
 
 class UseCase(models.Model):
@@ -312,6 +316,14 @@ class UseCase(models.Model):
     competition = models.CharField(
         max_length=100,
         choices=CompetitionType.choices
+    )
+    business_model = models.CharField(
+        max_length=10,
+        choices=BusinessModelChoices.choices,
+        null=True,
+        blank=True,
+        db_index=True,  # for performance
+        help_text="The primary business model for this use case."
     )
     target_markets = models.ManyToManyField(
         'TargetMarket',

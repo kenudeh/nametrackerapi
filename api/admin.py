@@ -1,6 +1,6 @@
 # admin.py
 from django.contrib import admin
-from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile
+from .models import Name, AppUser, UseCaseCategory, UseCaseTag, UseCase, ArchivedName, Subscription, PlanModel, AcquiredName, SavedName, ExtensionDropInfo, PublicInquiry, NewsLetter, IdeaOfTheDay, UploadedFile, TargetMarket
 
 from django_celery_beat.admin import PeriodicTaskAdmin, CrontabScheduleAdmin
 from django_celery_beat.models import PeriodicTask, CrontabSchedule
@@ -151,6 +151,12 @@ class UseCaseCategoryAdmin(admin.ModelAdmin):
 
 @admin.register(UseCaseTag)
 class UseCaseTagAdmin(admin.ModelAdmin):
+    list_display = ('name',)
+    search_fields = ('name',)
+
+
+@admin.register(TargetMarket)
+class TargetMarketAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
