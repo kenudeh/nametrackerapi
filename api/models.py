@@ -258,7 +258,6 @@ class UseCaseTag(models.Model):
         return self.name
 
 
-
 # ============================================
 # Use Case Model
 # ============================================
@@ -327,7 +326,7 @@ class UseCase(models.Model):
             models.Index(fields=['difficulty']),
             models.Index(fields=['category']),
             models.Index(fields=['target_market']),
-            GinIndex(fields=['target_market'], name='target_market_gin'),  # exclusive to Postgres
+            # GinIndex(fields=['target_market'], name='target_market_gin'),  # exclusive to Postgres
         ]
 
 
