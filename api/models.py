@@ -258,6 +258,29 @@ class UseCaseTag(models.Model):
         return self.name
 
 
+
+# ============================================
+#Target Market MODEL
+# ============================================
+class TargetMarket(models.Model):
+    name = models.CharField(max_length=100, unique=True)
+
+
+    class Meta:
+        indexes = [
+            GinIndex(
+                fields=['name'], 
+                name='targetmarket_name_gin_idx',
+                opclasses=['gin_trgm_ops'],
+            ),
+        ]
+
+    def __str__(self):
+        return self.name
+
+
+
+
 # ============================================
 # Use Case Model
 # ============================================
@@ -290,7 +313,11 @@ class UseCase(models.Model):
         max_length=100,
         choices=CompetitionType.choices
     )
-    target_market = models.CharField(max_length=100)
+    target_markets = models.ManyToManyField(
+        'TargetMarket',
+        blank=True,
+        related_name='use_cases'
+    )
     revenue_potential = models.CharField(
         max_length=100,
         choices=RevenueOptions.choices
@@ -325,8 +352,6 @@ class UseCase(models.Model):
             models.Index(fields=['competition']),
             models.Index(fields=['difficulty']),
             models.Index(fields=['category']),
-            models.Index(fields=['target_market']),
-            # GinIndex(fields=['target_market'], name='target_market_gin'),  # exclusive to Postgres
         ]
 
 

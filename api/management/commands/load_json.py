@@ -185,11 +185,18 @@ class Command(BaseCommand):
                         description=uc['description'],
                         difficulty=uc['difficulty'],
                         competition=uc['competition'],
-                        target_market=uc['target_market'],
                         revenue_potential=uc['revenue_potential'],
                         order=uc['order'],
                         category=uc_category,
                     )
+
+                    # Assign target markets to this individual use case
+                    for market_dict in uc.get('target_markets', []):
+                        market_name = market_dict.get('name')
+                        if market_name:
+                            market_obj, _ = TargetMarket.objects.get_or_create(name=market_name)
+                            use_case_obj.target_markets.add(market_obj)
+
 
                     # Assign tags to this individual use case
                     for tag_dict in uc.get('tag', []):

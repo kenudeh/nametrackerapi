@@ -154,11 +154,19 @@ class UseCaseTagAdmin(admin.ModelAdmin):
     list_display = ('name',)
     search_fields = ('name',)
 
+
+
 @admin.register(UseCase)
 class UseCaseAdmin(admin.ModelAdmin):
-    list_display = ('case_title', 'domain_name', 'category', 'order', 'difficulty', 'competition', 'revenue_potential')
+    list_display = ('case_title', 'domain_name', 'category', 'order', 'difficulty', 'competition', 'revenue_potential', 'display_target_markets')
     list_filter = ('difficulty', 'competition', 'revenue_potential')
-    search_fields = ('case_title', 'target_market')
+    search_fields = ('case_title', 'target_markets__name')
+
+    def display_target_markets(self, obj):
+        return ", ".join([market.name for market in obj.target_markets.all()])
+    display_target_markets.short_description = 'Target Markets' # Sets the column header
+
+
 
 
 @admin.register(IdeaOfTheDay)

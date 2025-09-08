@@ -37,7 +37,7 @@ class UseCaseFilter(filters.FilterSet):
     # exact matches
     competition = filters.CharFilter(field_name="competition", lookup_expr="iexact")
     difficulty  = filters.CharFilter(field_name="difficulty", lookup_expr="iexact")
-    target_market = filters.CharFilter(field_name="target_market", lookup_expr="icontains")
+    target_markets = filters.CharFilter(field_name="target_markets__name", lookup_expr="icontains")
 
     # category by id or name
     category = filters.NumberFilter(field_name="category_id")
@@ -54,7 +54,7 @@ class UseCaseFilter(filters.FilterSet):
             "difficulty",
             "category",
             "category_name",
-            "target_market",
+            "target_markets",
             "created_at_after",
             "created_at_before",
         ]

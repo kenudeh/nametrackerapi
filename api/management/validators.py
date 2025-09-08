@@ -27,7 +27,7 @@ def validate_domain_data(data):
         'competition',
         'category',
         'tag',
-        'target_market',
+        'target_markets', 
         'revenue_potential',
         'order'
     ]
@@ -69,6 +69,24 @@ def validate_domain_data(data):
                 if not isinstance(tag_item, dict) or 'name' not in tag_item:
                     raise ValueError(
                         f"Each tag in 'tag' must be a dict with a 'name' key in use_case[{uc_index}] of domain item at index {index}."
+                    )
+
+            
+            # --- NEW VALIDATION BLOCK for Target Market--- #
+            # Check target_markets structure
+            if not isinstance(use_case['target_markets'], list):
+                raise ValueError(
+                    f"'target_markets' must be a list in use_case[{uc_index}] of domain item at index {index}."
+                )
+
+            for market_item in use_case['target_markets']:
+                if not isinstance(market_item, dict) or 'name' not in market_item:
+                    raise ValueError(
+                        f"Each item in 'target_markets' must be a dict with a 'name' key in use_case[{uc_index}] of domain item at index {index}."
+                    )
+                if not isinstance(market_item['name'], str) or not market_item['name'].strip():
+                    raise ValueError(
+                        f"The 'name' in a target_market item must be a non-empty string in use_case[{uc_index}] of domain item at index {index}."
                     )
 
             # Check order is int and unique within this domain item
