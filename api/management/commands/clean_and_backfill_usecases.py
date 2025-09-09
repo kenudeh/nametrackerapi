@@ -138,6 +138,31 @@ class Command(BaseCommand):
             "Ux Researchers": "UX Researchers",
             "Vc-Backed Startups": "Tech Startups",
             "Vcs": "VCs",
+            #Production data
+            "Aestheticians": "Skincare Professionals",
+            "Ai Ethics Teams": "Compliance Teams",
+            "Ai Researchers": "Academic Researchers",
+            "Ai Startups Handling Pii": "Tech Startups",
+            "Backend Engineers": "Software Developers",
+            "Barbershops": "Hair Salons and Barbershops",
+            "Billing Departments": "Finance Departments",
+            "Booking Platforms": "Tech Startups",
+            "Corporations": "Large Companies",
+            "Devops": "DevOps Teams & Engineers",
+            "Engineering Managers": "Team Managers",
+            "Facility Managers": "Facilities Managers", # Merging into the plural form
+            "Growth Teams": "Marketing Teams",
+            "Health Insurers": "Insurance Providers",
+            "Independent Stylists": "Freelancers", # A type of freelancer
+            "Local Businesses With Hourly Workers": "Small Businesses", # See note below
+            "Logistics": "Logistics Companies",
+            "Online Retailers": "E-Commerce Brands",
+            "Promo-Seeking Tech Workers": "General Consumers",
+            "Remote Developers": "Software Developers",
+            "Series B+ Fintech Companies": "Fintech Companies",
+            "Shopify/Wix Agencies": "Agencies",
+            "Skincare Brands": "E-Commerce Brands",
+            "Small Agencies": "Agencies",
         }
 
     def identify_unmapped_targets(self):
@@ -176,7 +201,7 @@ class Command(BaseCommand):
     @transaction.atomic
     def backfill_business_models(self):
         # The classification sets are now derived directly from the master JSON
-        B2B_SET = {"Accounting Firms", "Aerospace Manufacturers", "Agencies", "Agriculture Companies", "Airlines", "Banks", "B-Corps", "Biotech Startups", "Boutique Hotels", "Boutique Travel Agencies", "Chemical Companies", "Compliance Teams", "Construction Companies", "Construction Smbs", "Consulting Firms", "Corporate Event Planners", "CPG Companies", "Credit Repair Agencies", "Credit Unions", "Crypto Projects", "Defense Contractors", "Design Agencies", "Digital Agencies", "E-Commerce Brands", "E-Commerce Platforms", "E-Learning Platforms", "Engineering Teams", "Factories", "Finance Departments", "Financial Services", "Fire Departments", "Fitness Centers", "Florists", "Forestry Services", "Freight Forwarders", "Government Agencies", "Hair Salons", "Healthcare Providers", "Hotel Managers & Staff", "HR Departments", "HR Teams", "Independent Bookstores", "Industrial Ops", "Insurance Providers", "Investment Firms", "IT Departments", "IT Security Departments", "Junk Removal Services", "K-12 Teachers", "Labs", "Large Companies", "Law Schools", "Learning & Development Teams", "Legal Departments", "Legal Firms", "Lending Platforms", "Logistics Companies", "Managed Service Providers (MSPs)", "Manufacturers", "Manufacturing", "Marketing Agencies", "Media Companies", "Moving Companies", "Municipal Governments", "Neobanks", "Non-Profits & Charities", "Operations Teams", "Paralegal Programs", "Product Teams", "Professional Certification Bodies", "Public Companies", "Publishers", "Real Estate Developers", "Rehabilitation Clinics", "Research Institutions", "Research Labs", "Restaurants", "Retail Stores", "Sales Teams", "School Districts", "Schools", "Smb Payroll Providers", "Small Inns", "Small Presses", "Staking Pools", "Support Teams", "Tech Companies", "Tech Startups", "Universities", "Warehouses", "Web3 Companies"}
+        B2B_SET = {"Accounting Firms", "Aerospace Manufacturers", "Agencies", "Agriculture Companies", "Airlines", "Banks", "B-Corps", "Biotech Startups", "Boutique Hotels", "Boutique Travel Agencies", "Chemical Companies", "Compliance Teams", "Construction Companies", "Construction Smbs", "Consulting Firms", "Corporate Event Planners", "CPG Companies", "Credit Repair Agencies", "Credit Unions", "Crypto Projects", "Defense Contractors", "Design Agencies", "Digital Agencies", "E-Commerce Brands", "E-Commerce Platforms", "E-Learning Platforms", "Engineering Teams", "Factories", "Finance Departments", "Financial Services", "Fire Departments", "Fitness Centers", "Florists", "Forestry Services", "Freight Forwarders", "Government Agencies", "Hair Salons and Barbershops", "Healthcare Providers", "Hotel Managers & Staff", "HR Departments", "HR Teams", "Independent Bookstores", "Industrial Ops", "Insurance Providers", "Investment Firms", "IT Departments", "IT Security Departments", "Junk Removal Services", "K-12 Teachers", "Labs", "Large Companies", "Law Schools", "Learning & Development Teams", "Legal Departments", "Legal Firms", "Lending Platforms", "Logistics Companies", "Managed Service Providers (MSPs)", "Manufacturers", "Manufacturing", "Marketing Agencies", "Media Companies", "Moving Companies", "Municipal Governments", "Neobanks", "Non-Profits & Charities", "Operations Teams", "Paralegal Programs", "Product Teams", "Professional Certification Bodies", "Public Companies", "Publishers", "Real Estate Developers", "Rehabilitation Clinics", "Research Institutions", "Research Labs", "Restaurants", "Retail Stores", "Sales Teams", "School Districts", "Schools", "Smb Payroll Providers", "Small Inns", "Small Presses", "Staking Pools", "Support Teams", "Tech Companies", "Tech Startups", "Universities", "Warehouses", "Web3 Companies"}
         PROSUMER_SET = {"Accountants", "Account Executives", "Academic Researchers", "Admins & Management", "Advisors", "Agency Owners", "Analysts", "Angel Investors", "Architects", "Athletes", "Audio Engineers", "Authors", "Bloggers", "Business Analysts", "Business Development Reps", "Caregivers", "Certification Candidates", "Chemical Engineers", "Coaches", "Community Builders", "Compliance Officers", "Content Creators", "Corporate Trainers", "Course Creators", "CTOs", "Data Analysts", "Data Engineers", "Data Scientists", "Demand Generation Managers", "Dermatology Clinics", "Design Studios", "DevOps Teams & Engineers", "Dietitians", "Digital Marketers", "Doctors", "E-Commerce Owners & Managers", "Editors", "Educators", "Environmental Agencies", "Event Organizers", "Event Producers", "Executives", "Financial Analysts", "Financial Coaches", "Freelancers", "Game Developers", "General Contractors", "Growth Marketers", "Illustrators", "Indie Game Studios", "Indie Hackers", "Independent Consultants", "Job Seekers", "Law Students", "Lawyers", "Librarians", "Market Researchers", "Marketers", "Nutritionists", "Paralegals", "Personal Trainers", "Physiotherapists", "Policymakers", "Product Managers", "Project Developers", "Project Managers", "Public Speakers", "Quantitative Traders & Developers", "Quality Assurance Teams", "Renewable Energy Investors", "Researchers", "Sales Professionals", "Security Engineers", "SEO Specialists", "Site Reliability Engineers", "Site Safety Officers", "Skincare Professionals", "Small Business Owners", "Small Contractors", "Small Landlords", "Social Media Managers", "Software Architects", "Software Developers", "Solo Attorneys", "Startup Founders", "Sustainability Officers", "System Administrators", "Team Managers", "Tradespeople", "Travel Agents", "UI/UX Designers", "UX Designers", "UX Researchers", "VCs", "Web3 Developers", "Webinar Hosts", "Wellness Coaches", "Writers"}
         B2C_SET = {"Affluent Solo Travelers", "Airbnb Hosts", "Career-Switchers", "Children", "Couples", "DeFi Users", "Digital Nomads", "Expatriates", "Families", "Family & Child Services", "Fitness Enthusiasts", "Frequent Travelers", "Friends", "General Consumers", "High School Students", "Honeymooners", "Individuals With Disorders", "Language Learners", "New Parents", "Parents", "Retail Crypto Investors", "Small Travel Groups", "Students", "Wellness-Conscious Consumers"}
 
