@@ -732,7 +732,9 @@ class UseCaseSearchView(APIView):
             SearchVector("case_title", weight="A") +
             SearchVector("description", weight="B") +
             SearchVector("category__name", weight="C") +
-            SearchVector("tag__name", weight="C")
+            SearchVector("tag__name", weight="C") +
+            SearchVector("target_markets__name", weight="C") + 
+            SearchVector("business_model", weight="C")   
         )
 
         query_websearch = SearchQuery(query, search_type="websearch")
@@ -774,7 +776,7 @@ class UseCaseSearchView(APIView):
         if page is None:
              return Response({"results": []})
 
-        # The serializer will now receive the true 'rank' value
+        # The serializer will receive the true 'rank' value
         return paginator.get_paginated_response(
             UseCaseSearchSerializer(page, many=True).data
         )

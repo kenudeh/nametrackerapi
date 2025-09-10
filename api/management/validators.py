@@ -3,9 +3,6 @@ This module provides JSON validation for the AI-generated domain data
 before inserting into the database. It ensures that every domain record
 and its nested use cases meet the required structure, types, and business rules.
 
-Usage:
-    from .validators import validate_domain_data
-    validate_domain_data(data)  # Raises ValueError if invalid
 """
 
 def validate_domain_data(data):
@@ -72,7 +69,6 @@ def validate_domain_data(data):
                     )
 
             
-            # --- NEW VALIDATION BLOCK for Target Market--- #
             # Check target_markets structure
             if not isinstance(use_case['target_markets'], list):
                 raise ValueError(
@@ -88,6 +84,15 @@ def validate_domain_data(data):
                     raise ValueError(
                         f"The 'name' in a target_market item must be a non-empty string in use_case[{uc_index}] of domain item at index {index}."
                     )
+
+            # Validation for Business Model 
+            business_model = use_case['business_model']
+            allowed_models = {'B2B', 'B2C', 'Prosumer'}
+            if business_model not in allowed_models:
+                raise ValueError(
+                    f"Invalid 'business_model' value '{business_model}' in use_case[{uc_index}] of domain item at index {index}. "
+                    f"Must be one of {sorted(list(allowed_models))}"
+                )
 
             # Check order is int and unique within this domain item
             order = use_case['order']
