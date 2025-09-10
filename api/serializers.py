@@ -82,7 +82,7 @@ class UseCaseSerializer(serializers.ModelSerializer):
             'case_title', 'slug', 'description', 
             "category", "tag",
             'difficulty', 'competition', 
-            'target_markets', 'revenue_potential', 
+            'target_markets', 'business_model', 'revenue_potential', 
             'order'
         ]
 
@@ -335,8 +335,10 @@ class SavedNameLightSerializer(serializers.ModelSerializer):
 
 class UseCaseListSerializer(serializers.ModelSerializer):
     category = serializers.CharField(source="category.name", read_only=True)
-    # domain_name = serializers.CharField(source="domain_name.name", read_only=True)
-    # domain_status = serializers.CharField(source="domain_name.status", read_only=True)
+    target_markets = serializers.StringRelatedField(
+        many=True,
+        read_only=True,
+    )
 
     class Meta:
         model = UseCase
@@ -355,11 +357,17 @@ class UseCaseDetailSerializer(serializers.ModelSerializer):
     domain_name = serializers.CharField(source="domain_name.domain_name", read_only=True)
     domain_status = serializers.CharField(source="domain_name.status", read_only=True)
     drop_date = serializers.CharField(source="domain_name.drop_date", read_only=True)
-    tags = serializers.SerializerMethodField()
+    tags = serializers.SerializerMethodField() 
+    target_markets = serializers.SerializerMethodField() 
 
     def get_tags(self, obj):
         # flat list of tag names (no nesting)
         return list(obj.tag.values_list("name", flat=True))
+
+    def get_target_markets(self, obj):
+        # flat list of target market names, consistent with tags
+        return list(obj.target_markets.values_list("name", flat=True))
+
 
     class Meta:
         model = UseCase
@@ -370,6 +378,7 @@ class UseCaseDetailSerializer(serializers.ModelSerializer):
             "category",
             "competition",
             "difficulty",
+            "business_model",
             "target_markets",
             "revenue_potential",
             "order",

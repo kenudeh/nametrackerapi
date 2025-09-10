@@ -1,20 +1,17 @@
 import json
 from django.core.management.base import BaseCommand, CommandError
 from django.utils.dateparse import parse_date
-import traceback 
+import traceback
 
-
-from api.management.validators import validate_domain_data  # Custom validator function
-from api.models import Name, UseCaseTag, UseCaseCategory, UseCase, IdeaOfTheDay, DomainListOptions, RegStatusOptions
+from api.management.validators import validate_domain_data
+from api.models import Name, UseCaseTag, UseCaseCategory, UseCase, IdeaOfTheDay, DomainListOptions, RegStatusOptions, TargetMarket
 
 import logging
 logger = logging.getLogger(__name__)
 
 from django.conf import settings
 
-
 # Example CLI usage:python manage.py load_json appname/data(a folder in app)/date.json(the exact json file) --drop_date=2025-07-01(a flag) --domain_list=pending_delete | marketplace(another flag)
-
 
 class Command(BaseCommand):
     help = 'Loads domain data from an AI-generated JSON file into the database.'
@@ -41,31 +38,27 @@ class Command(BaseCommand):
         parser.add_argument(
             '--drop_date', 
             type=str, 
-            required=True,
+            required=True, 
             help='Required: Drop date for this batch in YYYY-MM-DD format.'
         )
         parser.add_argument(
-            '--domain_list',
-            type=str,
-            choices=[choice[0] for choice in DomainListOptions.choices],  # Enforced against Enum choices
-            default=DomainListOptions.PENDING_DELETE,  # Default is 'pending_delete'
+            '--domain_list', 
+            type=str, 
+            choices=[choice[0] for choice in DomainListOptions.choices], 
+            default=DomainListOptions.PENDING_DELETE, 
             help=(
-                "Optional: Specify domain_list to assign all loaded domains to. "
+                "Optional: Specify domain_list to assign all loaded domains to."
                 "Options: 'all_list', 'pending_delete', 'deleted', 'marketplace'. "
                 "Defaults to 'pending_delete'."
             )
         )
-    
-
 
     def handle(self, *args, **options):
         json_file_path = options['json_file']
         drop_date_str = options['drop_date']
-        domain_list = options['domain_list']  # Already validated by argparse choices
+        domain_list = options['domain_list']
 
         # --- Validate and parse drop_date argument ---
-        if not drop_date_str:
-            raise CommandError("Error: --drop_date argument is required.")
         try:
             drop_date = parse_date(drop_date_str)
             if not drop_date:
@@ -78,10 +71,11 @@ class Command(BaseCommand):
             status = RegStatusOptions.PENDING
         elif domain_list == DomainListOptions.MARKETPLACE:
             status = RegStatusOptions.AVAILABLE
-        elif domain_list in [DomainListOptions.ALL_LIST, DomainListOptions.DELETED]:
-            status = RegStatusOptions.PENDING
+        elif: # Covers ALL_LIST and DELETED
+            status = RegStatusOptions.UNVERIFIED
         else:
             raise CommandError(f"Unexpected domain_list value encountered: {domain_list}")
+
 
         try:
             # --- Load and parse JSON file ---
@@ -98,18 +92,20 @@ class Command(BaseCommand):
                 logger.error(f"File not found: {json_file_path}")
                 raise CommandError(f"File not found: {json_file_path}")
 
-            # --- Validate top-level structure ---
+
+            # Validate top-level structure 
             if not isinstance(data, list):
                 raise CommandError("Top-level JSON must be a list of domains.")
 
-            # --- Preload allowed category names from DB ---
-            allowed_categories = set(
-                UseCaseCategory.objects.values_list('name', flat=True)
-            )
+            # Preload allowed category names from DB for validation
+            allowed_categories = set(UseCaseCategory.objects.values_list('name', flat=True))
+            
+            # Preload allowed TargetMarket names
+            allowed_target_markets = set(TargetMarket.objects.values_list('name', flat=True))
 
             # To track domains and their scores
-            top_scoring_domains = [] 
-            records_processed = 0  # Count successful inserts
+            top_scoring_domains = []
+            records_processed = 0 # Count successful inserts
 
             # --- Process each domain entry ---
             for index, item in enumerate(data):
@@ -119,36 +115,39 @@ class Command(BaseCommand):
                 try:
                     validate_domain_data([item])  # Validator expects a list, but we're passing domains one by one for scalability purposes.
                 except ValueError as e:
-                    self.stdout.write(self.style.ERROR(
-                        f"Skipped '{domain_name}' due to validation error: {e}"
-                    ))
+                    self.stdout.write(self.style.ERROR(f"Skipped '{domain_name}' due to validation error: {e}"))
                     logger.error(f"Skipped '{domain_name}' due to validation error: {e}")
-                    continue  #Block this domain from being saved
+                    continue #Block this domain from being saved
 
                 # --- Check if domain already exists in DB ---
                 if Name.objects.filter(domain_name=domain_name).exists():
-                    self.stdout.write(self.style.WARNING(
-                        f"Skipped '{domain_name}': already exists in DB."
-                    ))
+                    self.stdout.write(self.style.WARNING(f"Skipped '{domain_name}': already exists in DB."))
                     logger.warning(f"Skipped '{domain_name}': already exists in DB.")
-                    continue
+                    continue  
 
-                # --- Extract all category names used in this domain's use cases ---
-                use_case_categories = [
-                    uc['category']['name']
-                    for uc in item.get('use_cases', [])
-                    if 'category' in uc and 'name' in uc['category']
-                ]
+                # Extract use cases data
+                use_cases_data = item.get('use_cases', [])
 
-                # --- Ensure all categories used exist in DB ---
-                invalid_categories = [
-                    name for name in use_case_categories if name not in allowed_categories
-                ]
+                # --- VALIDATION: Ensure all categories used exist in DB ---
+                use_case_categories = {uc['category']['name'] for uc in use_cases_data if 'category' in uc and 'name' in uc['category']}
+                invalid_categories = use_case_categories - allowed_categories
                 if invalid_categories:
-                    self.stdout.write(self.style.WARNING(
-                        f"Skipped '{domain_name}': unknown categories used: {', '.join(invalid_categories)}"
-                    ))
+                    self.stdout.write(self.style.WARNING(f"Skipped '{domain_name}': unknown categories used: {', '.join(invalid_categories)}"))
                     logger.warning(f"Skipped '{domain_name}': unknown categories used: {', '.join(invalid_categories)}")
+                    continue
+                
+                # --- VALIDATION for TargetMarket ---
+                # Extract all unique target market names from all use cases in this item
+                use_case_target_markets = set()
+                for uc in use_cases_data:
+                    for market_dict in uc.get('target_markets', []):
+                        if 'name' in market_dict:
+                            use_case_target_markets.add(market_dict['name'])
+                
+                invalid_markets = use_case_target_markets - allowed_target_markets
+                if invalid_markets:
+                    self.stdout.write(self.style.WARNING(f"Skipped '{domain_name}': unknown target markets used: {', '.join(invalid_markets)}"))
+                    logger.warning(f"Skipped '{domain_name}': unknown target markets used: {', '.join(invalid_markets)}")
                     continue
 
                 # --- Create the Name entry ---
@@ -165,17 +164,8 @@ class Command(BaseCommand):
                     top_rated_date=drop_date if is_top_rated else None
                 )
 
-                # --- Collect and assign unique tags across all use cases ---
-                all_tag_names = set()
-                for uc in item['use_cases']:
-                    all_tag_names.update(
-                        tag_dict['name']
-                        for tag_dict in uc.get('tag', [])
-                        if isinstance(tag_dict, dict) and 'name' in tag_dict
-                    )
-
-                # --- Create UseCase entries, including tags and categories ---
-                for uc in item['use_cases']:
+                # --- Create UseCase entries
+                for uc in use_cases_data:
                     uc_category = UseCaseCategory.objects.get(name=uc['category']['name'])
 
                     # Create the use case instance
@@ -188,38 +178,47 @@ class Command(BaseCommand):
                         revenue_potential=uc['revenue_potential'],
                         order=uc['order'],
                         category=uc_category,
+                        business_model=uc['business_model']
                     )
 
-                    # Assign target markets to this individual use case
+                    # Assign target markets to this individual use case, using safe .get() ---
+                    market_objs_to_add = []
                     for market_dict in uc.get('target_markets', []):
                         market_name = market_dict.get('name')
                         if market_name:
-                            market_obj, _ = TargetMarket.objects.get_or_create(name=market_name)
-                            use_case_obj.target_markets.add(market_obj)
+                            try:
+                                # Use .get() because we've already validated they exist
+                                market_obj = TargetMarket.objects.get(name=market_name)
+                                market_objs_to_add.append(market_obj)
+                            except TargetMarket.DoesNotExist:
+                                # This should not happen due to the pre-validation, but it's a good safeguard
+                                logger.error(f"Logic error: Could not find pre-validated TargetMarket '{market_name}' for domain '{domain_name}'.")
+                    use_case_obj.target_markets.set(market_objs_to_add)
 
-
-                    # Assign tags to this individual use case
+                    # Assign tags to this individual use case (get_or_create is okay for tags)
+                    tag_objs_to_add = []
                     for tag_dict in uc.get('tag', []):
                         tag_name = tag_dict.get('name')
                         if tag_name:
                             tag_obj, _ = UseCaseTag.objects.get_or_create(name=tag_name)
-                            use_case_obj.tag.add(tag_obj)
+                            tag_objs_to_add.append(tag_obj)
+                    use_case_obj.tag.set(tag_objs_to_add)
 
-
-                 # --- Log success for this domain ---
+                # --- Log success for this domain ---
                 self.stdout.write(self.style.SUCCESS(f"Processed: {domain_name}"))
                 logger.info(f"Processed: {domain_name}")
 
                 # --- Track top scoring domains (for idea assignment later)
-                if domain_list == DomainListOptions.PENDING_DELETE and item.get('score') is not None:
+                if domain_list == DomainListOptions.PENDING_DELETE and score is not None:
                     top_scoring_domains.append({
-                        'domain_obj': name_obj,
-                        'score': item.get('score'),
+                        'domain_obj': name_obj, 
+                        'score': score
                     })
-
-
+                
+                #Increment total processed number
                 records_processed += 1
 
+            
             # --- Assign IdeaOfTheDay for 'pending_delete' domains if applicable ---
             if domain_list == DomainListOptions.PENDING_DELETE and top_scoring_domains:
                 # Sort by score (descending), pick the top one (or more with same score)
@@ -265,13 +264,11 @@ class Command(BaseCommand):
                     # ))
                     logger.warning( f"Skipped IdeaOfTheDay creation: no top use case (order=1) found for domain '{selected_domain.domain_name}'.")
 
-
-
             # --- Final success message ---
             self.stdout.write(self.style.SUCCESS(f'Total domains processed: {records_processed}'))
             logger.info(f'Total domains processed: {records_processed}')
-            # self.stdout.write(self.style.SUCCESS('All domain data loaded successfully.'))
 
+        
         except Exception as e:
-            logger.exception(f"Error loading JSON file: {e}")
-            raise CommandError(f"Error loading JSON file: {e}")
+            logger.exception(f"An error occurred: {e}")
+            raise CommandError(f"An error occurred: {e}")
