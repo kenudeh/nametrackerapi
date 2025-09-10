@@ -163,6 +163,21 @@ class Command(BaseCommand):
             "Shopify/Wix Agencies": "Agencies",
             "Skincare Brands": "E-Commerce Brands",
             "Small Agencies": "Agencies",
+
+            "Hair Salons": "Hair Salons & Barbershops",
+            "Payroll Saas": "Tech Startups",
+            "Saas Companies": "Tech Startups",
+            "Small Business Owners": "Small Businesses",
+            "Small Dev Teams": "Engineering Teams",
+            "Subscription Box Businesses": "E-Commerce Brands",
+            "Sustainability Consultants": "Independent Consultants",
+            "Team Leads": "Team Managers",
+            "Training Coordinators": "HR Teams",
+            "Travel Agencies": "Travel Agents & Agencies", 
+            "Boutique Travel Agencies": "Travel Agents & Agencies",
+            "Web3 Analysts": "Analysts",
+            "Web3 Startups": "Web3 Companies",
+            "Web3/Ai Startups Hiring Specialists": "HR Teams",
         }
 
     def identify_unmapped_targets(self):
