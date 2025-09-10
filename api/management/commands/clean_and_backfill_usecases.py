@@ -174,6 +174,7 @@ class Command(BaseCommand):
             "Team Leads": "Team Managers",
             "Training Coordinators": "HR Teams",
             "Travel Agencies": "Travel Agents & Agencies", 
+            "Travel Agents": "Travel Agents & Agencies",
             "Boutique Travel Agencies": "Travel Agents & Agencies",
             "Web3 Analysts": "Analysts",
             "Web3 Startups": "Web3 Companies",
