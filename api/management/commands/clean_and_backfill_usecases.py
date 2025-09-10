@@ -179,7 +179,7 @@ class Command(BaseCommand):
             "Web3 Analysts": "Analysts",
             "Web3 Startups": "Web3 Companies",
             "Web3/Ai Startups Hiring Specialists": "HR Teams",
-        }
+            "Hair Salons & Barbershops": "Hair Salons and Barbershops",        }
 
     def identify_unmapped_targets(self):
         approved_names = self.get_approved_list()
