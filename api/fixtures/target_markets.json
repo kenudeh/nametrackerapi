@@ -214,5 +214,10 @@
   {"name": "Small Travel Groups"},
   {"name": "Students"},
   {"name": "Wellness-Conscious Consumers"},
-  {"name": "Maintenance & Repair Organizations (MROs)"}
+  {"name": "Maintenance & Repair Organizations (MROs)"},
+  {"name": "Solo General Partners (GPs)"},
+  {"name": "Fintech Companies"},
+  {"name": "City Planners"},
+  {"name": "Development Agencies"},
+  {"name": "Marketing Teams"}
 ]
