@@ -20889,3 +20889,47 @@ WARNING 2025-09-11 16:16:14,265 log Forbidden: /api/dashboard/top-rated-names
 WARNING 2025-09-11 16:16:14,273 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
 WARNING 2025-09-11 16:17:39,562 log Forbidden: /api/dashboard/top-rated-names
 WARNING 2025-09-11 16:17:39,568 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 21:38:40,392 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 21:38:40,445 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 21:38:40,576 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 21:38:40,580 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 21:38:54,294 log Forbidden: /api/ideas/idea-of-the-day
+WARNING 2025-09-11 21:38:54,294 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 21:38:54,294 basehttp "GET /api/ideas/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-11 21:38:54,294 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 34
+WARNING 2025-09-11 21:38:57,860 log Forbidden: /api/domains/acquired
+WARNING 2025-09-11 21:38:57,883 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:02,834 log Forbidden: /api/domains/saved
+WARNING 2025-09-11 21:39:02,835 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:14,357 log Forbidden: /api/ideas/idea-of-the-day
+WARNING 2025-09-11 21:39:14,365 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 21:39:14,368 basehttp "GET /api/ideas/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:14,370 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:17,921 log Forbidden: /api/domains/acquired
+WARNING 2025-09-11 21:39:17,941 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:22,449 log Forbidden: /api/domains/saved
+WARNING 2025-09-11 21:39:22,449 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:22,880 log Forbidden: /api/domains/saved
+WARNING 2025-09-11 21:39:22,880 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:34,355 log Forbidden: /api/ideas/idea-of-the-day
+WARNING 2025-09-11 21:39:34,355 basehttp "GET /api/ideas/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:34,422 log Forbidden: /api/ideas/idea-of-the-day
+WARNING 2025-09-11 21:39:34,422 basehttp "GET /api/ideas/idea-of-the-day HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:37,958 log Forbidden: /api/domains/acquired
+WARNING 2025-09-11 21:39:37,958 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:37,972 log Forbidden: /api/domains/acquired
+WARNING 2025-09-11 21:39:37,974 basehttp "GET /api/domains/acquired?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 21:39:42,927 log Forbidden: /api/domains/saved
+WARNING 2025-09-11 21:39:42,937 basehttp "GET /api/domains/saved?limit=10&ordering=-name__created_at HTTP/1.1" 403 34
+WARNING 2025-09-11 22:26:17,146 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 22:26:17,193 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 23:05:07,228 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 23:05:07,324 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 23:12:28,309 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 23:12:28,633 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 23:29:03,956 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 23:29:03,963 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 23:32:31,737 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 23:32:31,742 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 23:35:30,681 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 23:35:30,692 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
