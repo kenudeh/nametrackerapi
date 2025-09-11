@@ -1,0 +1,550 @@
+[
+    {
+      "domain_name": "ZenRay.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Productivity & Focus Tool for Professionals",
+          "description": "A minimalist tool that helps users achieve a 'zen' state of focus, with features that cast a 'ray' of clarity on their most important tasks.",
+          "difficulty": "easy",
+          "competition": "high (vs. Freedom, Forest, Brain.fm)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Deep Work"},
+            {"name": "Focus"},
+            {"name": "Mindfulness"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Freelancers"},
+            {"name": "Writers"},
+            {"name": "Software Developers"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Data Visualization & Insight Platform",
+          "description": "A business intelligence (BI) tool that transforms complex data into clean, calming ('zen') visualizations that provide a 'ray' of clear insight.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Tableau, Looker Studio, Metabase)",
+          "category": {
+            "name": "Business Intelligence"
+          },
+          "tag": [
+            {"name": "Data Visualization"},
+            {"name": "Analytics"},
+            {"name": "BI"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Business Analysts"},
+            {"name": "Marketing Teams"},
+            {"name": "Executives"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        },
+        {
+          "case_title": "Mental Wellness & Meditation App",
+          "description": "A modern meditation and mindfulness app that uses light and sound ('rays') to help users find a state of 'zen' and reduce stress.",
+          "difficulty": "easy",
+          "competition": "high (vs. Calm, Headspace, Waking Up)",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {"name": "Meditation"},
+            {"name": "Mental Health"},
+            {"name": "Mindfulness"}
+          ],
+          "business_model": "B2C",
+          "target_markets": [
+            {"name": "General Consumers"},
+            {"name": "Wellness-Conscious Consumers"}
+          ],
+          "revenue_potential": "medium",
+          "order": 3
+        }
+      ]
+    },
+      {
+      "domain_name": "AgroReport.co",
+      "score": 6,
+      "use_cases": [
+        {
+          "case_title": "Crop Health & Yield Reporting",
+          "description": "A platform for modern farms that analyzes drone or satellite imagery to generate 'reports' on crop health, soil conditions, and yield forecasts.",
+          "difficulty": "hard",
+          "competition": "medium (vs. Planet Labs, Semios, Taranis)",
+          "category": {
+            "name": "Agriculture"
+          },
+          "tag": [
+            {"name": "AgriTech"},
+            {"name": "Analytics"},
+            {"name": "Reporting"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Agriculture Companies"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Agricultural Market & Compliance Reporting",
+          "description": "A tool that provides farmers and agricultural businesses with market price data 'reports' and helps them generate compliance documentation.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. government data, specialized brokers)",
+          "category": {
+            "name": "Agriculture"
+          },
+          "tag": [
+            {"name": "AgriTech"},
+            {"name": "Compliance"},
+            {"name": "Fintech"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Agriculture Companies"}
+          ],
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "DropKey.co",
+      "score": 6,
+      "use_cases": [
+        {
+          "case_title": "Secure Secret & Password Sharing",
+          "description": "A tool for securely sharing sensitive information like passwords or API 'keys' with a one-time, expiring link that you can 'drop' in a chat.",
+          "difficulty": "easy",
+          "competition": "high (vs. 1Password, Bitwarden, onetimesecret.com)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Security"},
+            {"name": "Encryption"},
+            {"name": "Productivity"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Software Developers"},
+            {"name": "Agencies"},
+            {"name": "Freelancers"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "SocialDrop.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Social Media Content Scheduling",
+          "description": "A tool for creators and brands to schedule and 'drop' their content across multiple social media platforms from a single calendar.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Buffer, Hootsuite, Later)",
+          "category": {
+            "name": "Social & Networking"
+          },
+          "tag": [
+            {"name": "Social Media"},
+            {"name": "MarTech"},
+            {"name": "Scheduling"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Social Media Managers"},
+            {"name": "Content Creators"},
+            {"name": "Marketing Agencies"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    },
+     {
+      "domain_name": "aramo.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Supply Chain & Logistics Platform",
+          "description": "An elegant and modern platform for businesses to manage the flow of goods, track inventory, and optimize their supply chain.",
+          "difficulty": "hard",
+          "competition": "high (vs. NetSuite, SAP, Katana)",
+          "category": {
+            "name": "Logistics & Supply Chain"
+          },
+          "tag": [
+            {"name": "Supply Chain"},
+            {"name": "Logistics"},
+            {"name": "ERP"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "E-Commerce Brands"},
+            {"name": "Manufacturers"},
+            {"name": "Logistics Companies"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "CRM & Sales Automation",
+          "description": "A sophisticated CRM for businesses with complex sales cycles, focusing on workflow automation and relationship management.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Salesforce, HubSpot, Zoho)",
+          "category": {
+            "name": "Customer Engagement & Support"
+          },
+          "tag": [
+            {"name": "CRM"},
+            {"name": "Sales Tech"},
+            {"name": "Automation"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Sales Teams"},
+            {"name": "Support Teams"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "MeshGuard.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "IoT & Mesh Network Security",
+          "description": "A tool for securing IoT deployments that use 'mesh' networking protocols, protecting fleets of connected devices from being compromised.",
+          "difficulty": "hard",
+          "competition": "high (vs. Palo Alto Networks, Cisco IoT)",
+          "category": {
+            "name": "Internet of Things"
+          },
+          "tag": [
+            {"name": "IoT"},
+            {"name": "Security"},
+            {"name": "Networking"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Security Engineers"},
+            {"name": "Manufacturers"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+       {
+      "domain_name": "MentalMirror.io",
+      "score": 6,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Journaling & Mood Tracking",
+          "description": "A B2C app that acts as a 'mental mirror,' analyzing a user's journal entries to reflect back patterns in their mood and thinking, promoting self-awareness.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Calm, Headspace, Daylio, Reflectly)",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {"name": "Mental Health"},
+            {"name": "Journaling"},
+            {"name": "AI"}
+          ],
+          "business_model": "B2C",
+          "target_markets": [
+            {"name": "General Consumers"},
+            {"name": "Wellness-Conscious Consumers"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        }
+      ]
+    },
+    {
+      "domain_name": "LayerFive.io",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "API & Application Security Platform",
+          "description": "A platform focused on securing the application 'layer' (often considered the 5th layer in networking models), protecting APIs and web apps.",
+          "difficulty": "hard",
+          "competition": "high (vs. Salt Security, Noname Security, Cloudflare)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "API Security"},
+            {"name": "Cybersecurity"},
+            {"name": "Developer Tools"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Security Engineers"},
+            {"name": "DevOps Teams & Engineers"},
+            {"name": "Software Architects"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+      {
+      "domain_name": "PeopleQuest.ai",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Candidate Sourcing & Recruitment",
+          "description": "A platform for recruiters to go on a 'quest' to find the best talent, using AI to proactively source and match candidates with open roles.",
+          "difficulty": "hard",
+          "competition": "high (vs. SeekOut, hireEZ, Loxo)",
+          "category": {
+            "name": "Recruitment & Staffing"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Recruitment"},
+            {"name": "HR Tech"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Recruiters"},
+            {"name": "HR Departments"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Employee Engagement & Survey Platform",
+          "description": "An HR tool for understanding the journey or 'quest' of employees within a company through intelligent surveys and continuous feedback analysis.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Culture Amp, Officevibe, Lattice)",
+          "category": {
+            "name": "HR & Workforce"
+          },
+          "tag": [
+            {"name": "Employee Engagement"},
+            {"name": "HR Tech"},
+            {"name": "Analytics"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "HR Departments"},
+            {"name": "Team Managers"},
+            {"name": "Executives"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+     {
+      "domain_name": "BlueRaptor.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Cybersecurity Threat Hunting",
+          "description": "An AI platform that acts like a 'raptor,' actively hunting for advanced threats and vulnerabilities within a corporate network before they can strike.",
+          "difficulty": "hard",
+          "competition": "high (vs. CrowdStrike, SentinelOne, Vectra AI)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Cybersecurity"},
+            {"name": "AI"},
+            {"name": "Threat Detection"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Security Engineers"},
+            {"name": "IT Security Departments"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Intelligent Web Scraping & Data Extraction",
+          "description": "An AI-powered 'data raptor' that intelligently scrapes and structures hard-to-get data from the web for analysis and lead generation.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Bright Data, Apify, Scrape.do)",
+          "category": {
+            "name": "Data Infrastructure"
+          },
+          "tag": [
+            {"name": "Web Scraping"},
+            {"name": "AI"},
+            {"name": "Data"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Data Scientists"},
+            {"name": "Market Researchers"},
+            {"name": "Sales Teams"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+      {
+      "domain_name": "EcoSpark.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Clean Energy Project Planning & Modeling",
+          "description": "A tool for entrepreneurs and developers to 'spark' and model new renewable energy projects, forecasting costs, output, and profitability.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. HOMER, Aurora Solar)",
+          "category": {
+            "name": "Solar & Clean Energy"
+          },
+          "tag": [
+            {"name": "Climate Tech"},
+            {"name": "Project Planning"},
+            {"name": "Fintech"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Renewable Energy Investors"},
+            {"name": "Project Developers"},
+            {"name": "Engineering Teams"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Community Engagement for Green Initiatives",
+          "description": "A platform to help non-profits and local governments 'spark' community engagement and action around environmental projects.",
+          "difficulty": "easy",
+          "competition": "low (emerging market)",
+          "category": {
+            "name": "Non-Profit & Community"
+          },
+          "tag": [
+            {"name": "Community Engagement"},
+            {"name": "Sustainability"},
+            {"name": "GovTech"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Non-Profits & Charities"},
+            {"name": "Community Builders"}
+          ],
+          "revenue_potential": "low",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "CyberFlux.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Real-time Threat & Data Flow Monitoring",
+          "description": "A security platform that monitors the constant 'flux' of data in a network to detect anomalies and threats in real-time using behavioral analysis.",
+          "difficulty": "hard",
+          "competition": "high (vs. Darktrace, Vectra AI)",
+          "category": {
+            "name": "Security"
+          },
+          "tag": [
+            {"name": "Cybersecurity"},
+            {"name": "Threat Detection"},
+            {"name": "Network Security"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Security Engineers"},
+            {"name": "IT Security Departments"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Cybersecurity Risk & Compliance Management",
+          "description": "A tool that helps businesses manage and adapt to the ever-changing 'flux' of cybersecurity regulations and evolving threat landscapes.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Vanta, Drata, Secureframe)",
+          "category": {
+            "name": "Privacy, Compliance & Identity"
+          },
+          "tag": [
+            {"name": "Compliance"},
+            {"name": "Risk Management"},
+            {"name": "RegTech"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Compliance Officers"},
+            {"name": "IT Departments"},
+            {"name": "Public Companies"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+       {
+      "domain_name": "FleetNow.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Real-time Fleet Tracking & Management for SMBs",
+          "description": "A modern platform for small to mid-sized businesses to track their vehicle fleet in real-time, manage dispatch, and optimize routes.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Samsara, Verizon Connect, KeepTruckin)",
+          "category": {
+            "name": "Logistics & Supply Chain"
+          },
+          "tag": [
+            {"name": "Fleet Management"},
+            {"name": "Vertical SaaS"},
+            {"name": "Logistics"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Logistics Companies"},
+            {"name": "Construction Companies"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "Local Delivery Fleet Management",
+          "description": "A lightweight tool for local businesses like restaurants or florists to manage their own delivery fleet, drivers, and order assignments.",
+          "difficulty": "easy",
+          "competition": "medium (vs. Onfleet, Bringg)",
+          "category": {
+            "name": "Logistics & Supply Chain"
+          },
+          "tag": [
+            {"name": "Delivery"},
+            {"name": "Local Business"},
+            {"name": "Restaurants"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Restaurants"},
+            {"name": "Florists"}
+          ],
+          "revenue_potential": "medium",
+          "order": 2
+        }
+      ]
+    }
+  ]

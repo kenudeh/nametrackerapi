@@ -20845,3 +20845,47 @@ WARNING 2025-09-10 11:06:16,535 log Forbidden: /api/ideas/list
 WARNING 2025-09-10 11:06:16,539 log Forbidden: /api/ideas/list
 WARNING 2025-09-10 11:06:16,542 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
 WARNING 2025-09-10 11:06:16,543 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-10 14:32:19,856 log Forbidden: /api/ideas/list
+WARNING 2025-09-10 14:32:19,884 basehttp "GET /api/ideas/list?top-rated=true&last_n=5 HTTP/1.1" 403 30
+WARNING 2025-09-10 14:35:49,565 log Forbidden: /api/ideas/list
+WARNING 2025-09-10 14:35:49,570 log Forbidden: /api/ideas/list
+WARNING 2025-09-10 14:35:49,578 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-10 14:35:49,594 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-10 15:34:29,025 log Not Found: /favicon.ico
+WARNING 2025-09-10 15:34:29,041 basehttp "GET /favicon.ico HTTP/1.1" 404 2555
+WARNING 2025-09-10 22:51:30,589 log Forbidden: /api/ideas/list
+WARNING 2025-09-10 22:51:30,600 log Forbidden: /api/ideas/list
+WARNING 2025-09-10 22:51:30,601 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-10 22:51:30,607 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-10 23:17:12,096 log Bad Request: /admin/upload-data/
+WARNING 2025-09-10 23:17:12,104 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 93
+WARNING 2025-09-11 05:55:50,758 log Forbidden: /api/ideas/list
+WARNING 2025-09-11 05:55:50,758 log Forbidden: /api/ideas/list
+WARNING 2025-09-11 05:55:50,761 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-11 05:55:50,763 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-11 10:46:15,470 log Bad Request: /admin/upload-data/
+WARNING 2025-09-11 10:46:15,486 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 93
+WARNING 2025-09-11 10:59:22,768 log Forbidden: /api/ideas/list
+WARNING 2025-09-11 10:59:22,774 log Forbidden: /api/ideas/list
+WARNING 2025-09-11 10:59:22,778 basehttp "GET /api/ideas/list?last_n=10 HTTP/1.1" 403 58
+WARNING 2025-09-11 10:59:22,779 basehttp "GET /api/ideas/list?featured=true HTTP/1.1" 403 58
+WARNING 2025-09-11 14:58:12,417 log Bad Request: /admin/upload-data/
+WARNING 2025-09-11 14:58:12,418 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 119
+WARNING 2025-09-11 15:08:38,693 log Bad Request: /admin/upload-data/
+WARNING 2025-09-11 15:08:38,696 basehttp "POST /admin/upload-data/ HTTP/1.1" 400 93
+WARNING 2025-09-11 15:17:08,237 log Not Found: /api/idea-of-the-day
+WARNING 2025-09-11 15:17:08,240 basehttp "GET /api/idea-of-the-day HTTP/1.1" 404 7140
+WARNING 2025-09-11 15:53:22,146 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 15:53:22,159 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 15:53:22,937 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 15:53:23,015 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 15:55:13,254 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 15:55:13,264 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 15:55:26,123 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 15:55:26,126 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 15:55:34,137 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 15:55:34,142 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 16:16:14,265 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 16:16:14,273 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58
+WARNING 2025-09-11 16:17:39,562 log Forbidden: /api/dashboard/top-rated-names
+WARNING 2025-09-11 16:17:39,568 basehttp "GET /api/dashboard/top-rated-names?last_n=12 HTTP/1.1" 403 58

@@ -564,7 +564,7 @@ class TopRatedNamesAPIView(generics.GenericAPIView):
         today_data = DashboardNameSerializer(today_qs, many=True).data
         yesterday_data = DashboardNameSerializer(yesterday_qs, many=True).data
 
-        return Response({"today": today_data, "yesterday": yesterday_data}, status=status.HTTP_200_OK)
+        return Response({"pending_delete": today_data, "deleted": yesterday_data}, status=status.HTTP_200_OK)
 
 
 

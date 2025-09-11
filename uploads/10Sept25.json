@@ -1,0 +1,302 @@
+[
+    {
+      "domain_name": "MindKit.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Productivity & 'Second Brain' Toolkit",
+          "description": "A suite of tools for knowledge workers to capture ideas, organize notes, and manage tasks, forming a 'kit' for their digital mind.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Notion, Obsidian, Evernote, Mem)",
+          "category": {
+            "name": "Productivity"
+          },
+          "tag": [
+            {"name": "Knowledge Management"},
+            {"name": "Note-taking"},
+            {"name": "Second Brain"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Freelancers"},
+            {"name": "Writers"},
+            {"name": "Independent Consultants"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Corporate Mental Wellness Toolkit",
+          "description": "A 'kit' of resources, exercises, and tools for companies to provide their employees for mental health and wellness support.",
+          "difficulty": "easy",
+          "competition": "high (vs. Calm, Headspace for Business, Ginger)",
+          "category": {
+            "name": "Health & Wellness"
+          },
+          "tag": [
+            {"name": "Mental Health"},
+            {"name": "HR Tech"},
+            {"name": "Corporate Wellness"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "HR Departments"},
+            {"name": "Large Companies"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "Classed.io",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Premium Online Course Platform",
+          "description": "A high-end platform for expert creators to host and manage their 'best-in-class' online courses and learning communities.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Kajabi, Teachable, Maven)",
+          "category": {
+            "name": "Education & Learning"
+          },
+          "tag": [
+            {"name": "EdTech"},
+            {"name": "Creator Economy"},
+            {"name": "LMS"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Course Creators"},
+            {"name": "Coaches"},
+            {"name": "Corporate Trainers"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+        {
+      "domain_name": "PureResponse.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Survey & Feedback Analysis",
+          "description": "A platform that helps creators get 'pure responses' by first refining survey questions to remove bias, and then using AI to analyze feedback for patterns and sentiment.",
+          "difficulty": "moderate",
+          "competition": "high (vs. SurveyMonkey, Typeform, features in Dovetail)",
+          "category": {
+            "name": "Analytics"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Survey"},
+            {"name": "Feedback Analysis"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Market Researchers"},
+            {"name": "UX Researchers"},
+            {"name": "Product Managers"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+          "case_title": "AI Customer Support Chatbot",
+          "description": "An AI chatbot for support teams that is trained to provide clear, direct, and 'pure' answers to customer questions without unnecessary fluff.",
+          "difficulty": "easy",
+          "competition": "high (vs. Intercom, Ada, Zendesk)",
+          "category": {
+            "name": "Customer Engagement & Support"
+          },
+          "tag": [
+            {"name": "AI Chatbot"},
+            {"name": "Customer Support"},
+            {"name": "Automation"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Support Teams"},
+            {"name": "E-Commerce Brands"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "WealthRoute.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Financial & Retirement Planning",
+          "description": "A platform that creates a personalized 'route' to 'wealth' by helping users with retirement planning, investment allocation, and financial goal setting.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Personal Capital, NewRetirement, Copilot)",
+          "category": {
+            "name": "Fintech"
+          },
+          "tag": [
+            {"name": "Wealth Management"},
+            {"name": "AI"},
+            {"name": "Financial Planning"}
+          ],
+          "business_model": "B2C",
+          "target_markets": [
+            {"name": "General Consumers"},
+            {"name": "Families"},
+            {"name": "Advisors"} 
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        },
+        {
+            "case_title": "Robo-Advisor for Thematic Investing",
+            "description": "An AI-powered investment platform that helps users build portfolios based on specific themes or long-term trends, creating a 'route' to 'wealth'.",
+            "difficulty": "hard",
+            "competition": "high (vs. Betterment, Wealthfront, Titan)",
+            "category": {
+                "name": "Venture Capital & Investment"
+            },
+            "tag": [
+                {"name": "Robo-Advisor"},
+                {"name": "Investing"},
+                {"name": "AI"}
+            ],
+            "business_model": "Prosumer",
+            "target_markets": [
+                {"name": "Retail Investors"},
+                {"name": "Job Seekers"}
+            ],
+            "revenue_potential": "high",
+            "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "SoundScribe.ai",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "AI Transcription for Content Creators",
+          "description": "A tool for podcasters, YouTubers, and journalists to get fast, highly accurate transcriptions of their audio and video content for repurposing.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Descript, Trint, Otter.ai)",
+          "category": {
+            "name": "Content & CMS"
+          },
+          "tag": [
+            {"name": "Transcription"},
+            {"name": "AI"},
+            {"name": "Creator Economy"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Content Creators"},
+            {"name": "Writers"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Meeting Transcription & Analysis for Teams",
+          "description": "A platform for businesses that records, transcribes, and analyzes online meetings to automatically generate summaries and identify action items.",
+          "difficulty": "moderate",
+          "competition": "high (vs. Fireflies.ai, Fathom, Gong)",
+          "category": {
+            "name": "Communication & Collaboration"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Meetings"},
+            {"name": "Productivity"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Sales Teams"},
+            {"name": "Project Managers"},
+            {"name": "Tech Startups"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    },
+    {
+      "domain_name": "BountyHire.co",
+      "score": 7,
+      "use_cases": [
+        {
+          "case_title": "Tech Referral & Hiring Bounty Platform",
+          "description": "A platform where companies post jobs with a public 'bounty,' allowing anyone in the community to refer candidates and earn a cash reward if they're hired.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. features in Lever, Greenhouse; Drafted)",
+          "category": {
+            "name": "Recruitment & Staffing"
+          },
+          "tag": [
+            {"name": "Recruitment"},
+            {"name": "Referral Marketing"},
+            {"name": "Community"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Tech Startups"},
+            {"name": "Recruiters"},
+            {"name": "HR Teams"}
+          ],
+          "revenue_potential": "high",
+          "order": 1
+        }
+      ]
+    },
+        {
+      "domain_name": "TwoSlash.ai",
+      "score": 8,
+      "use_cases": [
+        {
+          "case_title": "AI-Powered Code Commenting & Documentation",
+          "description": "An AI tool that integrates with an IDE to automatically generate useful comments ('//') and documentation for a given codebase.",
+          "difficulty": "moderate",
+          "competition": "medium (vs. features in GitHub Copilot, Mintlify)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "AI"},
+            {"name": "Developer Tools"},
+            {"name": "Documentation"}
+          ],
+          "business_model": "Prosumer",
+          "target_markets": [
+            {"name": "Software Developers"},
+            {"name": "Engineering Teams"}
+          ],
+          "revenue_potential": "medium",
+          "order": 1
+        },
+        {
+          "case_title": "Collaborative Code Review & Annotation",
+          "description": "A tool for code review that allows developers to leave contextual comments and tasks on specific lines of code, enhancing platforms like GitHub.",
+          "difficulty": "easy",
+          "competition": "medium (vs. Graphite, CodeSee, features in GitHub)",
+          "category": {
+            "name": "Developer Tools & Experience (DX)"
+          },
+          "tag": [
+            {"name": "Code Review"},
+            {"name": "Collaboration"},
+            {"name": "Developer Tools"}
+          ],
+          "business_model": "B2B",
+          "target_markets": [
+            {"name": "Engineering Teams"},
+            {"name": "Software Architects"}
+          ],
+          "revenue_potential": "high",
+          "order": 2
+        }
+      ]
+    }
+  ]

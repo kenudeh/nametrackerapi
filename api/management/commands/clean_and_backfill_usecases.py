@@ -54,7 +54,7 @@ class Command(BaseCommand):
             "Healthcare Systems": "Healthcare Providers", "Insurers": "Insurance Providers", "Logistics Providers": "Logistics Companies",
             "Manufacturing Plants": "Manufacturers", "SaaS Companies": "Tech Startups", "Software Companies": "Tech Companies",
             "Tech Enterprises": "Tech Companies", "University Law Schools": "Law Schools", "Expert Creators": "Content Creators",
-            "Online Educators": "Educators", "Travel Managers": "Travel Agents", "University Students": "Students", "Payroll SaaS": "Tech Startups",
+            "Online Educators": "Educators", "Travel Managers": "Travel Agents", "University Students": "Students", "Payroll SaaS": "Tech Startups", "Retail Crypto Investors": "Retail Investors",
             # This is the big list from the last round
             "Backend Developers": "Software Developers", "Content Marketers": "Marketers", "Corporate Hr Teams": "HR Teams",
             "Corporate Legal Teams": "Legal Departments", "Corporate Travel Managers": "Travel Agents", "Crypto Analysts": "Analysts",

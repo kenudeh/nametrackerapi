@@ -164,7 +164,7 @@ class TargetMarketAdmin(admin.ModelAdmin):
 
 @admin.register(UseCase)
 class UseCaseAdmin(admin.ModelAdmin):
-    list_display = ('case_title', 'domain_name', 'category', 'business_model', 'order', 'difficulty', 'competition', 'revenue_potential', 'display_target_markets')
+    list_display = ('case_title', 'domain_name', 'category', 'business_model', 'order', 'difficulty', 'competition', 'revenue_potential', 'display_target_markets', 'created_at')
     list_filter = ('difficulty', 'competition', 'revenue_potential')
     search_fields = ('case_title', 'target_markets__name')
 
