@@ -652,8 +652,8 @@ class DailyDropAPIView(generics.GenericAPIView):
 
         # 5) Build response
         response_payload = {
-            "today": today_data,
-            "yesterday": yesterday_data,
+            "pending_delete": today_data,
+            "deleted": yesterday_data,
         }
 
         return Response(response_payload, status=status.HTTP_200_OK)
