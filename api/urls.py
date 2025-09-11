@@ -24,8 +24,8 @@ urlpatterns = [
     path('domains/acquired', views.AcquiredNameView.as_view(), name='saved-names'),
 
     #Idea of the day
-    path('idea-of-the-day', views.IdeaOfTheDayView.as_view(), name='idea-of-the-day'),
-    path('idea-of-the-day/list', views.IdeaOfTheDayListView.as_view(), name='idea-of-the-day-list'),
+    path('ideas/idea-of-the-day', views.IdeaOfTheDayView.as_view(), name='idea-of-the-day'),
+    path('ideas/idea-of-the-day/list', views.IdeaOfTheDayListView.as_view(), name='idea-of-the-day-list'),
 
     #Idea center
     path("ideas/list", views.UseCaseListView.as_view(), name="ideas-list"),

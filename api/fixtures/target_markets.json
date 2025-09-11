@@ -210,7 +210,7 @@
   {"name": "Language Learners"},
   {"name": "New Parents"},
   {"name": "Parents"},
-  {"name": "Retail Crypto Investors"},
+  {"name": "Retail Investors"},
   {"name": "Small Travel Groups"},
   {"name": "Students"},
   {"name": "Wellness-Conscious Consumers"},
@@ -219,5 +219,9 @@
   {"name": "Fintech Companies"},
   {"name": "City Planners"},
   {"name": "Development Agencies"},
-  {"name": "Marketing Teams"}
+  {"name": "Marketing Teams"},
+  {"name": "Gaming Companies"},
+  {"name": "Recruiters"},
+  {"name": "Recent Graduates"},
+  {"name": "High-Net-Worth Individuals"}
 ]

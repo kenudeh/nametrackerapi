@@ -53,6 +53,7 @@ class Command(BaseCommand):
             )
         )
 
+        
     def handle(self, *args, **options):
         json_file_path = options['json_file']
         drop_date_str = options['drop_date']
@@ -71,27 +72,33 @@ class Command(BaseCommand):
             status = RegStatusOptions.PENDING
         elif domain_list == DomainListOptions.MARKETPLACE:
             status = RegStatusOptions.AVAILABLE
-        elif: # Covers ALL_LIST and DELETED
-            status = RegStatusOptions.UNVERIFIED
+        elif domain_list in [DomainListOptions.ALL_LIST, DomainListOptions.DELETED]:
+            # Setting a sensible default status
+            status = RegStatusOptions.PENDING
         else:
             raise CommandError(f"Unexpected domain_list value encountered: {domain_list}")
 
-
         try:
-            # --- Load and parse JSON file ---
-            # with open(json_file_path, 'r', encoding='utf-8') as file:
-            #     data = json.load(file)
+            # --- NEW: Robust JSON file loading ---
+            data = None
             try:
+                # First, try to open as standard UTF-8. This will work for most files.
                 with open(json_file_path, 'r', encoding='utf-8') as file:
-                    try:
-                        data = json.load(file)
-                    except json.JSONDecodeError as e:
-                        logger.error(f"Invalid JSON format in {json_file_path}: {e}")
-                        raise CommandError(f"JSON decode error: {e}")
+                    data = json.load(file)
+            except UnicodeDecodeError:
+                # If UTF-8 fails, it's likely a file with a UTF-16 BOM. Retry with 'utf-16'.
+                self.stdout.write(self.style.WARNING(f"UTF-8 decoding failed. Retrying with UTF-16 for {json_file_path}..."))
+                with open(json_file_path, 'r', encoding='utf-16') as file:
+                    data = json.load(file)
             except FileNotFoundError:
                 logger.error(f"File not found: {json_file_path}")
                 raise CommandError(f"File not found: {json_file_path}")
-
+            except json.JSONDecodeError as e:
+                logger.error(f"Invalid JSON format in {json_file_path}: {e}")
+                raise CommandError(f"JSON decode error: {e}")
+            
+            if data is None:
+                raise CommandError("Could not load data from JSON file after trying multiple encodings.")
 
             # Validate top-level structure 
             if not isinstance(data, list):
