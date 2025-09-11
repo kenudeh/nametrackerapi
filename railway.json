@@ -6,7 +6,7 @@
 
   },
   "deploy": {
-    "preDeployCommand": "python manage.py migrate && python manage.py load_target_markets"
+    "preDeployCommand": "python manage.py migrate"
   },
   "services": [
     {
